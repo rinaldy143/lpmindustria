@@ -1,0 +1,31 @@
+/**
+ * List.
+ */
+ul {
+	list-style: disc;
+
+	ul {
+		list-style: circle;
+
+		ul {
+			list-style: square;
+		}
+	}
+
+	&.default-wp-page {
+		list-style: none;
+	}
+}
+
+ol {
+	list-style: decimal;
+}
+
+li {
+	line-height: 1.8;
+
+	>ul,
+	>ol {
+		margin: 0 0 0 10px;
+	}
+}

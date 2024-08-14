@@ -1,0 +1,83 @@
+/* 404 Page.
+--------------------------------------------- */
+.cm-error-404 {
+	text-align: center;
+
+	.cm-page-title {
+		color: $color__primary;
+		font-size: 300px;
+		font-weight: 700;
+		line-height: 300px;
+	}
+
+	.cm-page-header {
+		margin-bottom: 	length( 'l-12' );
+
+		.cm-page-title {
+			font-size: 150px;
+			line-height: 135px;
+			border-bottom: 0;
+		}
+
+		p {
+			font-size: 22px;
+			line-height: 1.3;
+			margin-bottom: length( 'l-4' );
+		}
+
+		.cm-page-title,
+		p {
+			color: #52525B;
+			font-weight: 600;
+		}
+	}
+
+	.cm-page-content {
+		display: flex;
+		justify-content: center;
+		margin-bottom: length( 'l-20' );
+
+		p {
+			width: 100%;
+			margin-bottom: 0;
+			color: #52525B;
+		}
+	}
+
+	.cm-btn {
+		display: inline-block;
+		padding: 12px 24px;
+		background-color: $color__primary;
+		color: $color__white;
+		font-weight: 600;
+		border: 1px solid $color__primary;
+		border-radius: 2px;
+
+		&:hover {
+			background-color: #33363b;
+			border-color: #33363b;
+		}
+	}
+}
+
+@include breakpoint("mdm") {
+
+	.cm-error-404 {
+	
+		.cm-page-header {
+			margin-bottom: length( 'l-12' );
+	
+			.cm-page-title {
+				font-size: 240px;
+				line-height: 215px;
+			}
+		}
+
+		.cm-page-content {
+
+			p {
+				width: 570px;
+			}
+		}
+	}
+}

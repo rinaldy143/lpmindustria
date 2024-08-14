@@ -1,0 +1,149 @@
+.cm-posts {
+	display: grid;
+	gap: 20px;
+	grid-template-columns: 1fr;
+	position: relative;
+
+	.post {
+		overflow: hidden;
+		box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.24);
+		border-radius: 4px;
+
+	}
+}
+
+.cm-post {
+	box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.24);
+	border-radius: 4px;
+
+	a {
+		position: relative;
+		display: block;
+	}
+
+	&:hover {
+
+		.play-button-wrapper {
+			background-color: #207DAF;
+		}
+	}
+}
+
+.post {
+
+	&:hover {
+
+		.play-button-wrapper {
+			background-color: #207daf;
+		}
+	}
+}
+
+.cm-reading-time::before {
+	color: #71717a;
+}
+
+.cm-highlight-post {
+
+	.post:first-child,
+	.page:first-child {
+		grid-column: 1/-1;
+
+		.cm-entry-title {
+			font-size: 32px;
+		}
+	}
+}
+
+.cm-post-categories {
+    display: inline-flex;
+	gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+
+	a {
+		display: inline-block;
+		padding: length( 'l-2', px ) length( 'l-4', px);
+		background-color: $color__primary;
+		color: $color__white;
+		font-size: 10px;
+		text-transform: uppercase;
+		border-radius: 2px;
+		line-height: 1.8;
+	}
+}
+
+.featured-image-caption {
+	font-style: italic;
+	font-size: 14px;
+	padding: 10px 0 0 15px;
+	display: block;
+	color: #444444;
+}
+
+.human-diff-time {
+	font-size: 12px;
+	color: $color__gray-500;
+
+	.cm-post-date {
+		&:not( .human-diff-time-display ) {
+			display: none;
+		}
+	}
+
+	.human-diff-time-display {
+
+		&:hover {
+			color: $color__primary;
+			cursor: pointer;
+		}
+	}
+}
+
+.cm-tag-links a,
+.cm-edit-link a {
+	color: $color__gray-500;
+}
+
+.cm-post-content,
+.single-title-above {
+	padding: 20px;
+}
+
+.cm-entry-summary {
+
+	ul {
+		padding: 0 0 0 30px;
+		margin-bottom: 30px;
+	}
+
+	ol {
+		padding: 0 0 0 30px;
+		margin-bottom: 30px;
+	}
+
+	li {
+		> {
+			ul, ol {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+ul.blocks-gallery-grid,
+ul.wp-block-gallery {
+	padding: 0;
+
+	img {
+		margin-bottom: 0;
+	}
+}
+
+
+@include breakpoint("mdm") {
+
+	.cm-posts {
+		grid-template-columns: repeat(var(--grid-column, 1), 1fr);
+	}
+}

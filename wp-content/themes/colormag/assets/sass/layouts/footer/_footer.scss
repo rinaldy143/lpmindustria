@@ -1,0 +1,390 @@
+/* General Styles.
+--------------------------------------------- */
+.cm-footer {
+
+	.widget {
+		display: block;
+
+		ul {
+
+			li {
+				padding: length( 'l-4', px ) 0;
+				font-weight: 600;
+				border-bottom: 1px solid $color__gray-600;
+
+				&:last-child {
+					border-bottom: none;
+				}
+			}
+		}
+	}
+
+	.cm-upper-footer-cols {
+
+		.widget {
+			background-color: $color__gray-800;
+			border-radius: 4px;
+			padding: length("l-6", px);
+		}
+
+		.cm-entry-title {
+
+			a {
+				color: $color__white;
+			}
+		}
+
+		.cm-random-posts {
+			padding: 0;
+		}
+
+		.cm-first-post {
+
+			.cm-post-content {
+				margin-top: 12px;
+				padding: 0;
+			}
+		}
+
+		.cm-icon {
+			fill: $color__white;
+		}
+
+		.cm-post {
+			box-shadow: unset;
+		}
+
+		.cm-featured-posts--style-3 {
+
+			img {
+				border-radius: 4px;
+			}
+		}
+	}
+
+	.cm-footer-menu {
+
+		ul {
+
+			li {
+
+				a {
+					color: $color__white;
+					text-decoration: none;
+
+					&:hover {
+						color: $color__primary;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Footer column. */
+.cm-footer-cols {
+	background-color: $color__gray-700;
+
+	.cm-row {
+		display: flex;
+		flex-direction: column;
+		gap: length("l-20");
+		padding-top: length("l-20", px);
+		padding-bottom: length("l-20", px);
+		color: $color__gray-200;
+	}
+
+	.cm-widget-title {
+		border-bottom: 2px solid $color__primary;
+		@include font-size("font-size-xs");
+
+		span {
+			display: inline-block;
+			padding: 6px 12px;
+			background-color: $color__primary;
+			color: $color__white;
+			@include font-size("font-size-sm");
+		}
+	}
+
+	a,
+	.human-diff-time {
+		color: $color__white;
+
+		&:hover {
+			color: $color__primary;
+		}
+	}
+
+	ul {
+		list-style: none;
+	}
+
+	.cm-reading-time {
+		color: $color__white;
+	}
+
+	.cm-tab-widget {
+
+		.cm-tabs a:hover {
+			color: $color__white;
+		}
+	}
+}
+
+.cm-upper-footer-cols {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+
+	.cm-post-date a,
+	.cm-author a,
+	.cm-tag-links a,
+	.cm-edit-link a,
+	.cm-comments-link a {
+		color: $color__white;
+	}
+
+	.cm-featured-posts {
+
+		.cm-below-entry-meta {
+			margin-bottom: 0;
+		}
+	}
+
+	.cm-posts {
+
+		img {
+			border-radius: 4px;
+		}
+	}
+}
+
+.cm-lower-footer-cols {
+	gap: 30px;
+	@include font-size("font-size-xs");
+	width: 100%;
+}
+
+.cm-lower-footer-col,
+.cm-lower-footer-cols {
+	display: flex;
+	flex-direction: column;
+}
+
+.cm-upper-footer-col--1,
+.cm-upper-footer-col--2,
+.cm-upper-footer-col--3 {
+	width: 100%;
+}
+
+/*--------------------------------------------------------------
+Classic Layout
+--------------------------------------------------------------*/
+.colormag-footer--classic {
+
+	.cm-footer-cols .cm-row {
+
+		.cm-widget-title {
+			border-bottom: 0 none;
+
+			span {
+				background-color: transparent !important;
+				padding: 0 0 6px;
+				position: relative;
+
+				&::before {
+					position: absolute;
+					display: block;
+					bottom: -1px;
+					content: " ";
+					left: 0;
+					width: 25px;
+					height: 2px;
+					background-color: $color__primary;
+				}
+			}
+		}
+
+		.cm-view-all-link {
+			background-color: $color__gray-900;
+		}
+	}
+
+	.cm-footer-bar {
+		background-color: $color__background-footer-socket;
+		padding: 20px 0;
+	}
+}
+
+/*--------------------------------------------------------------
+Classic Bordered Layout
+--------------------------------------------------------------*/
+.colormag-footer--classic-bordered {
+
+	.cm-widget-title {
+		border-bottom: 0 none;
+		background-color: transparent !important;
+		position: relative;
+		border-bottom: 1px solid $color__gray-600 !important;
+
+		&::before {
+			position: absolute;
+			display: block;
+			bottom: -1px;
+			content: " ";
+			left: 0;
+			width: 25px;
+			height: 2px;
+			background-color: $color__primary;
+		}
+
+		span {
+			background-color: transparent !important;
+			padding-left: 0;
+		}
+	}
+
+	.cm-view-all-link {
+		margin-bottom: 0;
+	}
+
+	.cm-footer-bar {
+		padding-top: 0;
+
+		.cm-footer-bar-area {
+			padding-top: 20px;
+			border-top: 1px solid $color__gray-600;
+		}
+	}
+}
+
+#cm-footer {
+
+	&.colormag-footer--classic,
+	&.colormag-footer--classic-bordered {
+
+		.cm-random-posts {
+			box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+			gap: 16px;
+
+			.cm-post {
+				padding-bottom: length( 'l-8' );
+				border-bottom: 1px solid $color__gray-600;
+
+				&:last-child {
+					border-bottom: none;
+					margin-bottom: 0;
+					padding-bottom: 0;
+				}
+			}
+		}
+
+		.cm-featured-posts {
+
+			.cm-post {
+				box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+				border-radius: 0;
+			}
+		}
+
+		.cm-posts {
+
+			.cm-post {
+				border-bottom: 1px solid $color__gray-600;
+				padding-bottom: length( 'l-8' );
+
+				&:last-child {
+					border-bottom: none;
+					padding-bottom: 0;
+				}
+			}
+		}
+
+		.cm-first-post {
+			border-bottom: 1px solid $color__gray-600;
+
+			.cm-post-content {
+				padding: 0 0 5px;
+			}
+		}
+
+		.cm-featured-posts--style-2,
+		.cm-featured-posts--style-3 {
+
+			.cm-posts {
+				gap: 16px;
+			}
+
+			img {
+				border-radius: 4px;
+			}
+		}
+	}
+}
+
+/* Footer Menu.
+--------------------------------------------- */
+.cm-footer-menu {
+
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		column-gap: 16px;
+		row-gap: 4px;
+		list-style: none;
+
+		li {
+			font-size: 12px;
+		}
+	}
+}
+
+/* Footer Advertisement Area.
+--------------------------------------------- */
+.advertisement_above_footer {
+	background-color: $color__white;
+
+	.cm-widget-title {
+		border-bottom: 2px solid $color__primary;
+		font-size: 18px;
+		margin-bottom: length( 'l-8' );
+		padding-bottom: 0;
+
+		span {
+			background-color: $color__primary;
+			color: $color__white;
+			padding: 6px 12px;
+			display: inline-block;
+		}
+	}
+}
+
+@include breakpoint("lrg") {
+
+	.cm-upper-footer-cols {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	.cm-upper-footer-col--1,
+	.cm-upper-footer-col--2,
+	.cm-upper-footer-col--3 {
+		width: 31.578947%;
+	}
+
+	.cm-lower-footer-cols {
+		flex-direction: row;
+		justify-content: space-between;
+		flex-wrap: wrap;
+
+		.cm-lower-footer-col {
+			flex: 1;
+		}
+
+		.cm-lower-footer-col--1 {
+			flex-basis: 20%;
+		}
+	}
+}

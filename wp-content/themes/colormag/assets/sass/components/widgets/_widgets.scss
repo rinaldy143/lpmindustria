@@ -1,0 +1,377 @@
+/* Widget Title.
+--------------------------------------------- */
+.widget {
+
+	&:last-child {
+		margin-bottom: 0;
+	  }
+
+	  .wp-block-heading {
+		display: inline-block;
+		background-color: $color__primary;
+		color: $color__white;
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 1.8;
+		margin-bottom: 0;
+		padding: 4px 12px 2px;
+		border-radius: 2px 2px 0 0;
+		letter-spacing: 0.01em;
+	}
+
+	.block-title {
+		display: block;
+		margin-bottom: 20px;
+		border-bottom: 2px solid $color__primary;
+	}
+
+	select {
+		border: 1px solid #dddddd;
+		color: #777777;
+		padding: 2px;
+		width: 60%;
+	}
+}
+
+/* Featured Post.
+--------------------------------------------- */
+.cm-featured-posts {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: length( 'l-15', px );
+
+	.cm-widget-title {
+		display: flex;
+		flex-basis: 100%;
+		justify-content: space-between;
+		border-bottom: 2px solid $color__primary;
+		font-size: 18px;
+
+		span {
+			display: inline-block;
+			padding: 6px 12px;
+			color: $color__white;
+			background-color: $color__primary;
+		}
+	}
+
+	.cm-posts {
+
+		.cm-post {
+			display: flex;
+		}
+
+		.cm-author {
+			display: none;
+		}
+	}
+
+	.cm-post {
+		overflow: hidden;
+	}
+
+	.cm-entry-title {
+		font-size: 14px;
+
+		a {
+			display: block;
+			color: inherit;
+			text-shadow: none;
+			word-wrap: break-word;
+			line-height: 1.5;
+
+			&:hover {
+				color: $color__primary;
+			}
+		}
+	}
+
+	.cm-entry-header-meta {
+		display: none;
+	}
+
+	.cm-post-content {
+		flex: 1;
+		align-self: center;
+		padding: length( 'l-6', px) length( 'l-8', px);
+	}
+
+	img {
+		width: 100%;
+	}
+
+	.cm-first-post {
+		flex-basis: 100%;
+		margin-bottom: 12px;
+
+		figure {
+			position: relative;
+		}
+
+		.cm-post-content {
+			padding: 18px;
+		}
+
+		.cm-entry-title {
+			font-size: 24px;
+		}
+
+		.cm-entry-header-meta {
+			display: flex;
+		}
+	}
+
+	.cm-below-entry-meta {
+		margin-bottom: 12px;
+	}
+
+	.cm-breaking-news {
+
+		.cm-post {
+			overflow: visible;
+			box-shadow: none;
+		}
+	}
+
+	.cm-entry-summary {
+
+		p {
+			margin-bottom: 0;
+		}
+	}
+}
+
+/* Front Page Widget Areas.
+--------------------------------------------- */
+.cm-beside-slider-widget,
+.cm-slider-area {
+	width: 100%;
+}
+
+.cm-slider-area,
+.cm-beside-slider-widget {
+
+	.cm-widget-title {
+		border-bottom: 2px solid $color__primary;
+		font-size: 18px;
+		margin-bottom: 15px;
+		padding-bottom: 0;
+
+		span {
+			display: inline-block;
+			padding: 6px 12px;
+			background-color: $color__primary;
+			color: $color__white;
+		}
+	}
+}
+
+.cm-view-all-link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 6px 12px;
+	margin-bottom: 4px;
+	font-size: 14px;
+	color: $color__white;
+	font-weight: 600;
+	background-color: $color__black;
+
+	.cm-primary & {
+
+		span {
+			background: transparent;
+		}
+	}
+}
+
+/* All Related to Featured Posts Widget.
+--------------------------------------------- */
+.cm-post-date a:hover,
+.cm-author a:hover,
+.cm-comments-link a:hover,
+.cm-tag-links a:hover,
+.cm-edit-link a:hover {
+	color: $color__primary;
+}
+
+/* Front Page Top Section.
+--------------------------------------------- */
+.cm-front-page-top-section {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	margin-bottom: 30px;
+}
+
+/* Ajax popup CSS in ticker news widget */
+.mfp-content .cm-posts {
+	background: $color__white;
+	max-width: 50%;
+	margin: 0 auto;
+	border-radius: 5px;
+	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Widgets General CSS.
+--------------------------------------------- */
+.fitvids-video .video {
+	margin-bottom: 10px;
+}
+
+.cm-secondary,
+.cm-footer,
+#cm-tertiary {
+
+	.widget {
+
+		ul {
+			li {
+
+				li {
+					border-bottom: none;
+				}
+			}
+	
+			ul {
+				padding-left: 10px;
+			}
+		}
+	}
+}
+
+.cm-secondary,
+#cm-tertiary {
+	word-break: break-word;
+
+	.cm-widget-title {
+		display: flex;
+		justify-content: space-between;
+		border-bottom: 2px solid $color__primary;
+		margin-bottom: 15px;
+
+		span {
+			display: inline-block;
+			background-color: $color__primary;
+			color: $color__white;
+			font-size: 16px;
+			font-weight: 600;
+			line-height: 1.8;
+			margin-bottom: 0;
+			padding: 4px 12px 2px;
+			border-radius: 2px 2px 0 0;
+			letter-spacing: 0.01em;
+
+			.rsswidget {
+				color: $color__white;
+
+				img {
+					margin-top: 5px;
+					margin-bottom: 0;
+				}
+
+				&:hover {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}
+
+	.widget {
+		margin-bottom: length( l-16 );
+		@include font-size("font-size-xs");
+
+		p {
+			@include font-size("font-size-xs");
+		}
+
+		ul {
+
+			li {
+				line-height: 1.5;
+				padding: 6px 0;
+				list-style: none;
+			}
+		}
+
+		li {
+			line-height: 1.8;
+		}
+	}
+}
+
+.cm-error-404 .widget {
+	margin-bottom: 35px;
+	font-size: 14px;
+	background-color: $color__white;
+}
+
+#style6_pager_colormag_slider_news_widget-9 {
+
+	img:hover {
+
+		.play-button-wrapper {
+			background-color: #207DAF;
+		}
+	}
+}
+
+.widget,
+.cm-featured-image {
+
+	.play-button-wrapper {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background-color: rgba(35, 35, 35, 0.75);
+		width: 42px;
+		height: 26px;
+		border-radius: 3px;
+		transition: background 0.3s ease 0s;
+
+		.fa {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			color: $color__white;
+		}
+	}
+}
+
+@include breakpoint("mdm") {
+
+	.cm-slider-area,
+	.cm-beside-slider-widget {
+		width: 100%;
+	}
+
+	.cm-featured-posts--style-4 {
+
+		.cm-post {
+			flex-direction: row;
+		}
+	}
+}
+
+@include breakpoint("lrg") {
+
+	.cm-front-page-top-section {
+		flex-direction: row;
+		margin-bottom: 50px;
+	}
+
+	.cm-slider-area {
+		width: 55.26315789%;
+	}
+
+	.cm-beside-slider-widget {
+		width: 43.85964912%;
+	}
+}

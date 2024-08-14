@@ -1,0 +1,21 @@
+.wp-block-button {
+
+	.search-icon {
+
+		&::before {
+			display: none;
+		}
+	}
+}
+
+.wp-block-search__inside-wrapper,
+.search-wrap {
+
+	.search-icon::before {
+		content: "\f002";
+		color: $color__white;
+		@include font-size("font-size-lg");
+		font-family: FontAwesome;
+		font-weight: 400;
+	}
+}

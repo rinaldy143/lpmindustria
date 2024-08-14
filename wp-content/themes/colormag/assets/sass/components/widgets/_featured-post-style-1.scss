@@ -1,0 +1,50 @@
+/* Style 1 widget.
+--------------------------------------------- */
+.cm-featured-posts--style-1 {
+
+    p {
+        display: inline-block;
+        width: 100%;
+    }
+
+    .cm-entry-title {
+        margin-bottom: length( 'l-4' );
+    }
+
+    .cm-first-post {
+
+        .cm-entry-title {
+            margin-bottom: length( 'l-6' );
+        }
+    }
+
+    .cm-posts {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: length( 'l-6' );
+
+        .cm-below-entry-meta {
+            margin-bottom: 0;
+        }
+    }
+}
+
+@include breakpoint("mdm") {
+	
+    .cm-featured-posts {
+
+        &.cm-featured-posts--style-1 {
+            gap: 20px;
+
+            .cm-posts {
+                flex-basis: calc(50% - 10px);
+            }
+
+            .cm-first-post {
+                flex-basis: calc(50% - 10px);
+                margin-bottom: 0;
+            }
+        }
+    }
+}

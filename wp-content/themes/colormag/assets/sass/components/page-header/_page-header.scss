@@ -1,0 +1,22 @@
+.cm-page-header {
+
+	.cm-page-title {
+		margin-bottom: length( 'l-8' );
+		padding-bottom: 0;
+		@include font-size("font-size-md");
+		border-bottom: 2px solid $color__primary;
+	}
+
+	span {
+		display: inline-flex;
+		align-items: center;
+		gap: 6px;
+		padding: length( 'l-3' ) length( 'l-6' );
+		background-color: $color__primary;
+		color: $color__white;
+	}
+
+	.vcard {
+		padding: 0;
+	}
+}

@@ -1,0 +1,952 @@
+# Translation of Themes - ColorNews in Indonesian
+# This file is distributed under the same license as the Themes - ColorNews package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2021-08-24 14:13:45+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: GlotPress/4.0.0\n"
+"Language: id\n"
+"Project-Id-Version: Themes - ColorNews\n"
+
+#. Description of the theme
+#: style.css
+#, gp-priority: high
+msgid "ColorNews is a perfect free responsive news style WordPress theme. This theme provides beautiful well-organized magazine look and feel, carefully designed to give stunning impression to your visitors. Represent your categories with different colors and make your site colorful and crisp. This theme is specially crafted for news, newspaper, publishing and magazine types of site. Got a new magazine site project? This theme will be an ideal fit. Get free support at https://themegrill.com/contact/ and check the demo at https://themegrilldemos.com/colornews/"
+msgstr "ColorNews adalah tema WordPress gaya berita reaponsif yang gratis. Tema ini memberikan organisir yang baik, desain keren untuk memberikan impresi yang bagus untuk pengunjung Anda. Menunjukkan kategori Anda dengan warna berbeda dan membuat situs Anda berwarna dan menawan. Tema ini dibuat khusus untuk jenis situs berita, surat kabar, penerbit dan majalah. Ada proyek situs majalah baru? Tema ini akan cocok digunakan. Dapatkan bantuan gratis di https://themegrill.com/contact/ dan lihat demo nya di https://themegrilldemos.com/colornews/"
+
+#. Theme Name of the theme
+#: style.css inc/admin/class-colornews-theme-review-notice.php:75
+#: inc/admin/class-colornews-welcome-notice.php:45 inc/functions.php:470
+#, gp-priority: high
+msgid "ColorNews"
+msgstr "ColorNews"
+
+#: inc/customizer.php:200
+msgid "From WordPress Date Setting"
+msgstr "Dari Pengaturan Tanggal WordPress"
+
+#: inc/customizer.php:199
+msgid "Theme Default Setting"
+msgstr "Pengaturan Bawaan Tema"
+
+#: inc/customizer.php:197
+msgid "Date in header display type:"
+msgstr "Jenis Tampilan Tanggal di Header:"
+
+#: inc/widgets/colornews-125x125-advertisement-widget.php:45
+#: inc/widgets/colornews-300x250-advertisement-widget.php:49
+#: inc/widgets/colornews-728x90-advertisement-widget.php:50
+msgid "Select an Image"
+msgstr "Pilih Gambar"
+
+#: inc/widgets/colornews-125x125-advertisement-widget.php:45
+#: inc/widgets/colornews-300x250-advertisement-widget.php:49
+#: inc/widgets/colornews-728x90-advertisement-widget.php:50
+msgid "Use image"
+msgstr "Gunakan gambar"
+
+#: inc/widgets/colornews-125x125-advertisement-widget.php:45
+#: inc/widgets/colornews-300x250-advertisement-widget.php:49
+#: inc/widgets/colornews-728x90-advertisement-widget.php:50
+msgid "Choose an image"
+msgstr "Pilih gambar"
+
+#: inc/admin/class-colornews-dashboard.php:102
+msgid "Got theme support question?"
+msgstr "Ada pertanyaan bantuan seputar tema?"
+
+#: inc/admin/class-colornews-notice.php:60
+#: inc/admin/class-colornews-notice.php:79
+#: inc/admin/class-colornews-welcome-notice.php:80
+msgid "Cheatin&#8217; huh?"
+msgstr "Aneh huh?"
+
+#: inc/admin/class-colornews-notice.php:56
+#: inc/admin/class-colornews-notice.php:75
+#: inc/admin/class-colornews-theme-review-notice.php:152
+#: inc/admin/class-colornews-theme-review-notice.php:170
+#: inc/admin/class-colornews-welcome-notice.php:76
+msgid "Action failed. Please refresh the page and retry."
+msgstr "Gagal. Silahkan muat ulang laman dan coba lagi."
+
+#: inc/customizer.php:55
+msgid "View PRO version"
+msgstr "Lihat versi PRO"
+
+#. Template Name of the theme
+msgid "Contact Page Template"
+msgstr "Template Laman Kontak"
+
+#: template-parts/content-search.php:53 template-parts/content.php:59
+msgid "Read more"
+msgstr "Baca selengkapnya"
+
+#: template-parts/content-page.php:27 template-parts/content-single.php:58
+#: template-parts/content.php:52
+msgid "Pages:"
+msgstr "Laman:"
+
+#: template-parts/content-none.php:31
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Tampaknya kami tak bisa menemukan apa yang Anda inginkan. Mungkin pencarian bisa membantu."
+
+#: template-parts/content-none.php:26
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Maaf, tapi tak ada yang cocok dengan kata kunci pencarian Anda. Silakan coba lgi dengan kata kunci berbeda."
+
+#: template-parts/content-none.php:22
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Siap menerbitkan pos pertamamu? <a href=\"%1$s\">Mulailah di sini</a>."
+
+#: template-parts/content-none.php:16
+msgid "Nothing Found"
+msgstr "Tak ada apapun"
+
+#: sidebar.php:26
+msgid "Right"
+msgstr "Kanan"
+
+#: sidebar-left.php:31 sidebar.php:31
+msgid "This is an example widget to show how the %s Sidebar looks by default. You can add custom widgets from the %swidgets screen%s in the admin. If custom widgets is added than this will be replaced by those widgets."
+msgstr "Ini adalah contoh widget untuk menunjukkan bagaimana Sidebar %s terlihat secara default. Anda dapat menambahkan kustom widget dari %slayar widget%s di admin. Jika kustom widget ditambahkan maka ini akan ditimpa oleh widget tersebut."
+
+#: sidebar-left.php:30 sidebar.php:30
+msgid "Example Widget"
+msgstr "Contoh Widget"
+
+#: sidebar-left.php:26
+msgid "Left"
+msgstr "Kiri"
+
+#: sidebar-left.php:24 sidebar.php:24
+msgid "Contact Page"
+msgstr "Laman Kontak"
+
+#: searchform.php:11
+msgid "Enter a word for search"
+msgstr "Masukkan kata pencarian"
+
+#: search.php:22
+msgid "Search Results for: %s"
+msgstr "Hasil Pencarian untuk: %s"
+
+#: inc/widgets/colornews-custom-tag-widget.php:10
+msgid "TG: Custom Tag Cloud"
+msgstr "TG: Kustom Tag Awan"
+
+#: inc/widgets/colornews-custom-tag-widget.php:8
+msgid "This widget will display the Custom Tags."
+msgstr "Widget ini akan menampilkan Kustom Tag."
+
+#: inc/widgets/colornews-popular-posts-widget.php:31
+msgid "Number of popular posts to display:"
+msgstr "Jumlah pos terpopular yang ditampilkan:"
+
+#: inc/widgets/colornews-popular-posts-widget.php:17
+msgid "TG: Popular Posts Widget"
+msgstr "TG: Widget Pos Terpopular"
+
+#: inc/widgets/colornews-popular-posts-widget.php:11
+msgid "Displays the popular posts. Suitable for the Right/Left sidebar."
+msgstr "Menampilkan pos terpopular. Cocok untuk sidebar Kanan/Kiri."
+
+#: inc/widgets/colornews-random-posts-widget.php:28
+msgid "Number of random posts to display:"
+msgstr "Jumlah pos acak yang ditampilkan:"
+
+#: inc/widgets/colornews-random-posts-widget.php:14
+msgid "TG: Random Posts Widget"
+msgstr "TG: Widget Pos Acak"
+
+#: inc/widgets/colornews-random-posts-widget.php:11
+msgid "Displays the random posts from your site. Suitable for the Right/Left sidebar."
+msgstr "Menampilkan pos acak dari situs Anda. Cocok untuk sidebar Kanan/Kiri."
+
+#: inc/widgets/colornews-featured-post-style-four-widget.php:14
+msgid "TG: Featured Posts (Style 4)"
+msgstr "TG: Pos Andalan (Gaya 4)"
+
+#: inc/widgets/colornews-featured-post-style-three-widget.php:17
+msgid "TG: Featured Posts (Style 3)"
+msgstr "TG: Pos Andalan (Gaya 3)"
+
+#: inc/widgets/colornews-featured-post-style-three-widget.php:185
+#: inc/widgets/colornews-featured-post-style-two-widget.php:186
+msgid "Read More <i class=\"fa fa-angle-double-right\"></i>"
+msgstr "Selengkapnya <i class=\"fa fa-angle-double-right\"></i>"
+
+#: inc/widgets/colornews-featured-post-style-two-widget.php:17
+msgid "TG: Featured Posts (Style 2)"
+msgstr "TG: Pos Andalan (Gaya 2)"
+
+#: inc/widgets/colornews-featured-post-style-four-widget.php:11
+#: inc/widgets/colornews-featured-post-style-three-widget.php:11
+#: inc/widgets/colornews-featured-post-style-two-widget.php:11
+msgid "Display latest posts or posts of specific category."
+msgstr "Tampilkan pos terbaru atau pos dengan kategori tertentu."
+
+#: inc/widgets/colornews-featured-post-style-one-widget.php:107
+msgid " Read More <i class=\"fa fa-angle-double-right\"></i>"
+msgstr " Lanjut Baca <i class=\"fa fa-angle-double-right\"></i>"
+
+#: inc/widgets/colornews-featured-post-style-four-widget.php:43
+#: inc/widgets/colornews-featured-post-style-one-widget.php:38
+#: inc/widgets/colornews-featured-post-style-three-widget.php:46
+#: inc/widgets/colornews-featured-post-style-two-widget.php:46
+msgid "Select category"
+msgstr "Pilih kategori"
+
+#: inc/widgets/colornews-featured-post-style-four-widget.php:41
+#: inc/widgets/colornews-featured-post-style-one-widget.php:36
+#: inc/widgets/colornews-featured-post-style-three-widget.php:44
+#: inc/widgets/colornews-featured-post-style-two-widget.php:44
+msgid "Show posts from a category"
+msgstr "Tampilkan pos dari kategori"
+
+#: inc/widgets/colornews-featured-post-style-four-widget.php:39
+#: inc/widgets/colornews-featured-post-style-one-widget.php:34
+#: inc/widgets/colornews-featured-post-style-three-widget.php:42
+#: inc/widgets/colornews-featured-post-style-two-widget.php:42
+msgid "Show latest Posts"
+msgstr "Tampilkan Pos terbaru"
+
+#: inc/widgets/colornews-featured-post-style-four-widget.php:35
+#: inc/widgets/colornews-featured-post-style-one-widget.php:30
+#: inc/widgets/colornews-featured-post-style-three-widget.php:38
+#: inc/widgets/colornews-featured-post-style-two-widget.php:38
+msgid "Number of posts to display:"
+msgstr "Jumlah pos yang ditampilkan:"
+
+#: inc/widgets/colornews-featured-post-style-four-widget.php:28
+#: inc/widgets/colornews-featured-post-style-one-widget.php:26
+#: inc/widgets/colornews-featured-post-style-three-widget.php:31
+#: inc/widgets/colornews-featured-post-style-two-widget.php:31
+msgid "Layout will be as below:"
+msgstr "Tata Letak akan seperti dibawah:"
+
+#: inc/widgets/colornews-featured-post-style-one-widget.php:14
+msgid "TG: Featured Post (Style 1)"
+msgstr "TG: Pos Andalan (Gaya 1)"
+
+#: inc/widgets/colornews-featured-post-style-one-widget.php:11
+msgid "Display latest posts or posts of specific category. Suitable for the Front Page: Slider Area."
+msgstr "Tampilkan pos terbaru atau pos dengan kategori. Cocok untuk Laman Depan: Area Slider."
+
+#: inc/widgets/colornews-125x125-advertisement-widget.php:36
+msgid "125x125 Advertisement Image "
+msgstr "Gambar Iklan 125x125"
+
+#: inc/widgets/colornews-125x125-advertisement-widget.php:33
+msgid "125x125 Advertisement Image Link "
+msgstr "Link Gambar Iklan 125x125"
+
+#: inc/widgets/colornews-125x125-advertisement-widget.php:27
+msgid "Add your 125x125 Advertisement Images Here"
+msgstr "Tambahkan Gambar Iklan 125x125 Anda Disini"
+
+#: inc/widgets/colornews-125x125-advertisement-widget.php:11
+msgid "TG: 125x125 Advertisement"
+msgstr "TG: Iklan 125x125"
+
+#: inc/widgets/colornews-125x125-advertisement-widget.php:9
+msgid "Add your 125x125 Advertisement here"
+msgstr "Tambahkan Iklan 125x125 Anda disini"
+
+#: inc/widgets/colornews-300x250-advertisement-widget.php:40
+msgid "300x250 Advertisement Image:"
+msgstr "Gambar Iklan 300x250:"
+
+#: inc/widgets/colornews-300x250-advertisement-widget.php:36
+msgid "300x250 Advertisement Image Link:"
+msgstr "Link Gambar Iklan 300x250:"
+
+#: inc/widgets/colornews-300x250-advertisement-widget.php:34
+msgid "Add your Advertisement 300x250 Image Here"
+msgstr "Tambahkan Gambar iklan 300x250 Anda Disini"
+
+#: inc/widgets/colornews-300x250-advertisement-widget.php:14
+msgid "TG: 300x250 Advertisement"
+msgstr "TG: Iklan 300x250"
+
+#: inc/widgets/colornews-300x250-advertisement-widget.php:11
+msgid "Add your 300x250 Advertisement here"
+msgstr "Tambahkan Iklan 300x250 Anda disini"
+
+#: inc/widgets/colornews-728x90-advertisement-widget.php:41
+msgid "728x90 Advertisement Image:"
+msgstr "Gambar Iklan 728x90:"
+
+#: inc/widgets/colornews-728x90-advertisement-widget.php:37
+msgid "728x90 Advertisement Image Link:"
+msgstr "Link Gambar Iklan 728x90:"
+
+#: inc/widgets/colornews-728x90-advertisement-widget.php:35
+msgid "Add your 728x90 Advertisement Image Here"
+msgstr "Tambahkan Gambar Iklan 728x90 Anda Disini"
+
+#: inc/widgets/colornews-125x125-advertisement-widget.php:25
+#: inc/widgets/colornews-300x250-advertisement-widget.php:31
+#: inc/widgets/colornews-728x90-advertisement-widget.php:32
+#: inc/widgets/colornews-custom-tag-widget.php:17
+#: inc/widgets/colornews-featured-post-style-four-widget.php:31
+#: inc/widgets/colornews-featured-post-style-three-widget.php:34
+#: inc/widgets/colornews-featured-post-style-two-widget.php:34
+#: inc/widgets/colornews-popular-posts-widget.php:27
+#: inc/widgets/colornews-random-posts-widget.php:24
+msgid "Title:"
+msgstr "Judul:"
+
+#: inc/widgets/colornews-728x90-advertisement-widget.php:14
+msgid "TG: 728x90 Advertisement"
+msgstr "TG: Iklan 728x90"
+
+#: inc/widgets/colornews-728x90-advertisement-widget.php:11
+msgid "Add your 728x90 Advertisement here"
+msgstr "Tambahkan Iklan 728x90 Anda disini"
+
+#: inc/widgets/widgets.php:163
+msgid "Shows widgets in the Footer Sidebar Three."
+msgstr "Menampilkan widget di Sidebar Footer Tiga."
+
+#: inc/widgets/widgets.php:161
+msgid "Footer Sidebar Three"
+msgstr "Sidebar Footer Tiga"
+
+#: inc/widgets/widgets.php:152
+msgid "Shows widgets in the Footer Sidebar Two."
+msgstr "Menampilkan widget di Sidebar Footer Dua"
+
+#: inc/widgets/widgets.php:150
+msgid "Footer Sidebar Two"
+msgstr "Sidebar Footer Dua"
+
+#: inc/widgets/widgets.php:141
+msgid "Shows widgets in the Footer Sidebar One."
+msgstr "Menampilkan widget di Sidebar Footer Satu."
+
+#: inc/widgets/widgets.php:139
+msgid "Footer Sidebar One"
+msgstr "Sidebar Footer Satu"
+
+#: inc/widgets/widgets.php:130
+msgid "Shows widgets just above the Footer Area."
+msgstr "Menampilkan widget tepat diatas Area Footer."
+
+#: inc/widgets/widgets.php:128
+msgid "Advertisement Above Footer"
+msgstr "Iklan Diatas Footer"
+
+#: inc/widgets/widgets.php:119
+msgid "Shows widgets in the Front Page: Content Bottom Section."
+msgstr "Menampilkan widget di Laman Depan: Bagian Bawah Konten."
+
+#: inc/widgets/widgets.php:117
+msgid "Front Page: Content Bottom Section"
+msgstr "Laman Depan: Bagian Bawah Konten"
+
+#: inc/widgets/widgets.php:108
+msgid "Shows widgets in the Front Page: Content Middle Right Section."
+msgstr "Menampilkan widget di Laman Depan: Bagian Kanan Tengah Konten."
+
+#: inc/widgets/widgets.php:106
+msgid "Front Page: Content Middle Right Section"
+msgstr "Laman Depan: Bagian Kanan Tengah Konten"
+
+#: inc/widgets/widgets.php:97
+msgid "Shows widgets in the Front Page: Content Middle Left Section."
+msgstr "Menampilkan widget di Laman Depan: Bagian Kiri Tengah Konten."
+
+#: inc/widgets/widgets.php:95
+msgid "Front Page: Content Middle Left Section"
+msgstr "Laman Depan: Bagian Kiri Tengah Konten"
+
+#: inc/widgets/widgets.php:86
+msgid "Shows widgets in the Front Page: Content Top Section."
+msgstr "Menampilkan widget di Laman Depan: Bagian Atas Konten."
+
+#: inc/widgets/widgets.php:84
+msgid "Front Page: Content Top Section"
+msgstr "Laman Depan: Bagian Atas Konten"
+
+#: inc/widgets/widgets.php:75
+msgid "Shows widgets in the Front Page: Slider Area. Suitable for TG: Featured Posts (Style 1) widget."
+msgstr "Menampilkan widget di Laman Depan: Area Slider. Cocok untuk TG: Widget Pos Andalan (Gaya 1)."
+
+#: inc/widgets/widgets.php:73
+msgid "Front Page: Slider Area"
+msgstr "Laman Depan: Area Slider"
+
+#: inc/widgets/widgets.php:64
+msgid "Shows widgets in the 404 Error Page sidebar."
+msgstr "Menampilkan widget di sidebar Laman Error 404."
+
+#: inc/widgets/widgets.php:62
+msgid "404 Error Page Sidebar"
+msgstr "Sidebar Laman Error 404"
+
+#: inc/widgets/widgets.php:53
+msgid "Shows widgets in the Contact Page sidebar."
+msgstr "Menampilkan widget di sidebar Laman Kontak."
+
+#: inc/widgets/widgets.php:51
+msgid "Contact Page Sidebar"
+msgstr "Sidebar Laman Kontak"
+
+#: inc/widgets/widgets.php:42
+msgid "Shows widgets in the Header Section just above the main navigation menu."
+msgstr "Menampilkan widget di Bagian Header tepat diatas menu navigasi utama."
+
+#: inc/widgets/widgets.php:40
+msgid "Header Sidebar"
+msgstr "Sidebar Header"
+
+#: inc/widgets/widgets.php:31
+msgid "Shows widgets at the Left Sidebar."
+msgstr "Menampilkan widget di Sidebar Kiri."
+
+#: inc/widgets/widgets.php:20
+msgid "Shows widgets at the Right Sidebar."
+msgstr "Menampilkan widget di Sidebar Footer Tiga."
+
+#: inc/template-tags.php:132
+msgid "Archives"
+msgstr "Arsip"
+
+#. translators: 1: Taxonomy singular name, 2: Current taxonomy term
+#: inc/template-tags.php:128
+msgid "%1$s: %2$s"
+msgstr "%1$s: %2$s"
+
+#: inc/template-tags.php:124
+msgid "Archives: %s"
+msgstr "Arsip: %s"
+
+#: inc/template-tags.php:121
+msgctxt "post format archive title"
+msgid "Chats"
+msgstr "Obrolan"
+
+#: inc/template-tags.php:119
+msgctxt "post format archive title"
+msgid "Audio"
+msgstr "Audio"
+
+#: inc/template-tags.php:117
+msgctxt "post format archive title"
+msgid "Statuses"
+msgstr "Status"
+
+#: inc/template-tags.php:115
+msgctxt "post format archive title"
+msgid "Links"
+msgstr "Tautan"
+
+#: inc/template-tags.php:113
+msgctxt "post format archive title"
+msgid "Quotes"
+msgstr "Kutipan"
+
+#: inc/template-tags.php:111
+msgctxt "post format archive title"
+msgid "Videos"
+msgstr "Video"
+
+#: inc/template-tags.php:109
+msgctxt "post format archive title"
+msgid "Images"
+msgstr "Gambar"
+
+#: inc/template-tags.php:107
+msgctxt "post format archive title"
+msgid "Galleries"
+msgstr "Galeri"
+
+#: inc/template-tags.php:105
+msgctxt "post format archive title"
+msgid "Asides"
+msgstr "Aside"
+
+#: inc/template-tags.php:102
+msgctxt "daily archives date format"
+msgid "F j, Y"
+msgstr "F j, Y"
+
+#: inc/template-tags.php:102
+msgid "Day: %s"
+msgstr "Hari: %s"
+
+#: inc/template-tags.php:100
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr "F Y"
+
+#: inc/template-tags.php:100
+msgid "Month: %s"
+msgstr "Bulan: %s"
+
+#: inc/template-tags.php:98
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "Y"
+
+#: inc/template-tags.php:98
+msgid "Year: %s"
+msgstr "Tahun: %s"
+
+#: inc/template-tags.php:96
+msgid "Author: %s"
+msgstr "Penulis: %s"
+
+#: inc/template-tags.php:94
+msgid "Tag: %s"
+msgstr "Tag: %s"
+
+#: inc/template-tags.php:66
+msgid "Post navigation"
+msgstr "Navigasi pos"
+
+#: inc/template-tags.php:40
+msgid "Newer posts"
+msgstr "Pos terbaru"
+
+#: inc/template-tags.php:36
+msgid "Older posts"
+msgstr "Pos terdahulu"
+
+#: inc/template-tags.php:32
+msgid "Posts navigation"
+msgstr "Navigasi pos"
+
+#: inc/related-posts.php:43
+#: inc/widgets/colornews-featured-post-style-three-widget.php:171
+#: inc/widgets/colornews-featured-post-style-two-widget.php:172
+#: inc/widgets/colornews-popular-posts-widget.php:116
+msgid "<span class=\"posted-on\"><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><i class=\"fa fa-calendar-o\"></i> %3$s</a></span>"
+msgstr "<span class=\"posted-on\"><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><i class=\"fa fa-calendar-o\"></i> %3$s</a></span>"
+
+#: inc/related-posts.php:8
+msgid "You May Also Like"
+msgstr "Mungkin Anda Menyukai"
+
+#: inc/functions.php:744
+msgid "<span class=\"posted-on\"><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\">%3$s</a></span>"
+msgstr "<span class=\"posted-on\"><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\">%3$s</a></span>"
+
+#: inc/functions.php:717 template-parts/content-page.php:34
+msgid "Edit"
+msgstr "Sunting"
+
+#: inc/functions.php:712
+msgid ", "
+msgstr ", "
+
+#: inc/functions.php:709
+msgid "<i class=\"fa fa-comments\"></i> % Comments"
+msgstr "<i class=\"fa fa-comments\"></i> % Komentar"
+
+#: inc/functions.php:709
+msgid "<i class=\"fa fa-comment\"></i> 1 Comment"
+msgstr "<i class=\"fa fa-comment\"></i> 1 Komentar"
+
+#: inc/functions.php:709
+msgid "<i class=\"fa fa-comment\"></i> 0 Comment"
+msgstr "<i class=\"fa fa-comment\"></i> 0 Komentar"
+
+#: inc/functions.php:701
+msgid "Posted By: "
+msgstr "Diposkan Oleh:"
+
+#: inc/functions.php:671
+msgid "Reply"
+msgstr "Balas"
+
+#: inc/functions.php:661
+msgid "Your comment is awaiting moderation."
+msgstr "Komentar Anda sedang dimoderasi."
+
+#: inc/functions.php:653
+msgid "%1$s at %2$s"
+msgstr "%1$s pada %2$s"
+
+#: inc/functions.php:649
+msgid "Post author"
+msgstr "Penulis pos"
+
+#: inc/functions.php:633
+msgid "(Edit)"
+msgstr "(Sunting)"
+
+#: inc/functions.php:633
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#: inc/functions.php:472
+msgid "Powered by %s."
+msgstr "Dipersembahkan oleh %s."
+
+#: inc/functions.php:472
+msgid "Theme: %1$s by %2$s."
+msgstr "Tema: %1$s oleh %2$s."
+
+#: inc/functions.php:468
+msgid "WordPress"
+msgstr "WordPress"
+
+#: inc/functions.php:426
+msgid "View a random post"
+msgstr "Lihat pos acak"
+
+#: inc/functions.php:361
+msgid "Breaking News:"
+msgstr "Berita Baru:"
+
+#. Translators: If there are characters in your language that are not supported
+#. by Roboto, translate this to 'off'. Do not translate into your own language.
+#: inc/functions.php:28
+msgctxt "Roboto font: on or off"
+msgid "on"
+msgstr "on"
+
+#: inc/customizer.php:580 inc/template-tags.php:91
+msgid "%s"
+msgstr "%s"
+
+#: inc/customizer.php:558
+msgid "Category Color Settings"
+msgstr "Pengaturan Warna Kategori"
+
+#: inc/customizer.php:553
+msgid "Change the color of each category items as you want for your site."
+msgstr "Ganti warna setiap kategori sesukamu."
+
+#: inc/customizer.php:551
+msgid "Category Color Options"
+msgstr "Opsi Warna Kategori"
+
+#: inc/customizer.php:542
+msgid "Check to enable the lightbox for the featured images in single post."
+msgstr "Centang untuk menggunakan lightbox untuk gambar andalan di pos tunggal."
+
+#: inc/customizer.php:530
+msgid "Image Lightbox"
+msgstr "Lightbox Gambar"
+
+#: inc/customizer.php:523
+msgid "Related Posts By Tags"
+msgstr "Pos Terkait Berdasarkan Tag"
+
+#: inc/customizer.php:522
+msgid "Related Posts By Categories"
+msgstr "Pos Terkait Berdasarkan Kategori"
+
+#: inc/customizer.php:518
+msgid "Related Posts Must Be Shown As:"
+msgstr "Pos Terkait Harus Muncul Dengan:"
+
+#: inc/customizer.php:505
+msgid "Check to activate the related posts."
+msgstr "Centang untuk mengaktifkan pos terkait."
+
+#: inc/customizer.php:493
+msgid "Related Posts"
+msgstr "Pos Terkait"
+
+#: inc/customizer.php:487
+msgid "Additional Options"
+msgstr "Opsi Tambahan"
+
+#: inc/customizer.php:485
+msgid "Change the Additional Settings from here as you want."
+msgstr "Ganti Pengaturan Tambahan dari sini semaumu."
+
+#: inc/customizer.php:475
+msgid "This will reflect in links and many others. Choose a color to match your site."
+msgstr "Akan berdampak di link dan banyak lagi. Tentukan warna yang sesui untuk situs Anda."
+
+#: inc/customizer.php:464
+msgid "Primary color option"
+msgstr "Opsi warna utama"
+
+#: inc/customizer.php:449
+msgid "Select default layout for single posts. This layout will be reflected in all single posts unless unique layout is set for specific post."
+msgstr "Pilih tata letak bawaan untuk pos tunggal. Tata letak ini berdampak di semua pos tunggal kecuali tata letak unik diterapkan pada pos tertentu."
+
+#: inc/customizer.php:437
+msgid "Default layout for single posts only"
+msgstr "Tata letak bawaan untuk pos tunggal saja"
+
+#: inc/customizer.php:423
+msgid "Select default layout for pages. This layout will be reflected in all pages unless unique layout is set for specific page."
+msgstr "Pilih tata letak bawaan untuk laman. Tata letak ini berdampak di semua laman kecuali tata letak unik diterapkan pada pos tertentu."
+
+#: inc/customizer.php:411
+msgid "Default layout for pages only"
+msgstr "Tata letak bawaan untuk laman saja"
+
+#: inc/customizer.php:397
+msgid "Select default layout. This layout will be reflected in whole site archives, categories, search page etc. The layout for a single post and page can be controlled from below options."
+msgstr "Pilih tata letak bawaan. Tata letak ini berdampak di semua arsip, kategori, laman pencarian situs, dll. Tata letak untuk pos dan laman tunggal bisa diatur dari opsi dibawah."
+
+#: inc/customizer.php:385
+msgid "Default layout"
+msgstr "Tata Letak Bawaan"
+
+#: inc/customizer.php:377
+msgid "Wide Layout"
+msgstr "Tata Letak Lebar"
+
+#: inc/customizer.php:376
+msgid "Boxed Layout"
+msgstr "Tata Letak Kotak"
+
+#: inc/customizer.php:374
+msgid "Choose the required layout for your site. The change is reflected in the whole site"
+msgstr "Tentukan tata letak yang diperlukan untuk situs. Perubahan berdampak di keseluruhan situs"
+
+#: inc/customizer.php:361
+msgid "Site Layout"
+msgstr "Site Layout"
+
+#: inc/customizer.php:354
+msgid "Check to hide blog posts/static page on the front page."
+msgstr "Centang untuk menyembunyikan pos blog/laman statis di laman depan."
+
+#: inc/customizer.php:343
+msgid "Front Page Settings"
+msgstr "Pengaturan Laman Depan"
+
+#: inc/customizer.php:337
+msgid "Design Options"
+msgstr "Opsi Desain"
+
+#: inc/customizer.php:335
+msgid "Change the Design Settings from here as you want for your site."
+msgstr "Ganti Pengaturan Desain dari sini sesuai keinginan untuk situs Anda."
+
+#: inc/customizer.php:327
+msgid "Check to make header image link back to the home page."
+msgstr "Centang untuk membuat link gambar header kembali ke laman beranda."
+
+#: inc/customizer.php:315
+msgid "Display the Header image below main/primary menu."
+msgstr "Tampilkan gambar Header dibawah menu utama."
+
+#: inc/customizer.php:314
+msgid "Default: Display the Header image between site title/text and the main/primary menu."
+msgstr "Bawaan: Tampilkan gambar header diantara judul/teks situs dan menu utama."
+
+#: inc/customizer.php:313
+msgid "Display the Header image just above the site title/text."
+msgstr "Tampilkan gambar Header tepat diatas judul/teks situs."
+
+#: inc/customizer.php:310
+msgid "Header image display position."
+msgstr "Posisi tampilan gambar header."
+
+#: inc/customizer.php:298
+msgid "Header Image Position"
+msgstr "Posisi Gambar Header"
+
+#: inc/customizer.php:290
+msgid "Check to enable the sticky behavior of the primary menu."
+msgstr "Centang untuk menggunakan perilaku lengket menu utama."
+
+#: inc/customizer.php:277
+msgid "Sticky Menu"
+msgstr "Menu Lengket"
+
+#: inc/customizer.php:270
+msgid "Check to enable the breaking news section."
+msgstr "Centang untuk menggunakan bagian berita baru."
+
+#: inc/customizer.php:257
+msgid "Breaking News"
+msgstr "Berita Baru"
+
+#: inc/customizer.php:250
+msgid "Check to display the Random Post Icon in the primary menu."
+msgstr "Centang untuk menampilkan Pos Acak di menu utama."
+
+#: inc/customizer.php:237
+msgid "Random Post"
+msgstr "Pos Acak"
+
+#: inc/customizer.php:222
+msgid "Check to display the Search Icon in the primary menu."
+msgstr "Centang untuk menampilkan Ikon Pencarian di menu utama."
+
+#: inc/customizer.php:208
+msgid "Search Icon"
+msgstr "Ikon Pencarian"
+
+#: inc/customizer.php:175
+msgid "Check to show the date in header."
+msgstr "Centang untuk menampilkan tanggal di header."
+
+#: inc/customizer.php:161
+msgid "Show Date"
+msgstr "Tampilkan Tanggal"
+
+#: inc/customizer.php:154
+msgid "Check to enable the category menu in the top header bar."
+msgstr "Centang untuk menggunakan menu kategori di bar atas header."
+
+#: inc/customizer.php:140
+msgid "Check to enable the header top bar. The top header bar includes category menu, date display and social menu ."
+msgstr "Centang untuk menggunakan bar atas header. Bar atas header termasuk menu kategori, tampilan tanggal dan menu sosial."
+
+#: inc/customizer.php:127
+msgid "Show Header Top Bar"
+msgstr "Tampilkan Bar Atas Header"
+
+#: inc/customizer.php:112
+msgid "Check to enable the home icon in the primary menu."
+msgstr "Centang untuk menampilkan ikon beranda di menu utama."
+
+#: inc/customizer.php:98
+msgid "Show Home Icon"
+msgstr "Tampilkan Ikon Beranda"
+
+#: inc/customizer.php:92
+msgid "Disable"
+msgstr "Tiadakan"
+
+#: inc/customizer.php:91
+msgid "Show Both"
+msgstr "Tampilkan Keduanya"
+
+#: inc/customizer.php:90
+msgid "Header Text Only"
+msgstr "Hanya Teks Header"
+
+#: inc/customizer.php:89
+msgid "Header Logo Only"
+msgstr "Hanya Logo Header"
+
+#: inc/customizer.php:86
+msgid "Choose the option that you want from below."
+msgstr "Tentukan opsi yang Anda mau dari bawah ini."
+
+#: inc/customizer.php:74
+msgid "Header Logo"
+msgstr "Logo Header"
+
+#: inc/customizer.php:68
+msgid "Header Options"
+msgstr "Opsi Header"
+
+#: inc/customizer.php:66
+msgid "Change the Header Settings from here as you want."
+msgstr "Ganti Pengaturan Header dari sini semaumu."
+
+#: inc/admin/class-colornews-dashboard.php:93
+msgid "Documentation"
+msgstr "Dokumentasi"
+
+#: inc/admin/meta-boxes.php:48
+msgid "No Sidebar Content Centered"
+msgstr "Konten Ditengah Tanpa Sidebar"
+
+#: inc/admin/meta-boxes.php:43
+msgid "No Sidebar Full Width"
+msgstr "Lebar Penuh Tanpa Sidebar"
+
+#: inc/admin/meta-boxes.php:38 inc/widgets/widgets.php:29
+msgid "Left Sidebar"
+msgstr "Sidebar Kiri"
+
+#: inc/admin/meta-boxes.php:33 inc/widgets/widgets.php:18
+msgid "Right Sidebar"
+msgstr "Sidebar Kanan"
+
+#: inc/admin/meta-boxes.php:28
+msgid "Default Layout"
+msgstr "Tata Letak Bawaan"
+
+#: inc/admin/meta-boxes.php:16 inc/admin/meta-boxes.php:18
+msgid "Select Layout"
+msgstr "Pilih Tata Letak"
+
+#: header.php:153
+msgid "&times;"
+msgstr "&times;"
+
+#: header.php:138
+msgid "Menu"
+msgstr "Menu"
+
+#: header.php:33
+msgid "Skip to content"
+msgstr "Lompat ke konten"
+
+#: functions.php:116
+msgid "Category Menu"
+msgstr "Menu Kategori"
+
+#: functions.php:115
+msgid "Social Menu"
+msgstr "Menu Sosial"
+
+#: functions.php:114
+msgid "Primary Menu"
+msgstr "Menu Utama"
+
+#: comments.php:78
+msgid "Comments are closed."
+msgstr "Komentar ditutup."
+
+#: comments.php:44 comments.php:66
+msgid "Newer Comments"
+msgstr "Komentar Berikutnya"
+
+#: comments.php:43 comments.php:65
+msgid "Older Comments"
+msgstr "Komentar Sebelumnya"
+
+#: comments.php:40 comments.php:62
+msgid "Comment navigation"
+msgstr "Navigasi komentar"
+
+#: comments.php:31
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "Satu tanggapan untuk &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s tanggapan untuk &ldquo;%2$s&rdquo;"
+
+#: 404.php:32
+msgid "error"
+msgstr "Galat"
+
+#: 404.php:30
+msgid "404"
+msgstr "404"
+
+#: 404.php:26
+msgid "It looks like nothing was found at this location. You can try a search instead."
+msgstr "Sepertinya tidak ada apa-apa disini. Anda bisa coba pencarian."
+
+#: 404.php:23
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Ups! Laman tersebut tak ditemukan."
+
+#. Author URI of the theme
+#: style.css
+#, gp-priority: low
+msgid "https://themegrill.com/"
+msgstr "http://themegrill.com/"
+
+#. Theme URI of the theme
+#: style.css
+#, gp-priority: low
+msgid "https://themegrill.com/themes/colornews/"
+msgstr "http://themegrill.com/themes/colornews/"
+
+#. Author of the theme
+#: style.css
+#, gp-priority: low
+msgid "ThemeGrill"
+msgstr "ThemeGrill"

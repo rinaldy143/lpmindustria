@@ -1,0 +1,292 @@
+/* Responsive.
+--------------------------------------------- */
+
+@media screen and (min-width: 980px) {
+	.weather-location .owf {
+		line-height: 120px;
+	}
+	.weather-info .weather-icon {
+		font-size: 150px;
+	}
+	.weather-location-name {
+		font-size: 30px;
+		padding-top: 0;
+	}
+	.weather-desc {
+		font-size: 18px;
+		padding-top: 15px;
+	}
+	.weather-current-temp {
+		font-size: 60px;
+	}
+}
+
+@media screen and (max-width: 1190px) {
+	#page {
+		width: 97%;
+	}
+	.wide #page {
+		width: 100%;
+	}
+	.inner-wrap {
+		width: 94%;
+	}
+	.tg-full-width.inner-wrap {
+		padding: 0;
+	}
+	.author-description-wrapper {
+		width: 75%;
+	}
+	.call-to-action__title {
+		font-size: 40px;
+	}
+	.video-playing {
+		padding-bottom: 45%;
+	}
+	.video-player.video-player--horizontal .video-playlist .video-playlist-item {
+		width: 25.5%;
+	}
+}
+
+@media (min-width: 769px) and (max-width: 979px) {
+	.weather-today {
+		margin-left: 0;
+	}
+	.video-playlist {
+		width: 40%;
+	}
+	.video-player--vertical {
+		.video-playing {
+			width: 60%;
+			padding-bottom: 54%;
+		}
+
+		.video-playlist-info {
+			width: 70.5%;
+		}
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.header_display_type_one .cm-header-col-1 {
+		float: none;
+		margin-bottom: 10px;
+	}
+	.header_display_type_one #cm-site-branding {
+		float: none;
+		text-align: center;
+		padding-right: 0;
+		margin-bottom: 10px;
+	}
+	#header-text,
+	.header_display_type_one #header-text {
+		float: none;
+		text-align: center;
+		padding-right: 0;
+	}
+	.cm-header-col-2,
+	.header_display_type_one .cm-header-col-2 {
+		float: none;
+	}
+	.cm-header-col-2 .widget,
+	.header_display_type_one .cm-header-col-2 .widget {
+		text-align: center;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.cm-header-actions .social-links ul {
+		display: block;
+	}
+
+	.video-player--vertical {
+
+		.video-playing,
+		.video-playlist {
+			width: 100%;
+			display: block;
+		}
+
+		.video-playing {
+			padding-bottom: 65%;
+		}
+
+		&.video-playlist-item img {
+			margin-bottom: 0;
+			width: 20%;
+		}
+	}
+	.video-player.video-player--horizontal .video-playlist .video-playlist-item {
+		width: 35%;
+	}
+}
+
+@media screen and (max-width: 767px) {
+
+	.call-to-action__title {
+		font-size: 36px;
+	}
+	.widget_call_to_action .btn--primary {
+		padding: 15px 20px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+
+	.cm-image-ticker-news .cm-post-content .cm-entry-title {
+		display: none;
+	}
+	.logged-in #cm-masthead #cm-primary-nav {
+		top: 0 !important;
+	}
+
+	.gallery-columns-4 .gallery-item,
+	.gallery-columns-5 .gallery-item,
+	.gallery-columns-6 .gallery-item,
+	.gallery-columns-7 .gallery-item,
+	.gallery-columns-8 .gallery-item,
+	.gallery-columns-9 .gallery-item {
+		width: 25%;
+	}
+
+	.author-img {
+		img {
+			margin-right: 0;
+		}
+
+		display: block;
+		margin: 0 auto;
+	}
+	.avatar {
+		border-radius: 50%;
+		display: inline-block;
+		float: none;
+		margin: 0 auto;
+	}
+	.author-description-wrapper {
+		float: none;
+		padding-top: 10px;
+		width: 100%;
+	}
+	.search .status-publish {
+		&:nth-child( 2n ), &:nth-child( 2n+1 ) {
+			float: none;
+			width: 100%;
+		}
+	}
+	.call-to-action__title {
+		font-size: 24px;
+		margin-bottom: 0;
+	}
+	.call-to-action-content {
+		margin-bottom: 20px;
+	}
+	.widget_call_to_action .btn--primary {
+		padding: 10px 15px;
+		font-weight: 400;
+	}
+	.video-player.video-player--horizontal {
+		.video-playing {
+			padding-bottom: 70%;
+		}
+
+		.video-playlist .video-playlist-item {
+			width: 51%;
+		}
+	}
+	.exchange-currency {
+		&.exchange-column-2 .currency-table, &.exchange-column-3 .currency-table {
+			width: 100%;
+			padding-right: 0;
+		}
+	}
+
+	.weather-forecast-day, .cm-secondary .weather-forecast-day {
+		width: 52%;
+	}
+
+	.no-sidebar-full-width,
+	.no-sidebar {
+
+		.cm-primary {
+
+			.cm-entry-summary {
+
+				> .alignwide {
+					margin-left: 0;
+					margin-right: 0;
+				}
+			}
+		}
+
+		&.box-layout {
+
+			.cm-primary {
+
+				.cm-entry-summary {
+
+					> .alignwide {
+						margin-left: 0;
+						margin-right: 0;
+					}
+				}
+			}
+		}
+	}
+
+}
+
+@media screen and (max-width: 420px) {
+
+	.gallery-columns-4 .gallery-item,
+	.gallery-columns-5 .gallery-item,
+	.gallery-columns-6 .gallery-item,
+	.gallery-columns-7 .gallery-item,
+	.gallery-columns-8 .gallery-item,
+	.gallery-columns-9 .gallery-item {
+		width: 33.33%;
+	}
+
+	.related-posts-wrapper-flyout {
+		width: 95%;
+
+		.related-posts-flyout-main-title {
+			padding: 20px;
+		}
+
+		.related-posts-flyout {
+			padding: 20px;
+		}
+	}
+}
+
+/* CSS cod efor not displaying the content of slider/news until page loads */
+/* Newsticker */
+
+.newsticker,
+.cm-breaking-news-slider-widget {
+	visibility: hidden;
+}
+
+/* Sliders */
+.cm-image-ticker-news {
+	visibility: hidden;
+	height: 0;
+}
+
+/* Max Mega Menu plugin integration for slider widgets bundled within theme. This fixes visibility issue fix for those widgets, which utilizes BxSlider script */
+
+.mega-menu {
+	.cm-image-ticker-news,
+	.cm-breaking-news-slider-widget {
+		visibility: hidden !important;
+	}
+
+	.mega-toggle-on {
+		.cm-slider-area-rotate
+		.cm-image-ticker-news,
+		.cm-breaking-news-slider-widget {
+			visibility: visible !important;
+		}
+	}
+}

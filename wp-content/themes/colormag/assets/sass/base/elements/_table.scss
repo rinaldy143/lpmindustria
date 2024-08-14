@@ -1,0 +1,21 @@
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+	margin: 0 0 1.5em;
+	width: 100%;
+
+	thead {
+		background-color: #F4F8FB;
+	}
+
+	th {
+		text-transform: uppercase;
+		padding: 6px 12px;
+		font-weight: 500;
+	}
+
+	td {
+		padding: 6px 12px;
+		border-bottom: 1px solid $color__gray-800;
+	}
+}

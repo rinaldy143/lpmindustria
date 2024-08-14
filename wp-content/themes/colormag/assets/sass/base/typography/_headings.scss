@@ -1,0 +1,36 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-bottom: length( 'l-10' );
+	color: $color__gray-800;
+	font-weight: 500;
+	font-family: "Open Sans", sans-serif;
+	line-height: $line-height__headings;
+}
+
+h1 {
+	@include font-size('font-size-xxxl');
+}
+
+h2 {
+	@include font-size('font-size-xxl');
+}
+
+h3 {
+	@include font-size('font-size-xxl');
+}
+
+h4 {
+	@include font-size('font-size-lg');
+}
+
+h5 {
+	@include font-size('font-size-md');
+}
+
+h6 {
+	@include font-size('font-size-sm');
+}

@@ -1,0 +1,161 @@
+/* Search.
+--------------------------------------------- */
+.cm-header-actions {
+	display: flex;
+	align-items: center;
+	order: 3;
+	flex-basis: 100%;
+	justify-content: flex-end;
+	margin-left: auto;
+}
+
+.cm-top-search {
+	position: initial;
+
+	&:has(.show) {
+
+		.fa.search-top {
+
+			&::before {
+				content: '✖';
+			}
+		}
+		
+	}
+}
+
+.fa.search-top {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: length( 'l-4' );
+	width: 48px;
+	height: 48px;
+	color: $color__white;
+	@include font-size("font-size-xl");
+	cursor: pointer;
+
+	&:hover {
+		background-color: $color__primary;
+	}
+}
+
+.search-wrap {
+	position: relative;
+	display: flex;
+	overflow: hidden;
+	border-radius: 4px;
+
+	button {
+		padding: length( 'l-7' );
+		color: $color__white;
+		background-color: $color__primary;
+		@include font-size("font-size-xs");
+		border-radius: 0 4px 4px 0;
+		line-height: 0.8;
+	}
+}
+
+.search-form-top {
+	position: absolute;
+	right: 0;
+	z-index: 9999;
+	border: 1px solid $color__gray-100;
+	display: none;
+	padding: length( 'l-12' );
+	border-radius: 0 0 4px 4px;
+	background-color: $color__white;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+	&.show {
+		display: block;
+		width: 100%;
+
+		&::before {
+			content: '';
+			position: absolute;
+			width: 0;
+			height: 0;
+			border-bottom: 12px solid $color__white;
+			border-left: 12px solid transparent;
+			border-right: 12px solid transparent;
+			top: -10px;
+			right: 54px;
+		}
+	}
+
+	:focus-visible {
+		outline: none;
+	}
+
+	input.s {
+		width: 100%;
+		padding: length( 'l-6' );
+		@include font-size("font-size-xs");
+		border: 1px solid $color__gray-200;
+		border-radius: 4px 0 0 4px;
+	}
+
+	.search-wrap {
+		display: flex;
+	}
+}
+
+/* Random Posts Icon.
+--------------------------------------------- */
+.cm-random-post {
+	order :1;
+
+	.fa-random {
+		color: $color__white;
+		@include font-size("font-size-xl");
+		vertical-align: middle;
+	}
+}
+
+.cm-primary-nav {
+
+	.cm-random-post {
+
+		a {
+			display: flex;
+			align-items: center;
+			height: 48px;
+			padding: length( 'l-4' );
+			border-bottom: medium none;
+
+			&:hover {
+				background-color: $color__primary;
+			}
+
+			svg {
+				display: block;
+				fill: #fff;
+				font-size: 32px;
+			}
+		}
+
+	}
+}
+
+@include breakpoint("mdm") {
+
+	.cm-header-actions {
+		flex-basis: unset;
+	}
+
+	.search-form-top{
+
+		&.show {
+			width: 570px;
+
+			&::before {
+				right: 10px;
+			}
+		}
+	}
+
+	.cm-top-search {
+		position: relative;
+	}
+}

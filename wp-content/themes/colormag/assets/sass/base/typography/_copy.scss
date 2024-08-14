@@ -1,0 +1,92 @@
+html {
+	font-size: $font-size__percent; /* Sets base font size to 10px */
+}
+
+body,
+button,
+input,
+select,
+textarea {
+	color: $color__text;
+	font-size: 16px;
+	font-family: "Open Sans", serif;
+	line-height: $line-height__body;
+	word-wrap: break-word;
+}
+
+p {
+	margin-bottom: 16px;
+	line-height: $line-height__body;
+	word-break: break-word;
+}
+
+strong {
+	font-weight: 600;
+}
+
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+pre {
+	overflow: auto;
+    max-width: 100%;
+    width: 798px;
+	margin-bottom: 20px;
+    padding: 30px 30px 84px 30px ;
+	background-color: $color__gray-50;
+	@include font-size("font-size-xs");
+	font-style: italic;
+    line-height: 1.7;
+}
+
+code,
+kbd,
+var,
+samp,
+tt {
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	@include font-size("font-size-xs");
+	line-height: 1.4;
+	white-space: pre-wrap;
+}
+
+abbr,
+acronym,
+dfn {
+	border-bottom: 1px dotted $color__gray-300;
+	cursor: help;
+}
+
+address {
+	display: block;
+	font-style: italic;
+	margin: 0 0 length( 'l-8' );
+}
+
+ins {
+	background: $color__gray-100;
+}
+
+hr,
+.wp-block-separator {
+	background-color: $color__gray-200;
+	border: 0;
+	height: 1px;
+	margin: length( 'l-15' ) 0;
+}
+
+dl {
+	@include font-size("font-size-sm");
+}
+
+dt {
+	font-weight: bold;
+	margin-bottom: length( 'l-2' );
+}
+
+dd {
+	margin-bottom: length( 'l-12');
+}
