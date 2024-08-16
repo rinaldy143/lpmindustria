@@ -20,16 +20,23 @@
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'lpmindustria' );
+
+if (file_exists(__DIR__ . '/vendor/autoload.php')) {
+    require_once __DIR__ . '/vendor/autoload.php';
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+	$dotenv->load();
+}
+
+define('DB_NAME', $_ENV['WORDPRESS_DB_NAME']);
 
 /** Database username */
-define( 'DB_USER', 'root' );
+define( 'DB_USER', $_ENV['WORDPRESS_DB_USER'] );
 
 /** Database password */
-define( 'DB_PASSWORD', '' );
+define( 'DB_PASSWORD',  $_ENV['WORDPRESS_DB_PASSWORD'] );
 
 /** Database hostname */
-define( 'DB_HOST', 'localhost' );
+define( 'DB_HOST', $_ENV['WORDPRESS_DB_HOST'] );
 
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8mb4' );
@@ -48,14 +55,15 @@ define( 'DB_COLLATE', '' );
  *
  * @since 2.6.0
  */
-define( 'AUTH_KEY',         'qDCP_Jpzssh*Y]ZJJ]h_lULHQ!!<E<Q=YOZ3wMP%O_0Cy5#gcdziu6[j 76$:_+/' );
-define( 'SECURE_AUTH_KEY',  'ows- |WCt a!*QQfUgM7H6bA4e}&#l$J/~Tr%?i%@Lp=e }[U@ww2C./9k?#/4uP' );
-define( 'LOGGED_IN_KEY',    'YQqYH$#6N mE[rcW8KjR-|6K82HW Jz@Jl ek{SXOm2o5jqB(xnkamH&P:N81E8S' );
-define( 'NONCE_KEY',        'g}183,)15zkc|6})I2_JzyAk*Ks*p.rd>eq4N2okD,V&;z4bK;M~`0/%Qi)[Jz(G' );
-define( 'AUTH_SALT',        ')x:^|9 (Gz|Mo7f~_Ce>%;dy?#{5rVOV@[Z<+FfiHH.N^vf=sfAa[@|R0X.= %t/' );
-define( 'SECURE_AUTH_SALT', 'qRID?]EOB axhnc3Pr<P@KBr6FF4{gRNU=vS:!?OQi?X?AoEg9J2!@E^ymUCCGL6' );
-define( 'LOGGED_IN_SALT',   'um#aEDWq|rxC9GQ;5x&?Tg|`7*q(C?)pT{_-qrSWK8`~5*pq |,dG2nPiWEEu9.|' );
-define( 'NONCE_SALT',       'nSVs&0H8^{jOP41#){Yb8+#O8YC6%`|l}<_h,~PFXms`i/C|]rx^4pm/Gvy:WT45' );
+define('DISALLOW_FILE_EDIT', $_ENV['WORDPRESS_DISALLOW_FILE_EDIT'] );
+define( 'AUTH_KEY',          $_ENV['WORDPRESS_AUTH_KEY'] );
+define( 'SECURE_AUTH_KEY', 	 $_ENV['WORDPRESS_SECURE_AUTH_KEY'] );
+define( 'LOGGED_IN_KEY',     $_ENV['WORDPRESS_LOGGED_IN_KEY']);
+define( 'NONCE_KEY',         $_ENV['WORDPRESS_NONCE_KEY']);
+define( 'AUTH_SALT',         $_ENV['WORDPRESS_AUTH_SALT']);
+define( 'SECURE_AUTH_SALT',  $_ENV['WORDPRESS_SECURE_AUTH_SALT']);
+define( 'LOGGED_IN_SALT',    $_ENV['WORDPRESS_LOGGED_IN_SALT']);
+define( 'NONCE_SALT',        $_ENV['WORDPRESS_NONCE_SALT']);
 
 /**#@-*/
 
@@ -79,8 +87,9 @@ $table_prefix = 'wp_';
  *
  * @link https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/
  */
-define( 'WP_DEBUG', false );
-
+define('WP_DEBUG', $_ENV['WORDPRESS_DEBUG'] );
+define('WP_DEBUG_LOG', $_ENV['WORDPRESS_DEBUG_LOG']);
+define('WP_DEBUG_DISPLAY', $_ENV['WORDPRESS_DEBUG_DISPLAY']);
 /* Add any custom values between this line and the "stop editing" line. */
 
 
