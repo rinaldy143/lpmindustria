@@ -61,7 +61,16 @@ class colornews_popular_posts_widget extends WP_Widget {
 						'posts_per_page'      => $number,
 						'post_type'           => 'post',
 						'ignore_sticky_posts' => true,
-						'orderby'             => 'comment_count',
+						'orderby'             => 'post_views',
+						'order' 			  => 'DESC',
+						'tax_query'           => array(
+							array(
+								'taxonomy' => 'post_format',
+								'field'    => 'slug',
+								'terms' => array( 'post-format-image', 'post-format-video' ),
+								'operator' => 'NOT IN',
+							),
+						),
 					)
 				);
 				?>

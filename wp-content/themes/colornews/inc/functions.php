@@ -404,7 +404,7 @@ if ( ! function_exists( 'colornews_breaking_news' ) ) :
 
 			#breaking-news-list li {
 				display: inline-block;
-				margin-right: 90%; /* Jarak antar item berita */
+				margin-right: 90%;
 				white-space: nowrap;
 			}
 		</style>
@@ -414,7 +414,7 @@ if ( ! function_exists( 'colornews_breaking_news' ) ) :
 				let list = document.getElementById('breaking-news-list');
 				let items = Array.from(list.children);
 				let marquee = document.querySelector('.marquee');
-				let speed = 2; // Sesuaikan kecepatan
+				let speed = 2; 
 				let currentPosition = 0;
 
 				function moveItems() {
@@ -423,7 +423,6 @@ if ( ! function_exists( 'colornews_breaking_news' ) ) :
 
 					let firstItemWidth = items[0].offsetWidth + parseInt(getComputedStyle(items[0]).marginRight);
 
-					// Jika item pertama sudah keluar dari layar, pindahkan ke ujung kanan
 					if (Math.abs(currentPosition) >= firstItemWidth) {
 						currentPosition += firstItemWidth;
 						let firstItem = items.shift();
@@ -442,7 +441,7 @@ if ( ! function_exists( 'colornews_breaking_news' ) ) :
 				});
 
 				marquee.addEventListener('mouseout', function() {
-					speed = 2; // Kembali ke kecepatan asli
+					speed = 2; 
 				});
 			});
 		</script>
