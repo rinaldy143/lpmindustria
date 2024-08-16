@@ -359,25 +359,100 @@ if ( ! function_exists( 'colornews_breaking_news' ) ) :
 				<div class="tg-inner-wrap">
 					<div class="breaking-news-wrapper clearfix">
 						<div class="breaking-news-title"><?php _e( 'Breaking News:', 'colornews' ); ?></div>
-						<ul id="typing">
-							<?php
-							while ( $get_featured_posts->have_posts() ) :
-								$get_featured_posts->the_post();
-								?>
-								<li>
-									<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-								</li>
-							<?php endwhile; ?>
-						</ul>
+						<div class="marquee">
+							<ul id="breaking-news-list">
+								<?php
+								while ( $get_featured_posts->have_posts() ) :
+									$get_featured_posts->the_post();
+									?>
+									<li>
+										<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+									</li>
+								<?php endwhile; ?>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+
+		<style>
+			#breaking-news {
+				background: #f7f7f7;
+				padding: 10px 0;
+				overflow: hidden;
+				position: relative;
+			}
+
+			.breaking-news-wrapper {
+				display: flex;
+				align-items: center;
+			}
+
+			.marquee {
+				width: 80%;
+				overflow: hidden;
+				position: relative;
+			}
+
+			#breaking-news-list {
+				display: flex;
+				white-space: nowrap;
+				position: relative;
+				transform: translateX(0);
+			}
+
+			#breaking-news-list li {
+				display: inline-block;
+				margin-right: 90%; /* Jarak antar item berita */
+				white-space: nowrap;
+			}
+		</style>
+
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+				let list = document.getElementById('breaking-news-list');
+				let items = Array.from(list.children);
+				let marquee = document.querySelector('.marquee');
+				let speed = 2; // Sesuaikan kecepatan
+				let currentPosition = 0;
+
+				function moveItems() {
+					currentPosition -= speed;
+					list.style.transform = 'translateX(' + currentPosition + 'px)';
+
+					let firstItemWidth = items[0].offsetWidth + parseInt(getComputedStyle(items[0]).marginRight);
+
+					// Jika item pertama sudah keluar dari layar, pindahkan ke ujung kanan
+					if (Math.abs(currentPosition) >= firstItemWidth) {
+						currentPosition += firstItemWidth;
+						let firstItem = items.shift();
+						list.appendChild(firstItem);
+						items.push(firstItem);
+					}
+
+					requestAnimationFrame(moveItems);
+				}
+
+				moveItems();
+
+				// Pause on hover
+				marquee.addEventListener('mouseover', function() {
+					speed = 0;
+				});
+
+				marquee.addEventListener('mouseout', function() {
+					speed = 2; // Kembali ke kecepatan asli
+				});
+			});
+		</script>
+
 		<?php
 		// Reset Post Data
 		wp_reset_query();
 	}
 endif;
+
 
 /**************************************************************************************/
 

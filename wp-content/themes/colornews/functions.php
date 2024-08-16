@@ -299,3 +299,4 @@ function custom_slider_navigation_sidebar_script() {
     <?php
 }
 add_action('wp_footer', 'custom_slider_navigation_sidebar_script');
+
