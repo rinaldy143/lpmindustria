@@ -4337,15 +4337,15 @@ msgstr "Plugin ini gagal dimuat dengan sempurna dan dijeda selama mode pemulihan
 msgid "Go to the Themes screen"
 msgstr "Kunjungi panel Tema"
 
-#: wp-admin/includes/class-wp-debug-data.php:1734
+#: wp-admin/includes/class-wp-debug-data.php:1746
 msgid "Total size is not available. Some errors were encountered when determining the size of your installation."
 msgstr "Total ukuran tidak tersedia. Beberapa eror terjadi saat mendapatkan ukuran instalasi Anda."
 
-#: wp-admin/includes/class-wp-debug-data.php:1683
+#: wp-admin/includes/class-wp-debug-data.php:1695
 msgid "The size cannot be calculated. The directory is not accessible. Usually caused by invalid permissions."
 msgstr "Ukuran tidak dapat dihitung. Direktori tidak dapat diakses. Biasanya disebabkan oleh izin akses yang tidak valid."
 
-#: wp-admin/includes/class-wp-debug-data.php:1690
+#: wp-admin/includes/class-wp-debug-data.php:1702
 msgid "The directory size calculation has timed out. Usually caused by a very large number of sub-directories and files."
 msgstr "Penghitungan ukuran direktori telah kehabisan waktu.  Biasanya disebabkan oleh jumlah sub-direktori dan file yang sangat besar."
 
@@ -5058,7 +5058,7 @@ msgstr "Nomor versi ImageMagick"
 #: wp-admin/includes/class-wp-debug-data.php:521
 #: wp-admin/includes/class-wp-debug-data.php:543
 #: wp-admin/includes/class-wp-debug-data.php:560
-#: wp-admin/includes/class-wp-debug-data.php:1718 wp-admin/includes/ms.php:803
+#: wp-admin/includes/class-wp-debug-data.php:1730 wp-admin/includes/ms.php:803
 msgid "Not available"
 msgstr "Tidak tersedia"
 

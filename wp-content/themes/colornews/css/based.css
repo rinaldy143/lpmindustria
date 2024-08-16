@@ -22,3 +22,40 @@
 a:hover, a:focus, a:active {
     color: #1e73be;
 }
+
+.bottom-header-wrapper {
+    background: #1e73be none repeat scroll 0 0
+}
+
+.bottom-header-wrapper::before {
+    background: transparent none repeat scroll 0 0
+}
+.bottom-header-wrapper::after {
+    background: transparent none repeat scroll 0 0
+}
+.bottom-header-wrapper>.bottom-arrow-wrap::before, .bottom-header-wrapper>.bottom-arrow-wrap::after {
+    border-right: 10px solid transparent
+}
+
+#site-navigation ul.sub-menu, #site-navigation ul.children {
+    background: #1e73be none repeat scroll 0 0
+}
+
+#site-navigation ul>li.current-menu-ancestor, #site-navigation ul>li.current-menu-item, #site-navigation ul>li.current-menu-parent, #site-navigation ul>li:hover, .bottom-header-wrapper .home-icon a:hover, .home .bottom-header-wrapper .home-icon a{
+    background: rgb(17 17 17 / 30%)
+}
+
+.title-block-wrap {
+    background: #1e73be none repeat scroll 0 0
+}
+
+#top-footer {
+    background: #1e73be none repeat scroll 0 0
+}
+#bottom-footer {
+    background: #1e73be none repeat scroll 0 0;
+}
+
+#bottom-footer .copy-right {
+    color: #000;
+}
