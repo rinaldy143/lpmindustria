@@ -225,3 +225,39 @@ if ( is_admin() ) {
 	require( COLORNEWS_ADMIN_DIR . '/class-colornews-theme-review-notice.php' );
 }
 
+
+function custom_slider_navigation_script() {
+    ?>
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            var slider = $('.bxslider').bxSlider({
+                mode: 'horizontal',
+                controls: false,  // Menonaktifkan kontrol default
+                pager: false,
+                auto: true,  // Menjaga autoplay tetap aktif
+                pause: 4000, // Waktu jeda antara perpindahan slide
+                speed: 500  // Kecepatan perpindahan slide
+            });
+
+            // Menambahkan kontrol navigasi di dalam gambar
+            $('.bxslider').after(
+                '<div class="slider-controls">' +
+                '<a href="#" class="slider-prev"><i class="fa fa-angle-left"></i></a>' +
+                '<a href="#" class="slider-next"><i class="fa fa-angle-right"></i></a>' +
+                '</div>'
+            );
+
+            $('.slider-prev').click(function(e) {
+                e.preventDefault();
+                slider.goToPrevSlide();
+            });
+
+            $('.slider-next').click(function(e) {
+                e.preventDefault();
+                slider.goToNextSlide();
+            });
+        });
+    </script>
+    <?php
+}
+add_action('wp_footer', 'custom_slider_navigation_script');

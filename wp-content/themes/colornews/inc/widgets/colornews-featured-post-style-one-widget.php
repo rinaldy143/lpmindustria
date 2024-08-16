@@ -110,9 +110,9 @@ class colornews_featured_post_style_one_widget extends WP_Widget {
 						<ul class="bxslider">
 							<?php echo $big_image_output; ?>
 						</ul>
-						<div class="bx-pager">
+						<!-- <div class="bx-pager">
 							<?php echo $thumbnail_image; ?>
-						</div>
+						</div> -->
 						<?php
 					}
 					$i ++;

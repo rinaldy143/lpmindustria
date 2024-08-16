@@ -1,0 +1,24 @@
+.slider-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+.slider-prev, .slider-next {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background 0.3s ease;
+}
+.slider-prev:hover, .slider-next:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+a:hover, a:focus, a:active {
+    color: #1e73be;
+}
