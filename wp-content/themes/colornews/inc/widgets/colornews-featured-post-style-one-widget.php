@@ -67,14 +67,31 @@ class colornews_featured_post_style_one_widget extends WP_Widget {
 				'posts_per_page'      => $number,
 				'post_type'           => 'post',
 				'ignore_sticky_posts' => true,
+				'tax_query'           => array(
+					array(
+						'taxonomy' => 'post_format',
+						'field'    => 'slug',
+						'terms' => array( 'post-format-image', 'post-format-video' ),
+						'operator' => 'NOT IN',
+					),
+				),
 			) );
 		} else {
 			$get_featured_posts = new WP_Query( array(
 				'posts_per_page' => $number,
 				'post_type'      => 'post',
 				'category__in'   => $category,
+				'tax_query'      => array(
+					array(
+						'taxonomy' => 'post_format',
+						'field'    => 'slug',
+						'terms' => array( 'post-format-image', 'post-format-video' ),
+						'operator' => 'NOT IN',
+					),
+				),
 			) );
 		}
+		
 		echo $before_widget;
 		?>
 		<div class="tg-block-wrapper clearfix">

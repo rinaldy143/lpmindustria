@@ -59,3 +59,43 @@ a:hover, a:focus, a:active {
 #bottom-footer .copy-right {
     color: #000;
 }
+
+.caption-wrapper{
+    padding: 5px 40px;
+}
+
+.caption-title{
+    font-size: 15px;
+}
+.home-slider .below-entry-meta-sidebar {
+    position: relative;
+    z-index: 10; /* Pastikan z-index lebih tinggi dari caption-wrapper */
+    color: #fff; /* Teks putih untuk kontras yang lebih baik */
+    padding: 0px 10px;
+    border-radius: 5px;
+    margin-top: 15px; /* Atur jarak dari elemen sebelumnya */
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    outline: 0;
+    vertical-align: baseline;
+}
+.home-slider .below-entry-meta-sidebar a {
+    color: #fff;
+}
+
+.below-entry-meta-sidebar span a, .below-entry-meta-sidebar span i {
+    color: #fff;
+}
+.below-entry-meta-sidebar i {
+    margin-right: 5px;
+}
+
+.widget .below-entry-meta-sidebar>span {
+    margin-right: 15px;
+}
+
+.home-slider .bxslider-sidebar {
+    margin: 0;
+}

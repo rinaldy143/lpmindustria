@@ -261,3 +261,41 @@ function custom_slider_navigation_script() {
     <?php
 }
 add_action('wp_footer', 'custom_slider_navigation_script');
+
+function custom_slider_navigation_sidebar_script() {
+    ?>
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $('.bxslider-sidebar').each(function(index) {
+                var slider = $(this).bxSlider({
+                    mode: 'horizontal',
+                    controls: false,
+                    pager: false,
+                    auto: true,
+                    pause: 4000,
+                    speed: 500
+                });
+
+                // Menambahkan kontrol navigasi di dalam gambar
+                $(this).after(
+                    '<div class="slider-controls slider-controls-' + index + '">' +
+                    '<a href="#" class="slider-prev slider-prev-' + index + '"><i class="fa fa-angle-left"></i></a>' +
+                    '<a href="#" class="slider-next slider-next-' + index + '"><i class="fa fa-angle-right"></i></a>' +
+                    '</div>'
+                );
+
+                $('.slider-prev-' + index).click(function(e) {
+                    e.preventDefault();
+                    slider.goToPrevSlide();
+                });
+
+                $('.slider-next-' + index).click(function(e) {
+                    e.preventDefault();
+                    slider.goToNextSlide();
+                });
+            });
+        });
+    </script>
+    <?php
+}
+add_action('wp_footer', 'custom_slider_navigation_sidebar_script');

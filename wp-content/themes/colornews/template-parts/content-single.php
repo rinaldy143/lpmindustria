@@ -26,15 +26,20 @@
    ?>
 
    <div class="figure-cat-wrap <?php echo $featured_image_class; ?>">
+      <?php 
+      ?>
+   <?php if ( get_post_format() !== 'image' && get_post_format() !== 'video' ) { ?>
       <?php if ( has_post_thumbnail() ) { ?>
-         <div class="featured-image">
-         <?php if (get_theme_mod('colornews_featured_image_popup', 0) == 1) { ?>
-            <a href="<?php echo $image_popup_url; ?>" class="image-popup"><?php the_post_thumbnail( 'colornews-featured-image' ); ?></a>
-         <?php } else { ?>
-            <?php the_post_thumbnail( 'colornews-featured-image' ); ?>
+            <div class="featured-image">
+            <?php if ( get_theme_mod('colornews_featured_image_popup', 0) == 1 ) { ?>
+                  <a href="<?php echo $image_popup_url; ?>" class="image-popup"><?php the_post_thumbnail( 'colornews-featured-image' ); ?></a>
+            <?php } else { ?>
+                  <?php the_post_thumbnail( 'colornews-featured-image' ); ?>
+            <?php } ?>
+            </div>
          <?php } ?>
-         </div>
       <?php } ?>
+
 
       <?php colornews_colored_category_return(1); ?>
    </div>

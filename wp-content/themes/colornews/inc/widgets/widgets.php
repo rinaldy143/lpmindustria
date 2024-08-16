@@ -173,7 +173,9 @@ function colornews_widgets_init() {
    register_widget( 'colornews_125x125_advertisement_widget' );
    // featured posts widgets
    register_widget( 'colornews_featured_post_style_one_widget' );
+   register_widget( 'colornews_featured_media_style_widget' );
    register_widget( 'colornews_featured_post_style_two_widget' );
+   register_widget( 'colornews_featured_post_style_two_reverse_widget' );
    register_widget( 'colornews_featured_post_style_three_widget' );
    register_widget( 'colornews_featured_post_style_four_widget' );
    register_widget( 'colornews_random_posts_widget' );
@@ -195,8 +197,14 @@ require COLORNEWS_WIDGETS_DIR . '/colornews-125x125-advertisement-widget.php';
 // Require for TG: Featured Post (Style 1).
 require COLORNEWS_WIDGETS_DIR . '/colornews-featured-post-style-one-widget.php';
 
+// Require for TG: Featured Media (Style 1).
+require COLORNEWS_WIDGETS_DIR . '/colornews-featured-media-style-widget.php';
+
 // Require for TG: Featured Post (Style 2).
 require COLORNEWS_WIDGETS_DIR . '/colornews-featured-post-style-two-widget.php';
+
+// Require for TG: Featured Reverse Post (Style 2).
+require COLORNEWS_WIDGETS_DIR . '/colornews-featured-post-style-two-reverse-widget.php';
 
 // Require for TG: Featured Post (Style 3).
 require COLORNEWS_WIDGETS_DIR . '/colornews-featured-post-style-three-widget.php';
