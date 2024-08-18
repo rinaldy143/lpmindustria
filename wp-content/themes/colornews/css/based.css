@@ -143,3 +143,61 @@ a:hover, a:focus, a:active {
  {
     margin: 0;
  }
+
+ .pagination {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+ }
+ 
+ .pagination a,
+ .pagination span {
+    padding: 8px 16px;
+    margin: 0 4px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #333;
+ }
+ 
+ .pagination .current {
+    background-color: #1e73be;
+    color: #fff;
+    border: 1px solid #333;
+ }
+ 
+ .pagination a:hover {
+    background-color: #1e73be;
+    color: #fff;
+ }
+
+ .home-search .searchform button[type="submit"]{
+    background: #1e73be none repeat scroll 0 0;
+ }
+ 
+ .post .more-link {
+    background: #1e73be none repeat scroll 0 0;
+}
+
+ .post .more-link:hover {
+    background: rgb(30 115 190 / 80%);
+ }
+
+ #bottom-footer .copy-right a{
+    color: #000;
+    font-weight: bold;
+ }
+ #bottom-footer .copy-right a:hover{
+    color: #fff;
+ }
+
+/* Artikel terakhir tidak memiliki border-bottom */
+#blog-post article.hentry,
+.search article.hentry,
+.archive article.hentry,
+.tag article.hentry,
+.category article.hentry {
+    border-bottom: none;
+    padding-bottom: 0;  /* Hilangkan padding pada artikel terakhir */
+    margin-bottom: 0;   /* Hilangkan margin pada artikel terakhir */
+}
