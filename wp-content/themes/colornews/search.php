@@ -23,20 +23,42 @@ get_header(); ?>
             			</header><!-- .page-header -->
 
             			<?php /* Start the Loop */ ?>
-            			<?php while ( have_posts() ) : the_post(); ?>
+						<?php
+						// Hitung total post dalam loop
+						$total_posts = $wp_query->post_count;
+						$current_post = 0;
 
-            				<?php
-            				/**
-            				 * Run the loop for the search to output the results.
-            				 * If you want to overload this in a child theme then include a file
-            				 * called content-search.php and that will be used instead.
-            				 */
-            				get_template_part( 'template-parts/content', 'search' );
-            				?>
+						while ( have_posts() ) : the_post();
+							$current_post++;
+						?>
 
-            			<?php endwhile; ?>
+							<?php
+								/*
+								* Include the Post-Format-specific template for the content.
+								* If you want to override this in a child theme, then include a file
+								* called content-___.php (where ___ is the Post Format name) and that will be used instead.
+								*/
+								get_template_part( 'template-parts/content', 'search' );
+							?>
 
-            			<?php colornews_posts_navigation(); ?>
+							<?php
+								// Jika bukan post terakhir, tambahkan garis
+								if ( $current_post < $total_posts ) {
+									echo '<hr style="border: 1px dashed #dddddd; margin: 15px 0;">';
+								}
+							?>
+
+						<?php endwhile; ?>
+
+						<div class="pagination">
+							<?php
+							echo paginate_links( array(
+								'prev_text' => __('« Prev'),
+								'next_text' => __('Next »'),
+								'before_page_number' => '<span class="screen-reader-text">' . __('Page', 'text-domain') . ' </span>',
+							) );
+							?>
+						</div>
 
             		<?php else : ?>
 
