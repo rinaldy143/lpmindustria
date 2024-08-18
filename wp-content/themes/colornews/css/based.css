@@ -100,3 +100,46 @@ a:hover, a:focus, a:active {
     margin: 0;
 }
 
+.post-content-wrapper {
+    display: flex;
+    align-items: flex-start; /* Menyelaraskan gambar dan konten di bagian atas */
+    margin-bottom: 20px;
+ }
+ 
+ .figure-cat-wrap {
+    flex: 0 0 30%; /* Mengatur lebar gambar 35% */
+ }
+ 
+ .featured-image {
+    margin-right: 15px;
+    overflow: hidden; /* Menyembunyikan bagian gambar yang keluar dari kontainer */
+}
+
+.featured-image img {
+    width: 100%; /* Lebar gambar mengikuti lebar kontainer */
+    height: auto; /* Menjaga rasio aspek gambar */
+    max-width: 100%;
+    aspect-ratio: 16 / 9; 
+}
+
+ .post-text-content {
+    flex: 1; /* Menyediakan sisa ruang untuk konten teks */
+    display: flex;
+    flex-direction: column;
+ }
+ 
+ .entry-content {
+    margin-top: auto; /* Menjaga agar konten tidak meluas melebihi batas bawah gambar */
+    overflow: hidden; /* Menghindari konten melebihi batas */
+    text-overflow: ellipsis; /* Menambahkan elipsis jika teks terlalu panjang */
+ }
+ 
+ /* Optional: Mengatur ukuran font agar konten tidak melebihi batas */
+ .entry-content p {
+    font-size: 14px; /* Menyesuaikan ukuran font jika diperlukan */
+ }
+
+ .post .posted-on>a
+ {
+    margin: 0;
+ }
