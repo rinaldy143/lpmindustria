@@ -177,11 +177,11 @@ a:hover, a:focus, a:active {
  }
  
  .post .more-link {
-    background: #1e73be none repeat scroll 0 0;
+    background: rgb(30 115 190 / 80%);
 }
 
  .post .more-link:hover {
-    background: rgb(30 115 190 / 80%);
+    background: #1e73be none repeat scroll 0 0;
  }
 
  #bottom-footer .copy-right a{
