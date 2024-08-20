@@ -38,10 +38,10 @@
             <?php } ?>
             </div>
          <?php } ?>
+         <?php colornews_colored_category_return(1); ?>
       <?php } ?>
 
 
-      <?php colornews_colored_category_return(1); ?>
    </div>
 
    <?php if( get_post_format() ) { get_template_part( '/inc/post-formats' ); } ?>
