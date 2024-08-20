@@ -136,7 +136,8 @@ a:hover, a:focus, a:active {
  
  /* Optional: Mengatur ukuran font agar konten tidak melebihi batas */
  .entry-content p {
-    font-size: 14px; /* Menyesuaikan ukuran font jika diperlukan */
+    text-align: justify;
+    
  }
 
  .post .posted-on>a
@@ -172,7 +173,7 @@ a:hover, a:focus, a:active {
  }
 
  .home-search .searchform button[type="submit"]{
-    background: #1e73be none repeat scroll 0 0;
+    background: #282c2f none repeat scroll 0 0;
  }
  
  .post .more-link {
@@ -200,4 +201,21 @@ a:hover, a:focus, a:active {
     border-bottom: none;
     padding-bottom: 0;  /* Hilangkan padding pada artikel terakhir */
     margin-bottom: 0;   /* Hilangkan margin pada artikel terakhir */
+}
+
+#breaking-news-list li a{
+    color:#000;
+}
+
+#breaking-news-list li a:hover{
+    color:#1e73be;
+}
+
+.cat-links a:hover{
+    background: rgb(30 115 190 / 80%);
+    color: #fff
+}
+
+article.post.hentry h1.entry-title {
+    line-height: normal;
 }
