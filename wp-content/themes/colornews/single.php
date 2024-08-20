@@ -20,6 +20,7 @@ get_header(); ?>
 
             			<?php get_template_part( 'template-parts/content', 'single' ); ?>
 
+
             			<?php colornews_post_navigation(); ?>
 
                      <?php if ( get_the_author_meta( 'description' ) ) : ?>

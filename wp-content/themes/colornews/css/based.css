@@ -225,9 +225,30 @@ article.post.hentry h1.entry-title {
 }
 
 .everest-forms button[type="submit"] {
- background-color: #1e73be !important;
+    background: rgb(30 115 190 / 80%) !important;
 }
 
 .everest-forms button[type="submit"]:hover {
-    background: rgb(30 115 190 / 80%) !important;
+    background-color: #1e73be !important;
+}
+
+.social-buttons {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    align-items: center; /* Mengatur ikon sejajar secara vertikal */
+    justify-content: flex-start; /* Mengatur ikon sejajar dari kiri ke kanan */
+    gap: 10px; /* Menambahkan jarak antar ikon */
+}
+
+.share-text {
+    margin-top: 15px;
+}
+
+.navigation .nav-links a{
+    background: rgb(30 115 190 / 80%);
+}
+
+.navigation .nav-links a:hover{
+    background: #1e73be;
 }
