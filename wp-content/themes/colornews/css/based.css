@@ -211,8 +211,12 @@ a:hover, a:focus, a:active {
     color:#1e73be;
 }
 
-.cat-links a:hover{
+.cat-links a{
     background: rgb(30 115 190 / 80%);
+    color: #fff
+}
+.cat-links a:hover{
+    background: #1e73be;
     color: #fff
 }
 
