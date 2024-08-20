@@ -24,6 +24,8 @@
       $featured_image_class = '';
    }
    ?>
+   <!-- // Tambahkan breadcrumbs di sini   -->
+   <?php the_breadcrumb(); ?> 
 
    <div class="figure-cat-wrap <?php echo $featured_image_class; ?>">
       <?php 

@@ -300,3 +300,40 @@ function custom_slider_navigation_sidebar_script() {
 }
 add_action('wp_footer', 'custom_slider_navigation_sidebar_script');
 
+function the_breadcrumb() {
+    if (!is_home()) {
+        echo '<nav aria-label="breadcrumb" class="mr-1"><ol class="breadcrumb mr-1">';
+        
+        // Menampilkan breadcrumb dengan Breadcrumb YoastSEO
+        if (function_exists('yoast_breadcrumb')) {
+            yoast_breadcrumb('<ul class="breadcrumb-item">', '</ul>');
+        } else {
+            // Custom breadcrumb untuk kasus tanpa kategori
+            global $post;
+            $categories = get_the_category($post->ID);
+
+            if (empty($categories)) {
+                echo '<ul class="breadcrumb-item active" aria-current="page">Uncategorized</ul>';
+            } else {
+                foreach ($categories as $category) {
+                    echo '<ul class="breadcrumb-item mr-1"><a href="' . get_category_link($category->term_id) . '">' . $category->name . '</a></ul>';
+                }
+                echo '<ul class="breadcrumb-item active" aria-current="page">' . get_the_title() . '</ul>';
+            }
+        }
+
+        echo '</ol></nav>';
+    }
+}
+
+
+add_filter('wpseo_canonical', 'yoast_custom_canonical_pagination');
+
+function yoast_custom_canonical_pagination($canonical) {
+    if (is_paged()) {
+        $page_url = get_pagenum_link(1);
+        return $page_url;
+    }
+    return $canonical;
+}
+
