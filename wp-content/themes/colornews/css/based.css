@@ -219,3 +219,11 @@ a:hover, a:focus, a:active {
 article.post.hentry h1.entry-title {
     line-height: normal;
 }
+
+.everest-forms button[type="submit"] {
+ background-color: #1e73be !important;
+}
+
+.everest-forms button[type="submit"]:hover {
+    background: rgb(30 115 190 / 80%) !important;
+}
