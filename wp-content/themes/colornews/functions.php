@@ -337,3 +337,48 @@ function yoast_custom_canonical_pagination($canonical) {
     return $canonical;
 }
 
+function custom_copy_link_script() {
+    // Daftarkan script kosong untuk dijadikan wadah
+    wp_register_script('copy-link-script', '');
+
+    // JavaScript untuk menyalin link dan menampilkan popup
+    $inline_script = "
+    document.addEventListener('DOMContentLoaded', function() {
+        var copyButton = document.getElementById('link-copy');
+        var popup = document.getElementById('copyPopup');
+
+        copyButton.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            // Buat elemen textarea untuk menampung URL sementara
+            var tempInput = document.createElement('textarea');
+            tempInput.value = window.location.href;
+            document.body.appendChild(tempInput);
+
+            // Pilih teks di dalam textarea dan salin ke clipboard
+            tempInput.select();
+            document.execCommand('copy');
+
+            // Hapus textarea sementara
+            document.body.removeChild(tempInput);
+
+            // Tampilkan popup notifikasi bahwa URL telah disalin
+            popup.innerText = 'Link copied!';
+            popup.style.display = 'block';
+
+            // Sembunyikan popup setelah 2 detik
+            setTimeout(function() {
+                popup.style.display = 'none';
+            }, 2000);
+        });
+    });
+    ";
+
+    // Masukkan JavaScript ke dalam halaman
+    wp_add_inline_script('copy-link-script', $inline_script);
+
+    // Enqueue script
+    wp_enqueue_script('copy-link-script');
+}
+add_action('wp_enqueue_scripts', 'custom_copy_link_script');
+

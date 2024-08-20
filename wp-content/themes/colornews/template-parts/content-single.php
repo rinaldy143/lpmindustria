@@ -68,5 +68,41 @@
 		?>
 	</div><!-- .entry-content -->
 
+   <p class="share-text">Bagikan :</p>
+      <ul class="social-buttons mt-5">
+      	<?php
+      	global $wp;
+      	$current_url = home_url(add_query_arg(array(), $wp->request));
+      	?>
+      	<li>
+      		<a target="_blank" class="social-button" href="https://wa.me/?text=<?php echo $current_url ?>">
+      			<img class="" src="<?php echo get_template_directory_uri(); ?>/img/icon/whatsapp-circle.svg" alt="whatsapp">
+      		</a>
+      	</li>
+      	<li>
+      		<a target="_blank" class="social-button" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $current_url ?>">
+      			<img class="" src="<?php echo get_template_directory_uri(); ?>/img/icon/Facebook-logo-2019.svg" alt="facebook">
+      		</a>
+      	</li>
+      	<li>
+      		<a target="_blank" class="social-button" href="https://twitter.com/intent/tweet?url=<?php echo $current_url ?>">
+      			<img class="" src="<?php echo get_template_directory_uri(); ?>/img/icon/Twitter.svg" alt="twitter">
+      		</a>
+      	</li>
+      	<li>
+      		<a target="_blank" class="social-button" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo $current_url ?>">
+      			<img class="" src="<?php echo get_template_directory_uri(); ?>/img/icon/Linkedin.svg" alt="linkedin">
+      		</a>
+      	</li>
+      	<li>
+      		<a target="_blank" href="<?php echo $current_url ?>" id="link-copy">
+      			<img class="" src="<?php echo get_template_directory_uri(); ?>/img/icon/Link.svg" alt="link">
+      		</a>
+      		<div class="popup">
+      			<span class="popuptext" id="copyPopup" style="display: none"></span>
+      		</div>
+      	</li>
+      </ul>
+
    <?php do_action( 'colornews_after_post_content' ); ?>
 </article><!-- #post-## -->
