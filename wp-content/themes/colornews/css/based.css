@@ -67,6 +67,20 @@ a:hover, a:focus, a:active {
 .caption-title{
     font-size: 15px;
 }
+
+@media (max-width: 346px) {
+    .caption-title {
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .caption-title {
+        padding-bottom: 15px;
+    }
+}
+
 .home-slider .below-entry-meta-sidebar {
     position: relative;
     z-index: 10; /* Pastikan z-index lebih tinggi dari caption-wrapper */
