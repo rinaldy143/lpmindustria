@@ -22,6 +22,18 @@
 
 <body <?php body_class(); ?>>
 
+<?php if (get_option('modal_enabled')) : ?>
+	<div id="welcomeModal" class="modal" style="display:none;">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<a href="<?php echo esc_url(get_option('modal_link_url')); ?>" target="_blank">
+				<img src="<?php echo esc_url(get_option('modal_image_url')); ?>" alt="Gambar" style="width:100%;">
+			</a>
+		</div>
+	</div>
+<?php endif; ?>
+
+
 <?php
 if ( function_exists( 'wp_body_open' ) ) {
 	wp_body_open();

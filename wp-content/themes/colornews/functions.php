@@ -382,3 +382,85 @@ function custom_copy_link_script() {
 }
 add_action('wp_enqueue_scripts', 'custom_copy_link_script');
 
+function modal_settings_init() {
+    add_settings_section(
+        'modal_settings_section',
+        'Pengaturan Modal',
+        'modal_settings_section_callback',
+        'general'
+    );
+
+    add_settings_field(
+        'modal_enabled',
+        'Aktifkan Modal',
+        'modal_enabled_callback',
+        'general',
+        'modal_settings_section'
+    );
+
+    add_settings_field(
+        'modal_image_url',
+        'URL Gambar Modal',
+        'modal_image_url_callback',
+        'general',
+        'modal_settings_section'
+    );
+
+    add_settings_field(
+        'modal_link_url',
+        'URL Tautan Modal',
+        'modal_link_url_callback',
+        'general',
+        'modal_settings_section'
+    );
+
+    register_setting('general', 'modal_enabled');
+    register_setting('general', 'modal_image_url');
+    register_setting('general', 'modal_link_url');
+}
+
+add_action('admin_init', 'modal_settings_init');
+
+function modal_settings_section_callback() {
+    echo '<p>Pengaturan untuk modal yang muncul saat pertama kali halaman diakses.</p>';
+}
+
+function modal_enabled_callback() {
+    $enabled = get_option('modal_enabled');
+    echo '<input type="checkbox" name="modal_enabled" value="1"' . checked(1, $enabled, false) . ' />';
+}
+
+function modal_image_url_callback() {
+    $image_url = get_option('modal_image_url');
+    echo '<input type="text" name="modal_image_url" value="' . esc_attr($image_url) . '" />';
+}
+
+function modal_link_url_callback() {
+    $link_url = get_option('modal_link_url');
+    echo '<input type="text" name="modal_link_url" value="' . esc_attr($link_url) . '" />';
+}
+
+function add_custom_modal_script() {
+    ?>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (localStorage.getItem('modalShown') !== 'true' && document.getElementById('welcomeModal')) {
+                document.getElementById('welcomeModal').style.display = 'block';
+            }
+
+            document.querySelector('.close').onclick = function() {
+                document.getElementById('welcomeModal').style.display = 'none';
+                localStorage.setItem('modalShown', 'true');
+            }
+
+            window.onclick = function(event) {
+                if (event.target === document.getElementById('welcomeModal')) {
+                    document.getElementById('welcomeModal').style.display = 'none';
+                    localStorage.setItem('modalShown', 'true');
+                }
+            }
+        });
+    </script>
+    <?php
+}
+add_action('wp_footer', 'add_custom_modal_script');
