@@ -68,6 +68,22 @@ a:hover, a:focus, a:active {
     font-size: 15px;
 }
 
+@media (max-width: 600px) {
+    .caption-title {
+        padding-bottom: 15px;
+    }
+}
+
+@media (max-width: 431px) {
+    #caption-title-one {
+        padding-bottom: 0px;
+    }
+    
+    #caption-title-one a{
+        font-size: xx-small;
+    }
+}
+
 @media (max-width: 346px) {
     .caption-title {
         padding-bottom: 15px;
@@ -75,11 +91,6 @@ a:hover, a:focus, a:active {
     }
 }
 
-@media (max-width: 600px) {
-    .caption-title {
-        padding-bottom: 15px;
-    }
-}
 
 .home-slider .below-entry-meta-sidebar {
     position: relative;
@@ -119,6 +130,12 @@ a:hover, a:focus, a:active {
     align-items: flex-start; /* Menyelaraskan gambar dan konten di bagian atas */
     margin-bottom: 20px;
  }
+
+ @media (max-width: 768px) {
+    .post-content-wrapper{
+        flex-direction: column;
+    } 
+}
  
  .figure-cat-wrap {
     flex: 0 0 30%; /* Mengatur lebar gambar 35% */

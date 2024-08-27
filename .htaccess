@@ -18,7 +18,7 @@ RewriteRule . /lpmindustria/index.php [L]
 # The directives (lines) between "BEGIN Simply Static" and "END Simply Static" are
 # dynamically generated, and should only be modified via WordPress filters.
 # Any changes to the directives between these markers will be overwritten.
-<Files "D:\program\xampp\htdocs\lpmindustria/wp-content/uploads\simply-static\0f1e69114c0a7a98f550af74fdc2cbaf-debug.txt">
+<Files "D:\program\xampp\htdocs\lpmindustria/wp-content/uploads\simply-static\32abf497d6018abc7d5285f6ca187a77-debug.txt">
 require all denied
 require host localhost
 </Files>

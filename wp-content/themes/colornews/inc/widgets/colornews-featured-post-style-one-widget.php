@@ -121,7 +121,7 @@ class colornews_featured_post_style_one_widget extends WP_Widget {
 						$big_image       = '<a href="' . get_permalink( $post->ID ) . '"><img src="' . get_template_directory_uri() . '/img/big-slider.png">' . '</a>';
 						$thumbnail_image .= '<a data-slide-index="' . $j . '" href=""><img src="' . get_template_directory_uri() . '/img/big-slider-thumb.png">' . '</a>';
 					}
-					$big_image_output .= '<li>' . $big_image . '<div class="caption-wrapper"><div class="caption-desc"><h3 class="caption-title"><a href="' . get_permalink() . '" title="' . esc_attr( $title_attribute ) . '">' . get_the_title() . '</a></h3><div class="caption-content">' . get_the_excerpt() . '</div></div><div class="slider-btn"><a href="' . get_permalink() . '">' . __( ' Read More <i class="fa fa-angle-double-right"></i>', 'colornews' ) . '</a></div></div><div class="slider-category">' . colornews_colored_category_return( 0 ) . '</div></li>';
+					$big_image_output .= '<li>' . $big_image . '<div class="caption-wrapper"><div class="caption-desc"><h3 id="caption-title-one" class="caption-title"><a href="' . get_permalink() . '" title="' . esc_attr( $title_attribute ) . '">' . get_the_title() . '</a></h3><div class="caption-content">' . get_the_excerpt() . '</div></div><div class="slider-btn"><a href="' . get_permalink() . '">' . __( ' Read More <i class="fa fa-angle-double-right"></i>', 'colornews' ) . '</a></div></div><div class="slider-category">' . colornews_colored_category_return( 0 ) . '</div></li>';
 					if ( $i == $number || $i == $post_count ) {
 						?>
 						<ul class="bxslider">
