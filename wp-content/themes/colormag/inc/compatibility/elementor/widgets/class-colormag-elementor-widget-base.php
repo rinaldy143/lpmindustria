@@ -13,6 +13,7 @@ namespace elementor\widgets;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Core\Schemes\Color;
+use Elementor\Core\Kits\Documents\Tabs\Global_Colors;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -51,7 +52,6 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 
 		// Controls related to posts filter section.
 		$this->posts_filter_controls();
-
 	}
 
 	/**
@@ -82,7 +82,6 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 		$this->widget_title_controls_extra();
 
 		$this->end_controls_section();
-
 	}
 
 	/**
@@ -107,42 +106,56 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 
 		$this->add_control(
 			'widget_title_color',
-			array(
-				'label'     => esc_html__( 'Color:', 'colormag' ),
-				'type'      => Controls_Manager::COLOR,
-				'default'   => '#289dcc',
-				'scheme'    => array(
-					'type'  => Color::get_type(),
-					'value' => Color::COLOR_1,
+			array_merge(
+				array(
+					'label'     => esc_html__( 'Color:', 'colormag' ),
+					'type'      => Controls_Manager::COLOR,
+					'selectors' => array(
+						'{{WRAPPER}} .tg-module-wrapper .module-title span' => 'background-color: {{VALUE}}',
+						'{{WRAPPER}} .tg-module-wrapper .module-title'      => 'border-bottom-color: {{VALUE}}',
+					),
 				),
-				'selectors' => array(
-					'{{WRAPPER}} .tg-module-wrapper .module-title span' => 'background-color: {{VALUE}}',
-					'{{WRAPPER}} .tg-module-wrapper .module-title'      => 'border-bottom-color: {{VALUE}}',
-				),
+				class_exists( Color::class ) ? [
+					'scheme' => array(
+						'type'  => Color::get_type(),
+						'value' => Color::COLOR_1,
+					),
+				] : [
+					'global' => [
+						'default' => '',
+					],
+				]
 			)
 		);
 
-		$this->add_control(
-			'widget_title_text_color',
-			array(
-				'label'     => esc_html__( 'Text Color:', 'colormag' ),
-				'type'      => Controls_Manager::COLOR,
-				'default'   => '#ffffff',
-				'scheme'    => array(
-					'type'  => Color::get_type(),
-					'value' => Color::COLOR_1,
-				),
-				'selectors' => array(
-					'{{WRAPPER}} .tg-module-wrapper .module-title span' => 'color: {{VALUE}}',
-				),
-			)
-		);
+				$this->add_control(
+					'widget_title_text_color',
+					array_merge(
+						array(
+							'label'     => esc_html__( 'Text Color:', 'colormag' ),
+							'type'      => Controls_Manager::COLOR,
+							'default'   => '#232323',
+							'selectors' => array(
+								'{{WRAPPER}} .tg-module-wrapper .module-title span' => 'color: {{VALUE}}',
+							),
+						),
+						class_exists( Color::class ) ? [
+							'scheme' => array(
+								'type'  => Color::get_type(),
+								'value' => Color::COLOR_1,
+							),
+						] : [
+							'global' => [
+								'default' => '',
+							],
+						]
+					)
+				);
 
 		// Extra option control related to widget title style section.
 		$this->widget_title_style_controls_extra();
 
 		$this->end_controls_section();
-
 	}
 
 	/**
@@ -185,7 +198,6 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 		$this->posts_controls_extra();
 
 		$this->end_controls_section();
-
 	}
 
 	/**
@@ -236,7 +248,6 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 		$this->posts_filter_controls_extra();
 
 		$this->end_controls_section();
-
 	}
 
 	/**
@@ -278,7 +289,6 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 		$get_featured_posts = new \WP_Query( $query_args );
 
 		return $get_featured_posts;
-
 	}
 
 	/**
@@ -298,7 +308,7 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 			<h4 class="module-title">
 				<span><?php echo esc_html( $widget_title ); ?></span>
 			</h4>
-		</div><!-- tg-module-title-wrap -->
+		</div>
 
 		<?php
 	}
@@ -326,5 +336,4 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 		</a>
 		<?php
 	}
-
 }

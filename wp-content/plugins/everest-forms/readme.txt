@@ -1,10 +1,10 @@
 === Everest Forms – Build Contact Forms, Surveys, Polls, Quizzes, Newsletter & Application Forms, and Many More with Ease! ===
 Contributors: WPEverest
 Tags: contact form, custom form, form builder, forms, survey
-Requires at least: 5.2
-Tested up to: 6.6.1
+Requires at least: 5.5
+Tested up to: 6.7.1
 Requires PHP: 7.2
-Stable tag: 3.0.2
+Stable tag: 3.0.6
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -34,7 +34,7 @@ Effortlessly create online forms in WordPress using the simple drag-and-drop for
 
 Simply drag and drop the field you need from the options provided to your desired location on the form and customize it
 
-[youtube https://www.youtube.com/watch?v=4aX6zW9kjY0]
+[youtube https://www.youtube.com/watch?v=35CznJES5Uo]
 
 = Ready to Use Pre-Built Form Templates =
 
@@ -307,6 +307,67 @@ Yes you can! Join in on our [GitHub repository](https://github.com/wpeverest/eve
 
 
 == Changelog ==
+
+= 3.0.6        - 03-12-2024
+* Removed       - Necessary file from the distignore file.
+
+= 3.0.5.2        - 03-12-2024
+* Enhance        - SCSS PHP Compiler Updated.
+
+= 3.0.5.1        - 03-12-2024
+* Removed        - Vendor from the .distignore file.
+
+= 3.0.5          - 03-12-2024
+* Feature        - License settings page.
+* Feature        - Style Customizer Module.
+* Feature        - Bricks builder integration.
+* Feature        - Divi Builder Compatibility.
+* Feature        - Oxygen builder integration.
+* Feature        - Beaver Builder Compatibility.
+* Feature        - WPBakery Builder Compatibility.
+* Tweak          - Coupon into module.
+* Tweak 		 - Move active campaign to module.
+* Tweak          - Track module activation in TG User Tracking.
+* Fix            - Tooltips does not work on mobile.
+* Fix            - Background color for PDF submission.
+* Fix            - Critical issue when the publishable key is empty in live mode for recurring payment.
+* Dev 			 - amoCRM Module.
+* Dev       	 - QR Generator module.
+* Dev            - Get gist integration.
+* Dev            - CleverReach Integration.
+* Dev            - Slack Integration Module.
+* Dev   		 - User Registration Social Login.
+* Dev            - Moved Campaign Monitor to module.
+
+= 3.0.4.2        - 03-11-2024
+* Fix            - Escaping issue in required field.
+
+= 3.0.4.1        - 30-10-2024
+* Fix            - Remove unnecessary source map from build.
+
+= 3.0.4         - 28-10-2024
+* Fix           - Escaping issue.
+* Fix           - Line break in the confirmation message.
+
+= 3.0.3.1       - 17-09-2024
+* Fix           - Issue with add new form template designs.
+* Fix           - Copy/Paste not working in word limit.
+
+= 3.0.3        - 16-09-2024
+* Feature      - Add new form page design.
+* Feature      - Entry submission RestApi.
+* Enhancement  - Send file directly as an attachment.
+* Fix          - Premium sidebar design issue.
+* Fix          - Escaping issue in Yes/No field.
+* Dev 		   - Calculation module.
+* Tweak        - Hidden field editable compatibility.
+* Tweak        - Catch mail send error.
+* Tweak        - Filter added to state default value.
+* Tweak        - Background color of dashboard.
+* Tweak        - Format likert field data in seperate column wise while exporting entry.
+* Dev          - Aweber integration.
+* Dev          - Calculation Module.
+* Dev          - Feature api log table.
 
 = 3.0.2        - 07-08-2024
 * Feature 	   - Enable minimum time for form submission.

@@ -1,17 +1,49 @@
-# Translation of WordPress - 6.6.x - Development - Administration - Network Admin in Indonesian
-# This file is distributed under the same license as the WordPress - 6.6.x - Development - Administration - Network Admin package.
+# Translation of WordPress - 6.7.x - Development - Administration - Network Admin in Indonesian
+# This file is distributed under the same license as the WordPress - 6.7.x - Development - Administration - Network Admin package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-03-26 09:31:16+0000\n"
+"PO-Revision-Date: 2024-09-21 15:44:24+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: GlotPress/4.0.1\n"
 "Language: id\n"
-"Project-Id-Version: WordPress - 6.6.x - Development - Administration - Network Admin\n"
+"Project-Id-Version: WordPress - 6.7.x - Development - Administration - Network Admin\n"
 
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:759
+#: wp-admin/network/upgrade.php:32
+msgid "<a href=\"https://developer.wordpress.org/advanced-administration/multisite/admin/#network-admin-updates-screen\">Documentation on Upgrade Network</a>"
+msgstr "<a href=\"https://developer.wordpress.org/advanced-administration/multisite/admin/#network-admin-updates-screen\">Dokumentasi tentang Peningkatan Jaringan</a>"
+
+#: wp-admin/network/sites.php:124
+msgid "Deleting a site is a permanent action that cannot be undone. This will delete the entire site and its uploads directory."
+msgstr "Menghapus situs adalah tindakan permanen yang tidak dapat dibatalkan. Ini akan menghapus seluruh situs dan direktori unggahannya"
+
+#: wp-admin/network/sites.php:121
+msgid "Delete this site permanently"
+msgstr "Hapus situs ini secara permanen"
+
+#: wp-admin/network/sites.php:38
+msgid "Visit to go to the front-end of the live site."
+msgstr "Buka untuk menuju bagian depan situs saat ini."
+
+#: wp-admin/network/settings.php:64
+msgid "<a href=\"https://developer.wordpress.org/advanced-administration/multisite/admin/settings/\">Documentation on Network Settings</a>"
+msgstr "<a href=\"https://developer.wordpress.org/advanced-administration/multisite/admin/settings/\">Dokumentasi tentang Pengaturan Jaringan</a>"
+
+#: wp-admin/network/index.php:56
+msgid "<a href=\"https://developer.wordpress.org/advanced-administration/multisite/admin/\">Documentation on the Network Admin</a>"
+msgstr "<a href=\"https://developer.wordpress.org/advanced-administration/multisite/admin/\">Dokumentasi tentang Admin Jaringan</a>"
+
+#: wp-admin/network.php:68 wp-admin/network.php:81
+msgid "<a href=\"https://developer.wordpress.org/advanced-administration/multisite/create-network/\">Documentation on Creating a Network</a>"
+msgstr "<a href=\"https://developer.wordpress.org/advanced-administration/multisite/create-network/\">Dokumentasi tentang Pembuatan Jaringan</a>"
+
+#: wp-admin/includes/network.php:680
+msgid "https://developer.wordpress.org/advanced-administration/server/web-server/nginx/"
+msgstr "https://developer.wordpress.org/advanced-administration/server/web-server/nginx/"
+
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:761
 msgctxt "site"
 msgid "Activate"
 msgstr "Aktifkan"
@@ -74,12 +106,12 @@ msgid "You should back up your existing %1$s and %2$s files."
 msgstr "Anda harus mencadangkan berkas %1$s dan %2$s yang ada."
 
 #. translators: %s: Theme name.
-#: wp-admin/includes/class-wp-ms-themes-list-table.php:735
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:738
 msgid "Visit theme site for %s"
 msgstr "Kunjungi tema situs untuk %s"
 
 #. translators: %s: Theme name.
-#: wp-admin/includes/class-wp-ms-themes-list-table.php:748
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:751
 msgid "Child theme of %s"
 msgstr "Tema anak dari %s"
 
@@ -178,7 +210,7 @@ msgid_plural "Update Available <span class=\"count\">(%s)</span>"
 msgstr[0] "Pembaruan Tersedia <span class=\"count\">(%s)</span>"
 msgstr[1] "Pembaruan Tersedia <span class=\"count\">(%s)</span>"
 
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:650
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:652
 msgid "Main"
 msgstr "Utama"
 
@@ -216,7 +248,7 @@ msgstr "Instalasi sub-domain"
 msgid "Sub-directory Installation"
 msgstr "Instalasi sub-direktori"
 
-#: wp-admin/includes/class-wp-ms-themes-list-table.php:941
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:944
 msgid "Active Child Theme"
 msgstr "Tema Anak Aktif"
 
@@ -359,36 +391,36 @@ msgctxt "user"
 msgid "Mark as spam"
 msgstr "Tandai sebagai spam"
 
-#: wp-admin/includes/class-wp-ms-themes-list-table.php:741
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:744
 msgid "Visit Theme Site"
 msgstr "Kunjungi Situs Tema"
 
-#: wp-admin/includes/class-wp-ms-themes-list-table.php:704
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:707
 msgid "Broken Theme:"
 msgstr "Tema yang Rusak:"
 
 #. translators: %s: Theme name.
-#: wp-admin/includes/class-wp-ms-themes-list-table.php:610
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:613
 msgid "Network Disable %s"
 msgstr "Nonaktifkan Jaringan %s"
 
 #. translators: %s: Theme name.
-#: wp-admin/includes/class-wp-ms-themes-list-table.php:607
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:610
 msgid "Disable %s"
 msgstr "Nonaktifkan %s"
 
 #. translators: %s: Theme name.
-#: wp-admin/includes/class-wp-ms-themes-list-table.php:584
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:587
 msgid "Network Enable %s"
 msgstr "Aktifkan Jaringan %s"
 
 #. translators: %s: Theme name.
-#: wp-admin/includes/class-wp-ms-themes-list-table.php:581
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:584
 msgid "Enable %s"
 msgstr "Aktifkan %s"
 
 #: wp-admin/includes/class-wp-ms-themes-list-table.php:472
-#: wp-admin/includes/class-wp-ms-themes-list-table.php:617
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:620
 msgid "Network Disable"
 msgstr "Nonaktifkan Jaringan"
 
@@ -428,12 +460,12 @@ msgstr[1] "Semua <span class=\"count\">(%s)</span>"
 msgid "No themes found."
 msgstr "Tidak ada tema."
 
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:794
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:796
 msgctxt "verb; site"
 msgid "Archive"
 msgstr "Arsipkan"
 
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:783
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:785
 msgid "Unarchive"
 msgstr "Batal Diarsipkan"
 
@@ -459,7 +491,7 @@ msgstr "Terdaftar"
 msgid "Last Updated"
 msgstr "Pembaruan Terakhir"
 
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:807
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:809
 msgctxt "site"
 msgid "Not Spam"
 msgstr "Bukan Spam"
@@ -484,7 +516,7 @@ msgid "Deleted"
 msgstr "Terhapus"
 
 #: wp-admin/includes/class-wp-ms-sites-list-table.php:39
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:818
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:820
 #: wp-admin/network/site-info.php:202
 msgctxt "site"
 msgid "Spam"
@@ -885,6 +917,10 @@ msgstr "ID situs tidak sah."
 msgid "Sorry, you are not allowed to delete the site %s."
 msgstr "Maaf, Anda tak dizinkan menghapus situs %s."
 
+#: wp-admin/network/sites.php:37
+msgid "Delete which is a permanent action after the confirmation screen."
+msgstr "Hapus merupakan sebuah tindakan permanen setelah layar konfirmasi."
+
 #: wp-admin/network/sites.php:35
 msgid "Dashboard leads to the Dashboard for that site."
 msgstr "Dasbor membawa Anda ke Dasbor situs tersebut."
@@ -892,6 +928,10 @@ msgstr "Dasbor membawa Anda ke Dasbor situs tersebut."
 #: wp-admin/network/sites.php:34
 msgid "An Edit link to a separate Edit Site screen."
 msgstr "Sebuah taut Sunting untuk layar Sunting Situs yang terpisah."
+
+#: wp-admin/network/sites.php:31
+msgid "Add New Site takes you to the screen for adding a new site to the network. You can search for a site by Name, ID number, or IP address. Screen Options allows you to choose how many sites to display on one page."
+msgstr "Tambah Situs Baru membawa Anda ke layar untuk menambahkan situs baru di jaringan. Anda juga dapat mencari sebuah situs berdasarkan Nama, nomor ID, atau alamat IP. Opsi Layar memungkinkan Anda untuk memilih banyaknya situs yang ditampilkan dalam satu halaman."
 
 #: wp-admin/network/site-users.php:336 wp-admin/network/user-new.php:161
 msgid "Add User"
