@@ -87,27 +87,50 @@ class colornews_popular_posts_widget extends WP_Widget {
 						$get_featured_posts->the_post();
 						?>
 						<div class="single-article clearfix">
-							<?php
-							if ( has_post_thumbnail() ) {
-								$image           = '';
-								$title_attribute = get_the_title( $post->ID );
-								$image_id        = get_post_thumbnail_id( get_the_ID() );
-								$image_alt       = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
-								$image_alt_text  = ! empty( $image_alt ) ? $image_alt : $title_attribute;
-								$image          .= '<figure>';
-								$image          .= '<a href="' . get_permalink() . '" title="' . the_title( '', '', false ) . '">';
-								$image          .= get_the_post_thumbnail(
-									$post->ID,
-									$featured,
-									array(
-										'title' => esc_attr( $title_attribute ),
-										'alt'   => esc_attr( $image_alt_text ),
-									)
-								) . '</a>';
-								$image          .= '</figure>';
-								echo $image;
+						<?php
+						if ( has_post_thumbnail() ) {
+							$image           = '';
+							$title_attribute = get_the_title( $post->ID );
+							$image_id        = get_post_thumbnail_id( get_the_ID() );
+							$image_alt       = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
+							$image_alt_text  = ! empty( $image_alt ) ? $image_alt : $title_attribute;
+							
+							$image          .= '<figure>';
+							$image          .= '<a href="' . get_permalink() . '" title="' . the_title( '', '', false ) . '">';
+							$image          .= get_the_post_thumbnail(
+								$post->ID,
+								$featured,
+								array(
+									'title' => esc_attr( $title_attribute ),
+									'alt'   => esc_attr( $image_alt_text ),
+								)
+							) . '</a>';
+							$image          .= '</figure>';
+							echo $image;
+						} else {
+							$categories = get_the_category($post->ID);
+							$default_image_url = '';
+						
+							if (!empty($categories)) {
+								$category_id = $categories[0]->term_id;
+								$default_image_url = get_category_default_image($category_id); 
 							}
-							?>
+						
+							if (empty($default_image_url)) {
+								$default_image_url = get_category_default_image(0);
+							}
+						
+							$image = '';
+							$image .= '<figure>';
+							$image .= '<a href="' . get_permalink() . '" title="' . the_title( '', '', false ) . '">';
+							$image .= '<img width="115" height="73" src="' . esc_url($default_image_url) . '" alt="' . esc_attr( get_the_title($post->ID) ) . '" class="attachment-colornews-featured-post-small size-colornews-featured-post-small wp-post-image" />';
+							$image .= '</a>';
+							$image .= '</figure>';
+							
+							echo $image;
+						}
+						?>
+
 							<div class="article-content">
 								<h3 class="entry-title">
 									<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>

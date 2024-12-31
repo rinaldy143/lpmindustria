@@ -464,3 +464,27 @@ function add_custom_modal_script() {
     <?php
 }
 add_action('wp_footer', 'add_custom_modal_script');
+
+function get_category_default_image($category_id) {
+    $default_images = [
+        'info-kampus'  => 1746,
+        'info-industri-dan-teknologi'  => 1747,
+        'gaya-hidup'  => 1748,
+        'peristiwa'  => 1749,
+        'sosok'  => 1750,
+    ];
+
+    $default_global_image_id = 1746; // ID gambar global default
+
+    $category = get_category($category_id);
+    $category_slug = $category ? $category->slug : '';
+
+    $image_id = isset($default_images[$category_slug]) ? $default_images[$category_slug] : $default_global_image_id;
+
+    $image_url = wp_get_attachment_url($image_id);
+    if (!$image_url) {
+        $image_url = wp_get_attachment_url($default_global_image_id);
+    }
+
+    return $image_url;
+}

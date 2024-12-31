@@ -166,6 +166,38 @@ class colornews_featured_post_style_two_reverse_widget extends WP_Widget {
 									}
 									$image .= '</figure>';
 									echo $image;
+								}   else {
+									$categories = get_the_category($post->ID);
+									$default_image_url = '';
+								
+									if (!empty($categories)) {
+										$category_id = $categories[0]->term_id;
+										$default_image_url = get_category_default_image($category_id);
+									}
+								
+									if (empty($default_image_url)) {
+										$default_image_url = get_category_default_image(0);
+									}
+								
+									$image = '';
+									$title_attribute = get_the_title( $post->ID );
+									$image_alt_text = $title_attribute;
+								
+									$image .= '<figure>';
+									$image .= '<a href="' . get_permalink() . '" title="' . esc_attr($title_attribute) . '">';
+									if ( $i == 1 ) {
+										$image .= '<img width="345" height="165" src="' . esc_url($default_image_url) . '" alt="' . esc_attr($image_alt_text) . '" class="attachment-colornews-featured-post-large size-colornews-featured-post-large wp-post-image" />';
+									} else {
+										$image .= '<img width="115" height="73" src="' . esc_url($default_image_url) . '" alt="' . esc_attr($image_alt_text) . '" class="attachment-colornews-featured-post-small size-colornews-featured-post-small wp-post-image" />';
+									}									
+									$image .= '</a>';
+									if ( $i == 1 ) {
+										$image .= colornews_colored_category_return( 0 );
+									}
+									
+									$image .= '</figure>';
+								
+									echo $image;
 								}
 								?>
 								<div class="article-content">
