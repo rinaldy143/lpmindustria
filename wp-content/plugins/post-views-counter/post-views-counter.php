@@ -2,7 +2,7 @@
 /*
 Plugin Name: Post Views Counter
 Description: Post Views Counter allows you to display how many times a post, page or custom post type had been viewed in a simple, fast and reliable way.
-Version: 1.4.7
+Version: 1.4.8
 Author: dFactory
 Author URI: https://dfactory.co/
 Plugin URI: https://postviewscounter.com/
@@ -30,7 +30,7 @@ if ( ! class_exists( 'Post_Views_Counter' ) ) {
 	 * Post Views Counter final class.
 	 *
 	 * @class Post_Views_Counter
-	 * @version	1.4.7
+	 * @version	1.4.8
 	 */
 	final class Post_Views_Counter {
 
@@ -100,7 +100,7 @@ if ( ! class_exists( 'Post_Views_Counter' ) ) {
 				'deactivation_delete'	=> false,
 				'license'				=> ''
 			],
-			'version'	=> '1.4.7'
+			'version'	=> '1.4.8'
 		];
 
 		// instances
@@ -256,12 +256,182 @@ if ( ! class_exists( 'Post_Views_Counter' ) ) {
 			// actions
 			add_action( 'admin_enqueue_scripts', [ $this, 'admin_enqueue_scripts' ] );
 			add_action( 'wp_loaded', [ $this, 'load_pluggable_functions' ] );
+			add_action( 'init', [ $this, 'register_blocks' ] );
 			add_action( 'admin_init', [ $this, 'update_notice' ] );
 			add_action( 'wp_initialize_site', [ $this, 'initialize_new_network_site' ] );
 			add_action( 'wp_ajax_pvc_dismiss_notice', [ $this, 'dismiss_notice' ] );
 
 			// filters
 			add_filter( 'plugin_action_links_' . POST_VIEWS_COUNTER_BASENAME, [ $this, 'plugin_settings_link' ] );
+		}
+
+		/**
+		 * Register blocks.
+		 *
+		 * @global object $wp_version
+		 *
+		 * @return void
+		 */
+		public function register_blocks() {
+			global $wp_version;
+
+			// actions
+			add_action( 'enqueue_block_editor_assets', [ $this, 'block_editor_enqueue_scripts' ] );
+
+			// filters
+			if ( version_compare( $wp_version, '5.8', '>=' ) )
+				add_filter( 'block_categories_all', [ $this, 'add_block_category' ] );
+			else
+				add_filter( 'block_categories', [ $this, 'add_block_category' ] );
+
+			add_filter( 'register_block_type_args', [ $this, 'update_block_args' ], 10, 2 );
+
+			register_block_type( __DIR__ . '/blocks/most-viewed-posts/build' );
+			register_block_type( __DIR__ . '/blocks/post-views/build' );
+		}
+
+		/**
+		 * Enqueue block scripts.
+		 *
+		 * @global object $wp_version
+		 *
+		 * @return void
+		 */
+		public function block_editor_enqueue_scripts() {
+			// enqueue script
+			wp_enqueue_script( 'post-views-counter-block-editor-script', POST_VIEWS_COUNTER_URL . '/js/dummy.js', [] );
+
+			$block_image_sizes = [];
+
+			// image sizes
+			$image_sizes = array_merge( [ 'full' ], get_intermediate_image_sizes() );
+
+			// sort image sizes by name, ascending
+			sort( $image_sizes, SORT_STRING );
+
+			foreach ( $image_sizes as $image_size ) {
+				$block_image_sizes[] = [
+					'label'	=> $image_size,
+					'value'	=> $image_size
+				];
+			}
+
+			$post_types = Post_Views_Counter()->functions->get_post_types();
+
+			// prepare script data
+			$script_data = [
+				'postTypesKeys'	=> array_combine( array_keys( $post_types ), array_fill( 0, count( $post_types ), false ) ),
+				'postTypes'		=> $post_types,
+				'imageSizes'	=> $block_image_sizes
+			];
+
+			// force post as enabled
+			$script_data['postTypesKeys']['post'] = true;
+
+			// prepare script data
+			$script_data['periods'] = [	[
+				'label'		=> __( 'Total Views', 'post-views-counter' ),
+				'value'		=> 'total'
+			] ];
+
+			$script_data = apply_filters( 'pvc_block_editor_data', $script_data );
+
+			wp_add_inline_script( 'post-views-counter-block-editor-script', 'var pvcBlockEditorData = ' . wp_json_encode( $script_data ) . ";\n", 'before' );
+		}
+
+		/**
+		 * Update block arguments.
+		 *
+		 * @param array $args
+		 * @param string $block_type
+		 *
+		 * @return array
+		 */
+		function update_block_args( $args, $block_type ) {
+			// most viewed posts block
+			if ( $block_type === 'post-views-counter/most-viewed-posts' )
+				$args['render_callback'] = [ $this, 'most_viewed_posts_render_callback' ];
+			// post views block
+			elseif ( $block_type === 'post-views-counter/post-views' )
+				$args['render_callback'] = [ $this, 'post_views_render_callback' ];
+
+			return $args;
+		}
+
+		/**
+		 * Server side block renderer for most viewed posts.
+		 *
+		 * @param array $attributes
+		 * @param string $content
+		 *
+		 * @return array
+		 */
+		function most_viewed_posts_render_callback( $attributes, $content ) {
+			$post_types = [];
+
+			foreach ( $attributes['postTypes'] as $post_type => $enabled ) {
+				if ( $enabled === true || $enabled === 'true' )
+					$post_types[] = $post_type;
+			}
+
+			// map block attributes
+			$args = [
+				'number_of_posts'		=> max( 1, (int) $attributes['numberOfPosts'] ),
+				'post_type'				=> $post_types,
+				'period'				=> $attributes['period'],
+				'order'					=> $attributes['order'],
+				'thumbnail_size'		=> $attributes['thumbnailSize'],
+				'list_type'				=> $attributes['listType'],
+				'show_post_views'		=> (bool) $attributes['displayPostViews'],
+				'show_post_thumbnail'	=> (bool) $attributes['displayPostThumbnail'],
+				'show_post_author'		=> (bool) $attributes['displayPostAuthor'],
+				'show_post_excerpt'		=> (bool) $attributes['displayPostExcerpt'],
+				'no_posts_message'		=> $attributes['noPostsMessage']
+			];
+
+			$title = trim( $attributes['title'] );
+
+			$html = '<div ' . get_block_wrapper_attributes() . '>';
+
+			if ( $title !== '' )
+				$html .= '<h2 class="block-title">' . esc_html( $title ) . '</h2>';
+
+			$html .= pvc_most_viewed_posts( $args, false );
+			$html .= '</div>';
+
+			return $html;
+		}
+
+		/**
+		 * Server side block renderer for post views.
+		 *
+		 * @param array $attributes
+		 * @param string $content
+		 *
+		 * @return array
+		 */
+		function post_views_render_callback( $attributes, $content ) {
+			$html = '<div ' . get_block_wrapper_attributes() . '>';
+			$html .= pvc_post_views( (int) $attributes['postID'], false, $attributes['period'] );
+			$html .= '</div>';
+
+			return $html;
+		}
+
+		/**
+		 * Add new blocks category.
+		 *
+		 * @param array $categories
+		 *
+		 * @return array
+		 */
+		function add_block_category( $categories ) {
+			$categories[] = [
+				'slug'	=> 'post-views-counter',
+				'title'	=> 'Post Views Counter'
+			];
+
+			return $categories;
 		}
 
 		/**
@@ -326,6 +496,7 @@ if ( ! class_exists( 'Post_Views_Counter' ) ) {
 		 * @param string $status Notice status
 		 * @param bool $paragraph Whether to use paragraph
 		 * @param bool $network
+		 *
 		 * @return void
 		 */
 		public function add_notice( $html = '', $status = 'error', $paragraph = true, $network = false ) {
@@ -468,6 +639,7 @@ if ( ! class_exists( 'Post_Views_Counter' ) ) {
 		 * @global object $wpdb
 		 *
 		 * @param bool $network
+		 *
 		 * @return void
 		 */
 		public function activation( $network ) {
@@ -531,6 +703,7 @@ if ( ! class_exists( 'Post_Views_Counter' ) ) {
 		 * @global object $wpdb
 		 *
 		 * @param bool $network
+		 *
 		 * @return void
 		 */
 		public function deactivation( $network ) {
@@ -560,6 +733,7 @@ if ( ! class_exists( 'Post_Views_Counter' ) ) {
 		 * @global object $wpdb
 		 *
 		 * @param bool $multi
+		 *
 		 * @return void
 		 */
 		public function deactivate_site( $multi = false ) {
@@ -597,6 +771,7 @@ if ( ! class_exists( 'Post_Views_Counter' ) ) {
 		 * Initialize new network site.
 		 *
 		 * @param object $site
+		 *
 		 * @return void
 		 */
 		public function initialize_new_network_site( $site ) {
@@ -636,6 +811,7 @@ if ( ! class_exists( 'Post_Views_Counter' ) ) {
 		 * @global string $wp_version
 		 *
 		 * @param string $page
+		 *
 		 * @return void
 		 */
 		public function admin_enqueue_scripts( $page ) {
@@ -724,6 +900,7 @@ if ( ! class_exists( 'Post_Views_Counter' ) ) {
 		 * Add link to Settings page.
 		 *
 		 * @param array $links
+		 *
 		 * @return array
 		 */
 		public function plugin_settings_link( $links ) {

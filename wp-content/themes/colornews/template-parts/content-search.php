@@ -13,13 +13,31 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
    <?php do_action( 'colornews_before_post_content' ); ?>
-
+   <?php
+   if ( has_post_thumbnail() ) {
+      $featured_image_class = 'featured-image-enable';
+   } else {
+      $featured_image_class = '';
+   }
+   ?>
    <div class="post-content-wrapper">
       <div class="figure-cat-wrap <?php echo $featured_image_class; ?>">
          <?php if ( has_post_thumbnail() ) { ?>
             <div class="featured-image">
                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                   <?php the_post_thumbnail( 'medium-small' ); ?> <!-- Mengubah ukuran thumbnail -->
+               </a>
+            </div>
+         <?php } else { ?>
+            <div class="featured-image">
+               <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                     <?php
+                     $categories = get_the_category();
+                     $category_id = !empty($categories) ? $categories[0]->term_id : 0;
+
+                     $default_image_url = get_category_default_image($category_id);
+                     ?>
+                     <img src="<?php echo esc_url($default_image_url); ?>" alt="<?php the_title(); ?>" />
                </a>
             </div>
          <?php } ?>

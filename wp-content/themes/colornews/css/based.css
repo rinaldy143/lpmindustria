@@ -57,7 +57,7 @@ a:hover, a:focus, a:active {
 }
 
 #bottom-footer .copy-right {
-    color: #000;
+    color: #fff;
 }
 
 .caption-wrapper{
@@ -216,11 +216,11 @@ a:hover, a:focus, a:active {
  }
 
  #bottom-footer .copy-right a{
-    color: #000;
+    color: #fff;
     font-weight: bold;
  }
  #bottom-footer .copy-right a:hover{
-    color: #fff;
+    color: #000;
  }
 
 /* Artikel terakhir tidak memiliki border-bottom */
@@ -327,4 +327,15 @@ article.post.hentry h1.entry-title {
 #welcomeModal .close:focus {
     color: #1e73be;
     text-decoration: none;
+}
+
+#top-footer .widget a:hover{
+    color: #000;
+}
+
+#top-footer .widget a:hover::before{
+    color: #fff;
+}
+.widget_meta a::before, .widget_nav_menu li:before{
+    display: none;
 }

@@ -52,6 +52,7 @@ class EVF_Smart_Tags {
 				'user_role'              => esc_html__( 'User Role', 'everest-forms' ),
 				'referrer_url'           => esc_html__( 'Referrer URL', 'everest-forms' ),
 				'form_id'                => esc_html__( 'Form ID', 'everest-forms' ),
+				'entry_id'               => esc_html__( 'Entry ID', 'everest-forms' ),
 			)
 		);
 
@@ -325,7 +326,6 @@ class EVF_Smart_Tags {
 
 		// Other Smart tags.
 		preg_match_all( '/\{(.+?)\}/', $content, $other_tags );
-
 		if ( ! empty( $other_tags[1] ) ) {
 
 			foreach ( $other_tags[1] as $key => $tag ) {
@@ -452,20 +452,27 @@ class EVF_Smart_Tags {
 						if ( is_array( $meta ) && ! empty( $meta[1][0] ) ) {
 							$key = $meta[1][0];
 
-							$args  = array(
-								'post_type'      => 'any',
-								'meta_key'       => $key,
-								'posts_per_page' => -1,
-							);
-							$query = new WP_Query( $args );
+							// $args  = array(
+							// 'post_type'      => 'any',
+							// 'meta_key'       => $key,
+							// 'posts_per_page' => -1,
+							// );
 
-							if ( $query->have_posts() ) {
-								while ( $query->have_posts() ) {
-									$query->the_post();
-									$post_id = get_the_ID();
-								}
-							}
-							$value = get_post_meta( $post_id, $key, true );
+							// $query = new WP_Query( $args );
+
+							// if ( $query->have_posts() ) {
+							// while ( $query->have_posts() ) {
+							// $query->the_post();
+							// $post_id = get_the_ID();
+							// }
+							// }
+
+							/**
+							 * get_queried_object_id() is used to get current page id.
+							 *
+							 * @since 3.0.4
+							 */
+							$value = get_post_meta( get_queried_object_id(), $key, true );
 
 							$content = str_replace( '{' . $tag . '}', wp_kses_post( $value ), $content );
 						} else {

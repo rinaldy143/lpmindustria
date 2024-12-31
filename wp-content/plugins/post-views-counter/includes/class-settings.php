@@ -248,11 +248,19 @@ class Post_Views_Counter_Settings {
 				],
 				'post_views_column' => [
 					'tab'			=> 'general',
-					'title'			=> __( 'Post Views Column', 'post-views-counter' ),
+					'title'			=> __( 'Admin Column', 'post-views-counter' ),
 					'section'		=> 'post_views_counter_general_settings',
 					'type'			=> 'boolean',
 					'description'	=> '',
-					'label'			=> __( 'Enable to display post views count column for each of the selected post types.', 'post-views-counter' )
+					'label'			=> __( 'Enable to display post views count admin column for each counted content type.', 'post-views-counter' )
+				],
+				'restrict_edit_views' => [
+					'tab'			=> 'general',
+					'title'			=> __( 'Admin Edit', 'post-views-counter' ),
+					'section'		=> 'post_views_counter_general_settings',
+					'type'			=> 'boolean',
+					'description'	=> '',
+					'label'			=> __( 'Enable to restrict post views editing to admins only.', 'post-views-counter' )
 				],
 				'data_storage' => [
 					'tab'			=> 'general',
@@ -281,14 +289,6 @@ class Post_Views_Counter_Settings {
 					'label'			=> __( 'Enable to support Google AMP.', 'post-views-counter' ),
 					'description'	=> __( 'This feature requires official WordPress Google AMP plugin to be installed and activated.', 'post-views-counter' )
 				],
-				'restrict_edit_views' => [
-					'tab'			=> 'general',
-					'title'			=> __( 'Restrict Edit', 'post-views-counter' ),
-					'section'		=> 'post_views_counter_general_settings',
-					'type'			=> 'boolean',
-					'description'	=> '',
-					'label'			=> __( 'Enable to restrict post views editing to admins only.', 'post-views-counter' )
-				],
 				'time_between_counts' => [
 					'tab'			=> 'general',
 					'title'			=> __( 'Count Interval', 'post-views-counter' ),
@@ -300,6 +300,18 @@ class Post_Views_Counter_Settings {
 					'options'		=> $time_types,
 					'callback'		=> [ $this, 'setting_time_between_counts' ],
 					'validate'		=> [ $this, 'validate_time_between_counts' ]
+				],
+				'strict_counts' => [
+					'tab'			=> 'general',
+					'title'			=> __( 'Strict counts', 'post-views-counter' ),
+					'section'		=> 'post_views_counter_general_settings',
+					'type'			=> 'boolean',
+					'class'			=> 'pvc-pro',
+					'disabled'		=> true,
+					'skip_saving'	=> true,
+					'value'			=> false,
+					'description'	=> '',
+					'label'			=> __( 'Enable to prevent bypassing the counts interval (for e.g. using incognito browser window or by clearing cookies).', 'post-views-counter' )
 				],
 				'reset_counts' => [
 					'tab'			=> 'general',
@@ -346,18 +358,6 @@ class Post_Views_Counter_Settings {
 					'description'	=> '',
 					'callback'		=> [ $this, 'setting_exclude_ips' ],
 					'validate'		=> [ $this, 'validate_exclude_ips' ]
-				],
-				'strict_counts' => [
-					'tab'			=> 'general',
-					'title'			=> __( 'Strict counts', 'post-views-counter' ),
-					'section'		=> 'post_views_counter_general_settings',
-					'type'			=> 'boolean',
-					'class'			=> 'pvc-pro',
-					'disabled'		=> true,
-					'skip_saving'	=> true,
-					'value'			=> false,
-					'description'	=> '',
-					'label'			=> __( 'Enable to prevent bypassing the counts interval (for e.g. using incognito browser window or by clearing cookies).', 'post-views-counter' )
 				],
 				'label' => [
 					'tab'			=> 'display',
@@ -573,7 +573,7 @@ class Post_Views_Counter_Settings {
 			'callback'		=> null,
 			'tabs'			=> [
 				'general'	 => [
-					'label'			=> __( 'General', 'post-views-counter' ),
+					'label'			=> __( 'Counting', 'post-views-counter' ),
 					'option_name'	=> 'post_views_counter_settings_general'
 				],
 				'display'	 => [
@@ -609,8 +609,8 @@ class Post_Views_Counter_Settings {
 				'menu_slug'		=> 'post-views-counter',
 				'parent_slug'	=> 'post-views-counter',
 				'type'			=> 'subpage',
-				'page_title'	=> __( 'General', 'post-views-counter' ),
-				'menu_title'	=> __( 'General', 'post-views-counter' ),
+				'page_title'	=> __( 'Counting', 'post-views-counter' ),
+				'menu_title'	=> __( 'Counting', 'post-views-counter' ),
 				'capability'	=> apply_filters( 'pvc_settings_capability', 'manage_options' ),
 				'callback'		=> null
 			];

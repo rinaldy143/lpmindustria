@@ -49,7 +49,14 @@ jQuery( function ( $ ) {
 
 	;
 
-
+			/**
+			 * Focus on first error on submit.
+			 *
+			 * @since 3.0.5
+			 */
+			this.$everest_form.on( 'submit', function(){
+				everest_forms.onSubmitErrorScroll();
+			})
 
 			$( document.body ).trigger( 'everest_forms_loaded' );
 		},
@@ -106,6 +113,12 @@ jQuery( function ( $ ) {
 			} );
 		},
 		init_datepicker: function () {
+
+		// Exclude flatpicker in oxygen builder.
+		if (window.location.search.includes('ct_builder=true')) {
+			return;
+		}
+
 			var evfDateField = $( '.evf-field-date-time' );
 			if ( evfDateField.length && evfDateField.find( '.flatpickr-field' ).length ) {
 				evfDateField.find( '.flatpickr-field' ).each( function () {
@@ -731,6 +744,20 @@ jQuery( function ( $ ) {
 				}, 1000 );
 			}
 		},
+
+		/**
+		 * Focus on first error on submit.
+		 *
+		 * @since 3.0.5
+		 */
+		onSubmitErrorScroll: function(){
+			if ( $( '.everest-forms-invalid' ).length ) {
+				$( 'html,body' ).animate( {
+					scrollTop: ( $( '.everest-forms-invalid' )[0].offset().top ) - 100
+				}, 1000 );
+			}
+		},
+
 		randomize_elements: function() {
 			$( '.everest-forms-randomize' ).each( function() {
 				var $list      = $( this ),
