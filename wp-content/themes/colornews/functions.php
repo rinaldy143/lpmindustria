@@ -465,26 +465,74 @@ function add_custom_modal_script() {
 }
 add_action('wp_footer', 'add_custom_modal_script');
 
+// function get_category_default_image($category_id) {
+//     $default_images = [
+//         'info-kampus'  => 1746,
+//         'info-industri-dan-teknologi'  => 1747,
+//         'gaya-hidup'  => 1748,
+//         'peristiwa'  => 1749,
+//         'sosok'  => 1750,
+//     ];
+
+//     $default_global_image_id = 1746; // ID gambar global default
+
+//     $category = get_category($category_id);
+//     $category_slug = $category ? $category->slug : '';
+
+//     $image_id = isset($default_images[$category_slug]) ? $default_images[$category_slug] : $default_global_image_id;
+
+//     $image_url = wp_get_attachment_url($image_id);
+//     if (!$image_url) {
+//         $image_url = wp_get_attachment_url($default_global_image_id);
+//     }
+
+//     return $image_url;
+// }
+
 function get_category_default_image($category_id) {
     $default_images = [
-        'info-kampus'  => 1746,
-        'info-industri-dan-teknologi'  => 1747,
-        'gaya-hidup'  => 1748,
-        'peristiwa'  => 1749,
-        'sosok'  => 1750,
+        'info-kampus'  => 'Header-Politeknik-STMI.jpg',
+        'info-industri-dan-teknologi'  => 'professional-esport-gamer-playing-game-tournament-scaled.jpg',
+        'gaya-hidup'  => '2018_11_14_58619_1542169723._large.jpg-1659423991.jpg',
+        'peristiwa'  => 'pexels-nout-gons-80280-378570-scaled.jpg',
+        'sosok'  => 'surprised-happy-bearded-man-shirt-pointing-away.jpg',
     ];
 
-    $default_global_image_id = 1746; // ID gambar global default
+    $default_global_image_filename = 'Header-Politeknik-STMI.jpg'; 
 
     $category = get_category($category_id);
     $category_slug = $category ? $category->slug : '';
 
-    $image_id = isset($default_images[$category_slug]) ? $default_images[$category_slug] : $default_global_image_id;
+    $image_filename = isset($default_images[$category_slug]) ? $default_images[$category_slug] : $default_global_image_filename;
 
-    $image_url = wp_get_attachment_url($image_id);
+    $image_url = get_image_url_by_filename($image_filename);
     if (!$image_url) {
-        $image_url = wp_get_attachment_url($default_global_image_id);
+        $image_url = get_image_url_by_filename($default_global_image_filename);
     }
 
     return $image_url;
 }
+
+function get_image_url_by_filename($filename) {
+    $args = [
+        'post_type'      => 'attachment',
+        'posts_per_page' => 1,
+        'post_status'    => 'inherit',
+        'meta_query'     => [
+            [
+                'key'     => '_wp_attached_file',
+                'value'   => $filename,
+                'compare' => 'LIKE',
+            ],
+        ],
+    ];
+
+    $query = new WP_Query($args);
+    if ($query->have_posts()) {
+        $attachment_id = $query->posts[0]->ID;
+        return wp_get_attachment_url($attachment_id);
+    }
+
+    return false;
+}
+
