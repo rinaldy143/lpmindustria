@@ -536,3 +536,23 @@ function get_image_url_by_filename($filename) {
     return false;
 }
 
+function add_copy_source_script() {
+    ?>
+    <script type="text/javascript">
+        document.addEventListener('copy', function (e) {
+            var bodyElement = document.body;
+            var selection = window.getSelection();
+            var pageLink = "\n\nSumber Berita: " + document.location.href + "\nUnder Creative Commons License: Attribution Non-Commercial No Derivatives";
+            var copiedText = selection + pageLink;
+            var clipboardData = e.clipboardData || window.clipboardData;
+
+            if (clipboardData) {
+                clipboardData.setData('text/plain', copiedText);
+                e.preventDefault();
+            }
+        });
+    </script>
+    <?php
+}
+add_action('wp_footer', 'add_copy_source_script');
+
