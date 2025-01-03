@@ -19,5 +19,5 @@ jobs:
           server: "ftpupload.net"
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./lpmindustria
+          local-dir: ./
           server-dir: "/htdocs/lpmindustria/"
