@@ -22,7 +22,7 @@ composer.lock
 /wp-*.php
 /xmlrpc.php
 /wp-content/wflogs/
-/wp-content/plugins/
+# /wp-content/plugins/
 /wp-content/themes/
 !/wp-content/themes/colornews/ 
 
