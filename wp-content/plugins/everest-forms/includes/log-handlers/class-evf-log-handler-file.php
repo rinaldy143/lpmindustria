@@ -134,32 +134,26 @@ class EVF_Log_Handler_File extends EVF_Log_Handler {
 
 		$file = self::get_log_file_path( $handle );
 
-		if ( ! $file ) {
-			return false;
-		}
+		if ( $file ) {
+			if ( ! file_exists( $file ) ) {
+				$temphandle = @fopen( $file, 'w+' ); // @codingStandardsIgnoreLine
+				@fclose( $temphandle ); // @codingStandardsIgnoreLine
 
-		if ( ! file_exists( $file ) ) {
-			$temphandle = @fopen( $file, 'w+' ); // @codingStandardsIgnoreLine
-			if ( ! $temphandle ) {
-				return false;
+				if ( defined( 'FS_CHMOD_FILE' ) ) {
+					@chmod( $file, FS_CHMOD_FILE ); // @codingStandardsIgnoreLine
+				}
 			}
 
-			@fclose( $temphandle ); // @codingStandardsIgnoreLine
+			$resource = @fopen( $file, $mode ); // @codingStandardsIgnoreLine
 
-			if ( defined( 'FS_CHMOD_FILE' ) ) {
-				@chmod( $file, FS_CHMOD_FILE ); // @codingStandardsIgnoreLine
+			if ( $resource ) {
+				$this->handles[ $handle ] = $resource;
+				return true;
 			}
 		}
 
-		$resource = @fopen( $file, $mode ); // @codingStandardsIgnoreLine
-		if ( ! $resource ) {
-			return false;
-		}
-
-		$this->handles[ $handle ] = $resource;
-		return true;
+		return false;
 	}
-
 
 	/**
 	 * Check if a handle is open.

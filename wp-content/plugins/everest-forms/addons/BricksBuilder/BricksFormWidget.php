@@ -82,7 +82,7 @@ class BricksFormWidget extends \Bricks\Element {
 			array( 'class' => 'everest-forms' )
 		);
 
-		echo wp_kses( $content, evf_get_allowed_html_tags( 'builder' ) );
+		echo $content;
 		echo '</div>';
 	}
 }

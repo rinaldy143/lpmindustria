@@ -24,9 +24,14 @@ class wfConfig {
 	const OPTIONS_TYPE_DIAGNOSTICS = 'diagnostics';
 	const OPTIONS_TYPE_ALL = 'all';
 	
+	public static $diskCache = array();
+	private static $diskCacheDisabled = false; //enables if we detect a write fail so we don't keep calling stat()
+	private static $cacheDisableCheckDone = false;
 	private static $tableExists = true;
 	private static $cache = array();
 	private static $DB = false;
+	private static $tmpFileHeader = "<?php\n/* Wordfence temporary file security header */\necho \"Nothing to see here!\\n\"; exit(0);\n?>";
+	private static $tmpDirCache = false;
 	public static $defaultConfig = array(
 		//All exportable boolean options
 		"checkboxes" => array(
@@ -291,7 +296,8 @@ class wfConfig {
 	public static function loadAllOptions() {
 		global $wpdb;
 		
-		if (empty(self::$cache)) {
+		$options = wp_cache_get('alloptions', 'wordfence');
+		if (!$options) {
 			$table = self::table();
 			self::updateTableExists();
 			$suppress = $wpdb->suppress_errors();
@@ -312,10 +318,11 @@ class wfConfig {
 				}
 			}
 			
-			self::$cache = $options;
+			wp_cache_add_non_persistent_groups('wordfence');
+			wp_cache_add('alloptions', $options, 'wordfence');
 		}
 		
-		return self::$cache;
+		return $options;
 	}
 	
 	/**
@@ -359,13 +366,13 @@ class wfConfig {
 	private static function updateCachedOption($name, $val) {
 		$options = self::loadAllOptions();
 		$options[$name] = $val;
-		self::$cache = $options;
+		wp_cache_set('alloptions', $options, 'wordfence');
 	}
 	private static function removeCachedOption($name) {
 		$options = self::loadAllOptions();
 		if (isset($options[$name])) {
 			unset($options[$name]);
-			self::$cache = $options;
+			wp_cache_set('alloptions', $options, 'wordfence');
 		}
 	}
 	private static function getCachedOption($name) {
@@ -378,7 +385,7 @@ class wfConfig {
 		$val = self::getDB()->querySingle("SELECT val FROM {$table} WHERE name='%s'", $name);
 		if ($val !== null) {
 			$options[$name] = $val;
-			self::$cache = $options;
+			wp_cache_set('alloptions', $options, 'wordfence');
 		}
 		return $val;
 	}
@@ -1236,8 +1243,7 @@ Options -ExecCGI
 				//============ Plugin
 				case 'alertEmails':
 				{
-					$dirtyEmails = !is_string($value) ? '' : $value;
-					$dirtyEmails = explode(',', preg_replace('/[\r\n\s\t]+/', '', $dirtyEmails));
+					$dirtyEmails = explode(',', preg_replace('/[\r\n\s\t]+/', '', $value));
 					$dirtyEmails = array_filter($dirtyEmails);
 					$badEmails = array();
 					foreach ($dirtyEmails as $email) {
@@ -1254,8 +1260,7 @@ Options -ExecCGI
 				}
 				case 'scan_include_extra':
 				{
-					$dirtyRegexes = !is_string($value) ? '' : $value;
-					$dirtyRegexes = explode("\n", $dirtyRegexes);
+					$dirtyRegexes = explode("\n", $value);
 					foreach ($dirtyRegexes as $regex) {
 						if (@preg_match("/$regex/", "") === false) {
 							$errors[] = array('option' => $key, 'error' => sprintf(
@@ -1268,8 +1273,7 @@ Options -ExecCGI
 				}
 				case 'whitelisted':
 				{
-					$dirtyWhitelisted = !is_string($value) ? '' : $value;
-					$dirtyWhitelisted = explode(',', preg_replace('/[\r\n\s\t]+/', ',', $dirtyWhitelisted));
+					$dirtyWhitelisted = explode(',', preg_replace('/[\r\n\s\t]+/', ',', $value));
 					$dirtyWhitelisted = array_filter($dirtyWhitelisted);
 					$badWhiteIPs = array();
 					$range = new wfUserIPRange();
@@ -1288,8 +1292,7 @@ Options -ExecCGI
 				}
 				case 'liveTraf_ignoreUsers':
 				{
-					$dirtyUsers = !is_string($value) ? '' : $value;
-					$dirtyUsers = explode(',', $dirtyUsers);
+					$dirtyUsers = explode(',', $value);
 					$invalidUsers = array();
 					foreach ($dirtyUsers as $val) {
 						$val = trim($val);
@@ -1308,8 +1311,7 @@ Options -ExecCGI
 				}
 				case 'liveTraf_ignoreIPs':
 				{
-					$dirtyIPs = !is_string($value) ? '' : $value;
-					$dirtyIPs = explode(',', preg_replace('/[\r\n\s\t]+/', '', $dirtyIPs));
+					$dirtyIPs = explode(',', preg_replace('/[\r\n\s\t]+/', '', $value));
 					$dirtyIPs = array_filter($dirtyIPs);
 					$invalidIPs = array();
 					foreach ($dirtyIPs as $val) {
@@ -1326,8 +1328,7 @@ Options -ExecCGI
 				}
 				case 'howGetIPs_trusted_proxies':
 				{
-					$dirtyIPs = !is_string($value) ? '' : $value;
-					$dirtyIPs = preg_split('/[\r\n,]+/', $dirtyIPs);
+					$dirtyIPs = preg_split('/[\r\n,]+/', $value);
 					$dirtyIPs = array_filter($dirtyIPs);
 					$invalidIPs = array();
 					foreach ($dirtyIPs as $val) {
@@ -1701,8 +1702,7 @@ Options -ExecCGI
 				//============ Plugin (specialty treatment)
 				case 'alertEmails':
 				{
-					$emails = !is_string($value) ? '' : $value;
-					$emails = explode(',', preg_replace('/[\r\n\s\t]+/', '', $emails));
+					$emails = explode(',', preg_replace('/[\r\n\s\t]+/', '', $value));
 					$emails = array_filter($emails); //Already validated above
 					if (count($emails) > 0) {
 						wfConfig::set($key, implode(',', $emails));
@@ -1728,8 +1728,7 @@ Options -ExecCGI
 				}
 				case 'whitelisted':
 				{
-					$whiteIPs = !is_string($value) ? '' : $value;
-					$whiteIPs = explode(',', preg_replace('/[\r\n\s\t]+/', ',', $whiteIPs));
+					$whiteIPs = explode(',', preg_replace('/[\r\n\s\t]+/', ',', $value));
 					$whiteIPs = array_filter($whiteIPs); //Already validated above
 					if (count($whiteIPs) > 0) {
 						wfConfig::set($key, implode(',', $whiteIPs));
@@ -1765,8 +1764,7 @@ Options -ExecCGI
 				}
 				case 'liveTraf_ignoreUsers':
 				{
-					$dirtyUsers = !is_string($value) ? '' : $value;
-					$dirtyUsers = explode(',', $dirtyUsers);
+					$dirtyUsers = explode(',', $value);
 					$validUsers = array();
 					foreach ($dirtyUsers as $val) {
 						$val = trim($val);
@@ -1786,8 +1784,7 @@ Options -ExecCGI
 				}
 				case 'liveTraf_ignoreIPs':
 				{
-					$validIPs = !is_string($value) ? '' : $value;
-					$validIPs = explode(',', preg_replace('/[\r\n\s\t]+/', '', $validIPs));
+					$validIPs = explode(',', preg_replace('/[\r\n\s\t]+/', '', $value));
 					$validIPs = array_filter($validIPs); //Already validated above
 					if (count($validIPs) > 0) {
 						wfConfig::set($key, implode(',', $validIPs));
@@ -1801,7 +1798,6 @@ Options -ExecCGI
 				}
 				case 'liveTraf_ignoreUA':
 				{
-					$value = !is_string($value) ? '' : $value;
 					if (preg_match('/[a-zA-Z0-9\d]+/', $value)) {
 						wfConfig::set($key, trim($value));
 					}
@@ -1813,8 +1809,7 @@ Options -ExecCGI
 				}
 				case 'howGetIPs_trusted_proxies':
 				{
-					$validIPs = !is_string($value) ? '' : $value;
-					$validIPs = preg_split('/[\r\n,]+/', $validIPs);
+					$validIPs = preg_split('/[\r\n,]+/', $value);
 					$validIPs = array_filter($validIPs); //Already validated above
 					if (count($validIPs) > 0) {
 						wfConfig::set($key, implode("\n", $validIPs));
@@ -1845,8 +1840,7 @@ Options -ExecCGI
 				}
 				case 'bannedURLs':
 				{
-					$bannedURLs = !is_string($value) ? '' : $value;
-					wfConfig::set($key, preg_replace('/[\n\r]+/', ',', $bannedURLs));
+					wfConfig::set($key, preg_replace('/[\n\r]+/', ',', $value));
 					$saved = true;
 					break;
 				}

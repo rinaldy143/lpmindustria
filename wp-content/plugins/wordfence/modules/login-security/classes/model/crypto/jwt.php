@@ -38,10 +38,7 @@ class Model_JWT {
 		$json = self::base64url_decode($components[1]);
 		$payload = @json_decode($json, true);
 		$expiration = false;
-		if (!is_array($payload)) {
-			return false;
-		}
-		else if (isset($payload['_exp'])) {
+		if (isset($payload['_exp'])) {
 			$expiration = $payload['_exp'];
 			
 			if ($payload['_exp'] < Controller_Time::time()) {

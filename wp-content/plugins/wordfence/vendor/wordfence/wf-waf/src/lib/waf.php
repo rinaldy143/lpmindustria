@@ -156,6 +156,11 @@ auEa+7b+FGTKs7dUo2BNGR7OVifK4GZ8w/ajS0TelhrSRi3BBQCGXLzUO/UURUAh
 			}
 		}
 		
+		if (!$this->_hasCronOfType($cron, 'wfWAFCronFetchIPListEvent')) {
+			$cron[] = new wfWAFCronFetchIPListEvent(time() + 86400);
+			$changed = true;
+		}
+		
 		if (!$this->_hasCronOfType($cron, 'wfWAFCronFetchBlacklistPrefixesEvent')) {
 			$cron[] = new wfWAFCronFetchBlacklistPrefixesEvent(time() + 7200);
 			$changed = true;
@@ -207,11 +212,10 @@ auEa+7b+FGTKs7dUo2BNGR7OVifK4GZ8w/ajS0TelhrSRi3BBQCGXLzUO/UURUAh
 				if ($event->isInPast()) {
 					$run[$index] = $event;
 					$newEvent = $event->reschedule();
-					if ($newEvent && $newEvent instanceof wfWAFCronEvent && $newEvent !== $event) {
+					if ($newEvent instanceof wfWAFCronEvent && $newEvent !== $event) {
 						$cron[$index] = $newEvent;
 						$updated = true;
-					}
-					else {
+					} else {
 						unset($cron[$index]);
 					}
 				}
@@ -477,12 +481,20 @@ auEa+7b+FGTKs7dUo2BNGR7OVifK4GZ8w/ajS0TelhrSRi3BBQCGXLzUO/UURUAh
 				$cron = array(
 					new wfWAFCronFetchRulesEvent(time() +
 						(86400 * ($this->getStorageEngine()->getConfig('isPaid', null, 'synced') ? .5 : 7))),
+					new wfWAFCronFetchIPListEvent(time() + 86400),
 					new wfWAFCronFetchBlacklistPrefixesEvent(time() + 7200),
 				);
 				$this->getStorageEngine()->setConfig('cron', $cron, 'livewaf');
 			}
 
 			// Any migrations to newer versions go here.
+			if ($currentVersion === '1.0.0') {
+				$cron = (array) $this->getStorageEngine()->getConfig('cron', null, 'livewaf');
+				if (is_array($cron)) {
+					$cron[] = new wfWAFCronFetchIPListEvent(time() + 86400);
+				}
+				$this->getStorageEngine()->setConfig('cron', $cron, 'livewaf');
+			}
 			
 			if (wfWAFUtils::isVersionBelow('1.0.2', $currentVersion)) {
 				$event = new wfWAFCronFetchRulesEvent(time() - 2);
@@ -1346,8 +1358,6 @@ HTML
 	 * @return bool
 	 */
 	public function isRuleParamWhitelisted($ruleID, $urlPath, $paramKey) {
-		$urlPath = (string)$urlPath;
-		$paramKey = (string)$paramKey;
 		if ($this->isParamKeyURLBlacklisted($ruleID, $paramKey, $urlPath)) {
 			return false;
 		}
@@ -1434,6 +1444,9 @@ HTML
 						if (is_array($jsonData) && array_key_exists('success', $jsonData)) {
 							$this->getStorageEngine()->truncateAttackData();
 							$this->getStorageEngine()->unsetConfig('attackDataNextInterval', 'transient');
+						}
+						if (array_key_exists('data', $jsonData) && array_key_exists('watchedIPList', $jsonData['data'])) {
+							$this->getStorageEngine()->setConfig('watchedIPs', $jsonData['data']['watchedIPList'], 'transient');
 						}
 					}
 				} else if (is_string($response->getBody()) && preg_match('/next check in: ([0-9]+)/', $response->getBody(), $matches)) {
@@ -1619,7 +1632,7 @@ HTML
 		if ($host === null) {
 			$host = $this->getRequest()->getHost();
 		}
-		return self::AUTH_COOKIE . '-' . md5((string)$host);
+		return self::AUTH_COOKIE . '-' . md5($host);
 	}
 
 	/**
@@ -2086,11 +2099,39 @@ class wfWAFCronFetchRulesEvent extends wfWAFCronEvent {
 class wfWAFCronFetchIPListEvent extends wfWAFCronEvent {
 	
 	public function fire() {
-		//No op -- removed but class retained in case it still exists in serialized cron data
+		$waf = $this->getWaf();
+		if (!$waf) {
+			return;
+		}
+		$guessSiteURL = sprintf('%s://%s/', $waf->getRequest()->getProtocol(), $waf->getRequest()->getHost());
+		try {
+			//Watch List
+			$request = new wfWAFHTTP();
+			$request->setHeaders(array(
+				'Content-Type' => 'application/json',
+			));
+			$response = wfWAFHTTP::post(WFWAF_API_URL_SEC . "?" . http_build_query(array(
+					'action' => 'send_waf_attack_data',
+					'k'      => $waf->getStorageEngine()->getConfig('apiKey', null, 'synced'),
+					's'      => $waf->getStorageEngine()->getConfig('siteURL', null, 'synced') ? $waf->getStorageEngine()->getConfig('siteURL', null, 'synced') : $guessSiteURL,
+					'h'      => $waf->getStorageEngine()->getConfig('homeURL', null, 'synced') ? $waf->getStorageEngine()->getConfig('homeURL', null, 'synced') : $guessSiteURL,
+					't'		 => microtime(true),
+					'lang'   => $waf->getStorageEngine()->getConfig('WPLANG', null, 'synced'),
+				), '', '&'), '[]', $request);
+			
+			if ($response instanceof wfWAFHTTPResponse && $response->getBody()) {
+				$jsonData = wfWAFUtils::json_decode($response->getBody(), true);
+				if (is_array($jsonData) && array_key_exists('data', $jsonData) && is_array($jsonData['data']) && array_key_exists('watchedIPList', $jsonData['data'])) {
+					$waf->getStorageEngine()->setConfig('watchedIPs', $jsonData['data']['watchedIPList'], 'transient');
+				}
+			}
+		} catch (wfWAFHTTPTransportException $e) {
+			error_log($e->getMessage());
+		}
 	}
 
 	public function getNextFireTime() {
-		return null;
+		return time() + 86400;
 	}
 
 }
