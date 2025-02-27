@@ -21,6 +21,7 @@ composer.lock
 /readme.html
 /wp-*.php
 /xmlrpc.php
+/wp-content/wflogs/
 
 # Configuration
 wp-config.php
