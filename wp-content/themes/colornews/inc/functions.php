@@ -543,7 +543,7 @@ if ( ! function_exists( 'colornews_footer_copyright' ) ) :
 
 		$tg_link = '<a href="https://themegrill.com/themes/colornews" target="_blank" title="' . esc_attr__( 'ColorNews', 'colornews' ) . '" rel="nofollow"><span>' . esc_html__( 'ColorNews', 'colornews' ) . '</span></a>';
 
-		$default_footer_value = sprintf( __( 'Copyright &copy; %1$s %2$s. All rights reserved.', 'colornews' ), date( 'Y' ), $site_link ) . '&nbsp;' . sprintf( esc_html__( 'Theme: %1$s by %2$s.', 'colornews' ), $tg_link, 'ThemeGrill' ) . ' ' . sprintf( esc_html__( 'Powered by %s.', 'colornews' ), $wp_link );
+		$default_footer_value = sprintf( __( 'Copyright &copy; %1$s %2$s. All rights reserved.', 'colornews' ), date( 'Y' ), $site_link );
 
 		$colornews_footer_copyright = '<div class="copy-right">' . $default_footer_value . '</div>';
 
