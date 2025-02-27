@@ -161,7 +161,7 @@ class OxygenFormWidget extends OxygenElement {
 		);
 
 		$selector = '.evf-field-label';
-		$section_label->typographySection( __( 'Typography','everest-forms' ), $selector, $this );
+		$section_label->typographySection( __( 'Typography' ), $selector, $this );
 		$section_label->addStyleControls(
 			array(
 				array(
@@ -260,11 +260,11 @@ class OxygenFormWidget extends OxygenElement {
 	 */
 	public function render( $options, $defaults, $content ) {
 
-		$content = sprintf( '<div class="evf-widget">%s</div>', esc_html__( 'Everest Forms','everest-forms' ) );
+		$content = sprintf( '<div class="evf-widget">%s</div>', esc_html__( 'Everest Forms' ) );
 
 		if ( ! isset( $options['evf_form'] ) || empty( $options['evf_form'] ) ) {
 
-			echo wp_kses( $content, evf_get_allowed_html_tags( 'builder' ) );
+			echo $content;
 
 			return;
 		}
@@ -273,7 +273,7 @@ class OxygenFormWidget extends OxygenElement {
 
 		if ( empty( $form_id ) ) {
 
-			echo wp_kses( $content, evf_get_allowed_html_tags( 'builder' ) );
+			echo $content;
 
 			return;
 		}
@@ -287,6 +287,6 @@ class OxygenFormWidget extends OxygenElement {
 			array( 'class' => 'everest-forms' )
 		);
 
-		echo wp_kses( $content, evf_get_allowed_html_tags( 'builder' ) );
+		echo $content;
 	}
 }

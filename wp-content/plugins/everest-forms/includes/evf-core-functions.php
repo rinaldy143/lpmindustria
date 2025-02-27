@@ -1558,14 +1558,13 @@ function evf_get_license_plan() {
 
 	if ( $license_key && is_plugin_active( 'everest-forms-pro/everest-forms-pro.php' ) ) {
 		$license_data = get_transient( 'evf_pro_license_plan' );
+
+		if ( 'error' === $license_data ) {
+			return false;
+		}
+
 		if ( false === $license_data ) {
 			$license_response = EVF_Updater_Key_API::check( array( 'license' => $license_key ) );
-
-			if ( ! $license_response ) {
-				$license_plan = get_option( 'evf_saved_license_plan', 'unknown' );
-				return evf_handle_license_plan_compatibility( $license_plan );
-			}
-
 			$license_data     = json_decode( $license_response );
 
 			if ( ! empty( $license_data->item_name ) ) {
@@ -1576,12 +1575,15 @@ function evf_get_license_plan() {
 					$license_data->item_plan
 				);
 				$license_data->item_plan = trim( $license_data->item_plan );
-				update_option( 'evf_saved_license_plan', $license_data->item_plan );
+
 				set_transient( 'evf_pro_license_plan', $license_data, WEEK_IN_SECONDS );
+			} else {
+				set_transient( 'evf_pro_license_plan', 'error', 6 * HOUR_IN_SECONDS );
+				return false;
 			}
 		}
-		$license_plan = isset( $license_data->item_plan ) ? $license_data->item_plan : get_option( 'evf_saved_license_plan', 'unknown' );
-		return evf_handle_license_plan_compatibility( $license_plan );
+
+		return evf_handle_license_plan_compatibility( isset( $license_data->item_plan ) ? $license_data->item_plan : false );
 	}
 
 	return false;
@@ -1610,7 +1612,7 @@ if ( ! function_exists( 'evf_handle_force_update' ) ) {
  * @param $license_plan License plan.
  */
 function evf_handle_license_plan_compatibility( $license_plan ) {
-	$license_plan = ( 'plus' === $license_plan || 'professional' === $license_plan ||'unknown' === $license_plan ) ? 'personal' : $license_plan;
+	$license_plan = ( 'plus' === $license_plan || 'professional' === $license_plan ) ? 'personal' : $license_plan;
 	return $license_plan;
 }
 
@@ -4728,30 +4730,14 @@ function parse_datetime_values( $datetime_value, $datetime_format, $date_format,
 			break;
 		case 'date':
 			if ( 'range' === $mode ) {
-				$datetime_value = apply_filters( 'everest_forms_time_date_format', $datetime_value );
 				$selected_dates = explode( ' to ', $datetime_value );
 				if ( count( $selected_dates ) >= 2 ) {
-					if ( count( $selected_dates ) >= 2 ) {
-						$start_date = DateTime::createFromFormat( $date_format, $selected_dates[0] );
-						if ( $start_date === false ) {
-							evf_get_logger()->debug( print_r( "Invalid start date format: {$selected_dates[0]}", true ) );
-						}
-						$start_date->setTime( 0, 0 );
-						$datetime_start = $start_date->format( 'Y-m-d H:i' );
-
-						$end_date = DateTime::createFromFormat( $date_format, $selected_dates[1] );
-						if ( $end_date === false ) {
-							evf_get_logger()->debug( print_r( "Invalid end date format: {$selected_dates[1]}", true ) );
-						}
-						$end_date->modify( '+23 hours' );
-						$datetime_end = $end_date->format( 'Y-m-d H:i' );
-
-						$datetime_arr[ $entry_id ] = array( $datetime_start, $datetime_end );
-					}
-				}else{
-					if ( !empty($datetime_value) && ! is_array ( $datetime_value) ) {
-						$datetime_arr[ $entry_id ] = $datetime_value ;
-					}
+					$datetime_start = "$selected_dates[0] 00:00";
+					$datetime_start = gmdate( 'Y-m-d H:i', strtotime( $datetime_start ) );
+					$date_time      = new DateTime( $selected_dates[1] );
+					$date_time->modify( '+23 hour' );
+					$datetime_end              = $date_time->format( 'Y-m-d H:i' );
+					$datetime_arr[ $entry_id ] = array( $datetime_start, $datetime_end );
 				}
 			} else {
 				$selected_dates = explode( ', ', $datetime_value );
@@ -4769,7 +4755,6 @@ function parse_datetime_values( $datetime_value, $datetime_format, $date_format,
 			break;
 		case 'date-time':
 			if ( 'range' === $mode ) {
-				$datetime_value = apply_filters( 'everest_forms_time_date_format', $datetime_value );
 				$selected_dates = explode( ' to ', $datetime_value );
 				if ( count( $selected_dates ) >= 2 ) {
 					$datetime_start            = gmdate( 'Y-m-d H:i', strtotime( $selected_dates[0] ) );
@@ -5361,32 +5346,6 @@ if ( ! function_exists( 'evf_email_send_failed_handler' ) ) {
 			);
 		}
 	}
-}
-
-/**
- * Get form data by field key.
- *
- * @param array  $form_data Form Data.
- * @param string $key Field Key.
- *
- * @return array
- */
-function evf_get_form_data_by_key( $form_data, $key = null ) {
-
-	$form_data_array = array();
-
-	foreach ( $form_data['form_fields'] as $field_data ) {
-
-		$field_key = isset( $field_data['type'] ) && null !== $field_data['type'] ? $field_data['type'] : '';
-
-		if ( ! empty( $field_key ) ) {
-			if ( $field_key === $key ) {
-				$form_data_array[] = $field_data;
-			}
-		}
-	}
-
-	return $form_data_array;
 }
 
 add_action(

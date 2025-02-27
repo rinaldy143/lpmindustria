@@ -59,24 +59,12 @@ class EVF_Settings_reCAPTCHA extends EVF_Settings_Page {
 					'desc'     => esc_html__( 'Choose the type of CAPTCHA for this site key.', 'everest-forms' ),
 					'id'       => 'everest_forms_recaptcha_type',
 					'default'  => 'v2',
-					'type'     => 'radio-image',
+					'type'     => 'radio',
 					'options'  => array(
-						'v2'  => array(
-							'name' =>  esc_html__( 'reCAPTCHA v2', 'everest-forms' ),
-							'image' => plugins_url( 'assets/images/captcha/reCAPTCHA-v2-v3.png', EVF_PLUGIN_FILE ),
-						),
-						'v3'  => array(
-							'name' =>  esc_html__( 'reCAPTCHA v3', 'everest-forms' ),
-							'image' => plugins_url( 'assets/images/captcha/reCAPTCHA-v2-v3.png', EVF_PLUGIN_FILE ),
-						),
-						'hcaptcha'  => array(
-							'name' =>  esc_html__( 'hCaptcha', 'everest-forms' ),
-							'image' => plugins_url( 'assets/images/captcha/hCAPTCHA-logo.png', EVF_PLUGIN_FILE ),
-						),
-						'turnstile'  => array(
-							'name' =>  esc_html__( 'Cloudflare Turnstile', 'everest-forms' ),
-							'image' => plugins_url( 'assets/images/captcha/cloudflare-logo.png', EVF_PLUGIN_FILE ),
-						),
+						'v2'        => esc_html__( 'reCAPTCHA v2', 'everest-forms' ),
+						'v3'        => esc_html__( 'reCAPTCHA v3', 'everest-forms' ),
+						'hcaptcha'  => esc_html__( 'hCaptcha', 'everest-forms' ),
+						'turnstile' => esc_html__( 'Cloudflare Turnstile', 'everest-forms' ),
 					),
 					'class'    => 'everest-forms-recaptcha-type',
 					'desc_tip' => true,

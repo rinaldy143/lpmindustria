@@ -299,7 +299,7 @@ class Everest_Forms_Template_Section_Data {
 		}
 
 		// Capability check.
-		if ( ! current_user_can( 'manage_everest_forms' ) || ! current_user_can( 'everest_forms_create_forms' ) ) {
+		if ( ! current_user_can( 'manage_options' ) ) {
 			return new WP_Error(
 				'rest_forbidden',
 				esc_html__( 'You are not allowed to access this resource.', 'everest-forms' ),
@@ -313,7 +313,7 @@ class Everest_Forms_Template_Section_Data {
 	/**
 	 * Retrieves the favorite forms of user.
 	 *
-	 * @since 3.0.8
+	 * @since xx.xx.xx
 	 *
 	 * @param  WP_REST_Request $request
 	 */

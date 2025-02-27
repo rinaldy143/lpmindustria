@@ -390,6 +390,7 @@ class Everest_Forms_Plugin_Status {
 		$status['success'] = true;
 		$status['message'] = __( 'Addon installed Successfully', 'everest-forms' );
 		return $status;
+
 	}
 
 	/**
@@ -459,7 +460,7 @@ class Everest_Forms_Plugin_Status {
 		}
 
 		// Capability check.
-		if ( ! current_user_can( 'manage_everest_forms' ) || ! current_user_can( 'everest_forms_create_forms' ) ) {
+		if ( ! current_user_can( 'manage_options' ) ) {
 			return new WP_Error(
 				'rest_forbidden',
 				esc_html__( 'You are not allowed to access this resource.', 'everest-forms' ),

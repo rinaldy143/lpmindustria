@@ -5,22 +5,13 @@ use WordfenceLS\Controller_Settings;
 require_once(dirname(__FILE__) . '/wfRESTBaseController.php');
 
 class wfRESTConfigController extends wfRESTBaseController {
-	const WF_CENTRAL_USER_MARKER = '_wf_central_user_'; //Marker used to indicate that the site was disconnected by a user associated with the site's Central account
-	const WF_CENTRAL_FAILURE_MARKER = '_wf_central_failure_'; //Marker used to indicate that the site was disconnected due to exceeding the error threshold
 
 	public static function disconnectConfig($adminEmail = null) {
 		global $wpdb;
 		delete_transient('wordfenceCentralJWT' . wfConfig::get('wordfenceCentralSiteID'));
 
 		if (is_null($adminEmail)) {
-			$user = wp_get_current_user();
-			if ($user && $user->exists()) {
-				$adminEmail = $user->user_email;
-			}
-			
-			if (is_null($adminEmail)) {
-				$adminEmail = wfConfig::get('wordfenceCentralConnectEmail');
-			}
+			$adminEmail = wfConfig::get('wordfenceCentralConnectEmail');
 		}
 
 		$result = $wpdb->query('DELETE FROM ' . wfDB::networkTable('wfConfig') . " WHERE name LIKE 'wordfenceCentral%'");
@@ -310,7 +301,7 @@ class wfRESTConfigController extends wfRESTBaseController {
 	 * @return mixed|WP_REST_Response
 	 */
 	public function disconnect($request) {
-		self::disconnectConfig(!empty($this->tokenData['adminEmail']) ? $this->tokenData['adminEmail'] : self::WF_CENTRAL_USER_MARKER);
+		self::disconnectConfig();
 		return rest_ensure_response(array(
 			'success' => true,
 		));

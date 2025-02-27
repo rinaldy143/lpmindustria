@@ -270,8 +270,8 @@ class wfIssues {
 		}
 		
 		if (!$alreadyHashed) {
-			$ignoreP = md5(wfUtils::ifnull($ignoreP));
-			$ignoreC = md5(wfUtils::ifnull($ignoreC));
+			$ignoreP = md5($ignoreP);
+			$ignoreC = md5($ignoreC);
 		}
 		
 		$results = $this->getDB()->querySelect("SELECT id, status, ignoreP, ignoreC FROM {$table} WHERE (ignoreP = '%s' OR ignoreC = '%s')", $ignoreP, $ignoreC);
@@ -519,17 +519,11 @@ class wfIssues {
 		
 		wfConfig::set_ser('emailedIssuesList', $updated, false, wfConfig::DONT_AUTOLOAD);
 	}
-	
-	public function deleteIssue($id) {
-		$this->deleteIssues(array($id));
-	}
-	
-	public function deleteIssues($ids) {
-		$this->clearEmailedStatus($this->getIssuesByIDs($ids));
-		$idString = implode(',', array_map(function($id) { return intval($id); }, $ids));
-		$this->getDB()->queryWrite("DELETE FROM `{$this->issuesTable}` WHERE `id` IN ({$idString})");
+	public function deleteIssue($id){ 
+		$this->clearEmailedStatus(array($this->getIssueByID($id)));
+		$this->getDB()->queryWrite("delete from " . $this->issuesTable . " where id=%d", $id);
 		if (wfCentral::isConnected()) {
-			wfCentral::deleteIssues($ids);
+			wfCentral::deleteIssue($id);
 		}
 	}
 
@@ -577,15 +571,6 @@ class wfIssues {
 		$rec = $this->getDB()->querySingleRec("select * from " . $this->issuesTable . " where id=%d", $id);
 		$rec['data'] = unserialize($rec['data']);
 		return $rec;
-	}
-	public function getIssuesByIDs($ids) {
-		$result = array();
-		$idString = implode(',', array_map(function($id) { return intval($id); }, $ids));
-		$rows = $this->getDB()->querySelect("SELECT * FROM `{$this->issuesTable}` WHERE `id` IN ({$idString})");
-		foreach ($rows as $r) {
-			$result[] = array_merge($r, array('data' => unserialize($r['data'])));
-		}
-		return $result;
 	}
 	public function getIssueCounts() {
 		global $wpdb;
@@ -720,7 +705,6 @@ class wfIssues {
 				$this->deleteUpdateIssues('wfUpgrade');
 			}
 			
-			$issueIDs = array();
 			if ($updatesNeeded['plugins']) {
 				$upgradeNames = array();
 				foreach ($updatesNeeded['plugins'] as $p) {
@@ -732,7 +716,7 @@ class wfIssues {
 					$data = unserialize($issue['data']);
 					$name = $data['Name'];
 					if (!isset($upgradeNames[$name])) { //Some plugins don't have a slug associated with them, so we anchor on the name
-						$issueIDs[] = $issue['id'];
+						$this->deleteIssue($issue['id']);
 					}
 				}
 			}
@@ -751,16 +735,12 @@ class wfIssues {
 					$data = unserialize($issue['data']);
 					$name = $data['Name'];
 					if (!isset($upgradeNames[$name])) { //Some themes don't have a slug associated with them, so we anchor on the name
-						$issueIDs[] = $issue['id'];
+						$this->deleteIssue($issue['id']);
 					}
 				}
 			}
 			else {
 				$this->deleteUpdateIssues('wfThemeUpgrade');
-			}
-			
-			if (!empty($issueIDs)) {
-				$this->deleteIssues($issueIDs);
 			}
 		}
 		else {

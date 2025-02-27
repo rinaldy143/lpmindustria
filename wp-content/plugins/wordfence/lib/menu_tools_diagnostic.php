@@ -998,7 +998,6 @@ if (!isset($sendingDiagnosticEmail)) {
 
 	<?php endif ?>
 </div>
-<?php if (!$sendingDiagnosticEmail): ?>
 <div class="wf-scrollTop">
 	<a href="javascript:void(0);"><i class="wf-ionicons wf-ion-chevron-up"></i></a>
 </div>
@@ -1012,4 +1011,3 @@ if (!isset($sendingDiagnosticEmail)) {
 	))->render();
 	?>
 </script>
-<?php endif ?>

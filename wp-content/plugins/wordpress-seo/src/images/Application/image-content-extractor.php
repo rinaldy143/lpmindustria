@@ -88,12 +88,7 @@ class Image_Content_Extractor {
 		 */
 		$attribute = \apply_filters( 'wpseo_image_attribute_containing_id', 'class' );
 		while ( $processor->next_tag( $query ) ) {
-			$src_raw = $processor->get_attribute( 'src' );
-			if ( ! $src_raw ) {
-				continue;
-			}
-
-			$src     = \htmlentities( $src_raw, ( \ENT_QUOTES | \ENT_SUBSTITUTE | \ENT_HTML401 ), \get_bloginfo( 'charset' ) );
+			$src     = \htmlentities( $processor->get_attribute( 'src' ), ( \ENT_QUOTES | \ENT_SUBSTITUTE | \ENT_HTML401 ), \get_bloginfo( 'charset' ) );
 			$classes = $processor->get_attribute( $attribute );
 			$id      = $this->extract_id_of_classes( $classes );
 
