@@ -165,9 +165,6 @@ class Post_Views_Counter_Dashboard {
 		// get menu items
 		$menu_items = ! empty( $user_options['menu_items'] ) ? $user_options['menu_items'] : [];
 
-		// generate months
-		$months_html = wp_kses_post( $this->generate_months( current_time( 'timestamp', false ) ) );
-
 		// get widget items
 		$items = $this->widget_items;
 
@@ -175,7 +172,7 @@ class Post_Views_Counter_Dashboard {
 		<div id="pvc-dashboard-accordion" class="pvc-accordion">';
 
 		foreach ( $items as $item ) {
-			$html .= $this->generate_dashboard_widget_item( $item, $menu_items, $months_html );
+			$html .= $this->generate_dashboard_widget_item( $item, $menu_items );
 		}
 
 		$html .= '
@@ -190,10 +187,10 @@ class Post_Views_Counter_Dashboard {
 	 *
 	 * @param array $item
 	 * @param array $menu_items
-	 * @param string $esc_months_html
+	 * @param string $dates_html
 	 * @return string
 	 */
-	public function generate_dashboard_widget_item( $item, $menu_items, $esc_months_html ) {
+	public function generate_dashboard_widget_item( $item, $menu_items ) {
 		// get allowed html tags
 		$allowed_html = wp_kses_allowed_html( 'post' );
 		$allowed_html['canvas'] = [
@@ -201,26 +198,42 @@ class Post_Views_Counter_Dashboard {
 			'height' => []
 		];
 
-		return '
-		<div id="pvc-' . esc_attr( $item['id'] ) . '" class="pvc-accordion-item' . ( in_array( $item['id'], $menu_items, true ) ? ' pvc-collapsed' : '' ) . '">
+
+		ob_start(); ?>
+
+		<div id="pvc-<?php esc_attr_e( $item['id'] ); ?>" class="pvc-accordion-item<?php echo ( in_array( $item['id'], $menu_items, true ) ? ' pvc-collapsed' : '' ); ?>">
 			<div class="pvc-accordion-header">
-				<div class="pvc-accordion-toggle"><span class="pvc-accordion-title">' . esc_html( $item['title'] ) . '</span><span class="pvc-tooltip" aria-label="' . esc_html( $item['description'] ) . '" data-microtip-position="top" data-microtip-size="large" role="tooltip"><span class="pvc-tooltip-icon"></span></span></div>
-				<!--
+				<div class="pvc-accordion-toggle"><span class="pvc-accordion-title"><?php esc_html_e( $item['title'] ); ?></span><span class="pvc-tooltip" aria-label="<?php esc_html_e( $item['description'] ); ?>" data-microtip-position="top" data-microtip-size="large" role="tooltip"><span class="pvc-tooltip-icon"></span></span></div>
 				<div class="pvc-accordion-actions">
-					<a href="javascript:void(0);" class="pvc-accordion-action dashicons dashicons-admin-generic"></a>
+					<!--<a href="javascript:void(0);" class="pvc-accordion-action dashicons dashicons-admin-generic"></a>-->
+					<a href="javascript:void(0);" class="pvc-accordion-action pvc-toggle-indicator"></a>
 				</div>
-				-->
 			</div>
 			<div class="pvc-accordion-content">
 				<div class="pvc-dashboard-container loading">
+					<div class="pvc-dashboard-content-top">
+						<?php do_action( 'pvc_dashboard_widget_content_top', $item['id'] ); ?>
+					</div>
 					<div class="pvc-data-container">
-						' . wp_kses( $item['content'], $allowed_html ) . '
+						<?php echo wp_kses( $item['content'], $allowed_html ); ?>
 						<span class="spinner"></span>
 					</div>
-					<div class="pvc-months">' . $esc_months_html . '</div>
+					<div class="pvc-dashboard-content-bottom pvc-date-nav">
+						<div class="pvc-date-nav pvc-months">
+							<?php 
+							// generate dates
+							echo wp_kses_post( $this->generate_months( current_time( 'timestamp', false ), $item['id'] ) );
+							?>
+						</div>
+						<?php do_action( 'pvc_dashboard_widget_content_bottom', $item['id'] ); ?>
+					</div>
 				</div>
 			</div>
-		</div>';
+		</div>
+		
+		<?php
+		// Output current buffer
+		return ob_get_clean();
 	}
 
 	/**
@@ -233,243 +246,149 @@ class Post_Views_Counter_Dashboard {
 			wp_die( __( 'You do not have permission to access this page.', 'post-views-counter' ) );
 
 		// get period
-		$period = isset( $_POST['period'] ) ? preg_replace( '/[^a-z0-9_|]/', '', $_POST['period'] ) : 'this_month';
+		$period = isset( $_POST['period'] ) && ! empty( $_POST['period'] ) ? preg_replace( '/[^a-z0-9_|]/', '', $_POST['period'] ) : apply_filters( 'pvc_dashboard_widget_default_period', 'this_month', 'post-views' );
 
 		// get post types
 		$post_types = Post_Views_Counter()->options['general']['post_types_count'];
+		
+		// empty options?
+		if ( empty( $post_types ) || ! is_array( $post_types ) )
+			$post_types = [];
+
+		// sanitize post_types
+		$post_types = map_deep( $post_types, 'sanitize_text_field' );
 
 		// get dashboard user options
 		$user_options = $this->get_dashboard_user_options( get_current_user_id(), 'post_types' );
+		
+		// empty options?
+		if ( empty( $user_options ) || ! is_array( $user_options ) )
+			$user_options = [];
 
-		// get current date
-		$now = getdate( current_time( 'timestamp', get_option( 'gmt_offset' ) ) );
+		// sanitize options
+		$user_options = map_deep( $user_options, 'sanitize_text_field' );
 
 		// get colors
 		$colors = Post_Views_Counter()->functions->get_colors();
-
-		// set chart labels
-		switch ( $period ) {
-			case 'this_week':
-//TODO
-				$data = [
-					'design'	=> [
-						'fill'					=> true,
-						'backgroundColor'		=> 'rgba(' . $colors['r'] . ',' . $colors['g'] . ',' . $colors['b'] . ', 0.2)',
-						'borderColor'			=> 'rgba(' . $colors['r'] . ',' . $colors['g'] . ',' . $colors['b'] . ', 1)',
-						'borderWidth'			=> 1.2,
-						'borderDash'			=> [],
-						'pointBorderColor'		=> 'rgba(' . $colors['r'] . ',' . $colors['g'] . ',' . $colors['b'] . ', 1)',
-						'pointBackgroundColor'	=> 'rgba(255, 255, 255, 1)',
-						'pointBorderWidth'		=> 1.2
+		
+		// parameters to be used in filter
+		$args = [
+			'widget'		=> 'post_views',
+			'period'		=> $period,
+			'post_types'	=> $post_types,
+			'user_options'	=> $user_options
+		];
+		
+		$data = [
+			'widget'	=> 'post-views',
+			'design'	=> [
+				'fill'					=> true,
+				'backgroundColor'		=> 'rgba(' . $colors['r'] . ',' . $colors['g'] . ',' . $colors['b'] . ', 0.2)',
+				'borderColor'			=> 'rgba(' . $colors['r'] . ',' . $colors['g'] . ',' . $colors['b'] . ', 1)',
+				'borderWidth'			=> 1.2,
+				'borderDash'			=> [],
+				'pointBorderColor'		=> 'rgba(' . $colors['r'] . ',' . $colors['g'] . ',' . $colors['b'] . ', 1)',
+				'pointBackgroundColor'	=> 'rgba(255, 255, 255, 1)',
+				'pointBorderWidth'		=> 1.2
+			],
+			'data'		=> [
+				'datasets'	=> [
+					[
+						'label'			=> __( 'Total Views', 'post-views-counter' ),
+						'post_type'	=> '_pvc_total_views',
+						'hidden'		=> in_array( '_pvc_total_views', $user_options, true ),
+						'data'			=> []
 					]
-				];
+				]
+			],
+		];
+		
+		// convert period
+		$time = pvc_period2timestamp( $period );
 
-				$data['data']['datasets'][0]['label'] = __( 'Post Views', 'post-views-counter' );
-				$data['data']['datasets'][0]['post_type'] = '_pvc_total_views';
+		// get date chunks
+		$date = date( 'Y m W d t', $time );
+		$date_chunks = explode( ' ', $date );
 
-				for ( $day = 0; $day <= 6; $day++ ) {
-					$date = strtotime( $now['mday'] . '-' . $now['mon'] . '-' . $now['year'] . ' + ' . $day . ' days - ' . $now['wday'] . ' days' );
-					$query = new WP_Query(
-						wp_parse_args(
-							[
-								'post_type'			=> $post_types,
-								'posts_per_page'	=> -1,
-								'paged'				=> false,
-								'orderby'			=> 'post_views',
-								'suppress_filters'	=> false,
-								'no_found_rows'		=> true
-							],
-							[
-								'views_query' => [
-									'year'	=> date( 'Y', $date ),
-									'month'	=> date( 'n', $date ),
-									'day'	=> date( 'd', $date )
-								]
+		// get date
+		$year = (int) $date_chunks[0];
+		$month = sanitize_text_field( $date_chunks[1] );
+		$dates_number = (int) $date_chunks[4];
+
+		// get previous date chunks
+		$previous_time = strtotime( '-1 months', $time );
+		$previous_date = date( 'Y m W d t', $previous_time );
+		$previous_date_chunks = explode( ' ', $previous_date );
+
+		// get current date
+		$current_date = date_create( 'now', wp_timezone() )->format('Y m W d t');
+		$current_date_chunks = explode( ' ', $current_date );
+
+		// generate dates
+		$data['dates'] = $this->generate_months( $time );
+
+		// generate chart data
+		$sum = [];
+
+		// any post types?
+		if ( ! empty( $post_types ) ) {
+			// reindex post types
+			$post_types = array_combine( range( 1, count( $post_types ) ), array_values( $post_types ) );
+
+			$post_type_data = [];
+
+			foreach ( $post_types as $id => $post_type ) {
+				$post_type_obj = get_post_type_object( $post_type );
+
+				// unrecognized post type? (mainly from deactivated plugins)
+				if ( empty( $post_type_obj ) )
+					$label = $post_type;
+				else
+					$label = $post_type_obj->labels->name;
+
+				$data['data']['datasets'][$id]['label'] = $label;
+				$data['data']['datasets'][$id]['post_type'] = $post_type;
+				$data['data']['datasets'][$id]['hidden'] = in_array( $post_type, $user_options, true );
+				$data['data']['datasets'][$id]['data'] = [];
+
+				// get month views
+				$post_type_data[$id] = array_values(
+					pvc_get_views( apply_filters( 'pvc_dashboard_post_views_query_args', 
+						[
+							'fields'		=> 'date=>views',
+							'post_type'		=> $post_type,
+							'views_query'	=> [
+								'year'			=> $year,
+								'month'			=> $month,
+								'hide_empty'	=> true
 							]
-						)
-					);
+						], $period
+					) )
+				);
+			}
 
-					$data['data']['labels'][] = date_i18n( 'j', $date );
-					$data['data']['dates'][] = date_i18n( get_option( 'date_format' ), $date );
-					$data['data']['datasets'][0]['data'][] = $query->total_views;
-					$data['data']['datasets'][$day]['data'][] = $query->total_views;
+			foreach ( $post_type_data as $post_type_id => $post_views ) {
+				foreach ( $post_views as $id => $views ) {
+					// generate chart data for specific post types
+					$data['data']['datasets'][$post_type_id]['data'][] = $views;
+
+					if ( ! array_key_exists( $id, $sum ) )
+						$sum[$id] = 0;
+
+					$sum[$id] += $views;
 				}
-				break;
-
-			case 'this_year':
-				$data = [
-					'design'	=> [
-						'fill'					=> true,
-						'backgroundColor'		=> 'rgba(' . $colors['r'] . ',' . $colors['g'] . ',' . $colors['b'] . ', 0.2)',
-						'borderColor'			=> 'rgba(' . $colors['r'] . ',' . $colors['g'] . ',' . $colors['b'] . ', 1)',
-						'borderWidth'			=> 1.2,
-						'borderDash'			=> [],
-						'pointBorderColor'		=> 'rgba(' . $colors['r'] . ',' . $colors['g'] . ',' . $colors['b'] . ', 1)',
-						'pointBackgroundColor'	=> 'rgba(255, 255, 255, 1)',
-						'pointBorderWidth'		=> 1.2
-					]
-				];
-
-				$data['data']['datasets'][0]['label'] = __( 'Total Views', 'post-views-counter' );
-				$data['data']['datasets'][0]['post_type'] = '_pvc_total_views';
-				$data['data']['datasets'][0]['hidden'] = in_array( '_pvc_total_views', $user_options, true );
-				$data['data']['datasets'][0]['data'] = [];
-
-				$sum = [];
-
-				// any post types?
-				if ( ! empty( $post_types ) ) {
-					// reindex post types
-					$post_types = array_combine( range( 1, count( $post_types ) ), array_values( $post_types ) );
-
-					$post_type_data = [];
-
-					foreach ( $post_types as $id => $post_type ) {
-						$post_type_obj = get_post_type_object( $post_type );
-
-						// unrecognized post type? (mainly from deactivated plugins)
-						if ( empty( $post_type_obj ) )
-							$label = $post_type;
-						else
-							$label = $post_type_obj->labels->name;
-
-						$data['data']['datasets'][$id]['label'] = $label;
-						$data['data']['datasets'][$id]['post_type'] = $post_type;
-						$data['data']['datasets'][$id]['hidden'] = in_array( $post_type, $user_options, true );
-						$data['data']['datasets'][$id]['data'] = [];
-
-						// get month views
-						$post_type_data[$id] = array_values(
-							pvc_get_views(
-								[
-									'fields'		=> 'date=>views',
-									'post_type'		=> $post_type,
-									'views_query'	=> [
-										'year'	=> date( 'Y' ),
-										'month'	=> '',
-										'week'	=> '',
-										'day'	=> ''
-									]
-								]
-							)
-						);
-					}
-
-					foreach ( $post_type_data as $post_type_id => $post_views ) {
-						foreach ( $post_views as $id => $views ) {
-							// generate chart data for specific post types
-							$data['data']['datasets'][$post_type_id]['data'][] = $views;
-
-							if ( ! array_key_exists( $id, $sum ) )
-								$sum[$id] = 0;
-
-							$sum[$id] += $views;
-						}
-					}
-				}
-
-				// this month all days
-				for ( $i = 1; $i <= 12; $i++ ) {
-					// generate chart data
-					$data['data']['labels'][] = $i;
-					$data['data']['dates'][] = date_i18n( 'F Y', strtotime( date( 'Y' ) . '-' . str_pad( $i, 2, '0', STR_PAD_LEFT ) . '-01' ) );
-					$data['data']['datasets'][0]['data'][] = ( array_key_exists( $i - 1, $sum ) ? $sum[$i - 1] : 0 );
-				}
-				break;
-
-			case 'this_month':
-			default:
-				// convert period
-				$time = $this->period2timestamp( $period );
-
-				// get date chunks
-				$date = explode( ' ', date( "m Y t F", $time ) );
-
-				$data = [
-					'months'	=> $this->generate_months( $time ),
-					'design'	=> [
-						'fill'					=> true,
-						'backgroundColor'		=> 'rgba(' . $colors['r'] . ',' . $colors['g'] . ',' . $colors['b'] . ', 0.2)',
-						'borderColor'			=> 'rgba(' . $colors['r'] . ',' . $colors['g'] . ',' . $colors['b'] . ', 1)',
-						'borderWidth'			=> 1.2,
-						'borderDash'			=> [],
-						'pointBorderColor'		=> 'rgba(' . $colors['r'] . ',' . $colors['g'] . ',' . $colors['b'] . ', 1)',
-						'pointBackgroundColor'	=> 'rgba(255, 255, 255, 1)',
-						'pointBorderWidth'		=> 1.2
-					]
-				];
-
-				$data['data']['datasets'][0]['label'] = __( 'Total Views', 'post-views-counter' );
-				$data['data']['datasets'][0]['post_type'] = '_pvc_total_views';
-				$data['data']['datasets'][0]['hidden'] = in_array( '_pvc_total_views', $user_options, true );
-				$data['data']['datasets'][0]['data'] = [];
-
-				$sum = [];
-
-				// any post types?
-				if ( ! empty( $post_types ) ) {
-					// reindex post types
-					$post_types = array_combine( range( 1, count( $post_types ) ), array_values( $post_types ) );
-
-					$post_type_data = [];
-
-					foreach ( $post_types as $id => $post_type ) {
-						$post_type_obj = get_post_type_object( $post_type );
-
-						// unrecognized post type? (mainly from deactivated plugins)
-						if ( empty( $post_type_obj ) )
-							$label = $post_type;
-						else
-							$label = $post_type_obj->labels->name;
-
-						$data['data']['datasets'][$id]['label'] = $label;
-						$data['data']['datasets'][$id]['post_type'] = $post_type;
-						$data['data']['datasets'][$id]['hidden'] = in_array( $post_type, $user_options, true );
-						$data['data']['datasets'][$id]['data'] = [];
-
-						// get month views
-						$post_type_data[$id] = array_values(
-							pvc_get_views(
-								[
-									'fields'		=> 'date=>views',
-									'post_type'		=> $post_type,
-									'views_query'	=> [
-										'year'			=> $date[1],
-										'month'			=> $date[0],
-										'week'			=> '',
-										'day'			=> '',
-										'hide_empty'	=> true
-									]
-								]
-							)
-						);
-					}
-
-					foreach ( $post_type_data as $post_type_id => $post_views ) {
-						foreach ( $post_views as $id => $views ) {
-							// generate chart data for specific post types
-							$data['data']['datasets'][$post_type_id]['data'][] = $views;
-
-							if ( ! array_key_exists( $id, $sum ) )
-								$sum[$id] = 0;
-
-							$sum[$id] += $views;
-						}
-					}
-				}
-
-				// this month all days
-				for ( $i = 1; $i <= $date[2]; $i++ ) {
-					// generate chart data
-					$data['data']['labels'][] = ( $i % 2 === 0 ? '' : $i );
-					$data['data']['dates'][] = date_i18n( get_option( 'date_format' ), strtotime( $date[1] . '-' . $date[0] . '-' . str_pad( $i, 2, '0', STR_PAD_LEFT ) ) );
-					$data['data']['datasets'][0]['data'][] = ( array_key_exists( $i - 1, $sum ) ? $sum[$i - 1] : 0 );
-				}
-				break;
+			}
 		}
 
-		echo wp_json_encode( $data );
+		// this month all days
+		for ( $i = 1; $i <= $dates_number; $i++ ) {
+			// generate chart data
+			$data['data']['labels'][] = ( $i % 2 === 0 ? '' : $i );
+			$data['data']['dates'][] = date_i18n( get_option( 'date_format' ), strtotime( $year . '-' . $month . '-' . str_pad( $i, 2, '0', STR_PAD_LEFT ) ) );
+			$data['data']['datasets'][0]['data'][] = ( array_key_exists( $i - 1, $sum ) ? $sum[$i - 1] : 0 );
+		}
 
+		echo wp_json_encode( apply_filters( 'pvc_dashboard_post_views_data', $data, $args ) );
 		exit;
 	}
 
@@ -486,38 +405,60 @@ class Post_Views_Counter_Dashboard {
 		$pvc = Post_Views_Counter();
 
 		// get post types
-		$post_types = $pvc->options['general']['post_types_count'];
+		$post_types = Post_Views_Counter()->options['general']['post_types_count'];
+		
+		// empty options?
+		if ( empty( $post_types ) || ! is_array( $post_types ) )
+			$post_types = [];
+
+		// sanitize post_types
+		$post_types = map_deep( $post_types, 'sanitize_text_field' );
 
 		// get period
-		$period = isset( $_POST['period'] ) ? preg_replace( '/[^a-z0-9_|]/', '', $_POST['period'] ) : 'this_month';
+		$period = isset( $_POST['period'] ) && ! empty( $_POST['period'] ) ? preg_replace( '/[^a-z0-9_|]/', '', $_POST['period'] ) : apply_filters( 'pvc_dashboard_widget_default_period', 'this_month', 'post-most-viewed' );
+		
+		// parameters to be used in filter
+		$args = [
+			'widget'		=> 'post_most_viewed',
+			'period'		=> $period,
+			'post_types'	=> $post_types
+		];
+
+		$data = [
+			'widget'	=> 'post-most-viewed',
+			'html'		=> ''
+		];
 
 		// convert period
-		$time = $this->period2timestamp( $period );
+		$time = pvc_period2timestamp( $period );
 
 		// get date chunks
-		$date = explode( ' ', date( "m Y t F", $time ) );
+		$date = date( 'Y m W d t', $time );
+		$date_chunks = explode( ' ', $date );
 
-		// get stats
-		$query_args = [
+		// get date
+		$year = (int) $date_chunks[0];
+		$month = sanitize_text_field( $date_chunks[1] );
+		
+		// generate dates
+		$data['dates'] = $this->generate_months( $time );
+
+		// query args
+		$query_args = apply_filters( 'pvc_dashboard_post_most_viewed_query_args', [
 			'post_type'			=> $post_types,
 			'posts_per_page'	=> 10,
 			'paged'				=> false,
 			'suppress_filters'	=> false,
 			'no_found_rows'		=> true,
 			'views_query'		=> [
-				'year'			=> $date[1],
-				'month'			=> $date[0],
+				'year'			=> $year,
+				'month'			=> $month,
 				'hide_empty'	=> true
 			]
-		];
+		], $period );
 
 		$posts = pvc_get_most_viewed_posts( $query_args );
-
-		$data = [
-			'months'	=> $this->generate_months( $time ),
-			'html'		=> ''
-		];
-
+		
 		$html = '
 		<table id="pvc-post-most-viewed-table" class="pvc-table pvc-table-hover">
 			<thead>
@@ -551,14 +492,16 @@ class Post_Views_Counter_Dashboard {
 				if ( $title === '' )
 					$title = __( '(no title)' );
 
+				// post link
+				$link = '<a href="' . esc_url( get_permalink( $post->ID ) ) . '" target="_blank">' . esc_html( $title ) . '</a>';
+
 				// edit post link
 				if ( $post_type_exists && current_user_can( 'edit_post', $post->ID ) ) {
-					$html .= '
-					<td><a href="' . esc_url( get_edit_post_link( $post->ID ) ) . '">' . esc_html( $title ) . '</a></td>';
-				} else {
-					$html .= '
-					<td>' . esc_html( $title ). '</td>';
+					$link .= ' <a href="' . esc_url( get_edit_post_link( $post->ID ) ) . '" class="cn-edit-link" target="_blank">' . esc_html__( 'Edit', 'post-views-counter' ) . '</a>';
 				}
+
+				$html .= '
+					<td>' . $link . '</td>';
 
 				$html .= '
 					<td>' . number_format_i18n( $post->post_views ) . '</td>
@@ -574,11 +517,10 @@ class Post_Views_Counter_Dashboard {
 		$html .= '
 			</tbody>
 		</table>';
-
+		
 		$data['html'] = $html;
 
-		echo wp_json_encode( $data );
-
+		echo wp_json_encode( apply_filters( 'pvc_dashboard_post_most_viewed_data', $data, $args ) );
 		exit;
 	}
 
@@ -588,27 +530,27 @@ class Post_Views_Counter_Dashboard {
 	 * @param int $timestamp
 	 * @return string
 	 */
-	public function generate_months( $timestamp ) {
+	public function generate_months( $timestamp, $item = '' ) {
 		$dates = [
-			explode( ' ', date( "m F Y", strtotime( "-1 months", $timestamp ) ) ),
-			explode( ' ', date( "m F Y", $timestamp ) ),
-			explode( ' ', date( "m F Y", strtotime( "+1 months", $timestamp ) ) )
+			explode( ' ', date( 'm F Y', strtotime( '-1 months', $timestamp ) ) ),
+			explode( ' ', date( 'm F Y', $timestamp ) ),
+			explode( ' ', date( 'm F Y', strtotime( '+1 months', $timestamp ) ) )
 		];
 
-		$current = date( "Ym", current_time( 'timestamp', false ) );
+		$current = date( 'Ym', current_time( 'timestamp', false ) );
 
 		if ( (int) $current <= (int) ( $dates[1][2] . $dates[1][0] ) )
 			$next = '<span class="next">' . $dates[2][1] . ' ' . $dates[2][2] . ' ›</span>';
 		else
-			$next = '<a class="next" href="#" data-date="' . ( $dates[2][0] . '|' . $dates[2][2] ) . '">' . $dates[2][1] . ' ' . $dates[2][2] . ' ›</a>';
+			$next = '<a class="next" href="#" data-date="' . ( $dates[2][2] . $dates[2][0] ) . '">' . $dates[2][1] . ' ' . $dates[2][2] . ' ›</a>';
 
-		$dates = [
-			'prev'		=> '<a class="prev" href="#" data-date="' . ( $dates[0][0] . '|' . $dates[0][2] ) . '">‹ ' . $dates[0][1] . ' ' . $dates[0][2] . '</a>',
+		$dates_formatted = apply_filters( 'pvc_dashboard_widget_generate_months_formatted', [
+			'prev'		=> '<a class="prev" href="#" data-date="' . ( $dates[0][2] . $dates[0][0] ) . '">‹ ' . $dates[0][1] . ' ' . $dates[0][2] . '</a>',
 			'current'	=> '<span class="current">' . $dates[1][1] . ' ' . $dates[1][2] . '</span>',
 			'next'		=> $next
-		];
+		], $timestamp, $item );
 
-		return $dates['prev'] . $dates['current'] . $dates['next'];
+		return wp_kses_post( apply_filters( 'pvc_dashboard_widget_generate_months_html', $dates_formatted['prev'] . $dates_formatted['current'] . $dates_formatted['next'], $timestamp, $item ) );
 	}
 
 	/**
@@ -679,8 +621,11 @@ class Post_Views_Counter_Dashboard {
 
 			// update userdata
 			update_user_meta( $user_id, 'pvc_dashboard', $user_options );
+			
+			echo wp_send_json_success();
 		}
 
+		echo wp_send_json_error();
 		exit;
 	}
 
@@ -691,7 +636,7 @@ class Post_Views_Counter_Dashboard {
 	 * @param string $data_type
 	 * @return array
 	 */
-	public function get_dashboard_user_options( $user_id, $data_type ) {
+	public function get_dashboard_user_options( $user_id = 0, $data_type = '' ) {
 		$user_options = get_user_meta( $user_id, 'pvc_dashboard', true );
 
 		if ( ! is_array( $user_options ) || empty( $user_options ) )
@@ -702,28 +647,16 @@ class Post_Views_Counter_Dashboard {
 
 		return $user_options[$data_type];
 	}
-
+	
 	/**
 	 * Convert period to timestamp.
-	 *
+	 * 
+	 * @deprecated
 	 * @param string $period
 	 * @return int
 	 */
 	public function period2timestamp( $period ) {
-		// whitelisted period?
-		if ( in_array( $period, [ 'this_week', 'this_year', 'this_month' ], true ) ) {
-			$timestamp = current_time( 'timestamp', false );
-		} else {
-			if ( preg_match( '/^([0-9]{2}\|[0-9]{4})$/', $period ) === 1 ) {
-				// month|year
-				$date = explode( '|', $period, 2 );
-
-				// get timestamp
-				$timestamp = strtotime( (string) $date[1] . '-' . (string) $date[0] . '-13' );
-			} else
-				$timestamp = current_time( 'timestamp', false );
-		}
-
-		return $timestamp;
+		return pvc_period2timestamp( $period );
 	}
+
 }
