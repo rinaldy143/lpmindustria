@@ -9,6 +9,7 @@
 composer.lock
 
 /wp-admin/
+wp-config-sample.php
 /wp-content/index.php
 /wp-content/languages
 /wp-content/plugins/index.php
@@ -22,6 +23,13 @@ composer.lock
 /wp-*.php
 /xmlrpc.php
 /wp-content/wflogs/
+/wp-content/plugins/
+/wp-content/themes/
+!/wp-content/themes/colornews/ 
+
+# Ignore WordPress upgrade folders
+wp-content/upgrade/
+wp-content/upgrade-temp-backup/
 
 # Configuration
 wp-config.php
@@ -32,8 +40,11 @@ wp-config.php
 # Example plugin
 /wp-content/plugins/hello.php
 
-# Uploads
+# Uploads and backups
 /wp-content/uploads/
+*.sql
+/wp-content/cache/
+wp-content/backup-*/
 
 # Log files
 *.log
@@ -45,7 +56,7 @@ wp-config.php
 #
 # Note: If you wish to whitelist plugins,
 # uncomment the next line
-/wp-content/plugins
+#/wp-content/plugins
 
 # All themes
 #

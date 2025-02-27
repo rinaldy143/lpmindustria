@@ -1,14 +1,14 @@
-# <!=Copyright (C) 2024 ThemeGrill
+# <!=Copyright (C) 2025 ThemeGrill
 # This file is distributed under the GNU General Public License, version 3 (GPLv3).=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: ColorMag 4.0.9\n"
+"Project-Id-Version: ColorMag 4.0.10\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2024-12-23 04:34:47+00:00\n"
+"POT-Creation-Date: 2025-01-06 06:50:28+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2024-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2025-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "X-Generator: grunt-wp-i18n 1.0.3\n"
@@ -676,7 +676,7 @@ msgstr ""
 
 #: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:230
 #: inc/customizer/options/content/post-meta.php:19
-#: inc/customizer/options/content/single-post.php:80
+#: inc/customizer/options/content/single-post.php:131
 msgid "Categories"
 msgstr ""
 
@@ -786,7 +786,7 @@ msgstr ""
 #: inc/customizer/options/content/blog.php:139
 #: inc/customizer/options/content/page.php:14
 #: inc/customizer/options/content/single-post.php:43
-#: inc/customizer/options/content/single-post.php:69
+#: inc/customizer/options/content/single-post.php:120
 #: inc/customizer/options/global/builder.php:13
 #: inc/customizer/options/header-and-navigation/breadcrumb.php:19
 #: inc/customizer/options/header-and-navigation/header-action.php:52
@@ -856,7 +856,7 @@ msgstr ""
 #: inc/customizer/options/content/blog.php:163
 #: inc/customizer/options/content/page.php:25
 #: inc/customizer/options/content/post-meta.php:40
-#: inc/customizer/options/content/single-post.php:93
+#: inc/customizer/options/content/single-post.php:144
 #: inc/customizer/options/footer/footer-bar.php:123
 #: inc/customizer/options/footer/footer-column.php:191
 #: inc/customizer/options/front-page/front-page.php:24
@@ -880,7 +880,7 @@ msgstr ""
 #: inc/customizer/options/content/blog.php:164
 #: inc/customizer/options/content/page.php:26
 #: inc/customizer/options/content/post-meta.php:41
-#: inc/customizer/options/content/single-post.php:94
+#: inc/customizer/options/content/single-post.php:145
 #: inc/customizer/options/footer/footer-bar.php:124
 #: inc/customizer/options/footer/footer-column.php:192
 #: inc/customizer/options/front-page/front-page.php:25
@@ -943,6 +943,7 @@ msgid "Post title"
 msgstr ""
 
 #: inc/customizer/options/content/blog.php:81
+#: inc/customizer/options/content/single-post.php:104
 #: inc/customizer/options/footer-builder/copyright.php:97
 #: inc/customizer/options/footer-builder/footer-menu.php:80
 #: inc/customizer/options/header-and-navigation/primary-menu.php:115
@@ -1032,7 +1033,7 @@ msgid "Comments"
 msgstr ""
 
 #: inc/customizer/options/content/post-meta.php:24
-#: inc/customizer/options/content/single-post.php:81
+#: inc/customizer/options/content/single-post.php:132
 msgid "Tags"
 msgstr ""
 
@@ -1049,10 +1050,14 @@ msgid "LightBox"
 msgstr ""
 
 #: inc/customizer/options/content/single-post.php:63
+msgid "Post Title"
+msgstr ""
+
+#: inc/customizer/options/content/single-post.php:114
 msgid "Related Posts"
 msgstr ""
 
-#: inc/customizer/options/content/single-post.php:77
+#: inc/customizer/options/content/single-post.php:128
 msgid "Query"
 msgstr ""
 

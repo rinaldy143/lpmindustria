@@ -5,7 +5,7 @@ License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Tags: SEO, XML sitemap, Content analysis, Readability, Schema
 Tested up to: 6.7
-Stable tag: 24.1
+Stable tag: 24.5
 Requires PHP: 7.2.5
 
 Improve your WordPress SEO: Write better content and have a fully optimized WordPress site using the Yoast SEO plugin.
@@ -274,48 +274,37 @@ Your question has most likely been answered on our help center: [yoast.com/help/
 
 == Changelog ==
 
-= 24.1 =
+= 24.5 =
 
-Release date: 2024-12-18
+Release date: 2025-02-18
 
-Yoast SEO 24.1 adds the Yoast SEO Dashboard to monitor your site's SEO performance in one overview. Find more about Yoast SEO 24.1 in [our release post](https://yoa.st/release-18-12-24)!
-
-#### Enhancements
-
-* Introduces the Yoast Dashboard, a place where site administrators can check the SEO and Readability performance of the site's posts.
-* Adds `Not analyzed` as an option in the readability filter in the posts page.
-* Enhances the existing `Needs improvement` option in the readability filter in the posts page, to include posts that don't have enough content as well.
-
-#### Bugfixes
-
-* Fixes a bug where posts that have been set to explicitly not be noindexed and had no keyword set would not appear in the relevant SEO filter in the posts page.
-
-#### Other
-
-* Improves the translatability of feedback for the _paragraph length_ and the _sentence length_ assessments.
-
-= 24.0 =
-
-Release date: 2024-12-03
-
-Yoast SEO 24.0 brings more enhancements and bugfixes. [Find more information about our software releases and updates here](https://yoa.st/release-3-12-24).
+Yoast SEO 24.5 brings more enhancements and bugfixes. [Find more information about our software releases and updates here](https://yoa.st/releases).
 
 #### Enhancements
 
-* Allows to set OpenGraph image HTML metadata `width`, `height`, and `type` to `null` in order not to show them. Props to [GiovanniMounir](https://github.com/GiovanniMounir).
-* Improves the _transition words_ assessment for Portuguese and English by updating the relevant lists of transition words. Props to [BrunoAseff](https://github.com/BrunoAseff).
-* Introduces an error message in the Yoast _General_ page in case of JavaScript errors.
-* Updates the design and translations of the country selector in the modal for related keyphrase suggestions.
+* Issues a warning message when the image automatically selected for a post social preview is in the unsupported AVIF format.
 
 #### Bugfixes
 
-* Fixes a bug where the first step in the _First time configuration_ would not be considered finished unless the _Site representation_ step would be finished as well.
-* Fixes a bug where the settings for a post type are inaccessible when the permalink structure includes special characters that require encoding, e.g., when WooCommerce products are set to use the \"Shop base with category\" permalink structure.
-* Fixes a bug where the Yoast _General_ page would not reflect the active menu item properly if using a fallback.
+* Fixes a bug where the canonical presenter would throw a deprecation notice when the environments run PHP >= 8.1. Props to [aanduque](https://github.com/aanduque).
 
 #### Other
 
-* Improves the documentation for `wpseo_enable_tracking` filter. Props to [kkmuffme](https://github.com/kkmuffme).
+* Simplifies calculating the `date` replacement variable before displaying it in the frontend. Props to [apermo](https://github.com/apermo).
+* Updates the Yoast WooCommerce SEO integration cards with the latest Woo logo.
+
+= 24.4 =
+
+Release date: 2025-02-04
+
+Yoast SEO 24.4 brings more enhancements and bugfixes. [Find more information about our software releases and updates here](https://yoa.st/releases).
+
+#### Bugfixes
+
+* Fixes a bug where editing a link in the block editor would have unexpected consequences when using undo.
+* Fixes a bug where the `article:modified_time` meta tag would show an earlier time than the `article:published_time` meta tag for scheduled posts.
+* Fixes a bug where the Schema type of the product would not be locked when Yoast WooCommerce SEO is enabled.
+* Fixes a bug where using hyphens at the start or end of a sentence would cripple the content analysis when editing a post.
 
 = Earlier versions =
 For the changelog of earlier versions, please refer to [the changelog on yoast.com](https://yoa.st/yoast-seo-changelog).
