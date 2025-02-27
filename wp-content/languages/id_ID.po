@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 6.7.x - Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-12-23 14:09:04+0000\n"
+"PO-Revision-Date: 2025-01-31 11:29:26+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -49,10 +49,10 @@ msgstr "off"
 #. 'characters_including_spaces'. Otherwise, enter 'words'. Do not translate
 #. into your own language.
 #: wp-includes/class-wp-locale.php:429
-#: wp-includes/js/dist/block-library.js:42728
-#: wp-includes/js/dist/block-library.js:44876
-#: wp-includes/js/dist/editor.js:21653 wp-includes/js/dist/editor.js:21697
-#: wp-includes/js/dist/editor.js:28185
+#: wp-includes/js/dist/block-library.js:42729
+#: wp-includes/js/dist/block-library.js:44877
+#: wp-includes/js/dist/editor.js:21685 wp-includes/js/dist/editor.js:21729
+#: wp-includes/js/dist/editor.js:28217
 #, gp-priority: high
 msgctxt "Word count type. Do not translate!"
 msgid "words"
@@ -205,86 +205,116 @@ msgid "Sunday"
 msgstr "Minggu"
 
 #. translators: Month name.
-#: wp-includes/class-wp-locale.php:186 wp-includes/js/dist/components.js:54853
+#: wp-includes/class-wp-locale.php:186 wp-includes/js/dist/components.js:54882
 #, gp-priority: high
 msgid "December"
 msgstr "Desember"
 
 #. translators: Month name.
-#: wp-includes/class-wp-locale.php:185 wp-includes/js/dist/components.js:54850
+#: wp-includes/class-wp-locale.php:185 wp-includes/js/dist/components.js:54879
 #, gp-priority: high
 msgid "November"
 msgstr "November"
 
 #. translators: Month name.
-#: wp-includes/class-wp-locale.php:184 wp-includes/js/dist/components.js:54847
+#: wp-includes/class-wp-locale.php:184 wp-includes/js/dist/components.js:54876
 #, gp-priority: high
 msgid "October"
 msgstr "Oktober"
 
 #. translators: Month name.
-#: wp-includes/class-wp-locale.php:183 wp-includes/js/dist/components.js:54844
+#: wp-includes/class-wp-locale.php:183 wp-includes/js/dist/components.js:54873
 #, gp-priority: high
 msgid "September"
 msgstr "September"
 
 #. translators: Month name.
-#: wp-includes/class-wp-locale.php:182 wp-includes/js/dist/components.js:54841
+#: wp-includes/class-wp-locale.php:182 wp-includes/js/dist/components.js:54870
 #, gp-priority: high
 msgid "August"
 msgstr "Agustus"
 
 #. translators: Month name.
-#: wp-includes/class-wp-locale.php:181 wp-includes/js/dist/components.js:54838
+#: wp-includes/class-wp-locale.php:181 wp-includes/js/dist/components.js:54867
 #, gp-priority: high
 msgid "July"
 msgstr "Juli"
 
 #. translators: Month name.
-#: wp-includes/class-wp-locale.php:180 wp-includes/js/dist/components.js:54835
+#: wp-includes/class-wp-locale.php:180 wp-includes/js/dist/components.js:54864
 #, gp-priority: high
 msgid "June"
 msgstr "Juni"
 
 #. translators: Month name.
-#: wp-includes/class-wp-locale.php:179 wp-includes/js/dist/components.js:54832
+#: wp-includes/class-wp-locale.php:179 wp-includes/js/dist/components.js:54861
 #, gp-priority: high
 msgid "May"
 msgstr "Mei"
 
 #. translators: Month name.
-#: wp-includes/class-wp-locale.php:178 wp-includes/js/dist/components.js:54829
+#: wp-includes/class-wp-locale.php:178 wp-includes/js/dist/components.js:54858
 #, gp-priority: high
 msgid "April"
 msgstr "April"
 
 #. translators: Month name.
-#: wp-includes/class-wp-locale.php:177 wp-includes/js/dist/components.js:54826
+#: wp-includes/class-wp-locale.php:177 wp-includes/js/dist/components.js:54855
 #, gp-priority: high
 msgid "March"
 msgstr "Maret"
 
 #. translators: Month name.
-#: wp-includes/class-wp-locale.php:176 wp-includes/js/dist/components.js:54823
+#: wp-includes/class-wp-locale.php:176 wp-includes/js/dist/components.js:54852
 #, gp-priority: high
 msgid "February"
 msgstr "Februari"
 
 #. translators: Month name.
-#: wp-includes/class-wp-locale.php:175 wp-includes/js/dist/components.js:54820
+#: wp-includes/class-wp-locale.php:175 wp-includes/js/dist/components.js:54849
 #, gp-priority: high
 msgid "January"
 msgstr "Januari"
 
 #: wp-includes/category-template.php:162
-#: wp-includes/js/dist/block-editor.js:46173
-#: wp-includes/js/dist/block-editor.js:46178
-#: wp-includes/js/dist/block-editor.js:47307
-#: wp-includes/js/dist/edit-site.js:35339 wp-includes/js/dist/editor.js:29667
+#: wp-includes/js/dist/block-editor.js:46294
+#: wp-includes/js/dist/block-editor.js:46299
+#: wp-includes/js/dist/block-editor.js:47428
+#: wp-includes/js/dist/edit-site.js:35342 wp-includes/js/dist/editor.js:29699
 #: wp-admin/includes/upgrade.php:173
 #, gp-priority: high
 msgid "Uncategorized"
 msgstr "Tak Berkategori"
+
+#. translators: %s: list of allowed collection roots
+#: wp-includes/class-wp-block-metadata-registry.php:127
+msgid "Block metadata collections cannot be registered as one of the following directories or their parent directories: %s"
+msgstr "Koleksi metadata blok tidak dapat didaftarkan sebagai salah satu direktori berikut atau direktori induknya: %s"
+
+#: wp-includes/theme.json
+msgctxt "Shadow name"
+msgid "Crisp"
+msgstr "Crisp"
+
+#: wp-includes/theme.json
+msgctxt "Shadow name"
+msgid "Outlined"
+msgstr "Bergaris tepi"
+
+#: wp-includes/theme.json
+msgctxt "Shadow name"
+msgid "Sharp"
+msgstr "Tajam"
+
+#: wp-includes/theme.json
+msgctxt "Shadow name"
+msgid "Deep"
+msgstr "Dalam"
+
+#: wp-includes/theme.json
+msgctxt "Shadow name"
+msgid "Natural"
+msgstr "Alami"
 
 #: wp-includes/theme.json
 msgctxt "Aspect ratio name"
@@ -295,6 +325,11 @@ msgstr "Tinggi - 9:16"
 msgctxt "Aspect ratio name"
 msgid "Wide - 16:9"
 msgstr "Lebar - 16:9"
+
+#: wp-includes/theme.json
+msgctxt "Aspect ratio name"
+msgid "Classic Portrait - 2:3"
+msgstr "Potret Klasik - 2:3"
 
 #: wp-includes/theme.json
 msgctxt "Aspect ratio name"
@@ -433,14 +468,9 @@ msgstr "Nama template tidak boleh mengandung huruf kapital."
 msgid "Template names must be strings."
 msgstr "Nama template harus berupa string."
 
-#: wp-includes/class-wp-block-metadata-registry.php:125
+#: wp-includes/class-wp-block-metadata-registry.php:138
 msgid "The specified manifest file does not exist."
 msgstr "Berkas manifest yang diberikan tidak ditemukan."
-
-#: wp-includes/class-wp-block-metadata-registry.php:107
-#: wp-includes/class-wp-block-metadata-registry.php:116
-msgid "Block metadata collections can only be registered for a specific plugin. The provided path is neither a core path nor a valid plugin path."
-msgstr "Koleksi metadata blok hanya dapat didaftarkan untuk plugin tertentu. Jalur yang disediakan bukanlah jalur core atau jalur plugin yang valid."
 
 #: wp-includes/blocks/widget-group/block.json
 msgctxt "block title"
@@ -454,12 +484,12 @@ msgid "Disable"
 msgstr "Nonaktifkan"
 
 #. translators: Hidden accessibility text.
-#: wp-includes/js/dist/editor.js:14496 wp-includes/js/dist/editor.js:28674
+#: wp-includes/js/dist/editor.js:14524 wp-includes/js/dist/editor.js:28706
 #: wp-admin/edit-form-comment.php:133
 msgid "Comment status"
 msgstr "Status komentar"
 
-#: wp-includes/js/dist/editor.js:8206
+#: wp-includes/js/dist/editor.js:8234
 #: wp-admin/includes/edit-tag-messages.php:19
 msgid "Items deleted."
 msgstr "Item dihapus."
@@ -660,7 +690,7 @@ msgid "Edit %1$s (%2$s, %3$d of %4$d)"
 msgstr "Edit %1$s (%2$s, %3$d dari %4$d)"
 
 #: wp-includes/class-wp-customize-manager.php:5711
-#: wp-includes/js/dist/edit-site.js:22667
+#: wp-includes/js/dist/edit-site.js:22670
 msgid "https://developer.wordpress.org/advanced-administration/wordpress/css/"
 msgstr "https://developer.wordpress.org/advanced-administration/wordpress/css/"
 
@@ -1320,7 +1350,7 @@ msgctxt "block keyword"
 msgid "accordion"
 msgstr "akordeon"
 
-#: wp-includes/js/dist/editor.js:7634 wp-includes/js/dist/fields.js:1908
+#: wp-includes/js/dist/editor.js:7660 wp-includes/js/dist/fields.js:1932
 #: wp-admin/includes/class-wp-posts-list-table.php:1567
 msgid "Export as JSON"
 msgstr "Ekspor sebagai JSON"
@@ -1610,24 +1640,24 @@ msgid "Maximum posts per page"
 msgstr "Jumlah pos maksimal per halaman"
 
 #. translators: Hidden accessibility text.
-#: wp-includes/js/dist/block-editor.js:46399
-#: wp-includes/js/dist/edit-site.js:23195
+#: wp-includes/js/dist/block-editor.js:46520
+#: wp-includes/js/dist/edit-site.js:23198
 #: wp-admin/includes/class-wp-list-table.php:1157
 msgid "Last page"
 msgstr "Halaman terakhir"
 
 #. translators: 1: Current page number. 2: Total number of pages.
 #. translators: 1: Current page, 2: Total pages.
-#: wp-includes/js/dist/block-editor.js:46378
-#: wp-includes/js/dist/edit-site.js:23178
+#: wp-includes/js/dist/block-editor.js:46499
+#: wp-includes/js/dist/edit-site.js:23181
 #: wp-admin/includes/class-wp-list-table.php:1127
 msgctxt "paging"
 msgid "%1$s of %2$s"
 msgstr "%1$s dari %2$s"
 
 #. translators: Hidden accessibility text.
-#: wp-includes/js/dist/block-editor.js:46356
-#: wp-includes/js/dist/edit-site.js:23162
+#: wp-includes/js/dist/block-editor.js:46477
+#: wp-includes/js/dist/edit-site.js:23165
 #: wp-admin/includes/class-wp-list-table.php:1081
 msgid "First page"
 msgstr "Halaman pertama"
@@ -1638,21 +1668,21 @@ msgstr "Halaman pertama"
 msgid "Continue"
 msgstr "Lanjutkan"
 
-#: wp-includes/js/dist/block-library.js:39485
-#: wp-includes/js/dist/editor.js:12355 wp-includes/js/dist/editor.js:12413
-#: wp-includes/js/dist/editor.js:12432
+#: wp-includes/js/dist/block-library.js:39486
+#: wp-includes/js/dist/editor.js:12383 wp-includes/js/dist/editor.js:12441
+#: wp-includes/js/dist/editor.js:12460
 #: wp-admin/includes/class-wp-posts-list-table.php:1832
 #: wp-admin/includes/meta-boxes.php:1029
 msgid "Parent"
 msgstr "Induk"
 
-#: wp-includes/js/dist/edit-site.js:38976 wp-admin/includes/dashboard.php:2118
+#: wp-includes/js/dist/edit-site.js:39004 wp-admin/includes/dashboard.php:2118
 msgid "Edit styles"
 msgstr "Edit gaya"
 
 #: wp-includes/blocks/footnotes.php:123
-#: wp-includes/js/dist/block-library.js:63961
-#: wp-includes/js/dist/block-library.js:63973
+#: wp-includes/js/dist/block-library.js:63989
+#: wp-includes/js/dist/block-library.js:64001
 msgid "Footnotes"
 msgstr "Catatan kaki"
 
@@ -2033,13 +2063,13 @@ msgstr "Isi Daftar Laman"
 msgid "Style Variations"
 msgstr "Variasi Style"
 
-#: wp-includes/js/dist/block-editor.js:34336
-#: wp-includes/js/dist/block-editor.js:69409 wp-admin/widgets-form.php:300
+#: wp-includes/js/dist/block-editor.js:34341
+#: wp-includes/js/dist/block-editor.js:69556 wp-admin/widgets-form.php:300
 msgid "Position"
 msgstr "Posisi"
 
-#: wp-includes/js/dist/block-editor.js:34010
-#: wp-includes/js/dist/editor.js:19665
+#: wp-includes/js/dist/block-editor.js:34015
+#: wp-includes/js/dist/editor.js:19695
 #: wp-admin/includes/class-wp-posts-list-table.php:2005
 #: wp-admin/includes/class-wp-posts-list-table.php:2008
 msgid "Sticky"
@@ -2291,11 +2321,11 @@ msgstr "Laman Selanjutnya Komentar"
 
 #. translators: %s: Post type name.
 #. translators: %s: Name of the post type e.g: "Post".
-#: wp-includes/post.php:2104 wp-includes/js/dist/edit-site.js:36625
+#: wp-includes/post.php:2104 wp-includes/js/dist/edit-site.js:36629
 msgid "Single item: %s"
 msgstr "Item tunggal: %s"
 
-#: wp-includes/js/dist/editor.js:12769 wp-admin/edit-form-blocks.php:167
+#: wp-includes/js/dist/editor.js:12797 wp-admin/edit-form-blocks.php:167
 #: wp-admin/includes/class-wp-posts-list-table.php:1888
 #: wp-admin/includes/meta-boxes.php:1063
 msgid "Default template"
@@ -2303,7 +2333,7 @@ msgstr "Template standar"
 
 #. translators: %s: Number of comments
 #. translators: %s: Number of comments.
-#: wp-includes/js/dist/block-library.js:41940
+#: wp-includes/js/dist/block-library.js:41941
 #: wp-admin/includes/class-wp-list-table.php:855
 msgid "%s comment"
 msgid_plural "%s comments"
@@ -2753,7 +2783,7 @@ msgstr "Avatar Standar"
 
 #: wp-includes/media-template.php:847 wp-includes/media-template.php:1103
 #: wp-includes/media-template.php:1167
-#: wp-includes/js/dist/block-editor.js:20892
+#: wp-includes/js/dist/block-editor.js:20896
 msgctxt "Alignment option"
 msgid "None"
 msgstr "Tidak ada"
@@ -3156,13 +3186,13 @@ msgstr "Tampilkan konten dalam multi-kolom, dengan blok yang dapat ditambahkan p
 
 #: wp-includes/media-template.php:1363 wp-includes/media-template.php:1462
 #: wp-includes/js/dist/block-library.js:3425
-#: wp-includes/js/dist/block-library.js:63005
+#: wp-includes/js/dist/block-library.js:63033
 msgctxt "Preload value"
 msgid "None"
 msgstr "Tidak ada"
 
 #. translators: Hidden accessibility text.
-#: wp-includes/js/dist/block-library.js:41937
+#: wp-includes/js/dist/block-library.js:41938
 #: wp-admin/includes/class-wp-list-table.php:876
 #: wp-admin/includes/class-wp-list-table.php:919
 #: wp-admin/includes/class-wp-list-table.php:952
@@ -3679,7 +3709,7 @@ msgstr "Komponen Template Induk:"
 msgid "Search Template Parts"
 msgstr "Cari Komponen Template"
 
-#: wp-includes/post.php:423 wp-includes/js/dist/editor.js:11381
+#: wp-includes/post.php:423 wp-includes/js/dist/editor.js:11409
 msgid "Template Parts"
 msgstr "Komponen Template"
 
@@ -3748,7 +3778,7 @@ msgstr "Berkas %s tidak tersedia!"
 
 #: wp-includes/functions.php:2894
 #: wp-includes/rest-api/endpoints/class-wp-rest-font-faces-controller.php:896
-#: wp-includes/script-loader.php:986 wp-includes/js/dist/edit-site.js:19140
+#: wp-includes/script-loader.php:986 wp-includes/js/dist/edit-site.js:19143
 #: wp-admin/includes/file.php:965
 msgid "Sorry, you are not allowed to upload this file type."
 msgstr "Maaf, Anda tidak diizinkan untuk mengunggah tipe berkas ini."
@@ -3779,7 +3809,7 @@ msgstr "Nama style blok tidak boleh mengandung spasi."
 
 #. translators: %s: Template part slug.
 #: wp-includes/blocks/template-part.php:120
-#: wp-includes/js/dist/block-library.js:61779
+#: wp-includes/js/dist/block-library.js:61807
 msgid "Template part has been deleted or is unavailable: %s"
 msgstr "Komponen template telah dihapus atau tidak tersedia: %s"
 
@@ -4062,17 +4092,17 @@ msgid "Small"
 msgstr "Kecil"
 
 #: wp-includes/blocks/query-pagination-previous.php:26
-#: wp-includes/js/dist/block-library.js:49958
+#: wp-includes/js/dist/block-library.js:49962
 msgid "Previous Page"
 msgstr "Laman Sebelumnya"
 
 #: wp-includes/blocks/query-pagination-next.php:29
-#: wp-includes/js/dist/block-library.js:49697
+#: wp-includes/js/dist/block-library.js:49701
 msgid "Next Page"
 msgstr "Laman Berikutnya"
 
-#: wp-includes/js/dist/block-library.js:48000
-#: wp-includes/js/dist/block-library.js:48005
+#: wp-includes/js/dist/block-library.js:48004
+#: wp-includes/js/dist/block-library.js:48009
 #: wp-admin/includes/plugin-install.php:328
 #: wp-admin/includes/theme-install.php:108
 msgid "Keyword"
@@ -4746,8 +4776,8 @@ msgstr "Laman di depan"
 msgid "Show on front"
 msgstr "Tampilkan di depan"
 
-#: wp-includes/post.php:299 wp-includes/js/dist/block-editor.js:54937
-#: wp-includes/js/dist/block-editor.js:63039
+#: wp-includes/post.php:299 wp-includes/js/dist/block-editor.js:55056
+#: wp-includes/js/dist/block-editor.js:63159
 msgid "Patterns list"
 msgstr "Daftar pola"
 
@@ -4778,15 +4808,15 @@ msgstr "Daftar pola"
 msgid "Select %s"
 msgstr "Pilih %s"
 
-#: wp-includes/js/dist/block-editor.js:39569
-#: wp-includes/js/dist/block-library.js:40404 wp-admin/edit-form-blocks.php:220
+#: wp-includes/js/dist/block-editor.js:39574
+#: wp-includes/js/dist/block-library.js:40405 wp-admin/edit-form-blocks.php:220
 msgid "Type / to choose a block"
 msgstr "Ketik / untuk memilih sebuah blok"
 
-#: wp-includes/js/dist/block-editor.js:35975
+#: wp-includes/js/dist/block-editor.js:35980
 #: wp-includes/js/dist/edit-site.js:11296
-#: wp-includes/js/dist/edit-site.js:21892
-#: wp-includes/js/dist/edit-site.js:32850
+#: wp-includes/js/dist/edit-site.js:21895
+#: wp-includes/js/dist/edit-site.js:32853
 #: wp-admin/includes/class-wp-screen.php:1209 wp-admin/includes/theme.php:351
 #: wp-admin/includes/theme.php:387 wp-admin/index.php:70
 msgid "Layout"
@@ -5343,12 +5373,12 @@ msgstr "Templat Baru"
 msgid "Add New Template"
 msgstr "Tambahkan Template Baru"
 
-#: wp-includes/post.php:358 wp-includes/js/dist/block-library.js:61691
+#: wp-includes/post.php:358 wp-includes/js/dist/block-library.js:61719
 #: wp-includes/js/dist/core-commands.js:620
-#: wp-includes/js/dist/edit-site.js:38422
-#: wp-includes/js/dist/edit-site.js:39071
-#: wp-includes/js/dist/edit-site.js:40171 wp-includes/js/dist/editor.js:13782
-#: wp-includes/js/dist/editor.js:28888
+#: wp-includes/js/dist/edit-site.js:38450
+#: wp-includes/js/dist/edit-site.js:39099
+#: wp-includes/js/dist/edit-site.js:40199 wp-includes/js/dist/editor.js:13810
+#: wp-includes/js/dist/editor.js:28920
 msgid "Templates"
 msgstr "Template"
 
@@ -5469,7 +5499,7 @@ msgstr[1] "%s pembaruan teresedia"
 
 #: wp-includes/blocks/latest-posts.php:169
 #: wp-includes/blocks/latest-posts.php:184
-#: wp-includes/js/dist/block-library.js:42107
+#: wp-includes/js/dist/block-library.js:42108
 msgid "This content is password protected."
 msgstr "Konten ini terkunci dengan kata sandi"
 
@@ -5952,10 +5982,10 @@ msgstr "&larr; Pergi ke Tag"
 msgid "&#8592; Go to library"
 msgstr "&#8592; Pergi ke pustaka"
 
-#: wp-includes/js/dist/block-editor.js:28248
-#: wp-includes/js/dist/block-editor.js:29070
-#: wp-includes/js/dist/edit-site.js:33200 wp-includes/js/dist/editor.js:29824
-#: wp-includes/js/dist/editor.js:29826 wp-admin/menu.php:189
+#: wp-includes/js/dist/block-editor.js:28253
+#: wp-includes/js/dist/block-editor.js:29075
+#: wp-includes/js/dist/edit-site.js:33203 wp-includes/js/dist/editor.js:29856
+#: wp-includes/js/dist/editor.js:29858 wp-admin/menu.php:189
 msgid "Appearance"
 msgstr "Tampilan"
 
@@ -6338,7 +6368,7 @@ msgstr "Maaf, Anda tidak diizinkan untuk mengaktifkan plugin ini."
 msgid "by %s"
 msgstr "oleh %s"
 
-#: wp-includes/js/dist/core-data.js:2931
+#: wp-includes/js/dist/core-data.js:2955
 #: wp-admin/includes/ajax-actions.php:1579
 msgid "Menu Item"
 msgstr "Bagian Menu"
@@ -6347,14 +6377,14 @@ msgstr "Bagian Menu"
 #: wp-includes/js/dist/block-library.js:8868
 #: wp-includes/js/dist/block-library.js:18760
 #: wp-includes/js/dist/block-library.js:18929
-#: wp-includes/js/dist/core-data.js:2913 wp-admin/edit-form-comment.php:84
+#: wp-includes/js/dist/core-data.js:2937 wp-admin/edit-form-comment.php:84
 #: wp-admin/includes/template.php:471
 msgid "Comment"
 msgstr "Komentar"
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1465
 #: wp-includes/js/dist/block-library.js:26332
-#: wp-includes/js/dist/block-library.js:53654
+#: wp-includes/js/dist/block-library.js:53658
 #: wp-admin/includes/image-edit.php:63
 msgid "Crop"
 msgstr "Potong"
@@ -7218,8 +7248,8 @@ msgstr "Pendaftaran selesai. Silakan periksa e-mail Anda, kemudian kunjungi <a h
 msgid "Check your email for the confirmation link, then visit the <a href=\"%s\">login page</a>."
 msgstr "Periksa e-mail Anda untuk tautan konfirmasi, lalu kunjungi <a href=\"%s\">laman masuk</a>."
 
-#: wp-includes/comment-template.php:664 wp-includes/js/dist/editor.js:16593
-#: wp-includes/js/dist/editor.js:19878 wp-admin/includes/meta-boxes.php:183
+#: wp-includes/comment-template.php:664 wp-includes/js/dist/editor.js:16621
+#: wp-includes/js/dist/editor.js:19908 wp-admin/includes/meta-boxes.php:183
 #: wp-admin/includes/meta-boxes.php:217
 msgid "Password protected"
 msgstr "Diproteksi kata sandi"
@@ -7246,22 +7276,22 @@ msgctxt "block keyword"
 msgid "links"
 msgstr "tautan"
 
-#: wp-includes/media.php:5028 wp-includes/js/dist/block-library.js:63583
+#: wp-includes/media.php:5028 wp-includes/js/dist/block-library.js:63611
 msgid "Select poster image"
 msgstr "PIlih gambar poster"
 
 #. Author of the plugin
-#: wp-includes/js/dist/block-library.js:46487 hello.php
+#: wp-includes/js/dist/block-library.js:46488 hello.php
 msgid "Matt Mullenweg"
 msgstr "Matt Mullenweg"
 
-#: wp-includes/js/dist/editor.js:25970 wp-admin/edit-form-advanced.php:145
+#: wp-includes/js/dist/editor.js:26002 wp-admin/edit-form-advanced.php:145
 msgid "View post"
 msgstr "Lihat artikel"
 
 #. translators: Hidden accessibility text.
-#: wp-includes/js/dist/editor.js:20240 wp-admin/edit-tag-form.php:155
-#: wp-admin/edit-tags.php:466
+#: wp-includes/js/dist/editor.js:20270 wp-admin/edit-tag-form.php:155
+#: wp-admin/edit-tags.php:469
 #: wp-admin/includes/class-wp-posts-list-table.php:1702
 #: wp-admin/includes/class-wp-terms-list-table.php:194
 #: wp-admin/includes/class-wp-terms-list-table.php:221
@@ -7272,8 +7302,8 @@ msgstr "Slug"
 
 #. translators: %s: Digit to indicate multiple of sizing, eg. 2X-Small.
 #: wp-includes/class-wp-theme-json.php:4139
-#: wp-includes/js/dist/block-library.js:56248
-#: wp-includes/js/dist/components.js:57156
+#: wp-includes/js/dist/block-library.js:56252
+#: wp-includes/js/dist/components.js:57186
 msgid "Small"
 msgstr "Kecil"
 
@@ -7506,23 +7536,23 @@ msgid "Filter media"
 msgstr "Saring media"
 
 #. translators: Hidden accessibility text.
-#: wp-includes/media-template.php:335 wp-includes/js/dist/block-editor.js:62942
+#: wp-includes/media-template.php:335 wp-includes/js/dist/block-editor.js:63062
 #: wp-admin/includes/class-wp-media-list-table.php:44
 msgid "Grid view"
 msgstr "Tampilan kisi"
 
 #. translators: Hidden accessibility text.
-#: wp-includes/media-template.php:327 wp-includes/js/dist/block-editor.js:62379
-#: wp-includes/js/dist/block-editor.js:62413
+#: wp-includes/media-template.php:327 wp-includes/js/dist/block-editor.js:62499
+#: wp-includes/js/dist/block-editor.js:62533
 #: wp-admin/includes/class-wp-media-list-table.php:43
 msgid "List view"
 msgstr "Tampilan daftar"
 
-#: wp-includes/js/dist/editor.js:11843 wp-admin/includes/template.php:2707
+#: wp-includes/js/dist/editor.js:11871 wp-admin/includes/template.php:2707
 msgid "Restore the backup"
 msgstr "Kembalikan cadangan"
 
-#: wp-includes/js/dist/editor.js:11840 wp-admin/includes/template.php:2706
+#: wp-includes/js/dist/editor.js:11868 wp-admin/includes/template.php:2706
 msgid "The backup of this post in your browser is different from the version below."
 msgstr "Cadangan pos ini di peramban Anda berbeda dengan versi dibawah ini."
 
@@ -7801,7 +7831,7 @@ msgid "Caption&hellip;"
 msgstr "Penjelas&hellip;"
 
 #. translators: Hidden accessibility text.
-#: wp-includes/media-template.php:442 wp-includes/js/dist/editor.js:21872
+#: wp-includes/media-template.php:442 wp-includes/js/dist/editor.js:21904
 #: wp-admin/import.php:211
 #: wp-admin/includes/class-wp-theme-install-list-table.php:383
 #: wp-admin/includes/class-wp-themes-list-table.php:273
@@ -8131,7 +8161,7 @@ msgstr "Gambar-gambar baru telah ditambahkan ke galeri ini: %s"
 #. Translators: %s: The selected image filename.
 #: wp-includes/widgets/class-wp-widget-media-gallery.php:204
 #: wp-includes/widgets/class-wp-widget-media-image.php:392
-#: wp-includes/js/dist/editor.js:15249
+#: wp-includes/js/dist/editor.js:15277
 msgid "The current image has no alternative text. The file name is: %s"
 msgstr "Gambar saat ini tidak memiliki teks alternatif (alt). Nama berkas: %s"
 
@@ -8298,8 +8328,8 @@ msgstr[1] "%s detik"
 #. translators: %s: Time duration in minute or minutes.
 #. translators: %s: the number of minutes to read the post.
 #: wp-includes/formatting.php:3873 wp-includes/functions.php:557
-#: wp-includes/js/dist/block-library.js:44879
-#: wp-includes/js/dist/editor.js:28195
+#: wp-includes/js/dist/block-library.js:44880
+#: wp-includes/js/dist/editor.js:28227
 msgid "%s minute"
 msgid_plural "%s minutes"
 msgstr[0] "%s menit"
@@ -8361,18 +8391,18 @@ msgstr "Pintasan Kibor Blok Klasik"
 msgid "Sorry, you are not allowed to view autosaves of this post."
 msgstr "Maaf, Anda tidak diijinkan untuk melihat autosave dari postingan ini."
 
-#: wp-includes/js/dist/edit-site.js:33657
-#: wp-includes/js/dist/edit-site.js:33962 wp-includes/js/dist/editor.js:19718
-#: wp-includes/js/dist/editor.js:19739 wp-admin/includes/ajax-actions.php:2273
+#: wp-includes/js/dist/edit-site.js:33660
+#: wp-includes/js/dist/edit-site.js:33965 wp-includes/js/dist/editor.js:19748
+#: wp-includes/js/dist/editor.js:19769 wp-admin/includes/ajax-actions.php:2273
 #: wp-admin/includes/class-wp-posts-list-table.php:1219
 #: wp-admin/includes/class-wp-posts-list-table.php:1989
 #: wp-admin/includes/meta-boxes.php:115 wp-admin/includes/meta-boxes.php:156
 msgid "Scheduled"
 msgstr "Dijadwalkan"
 
-#: wp-includes/js/dist/block-library.js:60944
-#: wp-includes/js/dist/edit-post.js:1774 wp-includes/js/dist/edit-site.js:37762
-#: wp-includes/js/dist/edit-site.js:40501 wp-includes/js/dist/editor.js:12628
+#: wp-includes/js/dist/block-library.js:60971
+#: wp-includes/js/dist/edit-post.js:1774 wp-includes/js/dist/edit-site.js:37789
+#: wp-includes/js/dist/edit-site.js:40529 wp-includes/js/dist/editor.js:12656
 #: wp-includes/js/dist/reusable-blocks.js:401 wp-admin/options-privacy.php:277
 msgid "Create"
 msgstr "Membuat"
@@ -8418,28 +8448,28 @@ msgctxt "block title"
 msgid "Classic"
 msgstr "Klasik"
 
-#: wp-includes/js/dist/blocks.js:8080 wp-admin/options-media.php:119
+#: wp-includes/js/dist/blocks.js:8104 wp-admin/options-media.php:119
 msgid "Embeds"
 msgstr "Sematan"
 
-#: wp-includes/js/dist/edit-site.js:34231 wp-includes/js/dist/editor.js:14584
-#: wp-includes/js/dist/editor.js:14684 wp-includes/js/dist/editor.js:28644
-#: wp-includes/js/dist/editor.js:28665 wp-includes/js/dist/editor.js:29805
+#: wp-includes/js/dist/edit-site.js:34234 wp-includes/js/dist/editor.js:14612
+#: wp-includes/js/dist/editor.js:14712 wp-includes/js/dist/editor.js:28676
+#: wp-includes/js/dist/editor.js:28697 wp-includes/js/dist/editor.js:29837
 #: wp-admin/includes/meta-boxes.php:1679 wp-admin/menu.php:381
 msgid "Discussion"
 msgstr "Diskusi"
 
-#: wp-includes/js/dist/editor.js:20859 wp-includes/js/dist/editor.js:21064
+#: wp-includes/js/dist/editor.js:20889 wp-includes/js/dist/editor.js:21096
 #: wp-admin/edit-form-advanced.php:545 wp-admin/edit-form-blocks.php:226
 msgid "Add title"
 msgstr "Tambahkan judul"
 
-#: wp-includes/js/dist/editor.js:19073 wp-admin/includes/meta-boxes.php:174
+#: wp-includes/js/dist/editor.js:19103 wp-admin/includes/meta-boxes.php:174
 msgid "Visibility:"
 msgstr "Visibilitas:"
 
 #: wp-includes/media-template.php:553 wp-includes/media-template.php:805
-#: wp-includes/js/dist/components.js:37976 wp-includes/js/dist/editor.js:19228
+#: wp-includes/js/dist/components.js:38210 wp-includes/js/dist/editor.js:19258
 #: wp-admin/async-upload.php:80
 #: wp-admin/includes/class-wp-media-list-table.php:830
 #: wp-admin/includes/class-wp-privacy-policy-content.php:431
@@ -8448,7 +8478,7 @@ msgstr "Visibilitas:"
 msgid "Copied!"
 msgstr "Disalin!"
 
-#: wp-includes/js/dist/editor.js:16342 wp-admin/includes/meta-boxes.php:394
+#: wp-includes/js/dist/editor.js:16370 wp-admin/includes/meta-boxes.php:394
 #: wp-admin/includes/meta-boxes.php:395
 msgid "Submit for Review"
 msgstr "Kirimkan untuk Ditinjau"
@@ -8457,8 +8487,8 @@ msgstr "Kirimkan untuk Ditinjau"
 msgid "Replace image"
 msgstr "Ganti gambar"
 
-#: wp-includes/js/dist/edit-site.js:32933 wp-includes/js/dist/editor.js:7414
-#: wp-includes/js/dist/editor.js:7521 wp-includes/js/dist/editor.js:12054
+#: wp-includes/js/dist/edit-site.js:32936 wp-includes/js/dist/editor.js:7440
+#: wp-includes/js/dist/editor.js:7547 wp-includes/js/dist/editor.js:12082
 #: wp-includes/js/dist/fields.js:151 wp-includes/js/dist/fields.js:994
 #: wp-admin/includes/class-wp-posts-list-table.php:1870
 #: wp-admin/includes/media.php:1421 wp-admin/includes/media.php:2591
@@ -8466,7 +8496,7 @@ msgstr "Ganti gambar"
 msgid "Order"
 msgstr "Urutan"
 
-#: wp-includes/js/dist/components.js:57709
+#: wp-includes/js/dist/components.js:57740
 #: wp-admin/includes/edit-tag-messages.php:14
 msgid "Item added."
 msgstr "Item ditambahkan."
@@ -8479,11 +8509,11 @@ msgstr "Item ditambahkan."
 #: wp-includes/customize/class-wp-customize-nav-menu-locations-control.php:58
 #: wp-includes/functions.php:8539 wp-includes/media-template.php:168
 #: wp-includes/widgets/class-wp-widget-custom-html.php:319 wp-login.php:703
-#: wp-includes/js/dist/components.js:56300
+#: wp-includes/js/dist/components.js:56330
 #: wp-includes/js/dist/customize-widgets.js:967
 #: wp-includes/js/dist/edit-site.js:8054
-#: wp-includes/js/dist/edit-widgets.js:4147 wp-includes/js/dist/editor.js:16270
-#: wp-includes/js/dist/editor.js:25815 wp-includes/js/dist/editor.js:26165
+#: wp-includes/js/dist/edit-widgets.js:4147 wp-includes/js/dist/editor.js:16298
+#: wp-includes/js/dist/editor.js:25847 wp-includes/js/dist/editor.js:26197
 #: wp-admin/includes/class-wp-privacy-policy-content.php:361
 #: wp-admin/includes/class-wp-site-health.php:753
 #: wp-admin/includes/class-wp-site-health.php:899
@@ -9007,8 +9037,8 @@ msgstr ""
 "Semua di ###SITENAME###\n"
 "###SITEURL###"
 
-#: wp-includes/js/dist/edit-site.js:33677 wp-includes/js/dist/editor.js:19710
-#: wp-includes/js/dist/editor.js:19731 wp-admin/edit-form-comment.php:120
+#: wp-includes/js/dist/edit-site.js:33680 wp-includes/js/dist/editor.js:19740
+#: wp-includes/js/dist/editor.js:19761 wp-admin/edit-form-comment.php:120
 msgid "Pending"
 msgstr "Menunggu"
 
@@ -9215,13 +9245,13 @@ msgid "Looks like something&#8217;s gone wrong. Wait a couple seconds, and then 
 msgstr "Sepertinya ada masalah. Tunggu beberapa detik, lalu coba lagi."
 
 #: wp-includes/class-wp-customize-manager.php:4339
-#: wp-includes/js/dist/editor.js:15978 wp-admin/includes/post.php:1896
+#: wp-includes/js/dist/editor.js:16006 wp-admin/includes/post.php:1896
 msgid "Take over"
 msgstr "Ambil alih"
 
 #: wp-includes/class-wp-customize-manager.php:4335
-#: wp-includes/js/dist/editor.js:7971 wp-includes/js/dist/editor.js:12879
-#: wp-includes/js/dist/editor.js:13961 wp-admin/comment.php:80
+#: wp-includes/js/dist/editor.js:7999 wp-includes/js/dist/editor.js:12907
+#: wp-includes/js/dist/editor.js:13989 wp-admin/comment.php:80
 #: wp-admin/comment.php:292 wp-admin/includes/post.php:1808
 #: wp-admin/plugin-editor.php:362 wp-admin/theme-editor.php:419
 msgid "Go back"
@@ -9349,8 +9379,8 @@ msgstr "Tampilkan galeri gambar."
 
 #: wp-includes/widgets/class-wp-widget-media-gallery.php:28
 #: wp-includes/js/dist/block-library.js:21794
-#: wp-includes/js/dist/block-library.js:47478
-#: wp-includes/js/dist/editor.js:15513 wp-admin/includes/media.php:20
+#: wp-includes/js/dist/block-library.js:47482
+#: wp-includes/js/dist/editor.js:15541 wp-admin/includes/media.php:20
 msgid "Gallery"
 msgstr "Galeri"
 
@@ -9638,7 +9668,7 @@ msgid "Estonian"
 msgstr "Bahasa Estonia"
 
 #: wp-includes/script-loader.php:1101
-#: wp-includes/js/dist/block-library.js:63229 wp-admin/includes/ms.php:655
+#: wp-includes/js/dist/block-library.js:63257 wp-admin/includes/ms.php:655
 msgid "English"
 msgstr "Bahasa Inggris"
 
@@ -9699,7 +9729,7 @@ msgid "Live Broadcast"
 msgstr "Siaran Langsung"
 
 #: wp-includes/script-loader.php:1086
-#: wp-includes/js/dist/block-library.js:63115
+#: wp-includes/js/dist/block-library.js:63143
 msgid "Chapters"
 msgstr "Bab"
 
@@ -9944,29 +9974,29 @@ msgid "Hour"
 msgstr "Jam"
 
 #: wp-includes/customize/class-wp-customize-date-time-control.php:175
-#: wp-includes/js/dist/components.js:54970
-#: wp-includes/js/dist/components.js:54975
+#: wp-includes/js/dist/components.js:54999
+#: wp-includes/js/dist/components.js:55004
 msgid "Time"
 msgstr "Waktu"
 
 #. translators: Hidden accessibility text.
 #: wp-includes/customize/class-wp-customize-date-time-control.php:154
 #: wp-includes/js/dist/block-library.js:1808
-#: wp-includes/js/dist/components.js:54901 wp-admin/includes/template.php:852
+#: wp-includes/js/dist/components.js:54930 wp-admin/includes/template.php:852
 msgid "Day"
 msgstr "Hari"
 
 #. translators: Hidden accessibility text.
 #: wp-includes/customize/class-wp-customize-date-time-control.php:133
 #: wp-includes/js/dist/block-library.js:1802
-#: wp-includes/js/dist/components.js:54919 wp-admin/includes/template.php:839
+#: wp-includes/js/dist/components.js:54948 wp-admin/includes/template.php:839
 msgid "Month"
 msgstr "Bulan"
 
 #: wp-includes/customize/class-wp-customize-date-time-control.php:127
-#: wp-includes/js/dist/components.js:54991
-#: wp-includes/js/dist/components.js:54996
-#: wp-includes/js/dist/edit-site.js:34182
+#: wp-includes/js/dist/components.js:55020
+#: wp-includes/js/dist/components.js:55025
+#: wp-includes/js/dist/edit-site.js:34185
 #: wp-admin/includes/ajax-actions.php:2261
 #: wp-admin/includes/class-wp-media-list-table.php:404
 #: wp-admin/includes/class-wp-posts-list-table.php:717
@@ -10193,7 +10223,7 @@ msgid "Arbitrary HTML code."
 msgstr "Kode HTML arbitrer."
 
 #: wp-includes/widgets/class-wp-widget-tag-cloud.php:199
-#: wp-includes/js/dist/block-library.js:60119
+#: wp-includes/js/dist/block-library.js:60123
 msgid "Show tag counts"
 msgstr "Tampilkan jumlah tag"
 
@@ -10203,8 +10233,8 @@ msgstr "Tampilkan jumlah tag"
 #. translators: %s: Number of items.
 #. translators: Number of items.
 #: wp-includes/category-template.php:878 wp-includes/category-template.php:889
-#: wp-includes/js/dist/block-editor.js:46339
-#: wp-includes/js/dist/edit-site.js:23153
+#: wp-includes/js/dist/block-editor.js:46460
+#: wp-includes/js/dist/edit-site.js:23156
 #: wp-admin/includes/ajax-actions.php:563
 #: wp-admin/includes/class-wp-list-table.php:1041
 #: wp-admin/includes/class-wp-list-table.php:1849
@@ -10595,7 +10625,7 @@ msgid "Insert/edit code sample"
 msgstr "Sisipkan/sunting contoh kode"
 
 #: wp-includes/class-wp-editor.php:1236
-#: wp-includes/js/dist/block-library.js:59803
+#: wp-includes/js/dist/block-library.js:59807
 #: wp-admin/includes/privacy-tools.php:472
 msgid "Table of Contents"
 msgstr "Daftar Isi"
@@ -11332,7 +11362,7 @@ msgid "I really need an ID for this to work."
 msgstr "Saya benar-benar memerlukan sebuah ID untuk tindakan ini."
 
 #: wp-includes/class-wp-customize-manager.php:5681
-#: wp-includes/js/dist/edit-site.js:34137 wp-includes/js/dist/editor.js:28116
+#: wp-includes/js/dist/edit-site.js:34140 wp-includes/js/dist/editor.js:28148
 #: wp-admin/includes/file.php:39
 msgid "Homepage"
 msgstr "Beranda"
@@ -12352,15 +12382,15 @@ msgid "Invalid value for background repeat."
 msgstr "Nilai untuk perulangan latar belakang tidak sah."
 
 #: wp-includes/class-wp-customize-manager.php:5712
-#: wp-includes/js/dist/edit-site.js:22669
+#: wp-includes/js/dist/edit-site.js:22672
 msgid "Learn more about CSS"
 msgstr "Pelajari lanjut tentang CSS"
 
 #: wp-includes/class-wp-customize-manager.php:5748
-#: wp-includes/js/dist/block-editor.js:70932
+#: wp-includes/js/dist/block-editor.js:71081
 #: wp-includes/js/dist/edit-site.js:12014
 #: wp-includes/js/dist/edit-site.js:12018
-#: wp-includes/js/dist/edit-site.js:23442
+#: wp-includes/js/dist/edit-site.js:23445
 msgid "Additional CSS"
 msgstr "CSS Tambahan"
 
@@ -12510,7 +12540,7 @@ msgid "Warning: the link has been inserted but may have errors. Please test it."
 msgstr "Peringatan: tautan telah disisipkan tetapi mungkin mengandung galat. Silakan diuji."
 
 #: wp-includes/blocks/query-title.php:41
-#: wp-includes/js/dist/block-library.js:50230
+#: wp-includes/js/dist/block-library.js:50234
 msgid "Search results"
 msgstr "Hasil pencarian"
 
@@ -12739,7 +12769,7 @@ msgstr "Opsi tautan"
 msgid "Link inserted."
 msgstr "Tautan tersisipkan."
 
-#: wp-includes/script-loader.php:1249 wp-includes/js/dist/block-editor.js:22135
+#: wp-includes/script-loader.php:1249 wp-includes/js/dist/block-editor.js:22139
 msgid "Link selected."
 msgstr "Tautan terpilih."
 
@@ -12798,7 +12828,7 @@ msgid "Unregistering a built-in taxonomy is not allowed."
 msgstr "Tak diizinkan menghapus taksonomi bawaan."
 
 #: wp-includes/script-loader.php:1302 wp-includes/js/dist/block-library.js:6218
-#: wp-includes/js/dist/editor.js:19064
+#: wp-includes/js/dist/editor.js:19094
 msgid "(Untitled)"
 msgstr "(Tanpa judul)"
 
@@ -12864,9 +12894,9 @@ msgid "The called constructor method for %1$s class in %2$s is <strong>deprecate
 msgstr "Metode constructor yang ditulis untuk %1$s di %2$s sudah <strong>usang</strong> sejak versi %3$s! Sebagai gantinya, gunakan %4$s."
 
 #: wp-includes/class-wp-customize-manager.php:5254
-#: wp-includes/js/dist/block-library.js:53838
-#: wp-includes/js/dist/block-library.js:53927
-#: wp-includes/js/dist/block-library.js:53959
+#: wp-includes/js/dist/block-library.js:53842
+#: wp-includes/js/dist/block-library.js:53931
+#: wp-includes/js/dist/block-library.js:53963
 msgid "Choose logo"
 msgstr "Memilih logo"
 
@@ -12936,7 +12966,7 @@ msgid "Invalid object type."
 msgstr "Tipe object tidak sah."
 
 #: wp-includes/class-wp-editor.php:1395
-#: wp-includes/js/dist/block-editor.js:22199
+#: wp-includes/js/dist/block-editor.js:22203
 msgid "Paste URL or type to search"
 msgstr "Tempelkan URL atau ketik untuk mencari"
 
@@ -13542,7 +13572,7 @@ msgstr[1] "%s <span class=\"screen-reader-text\">Komentar</span>"
 #: wp-includes/blocks/read-more.php:39
 #: wp-includes/js/dist/block-library.js:23401
 #: wp-includes/js/dist/block-library.js:32907
-#: wp-includes/js/dist/block-library.js:51776
+#: wp-includes/js/dist/block-library.js:51780
 msgid "Read more"
 msgstr "Selanjutnya"
 
@@ -13682,7 +13712,7 @@ msgstr "Sembunyikan gambar tajuk"
 
 #: wp-includes/class-wp-customize-manager.php:5211
 #: wp-includes/js/dist/edit-post.js:300 wp-includes/js/dist/edit-site.js:7859
-#: wp-includes/js/dist/editor.js:19031 wp-admin/includes/template.php:2453
+#: wp-includes/js/dist/editor.js:19061 wp-admin/includes/template.php:2453
 #: wp-admin/options-general.php:102
 msgid "Site Icon"
 msgstr "Ikon Situs"
@@ -14180,7 +14210,7 @@ msgid "Automatically add new top-level pages to this menu"
 msgstr "Tambahkan laman tingkat-atas baru ke menu ini secara otomatis"
 
 #: wp-includes/class-wp-customize-nav-menus.php:511
-#: wp-includes/js/dist/core-data.js:2941
+#: wp-includes/js/dist/core-data.js:2965
 msgid "Menu Location"
 msgstr "Lokasi Menu"
 
@@ -14332,7 +14362,7 @@ msgstr ""
 msgid "Drag and drop to reorder media files."
 msgstr "Seret dan lepas untuk mengurutkan berkas-berkas media."
 
-#: wp-includes/js/dist/editor.js:24309 wp-includes/js/dist/patterns.js:1077
+#: wp-includes/js/dist/editor.js:24341 wp-includes/js/dist/patterns.js:1077
 #: wp-includes/js/dist/reusable-blocks.js:481
 #: wp-admin/includes/class-wp-media-list-table.php:607
 msgid "Detach"
@@ -14520,7 +14550,7 @@ msgstr "Sampah"
 msgid "Edit Selection"
 msgstr "Edit Seleksi"
 
-#: wp-includes/js/dist/editor.js:6355
+#: wp-includes/js/dist/editor.js:6380
 #: wp-admin/includes/class-wp-comments-list-table.php:815
 #: wp-admin/includes/class-wp-media-list-table.php:790
 #: wp-admin/includes/class-wp-posts-list-table.php:1523
@@ -14530,8 +14560,8 @@ msgid "Trash"
 msgstr "Buang"
 
 #: wp-includes/script-loader.php:1976
-#: wp-includes/js/dist/block-library.js:43816
-#: wp-includes/js/dist/components.js:58398
+#: wp-includes/js/dist/block-library.js:43817
+#: wp-includes/js/dist/components.js:58429
 msgid "Previous"
 msgstr "Sebelumnya"
 
@@ -14644,7 +14674,7 @@ msgctxt "horizontal table cell alignment"
 msgid "H Align"
 msgstr "Perataan horisontal"
 
-#: wp-includes/class-wp-editor.php:1309 wp-includes/js/dist/components.js:40370
+#: wp-includes/class-wp-editor.php:1309 wp-includes/js/dist/components.js:40604
 msgid "Border color"
 msgstr "Warna garis tepi"
 
@@ -14666,13 +14696,13 @@ msgid "Custom color"
 msgstr "Warna tersuai"
 
 #: wp-includes/class-wp-editor.php:1277
-#: wp-includes/js/dist/block-editor.js:27019
-#: wp-includes/js/dist/block-editor.js:27468
-#: wp-includes/js/dist/block-editor.js:69481
-#: wp-includes/js/dist/block-editor.js:69953
-#: wp-includes/js/dist/block-editor.js:70071
-#: wp-includes/js/dist/block-editor.js:71129
-#: wp-includes/js/dist/edit-site.js:20881
+#: wp-includes/js/dist/block-editor.js:27024
+#: wp-includes/js/dist/block-editor.js:27473
+#: wp-includes/js/dist/block-editor.js:69628
+#: wp-includes/js/dist/block-editor.js:70100
+#: wp-includes/js/dist/block-editor.js:70218
+#: wp-includes/js/dist/block-editor.js:71279
+#: wp-includes/js/dist/edit-site.js:20884
 msgid "Color"
 msgstr "Warna"
 
@@ -14951,7 +14981,7 @@ msgstr "Durasi"
 #. translators: Hidden accessibility text.
 #: wp-includes/customize/class-wp-customize-date-time-control.php:164
 #: wp-includes/media.php:3318 wp-includes/js/dist/block-library.js:1799
-#: wp-includes/js/dist/components.js:54935 wp-admin/includes/template.php:856
+#: wp-includes/js/dist/components.js:54964 wp-admin/includes/template.php:856
 msgid "Year"
 msgstr "Tahun"
 
@@ -14988,7 +15018,7 @@ msgstr "Atribut Judul Gambar"
 msgid "Advanced Options"
 msgstr "Pilihan Lebih Lanjut"
 
-#: wp-includes/media-template.php:1205 wp-includes/js/dist/components.js:57366
+#: wp-includes/media-template.php:1205 wp-includes/js/dist/components.js:57396
 msgid "Custom Size"
 msgstr "Ukuran Tersuai"
 
@@ -15190,7 +15220,7 @@ msgid "Replace"
 msgstr "Gantikan"
 
 #: wp-includes/class-wp-editor.php:1250
-#: wp-includes/js/dist/block-library.js:40283
+#: wp-includes/js/dist/block-library.js:40284
 msgctxt "editor button"
 msgid "Left to right"
 msgstr "Kiri ke kanan"
@@ -15410,14 +15440,14 @@ msgstr "Buat daftar putar baru"
 #: wp-includes/class-wp-customize-widgets.php:915
 #: wp-includes/customize/class-wp-customize-nav-menus-panel.php:75
 #: wp-includes/customize/class-wp-customize-themes-panel.php:72
-#: wp-includes/media.php:4933 wp-includes/js/dist/block-editor.js:47411
-#: wp-includes/js/dist/block-editor.js:47449
+#: wp-includes/media.php:4933 wp-includes/js/dist/block-editor.js:47532
+#: wp-includes/js/dist/block-editor.js:47570
 #: wp-includes/js/dist/block-library.js:35288
-#: wp-includes/js/dist/components.js:59434 wp-includes/js/dist/edit-post.js:322
+#: wp-includes/js/dist/components.js:59465 wp-includes/js/dist/edit-post.js:322
 #: wp-includes/js/dist/edit-site.js:12114
-#: wp-includes/js/dist/edit-site.js:14510
-#: wp-includes/js/dist/edit-site.js:15060
-#: wp-includes/js/dist/edit-site.js:38541 wp-includes/js/dist/editor.js:10493
+#: wp-includes/js/dist/edit-site.js:14512
+#: wp-includes/js/dist/edit-site.js:15062
+#: wp-includes/js/dist/edit-site.js:38569 wp-includes/js/dist/editor.js:10521
 #: wp-includes/js/dist/preferences.js:733 wp-admin/includes/ms.php:49
 #: wp-admin/theme-install.php:60
 msgid "Back"
@@ -15433,14 +15463,14 @@ msgstr "Gambar Poster"
 
 #: wp-includes/media-template.php:1371 wp-includes/media-template.php:1470
 #: wp-includes/js/dist/block-library.js:3395
-#: wp-includes/js/dist/block-library.js:63050
+#: wp-includes/js/dist/block-library.js:63078
 msgid "Autoplay"
 msgstr "Putar otomatis"
 
 #: wp-includes/media-template.php:1362 wp-includes/media-template.php:1461
 #: wp-includes/js/dist/block-library.js:3422
-#: wp-includes/js/dist/block-library.js:63002
-#: wp-includes/js/dist/block-library.js:63118
+#: wp-includes/js/dist/block-library.js:63030
+#: wp-includes/js/dist/block-library.js:63146
 #: wp-admin/includes/meta-boxes.php:1594
 msgid "Metadata"
 msgstr "Metadata"
@@ -15474,11 +15504,11 @@ msgstr "Masukkan tag Baca Lebih Lanjut"
 msgid "Toolbar Toggle"
 msgstr "Nyalakan Bilah Perkakas"
 
-#: wp-includes/js/dist/block-editor.js:68629
-#: wp-includes/js/dist/block-editor.js:68637
+#: wp-includes/js/dist/block-editor.js:68776
+#: wp-includes/js/dist/block-editor.js:68784
 #: wp-includes/js/dist/block-library.js:33493
 #: wp-includes/js/dist/customize-widgets.js:947
-#: wp-includes/js/dist/edit-widgets.js:4127 wp-includes/js/dist/editor.js:25802
+#: wp-includes/js/dist/edit-widgets.js:4127 wp-includes/js/dist/editor.js:25834
 #: wp-admin/menu.php:362 wp-admin/tools.php:43
 msgid "Tools"
 msgstr "Peralatan"
@@ -15496,7 +15526,7 @@ msgid "Background color"
 msgstr "Warna latar belakang"
 
 #: wp-includes/class-wp-editor.php:1328
-#: wp-includes/js/dist/block-library.js:58786
+#: wp-includes/js/dist/block-library.js:58790
 msgid "Delete column"
 msgstr "Hapus kolom"
 
@@ -15533,7 +15563,7 @@ msgid "Column group"
 msgstr "Grup kolom"
 
 #: wp-includes/class-wp-editor.php:1312
-#: wp-includes/js/dist/block-editor.js:20590
+#: wp-includes/js/dist/block-editor.js:20594
 msgid "Rows"
 msgstr "Baris-baris"
 
@@ -15550,14 +15580,14 @@ msgid "Find and replace"
 msgstr "Temukan dan gantikan"
 
 #: wp-includes/media-template.php:1288 wp-includes/media.php:4931
-#: wp-includes/js/dist/block-editor.js:23996
+#: wp-includes/js/dist/block-editor.js:24000
 #: wp-includes/js/dist/block-library.js:13943
 #: wp-includes/js/dist/block-library.js:26309
-#: wp-includes/js/dist/block-library.js:46991
-#: wp-includes/js/dist/block-library.js:53838
-#: wp-includes/js/dist/block-library.js:61671
-#: wp-includes/js/dist/block-library.js:63594
-#: wp-includes/js/dist/editor.js:15284
+#: wp-includes/js/dist/block-library.js:46992
+#: wp-includes/js/dist/block-library.js:53842
+#: wp-includes/js/dist/block-library.js:61699
+#: wp-includes/js/dist/block-library.js:63622
+#: wp-includes/js/dist/editor.js:15312
 msgid "Replace"
 msgstr "Gantikan"
 
@@ -15610,7 +15640,7 @@ msgstr "Masukkan tanggal/waktu"
 msgid "Insert image"
 msgstr "Masukkan gambar"
 
-#: wp-includes/class-wp-editor.php:1231 wp-includes/js/dist/components.js:40387
+#: wp-includes/class-wp-editor.php:1231 wp-includes/js/dist/components.js:40621
 msgid "Style"
 msgstr "Gaya"
 
@@ -15651,7 +15681,7 @@ msgid "Visual aids"
 msgstr "Bantuan visual"
 
 #: wp-includes/class-wp-editor.php:1175
-#: wp-includes/js/dist/block-editor.js:20896
+#: wp-includes/js/dist/block-editor.js:20900
 msgid "Align left"
 msgstr "Rata kiri"
 
@@ -15668,7 +15698,7 @@ msgid "Decrease indent"
 msgstr "Persempit inden"
 
 #: wp-includes/class-wp-editor.php:1173
-#: wp-includes/js/dist/block-editor.js:20900
+#: wp-includes/js/dist/block-editor.js:20904
 msgid "Align center"
 msgstr "Rata tengah"
 
@@ -15677,7 +15707,7 @@ msgid "Clear formatting"
 msgstr "Bersihkan pemformatan"
 
 #: wp-includes/widgets/class-wp-widget-block.php:45
-#: wp-includes/js/dist/edit-widgets.js:3344 wp-includes/js/dist/editor.js:29007
+#: wp-includes/js/dist/edit-widgets.js:3344 wp-includes/js/dist/editor.js:29039
 msgid "Block"
 msgstr "Blok"
 
@@ -15690,7 +15720,7 @@ msgid "Numbered list"
 msgstr "Daftar bernomor"
 
 #: wp-includes/class-wp-editor.php:1174
-#: wp-includes/js/dist/block-editor.js:20904
+#: wp-includes/js/dist/block-editor.js:20908
 msgid "Align right"
 msgstr "Rata kanan"
 
@@ -15708,11 +15738,11 @@ msgstr "Pilih satu area untuk menempatkan widget ini:"
 #. translators: Hidden accessibility text.
 #: wp-includes/class-wp-customize-nav-menus.php:1096
 #: wp-includes/class-wp-customize-widgets.php:723
-#: wp-includes/js/dist/block-editor.js:50218
-#: wp-includes/js/dist/block-editor.js:50219
-#: wp-includes/js/dist/block-editor.js:53683
+#: wp-includes/js/dist/block-editor.js:50335
+#: wp-includes/js/dist/block-editor.js:50336
+#: wp-includes/js/dist/block-editor.js:53800
 #: wp-includes/js/dist/block-library.js:34993
-#: wp-includes/js/dist/edit-site.js:39394
+#: wp-includes/js/dist/edit-site.js:39422
 #: wp-admin/includes/class-walker-nav-menu-edit.php:148
 #: wp-admin/includes/template.php:1401
 msgid "Move up"
@@ -15721,11 +15751,11 @@ msgstr "Pindahkan ke atas"
 #. translators: Hidden accessibility text.
 #: wp-includes/class-wp-customize-nav-menus.php:1097
 #: wp-includes/class-wp-customize-widgets.php:722
-#: wp-includes/js/dist/block-editor.js:50231
-#: wp-includes/js/dist/block-editor.js:50232
-#: wp-includes/js/dist/block-editor.js:53688
+#: wp-includes/js/dist/block-editor.js:50348
+#: wp-includes/js/dist/block-editor.js:50349
+#: wp-includes/js/dist/block-editor.js:53805
 #: wp-includes/js/dist/block-library.js:35000
-#: wp-includes/js/dist/edit-site.js:39401
+#: wp-includes/js/dist/edit-site.js:39429
 #: wp-admin/includes/class-walker-nav-menu-edit.php:165
 #: wp-admin/includes/template.php:1414
 msgid "Move down"
@@ -15783,10 +15813,10 @@ msgstr "https://wordpress.org/support/forum/requests-and-feedback"
 msgid "Change"
 msgstr "Ubah"
 
-#: wp-includes/js/dist/block-library.js:47493
-#: wp-includes/js/dist/core-data.js:2977 wp-includes/js/dist/edit-site.js:34171
-#: wp-includes/js/dist/editor.js:15528 wp-includes/js/dist/editor.js:19828
-#: wp-includes/js/dist/editor.js:19862 wp-admin/includes/ajax-actions.php:2261
+#: wp-includes/js/dist/block-library.js:47497
+#: wp-includes/js/dist/core-data.js:3001 wp-includes/js/dist/edit-site.js:34174
+#: wp-includes/js/dist/editor.js:15556 wp-includes/js/dist/editor.js:19858
+#: wp-includes/js/dist/editor.js:19892 wp-admin/includes/ajax-actions.php:2261
 #: wp-admin/includes/class-wp-posts-list-table.php:1981
 #: wp-admin/includes/class-wp-privacy-requests-table.php:44
 msgid "Status"
@@ -15903,7 +15933,7 @@ msgstr "Awal"
 #: wp-includes/js/dist/block-library.js:33709
 #: wp-includes/js/dist/block-library.js:35570
 #: wp-includes/js/dist/block-library.js:36049
-#: wp-includes/js/dist/core-data.js:2922 wp-includes/js/dist/edit-site.js:21474
+#: wp-includes/js/dist/core-data.js:2946 wp-includes/js/dist/edit-site.js:21477
 msgid "Menu"
 msgstr "Menu"
 
@@ -16130,7 +16160,7 @@ msgstr "ID pengguna tidak sah."
 msgid "Random Order"
 msgstr "Urutan Acak"
 
-#: wp-includes/media.php:4984 wp-includes/js/dist/block-editor.js:66145
+#: wp-includes/media.php:4984 wp-includes/js/dist/block-editor.js:66290
 msgid "Insert from URL"
 msgstr "Sisipkan dari URL"
 
@@ -16201,10 +16231,10 @@ msgid "Manage Video"
 msgstr "Kelola Video"
 
 #: wp-includes/widgets/class-wp-widget-media-video.php:28
-#: wp-includes/js/dist/block-editor.js:66340
-#: wp-includes/js/dist/block-library.js:47496
-#: wp-includes/js/dist/block-library.js:63505
-#: wp-includes/js/dist/editor.js:15531
+#: wp-includes/js/dist/block-editor.js:66485
+#: wp-includes/js/dist/block-library.js:47500
+#: wp-includes/js/dist/block-library.js:63533
+#: wp-includes/js/dist/editor.js:15559
 msgid "Video"
 msgstr "Video"
 
@@ -16239,9 +16269,9 @@ msgid "Insert into page"
 msgstr "Sisipkan ke lama"
 
 #: wp-includes/widgets/class-wp-widget-media-audio.php:28
-#: wp-includes/js/dist/block-editor.js:66336
-#: wp-includes/js/dist/block-library.js:47472
-#: wp-includes/js/dist/editor.js:15507 wp-includes/js/dist/editor.js:22113
+#: wp-includes/js/dist/block-editor.js:66481
+#: wp-includes/js/dist/block-library.js:47476
+#: wp-includes/js/dist/editor.js:15535 wp-includes/js/dist/editor.js:22145
 msgid "Audio"
 msgstr "Audio"
 
@@ -16260,17 +16290,17 @@ msgid "Custom URL"
 msgstr "URL Tersuai"
 
 #: wp-includes/class-wp-editor.php:1314 wp-includes/media-template.php:965
-#: wp-includes/js/dist/block-editor.js:20546
-#: wp-includes/js/dist/block-editor.js:20573
-#: wp-includes/js/dist/block-editor.js:20602
-#: wp-includes/js/dist/block-editor.js:29371
-#: wp-includes/js/dist/block-editor.js:29377
+#: wp-includes/js/dist/block-editor.js:20550
+#: wp-includes/js/dist/block-editor.js:20577
+#: wp-includes/js/dist/block-editor.js:20606
+#: wp-includes/js/dist/block-editor.js:29376
+#: wp-includes/js/dist/block-editor.js:29382
 #: wp-includes/js/dist/block-library.js:8155
 #: wp-includes/js/dist/block-library.js:21831
 #: wp-includes/js/dist/block-library.js:28331
-#: wp-includes/js/dist/block-library.js:47902
-#: wp-includes/js/dist/block-library.js:52034
-#: wp-includes/js/dist/block-library.js:62282
+#: wp-includes/js/dist/block-library.js:47906
+#: wp-includes/js/dist/block-library.js:52038
+#: wp-includes/js/dist/block-library.js:62310
 #: wp-admin/includes/class-wp-screen.php:1160
 msgid "Columns"
 msgstr "Kolom"
@@ -16288,8 +16318,8 @@ msgstr "Detil Lampiran"
 #: wp-includes/media-template.php:918 wp-includes/media-template.php:998
 #: wp-includes/media-template.php:1189 wp-includes/media.php:4566
 #: wp-includes/js/dist/block-editor.js:8187
-#: wp-includes/js/dist/block-library.js:56254
-#: wp-includes/js/dist/components.js:57156
+#: wp-includes/js/dist/block-library.js:56258
+#: wp-includes/js/dist/components.js:57186
 #: wp-admin/includes/class-custom-background.php:650
 #: wp-admin/includes/media.php:1205
 msgid "Large"
@@ -16324,7 +16354,7 @@ msgid "Insert gallery"
 msgstr "Sisipkan galeri"
 
 #: wp-includes/media-template.php:215 wp-includes/media-template.php:222
-#: wp-includes/media-template.php:264 wp-includes/js/dist/components.js:55787
+#: wp-includes/media-template.php:264 wp-includes/js/dist/components.js:55816
 #: wp-admin/includes/media.php:2250
 msgid "Drop files to upload"
 msgstr "Taruh berkas yang akan diunggah"
@@ -16333,7 +16363,7 @@ msgstr "Taruh berkas yang akan diunggah"
 msgid "Create gallery"
 msgstr "Buat galeri"
 
-#: wp-includes/media.php:4947 wp-includes/js/dist/block-editor.js:66408
+#: wp-includes/media.php:4947 wp-includes/js/dist/block-editor.js:66553
 #: wp-admin/includes/media.php:21 wp-admin/upload.php:204
 #: wp-admin/upload.php:358
 msgid "Media Library"
@@ -16474,10 +16504,10 @@ msgstr "%1$s %2$s"
 msgid "Could not insert term relationship into the database."
 msgstr "Gagal menyimpan relasi istilah ke dalam basis data."
 
-#: wp-includes/media-template.php:818 wp-includes/js/dist/block-editor.js:26041
-#: wp-includes/js/dist/components.js:39517
-#: wp-includes/js/dist/components.js:45400
-#: wp-includes/js/dist/components.js:56210 wp-admin/theme-install.php:244
+#: wp-includes/media-template.php:818 wp-includes/js/dist/block-editor.js:26046
+#: wp-includes/js/dist/components.js:39751
+#: wp-includes/js/dist/components.js:45634
+#: wp-includes/js/dist/components.js:56239 wp-admin/theme-install.php:244
 #: wp-admin/theme-install.php:266 wp-admin/js/color-picker.js:154
 msgid "Clear"
 msgstr "Kosongkan"
@@ -16571,14 +16601,14 @@ msgid "Header Text Color"
 msgstr "Warna Teks Tajuk"
 
 #: wp-includes/class-wp-customize-manager.php:5275
-#: wp-includes/js/dist/block-editor.js:71131
+#: wp-includes/js/dist/block-editor.js:71281
 #: wp-includes/js/dist/edit-site.js:11281
-#: wp-includes/js/dist/edit-site.js:20564
+#: wp-includes/js/dist/edit-site.js:20567
 msgid "Colors"
 msgstr "Warna"
 
 #: wp-includes/script-loader.php:1290 wp-includes/js/dist/edit-site.js:8880
-#: wp-includes/js/dist/edit-site.js:8892 wp-includes/js/dist/editor.js:20038
+#: wp-includes/js/dist/edit-site.js:8892 wp-includes/js/dist/editor.js:20068
 #: wp-admin/js/widgets.js:130 wp-admin/js/widgets.js:575
 msgid "Saved"
 msgstr "Tersimpan"
@@ -16711,11 +16741,11 @@ msgstr "Berkas yang Diijinkan"
 #: wp-includes/customize/class-wp-customize-media-control.php:261
 #: wp-includes/customize/class-wp-customize-nav-menu-item-control.php:175
 #: wp-includes/media-template.php:627 wp-includes/media.php:4932
-#: wp-includes/js/dist/block-editor.js:24496
-#: wp-includes/js/dist/block-editor.js:37266
-#: wp-includes/js/dist/block-library.js:63605
-#: wp-includes/js/dist/edit-site.js:20302
-#: wp-includes/js/dist/edit-site.js:30380 wp-includes/js/dist/editor.js:15292
+#: wp-includes/js/dist/block-editor.js:24500
+#: wp-includes/js/dist/block-editor.js:37271
+#: wp-includes/js/dist/block-library.js:63633
+#: wp-includes/js/dist/edit-site.js:20305
+#: wp-includes/js/dist/edit-site.js:30383 wp-includes/js/dist/editor.js:15320
 #: wp-admin/includes/class-walker-nav-menu-edit.php:316
 #: wp-admin/includes/class-wp-users-list-table.php:276
 #: wp-admin/includes/class-wp-users-list-table.php:487
@@ -16723,11 +16753,11 @@ msgid "Remove"
 msgstr "Singkirkan"
 
 #. translators: Hidden accessibility text.
-#: wp-includes/js/dist/block-editor.js:24118
-#: wp-includes/js/dist/block-editor.js:66439
-#: wp-includes/js/dist/block-editor.js:66457
-#: wp-includes/js/dist/block-library.js:63362
-#: wp-includes/js/dist/edit-site.js:19311 wp-includes/js/dist/editor.js:18959
+#: wp-includes/js/dist/block-editor.js:24122
+#: wp-includes/js/dist/block-editor.js:66584
+#: wp-includes/js/dist/block-editor.js:66602
+#: wp-includes/js/dist/block-library.js:63390
+#: wp-includes/js/dist/edit-site.js:19314 wp-includes/js/dist/editor.js:18989
 #: wp-admin/includes/class-custom-background.php:357
 #: wp-admin/includes/class-custom-image-header.php:667
 #: wp-admin/includes/class-wp-theme-install-list-table.php:63
@@ -16822,10 +16852,10 @@ msgid "Stylesheet"
 msgstr "Lembar-gaya"
 
 #: wp-includes/class-wp-xmlrpc-server.php:569
-#: wp-includes/js/dist/edit-site.js:6764 wp-includes/js/dist/edit-site.js:38181
-#: wp-includes/js/dist/edit-site.js:38284 wp-includes/js/dist/editor.js:12842
-#: wp-includes/js/dist/editor.js:12858 wp-includes/js/dist/editor.js:14085
-#: wp-includes/js/dist/editor.js:14091
+#: wp-includes/js/dist/edit-site.js:6764 wp-includes/js/dist/edit-site.js:38208
+#: wp-includes/js/dist/edit-site.js:38312 wp-includes/js/dist/editor.js:12870
+#: wp-includes/js/dist/editor.js:12886 wp-includes/js/dist/editor.js:14113
+#: wp-includes/js/dist/editor.js:14119
 #: wp-admin/includes/class-wp-posts-list-table.php:1881
 #: wp-admin/includes/meta-boxes.php:1038
 msgid "Template"
@@ -16877,7 +16907,7 @@ msgstr "&mdash; Pilih &mdash;"
 msgid "Tagline"
 msgstr "Slogan"
 
-#: wp-includes/js/dist/edit-site.js:34142 wp-includes/js/dist/editor.js:28119
+#: wp-includes/js/dist/edit-site.js:34145 wp-includes/js/dist/editor.js:28151
 #: wp-admin/includes/file.php:32
 msgid "Posts Page"
 msgstr "Halaman Pos"
@@ -16893,8 +16923,8 @@ msgstr "Pos-pos terbaru Anda"
 #: wp-includes/js/dist/block-library.js:34563
 #: wp-includes/js/dist/core-commands.js:563
 #: wp-includes/js/dist/edit-site.js:6767 wp-includes/js/dist/edit-site.js:9366
-#: wp-includes/js/dist/edit-site.js:39050
-#: wp-includes/js/dist/edit-site.js:39990 wp-includes/js/dist/editor.js:29856
+#: wp-includes/js/dist/edit-site.js:39078
+#: wp-includes/js/dist/edit-site.js:40018 wp-includes/js/dist/editor.js:29888
 #: wp-admin/index.php:57
 msgid "Navigation"
 msgstr "Navigasi"
@@ -17261,10 +17291,10 @@ msgid "Your account is now activated. <a href=\"%1$s\">View your site</a> or <a 
 msgstr "Akun Anda kini telah aktif. <a href=\"%1$s\">Lihat situs Anda</a> atau <a href=\"%2$s\">Masuk log</a>"
 
 #: wp-includes/class-wp-editor.php:1266
-#: wp-includes/js/dist/block-editor.js:23022
-#: wp-includes/js/dist/block-editor.js:27482
-#: wp-includes/js/dist/block-editor.js:69065
-#: wp-includes/js/dist/block-editor.js:71120
+#: wp-includes/js/dist/block-editor.js:23026
+#: wp-includes/js/dist/block-editor.js:27487
+#: wp-includes/js/dist/block-editor.js:69212
+#: wp-includes/js/dist/block-editor.js:71270
 #: wp-includes/js/dist/block-library.js:5142
 #: wp-includes/js/dist/block-library.js:21850
 #: wp-includes/js/dist/block-library.js:21886
@@ -17272,9 +17302,9 @@ msgstr "Akun Anda kini telah aktif. <a href=\"%1$s\">Lihat situs Anda</a> atau <
 #: wp-includes/js/dist/block-library.js:37474
 #: wp-includes/js/dist/block-library.js:38310
 #: wp-includes/js/dist/block-library.js:38348
-#: wp-includes/js/dist/block-library.js:47484
-#: wp-includes/js/dist/editor.js:15519 wp-includes/js/dist/editor.js:21309
-#: wp-includes/js/dist/editor.js:21334 wp-includes/js/dist/editor.js:21509
+#: wp-includes/js/dist/block-library.js:47488
+#: wp-includes/js/dist/editor.js:15547 wp-includes/js/dist/editor.js:21341
+#: wp-includes/js/dist/editor.js:21366 wp-includes/js/dist/editor.js:21541
 #: wp-includes/js/dist/format-library.js:933
 #: wp-includes/js/dist/format-library.js:1073
 msgid "Link"
@@ -17307,7 +17337,7 @@ msgstr "Poster"
 #: wp-includes/media-template.php:1358 wp-includes/media-template.php:1457
 #: wp-includes/widgets/class-wp-widget-media-audio.php:72
 #: wp-includes/widgets/class-wp-widget-media-video.php:74
-#: wp-includes/js/dist/block-library.js:63079
+#: wp-includes/js/dist/block-library.js:63107
 msgid "Preload"
 msgstr "Pramuat"
 
@@ -17595,9 +17625,9 @@ msgstr "Cari Kategori Taut"
 msgid "Link Category"
 msgstr "Kategori Taut"
 
-#: wp-includes/user.php:3990 wp-includes/js/dist/block-editor.js:47486
+#: wp-includes/user.php:3990 wp-includes/js/dist/block-editor.js:47607
 #: wp-includes/js/dist/block-library.js:2069
-#: wp-includes/js/dist/core-data.js:2897 wp-includes/js/dist/edit-site.js:23018
+#: wp-includes/js/dist/core-data.js:2921 wp-includes/js/dist/edit-site.js:23021
 msgid "User"
 msgstr "Pengguna"
 
@@ -17687,7 +17717,7 @@ msgstr "Perbarui Tag"
 msgid "Parent Category:"
 msgstr "Kategori Induk:"
 
-#: wp-includes/class-wp-taxonomy.php:618 wp-includes/js/dist/editor.js:18419
+#: wp-includes/class-wp-taxonomy.php:618 wp-includes/js/dist/editor.js:18447
 msgid "Parent Category"
 msgstr "Kategori Induk"
 
@@ -18382,8 +18412,8 @@ msgstr "%s adalah nama pengguna baru Anda"
 
 #: wp-includes/class-wp-customize-nav-menus.php:1115
 #: wp-includes/script-loader.php:1975 wp-signup.php:653
-#: wp-includes/js/dist/block-library.js:43816
-#: wp-includes/js/dist/components.js:58404
+#: wp-includes/js/dist/block-library.js:43817
+#: wp-includes/js/dist/components.js:58435
 msgid "Next"
 msgstr "Berikut"
 
@@ -18609,11 +18639,11 @@ msgstr "dari"
 
 #: wp-includes/class-wp-editor.php:1222 wp-includes/script-loader.php:967
 #: wp-includes/widgets/class-wp-widget-media-image.php:28
-#: wp-includes/js/dist/block-editor.js:24837
-#: wp-includes/js/dist/block-editor.js:66338
+#: wp-includes/js/dist/block-editor.js:24841
+#: wp-includes/js/dist/block-editor.js:66483
 #: wp-includes/js/dist/block-library.js:27040
-#: wp-includes/js/dist/block-library.js:47481
-#: wp-includes/js/dist/editor.js:15516 wp-admin/includes/media.php:2954
+#: wp-includes/js/dist/block-library.js:47485
+#: wp-includes/js/dist/editor.js:15544 wp-admin/includes/media.php:2954
 msgid "Image"
 msgstr "Gambar"
 
@@ -18756,20 +18786,20 @@ msgid "Home"
 msgstr "Beranda"
 
 #. translators: Hidden accessibility text.
-#: wp-includes/post-template.php:960 wp-includes/js/dist/block-editor.js:46368
-#: wp-includes/js/dist/edit-site.js:15128
-#: wp-includes/js/dist/edit-site.js:23170
-#: wp-includes/js/dist/edit-site.js:32528
+#: wp-includes/post-template.php:960 wp-includes/js/dist/block-editor.js:46489
+#: wp-includes/js/dist/edit-site.js:15130
+#: wp-includes/js/dist/edit-site.js:23173
+#: wp-includes/js/dist/edit-site.js:32531
 #: wp-admin/includes/class-wp-list-table.php:1096
 #: wp-admin/includes/nav-menu.php:528 wp-admin/includes/nav-menu.php:900
 msgid "Previous page"
 msgstr "Laman sebelumnya"
 
 #. translators: Hidden accessibility text.
-#: wp-includes/post-template.php:959 wp-includes/js/dist/block-editor.js:46390
-#: wp-includes/js/dist/edit-site.js:15159
-#: wp-includes/js/dist/edit-site.js:23187
-#: wp-includes/js/dist/edit-site.js:32540
+#: wp-includes/post-template.php:959 wp-includes/js/dist/block-editor.js:46511
+#: wp-includes/js/dist/edit-site.js:15161
+#: wp-includes/js/dist/edit-site.js:23190
+#: wp-includes/js/dist/edit-site.js:32543
 #: wp-admin/includes/class-wp-list-table.php:1142
 #: wp-admin/includes/nav-menu.php:529 wp-admin/includes/nav-menu.php:901
 msgid "Next page"
@@ -18938,13 +18968,13 @@ msgstr "Pengguna tersebut tidak ada."
 
 #: wp-includes/class-wp-locale.php:220
 #: wp-includes/customize/class-wp-customize-date-time-control.php:203
-#: wp-includes/js/dist/components.js:54745
+#: wp-includes/js/dist/components.js:54774
 msgid "PM"
 msgstr "PM"
 
 #: wp-includes/class-wp-locale.php:219
 #: wp-includes/customize/class-wp-customize-date-time-control.php:202
-#: wp-includes/js/dist/components.js:54742
+#: wp-includes/js/dist/components.js:54771
 msgid "AM"
 msgstr "AM"
 
@@ -18991,13 +19021,13 @@ msgid "Fill Screen"
 msgstr "Penuhi Layar"
 
 #: wp-includes/class-wp-editor.php:1263
-#: wp-includes/js/dist/block-editor.js:23354
-#: wp-includes/js/dist/block-editor.js:69051
+#: wp-includes/js/dist/block-editor.js:23358
+#: wp-includes/js/dist/block-editor.js:69198
 msgid "Remove link"
 msgstr "Hilangkan Taut"
 
 #: wp-includes/class-wp-editor.php:1267 wp-includes/script-loader.php:781
-#: wp-includes/js/dist/block-editor.js:68749
+#: wp-includes/js/dist/block-editor.js:68896
 msgid "Insert link"
 msgstr "Sisipkan taut"
 
@@ -19005,9 +19035,9 @@ msgstr "Sisipkan taut"
 msgid "Check Spelling"
 msgstr "Cek Ejaan"
 
-#: wp-includes/class-wp-editor.php:1183 wp-includes/js/dist/edit-site.js:14537
-#: wp-includes/js/dist/edit-site.js:15085
-#: wp-includes/js/dist/edit-site.js:31095
+#: wp-includes/class-wp-editor.php:1183 wp-includes/js/dist/edit-site.js:14539
+#: wp-includes/js/dist/edit-site.js:15087
+#: wp-includes/js/dist/edit-site.js:31098
 msgid "Select all"
 msgstr "Pilih semua"
 
@@ -19025,30 +19055,30 @@ msgid "Link Rel"
 msgstr "Rel Taut"
 
 #: wp-includes/class-wp-editor.php:1226
-#: wp-includes/js/dist/block-editor.js:47551
+#: wp-includes/js/dist/block-editor.js:47672
 msgid "Source"
 msgstr "Sumber"
 
 #: wp-includes/customize/class-wp-customize-background-position-control.php:79
-#: wp-includes/js/dist/components.js:15004
+#: wp-includes/js/dist/components.js:15236
 #: wp-admin/includes/class-custom-background.php:425
 msgid "Bottom Right"
 msgstr "Kanan Bawah"
 
 #: wp-includes/customize/class-wp-customize-background-position-control.php:71
-#: wp-includes/js/dist/components.js:15002
+#: wp-includes/js/dist/components.js:15234
 #: wp-admin/includes/class-custom-background.php:417
 msgid "Bottom Left"
 msgstr "Kiri Bawah"
 
 #: wp-includes/customize/class-wp-customize-background-position-control.php:51
-#: wp-includes/js/dist/components.js:14997
+#: wp-includes/js/dist/components.js:15229
 #: wp-admin/includes/class-custom-background.php:397
 msgid "Top Right"
 msgstr "Kanan Atas"
 
 #: wp-includes/customize/class-wp-customize-background-position-control.php:43
-#: wp-includes/js/dist/components.js:14995
+#: wp-includes/js/dist/components.js:15227
 #: wp-admin/includes/class-custom-background.php:389
 msgid "Top Left"
 msgstr "Kiri Atas"
@@ -19062,7 +19092,7 @@ msgid "Fullscreen"
 msgstr "Selayar penuh"
 
 #: wp-includes/media-template.php:1090 wp-includes/media-template.php:1154
-#: wp-includes/js/dist/block-editor.js:20956
+#: wp-includes/js/dist/block-editor.js:20960
 msgid "Align"
 msgstr "Rata"
 
@@ -19070,12 +19100,12 @@ msgstr "Rata"
 #: wp-includes/widgets/class-wp-widget-media-audio.php:77
 #: wp-includes/widgets/class-wp-widget-media-video.php:80
 #: wp-includes/js/dist/block-library.js:3401
-#: wp-includes/js/dist/block-library.js:63056
+#: wp-includes/js/dist/block-library.js:63084
 msgid "Loop"
 msgstr "Pengulangan"
 
-#: wp-includes/js/dist/block-editor.js:47561
-#: wp-includes/js/dist/components.js:45099
+#: wp-includes/js/dist/block-editor.js:47682
+#: wp-includes/js/dist/components.js:45333
 #: wp-admin/includes/ajax-actions.php:2261
 msgid "Type"
 msgstr "Jenis"
@@ -19084,8 +19114,8 @@ msgstr "Jenis"
 msgid "Constrain proportions"
 msgstr "Pertahankan proporsi"
 
-#: wp-includes/class-wp-editor.php:1224 wp-includes/js/dist/editor.js:29759
-#: wp-includes/js/dist/editor.js:29897
+#: wp-includes/class-wp-editor.php:1224 wp-includes/js/dist/editor.js:29791
+#: wp-includes/js/dist/editor.js:29929
 msgid "General"
 msgstr "Umum"
 
@@ -19099,7 +19129,7 @@ msgstr "URL yang Anda masukkan sepertinya merupakan alamat surel. Apakah Anda in
 
 #: wp-includes/class-wp-editor.php:1346
 #: wp-includes/customize/class-wp-customize-background-position-control.php:75
-#: wp-includes/js/dist/block-editor.js:18904
+#: wp-includes/js/dist/block-editor.js:18908
 #: wp-admin/includes/class-custom-background.php:421
 msgid "Bottom"
 msgstr "Dasar"
@@ -19110,8 +19140,8 @@ msgstr "Tengah"
 
 #: wp-includes/class-wp-editor.php:1344
 #: wp-includes/customize/class-wp-customize-background-position-control.php:47
-#: wp-includes/js/dist/block-editor.js:18903
-#: wp-includes/js/dist/components.js:56491
+#: wp-includes/js/dist/block-editor.js:18907
+#: wp-includes/js/dist/components.js:56521
 #: wp-admin/includes/class-custom-background.php:393
 msgid "Top"
 msgstr "Puncak"
@@ -19125,17 +19155,17 @@ msgid "Vertical space"
 msgstr "Spasi vertikal"
 
 #: wp-includes/class-wp-editor.php:1232
-#: wp-includes/js/dist/block-editor.js:31689
-#: wp-includes/js/dist/block-editor.js:69493
-#: wp-includes/js/dist/block-editor.js:69963
-#: wp-includes/js/dist/block-editor.js:70081
+#: wp-includes/js/dist/block-editor.js:31694
+#: wp-includes/js/dist/block-editor.js:69640
+#: wp-includes/js/dist/block-editor.js:70110
+#: wp-includes/js/dist/block-editor.js:70228
 msgid "Dimensions"
 msgstr "Dimensi"
 
 #: wp-includes/class-wp-editor.php:1227
-#: wp-includes/js/dist/block-editor.js:26389
-#: wp-includes/js/dist/block-editor.js:26404
-#: wp-includes/js/dist/block-editor.js:26661
+#: wp-includes/js/dist/block-editor.js:26394
+#: wp-includes/js/dist/block-editor.js:26409
+#: wp-includes/js/dist/block-editor.js:26666
 msgid "Border"
 msgstr "Tepi"
 
@@ -19153,8 +19183,8 @@ msgstr "Tempel"
 
 #: wp-includes/class-wp-customize-manager.php:4393
 #: wp-includes/class-wp-editor.php:1181
-#: wp-includes/js/dist/block-editor.js:56823
-#: wp-includes/js/dist/components.js:37976 wp-includes/js/dist/editor.js:19228
+#: wp-includes/js/dist/block-editor.js:56943
+#: wp-includes/js/dist/components.js:38210 wp-includes/js/dist/editor.js:19258
 #: wp-admin/user-edit.php:987
 msgid "Copy"
 msgstr "Salin"
@@ -19174,13 +19204,13 @@ msgid "Subscript"
 msgstr "Tika bawah"
 
 #: wp-includes/class-wp-editor.php:1162
-#: wp-includes/js/dist/block-editor.js:28884
+#: wp-includes/js/dist/block-editor.js:28889
 #: wp-includes/js/dist/format-library.js:1164
 msgid "Strikethrough"
 msgstr "Coret"
 
 #: wp-includes/class-wp-editor.php:1161
-#: wp-includes/js/dist/block-editor.js:28880
+#: wp-includes/js/dist/block-editor.js:28885
 #: wp-includes/js/dist/format-library.js:1210
 msgid "Underline"
 msgstr "Garis bawah"
@@ -19204,32 +19234,32 @@ msgstr "Kode"
 msgid "Blockquote"
 msgstr "Blok kutipan"
 
-#: wp-includes/class-wp-editor.php:1149 wp-includes/js/dist/edit-site.js:19765
+#: wp-includes/class-wp-editor.php:1149 wp-includes/js/dist/edit-site.js:19768
 msgid "Heading 6"
 msgstr "Penajukan 6"
 
-#: wp-includes/class-wp-editor.php:1148 wp-includes/js/dist/edit-site.js:19760
+#: wp-includes/class-wp-editor.php:1148 wp-includes/js/dist/edit-site.js:19763
 msgid "Heading 5"
 msgstr "Penajukan 5"
 
-#: wp-includes/class-wp-editor.php:1147 wp-includes/js/dist/edit-site.js:19755
+#: wp-includes/class-wp-editor.php:1147 wp-includes/js/dist/edit-site.js:19758
 msgid "Heading 4"
 msgstr "Penajukan 4"
 
-#: wp-includes/class-wp-editor.php:1146 wp-includes/js/dist/edit-site.js:19750
+#: wp-includes/class-wp-editor.php:1146 wp-includes/js/dist/edit-site.js:19753
 msgid "Heading 3"
 msgstr "Penajukan 3"
 
-#: wp-includes/class-wp-editor.php:1145 wp-includes/js/dist/edit-site.js:19745
+#: wp-includes/class-wp-editor.php:1145 wp-includes/js/dist/edit-site.js:19748
 msgid "Heading 2"
 msgstr "Penajukan 2"
 
-#: wp-includes/class-wp-editor.php:1144 wp-includes/js/dist/edit-site.js:19740
+#: wp-includes/class-wp-editor.php:1144 wp-includes/js/dist/edit-site.js:19743
 msgid "Heading 1"
 msgstr "Penajukan 1"
 
 #: wp-includes/class-wp-editor.php:1153
-#: wp-includes/js/dist/block-editor.js:62768
+#: wp-includes/js/dist/block-editor.js:62888
 msgid "Paragraph"
 msgstr "Paragraf"
 
@@ -19253,12 +19283,12 @@ msgid "The changes you made will be lost if you navigate away from this page."
 msgstr "Perubahan yang Anda buat akan hilang jika Anda meninggalkan laman ini."
 
 #: wp-includes/class-wp-editor.php:1313
-#: wp-includes/js/dist/block-editor.js:31416
+#: wp-includes/js/dist/block-editor.js:31421
 msgid "Column"
 msgstr "Kolom"
 
 #: wp-includes/class-wp-editor.php:1311
-#: wp-includes/js/dist/block-editor.js:31440
+#: wp-includes/js/dist/block-editor.js:31445
 msgid "Row"
 msgstr "Baris"
 
@@ -19299,27 +19329,27 @@ msgid "Merge table cells"
 msgstr "Gabung sel tabel"
 
 #: wp-includes/class-wp-editor.php:1324
-#: wp-includes/js/dist/block-library.js:58781
+#: wp-includes/js/dist/block-library.js:58785
 msgid "Insert column after"
 msgstr "Sisipkan kolom setelah"
 
 #: wp-includes/class-wp-editor.php:1323
-#: wp-includes/js/dist/block-library.js:58776
+#: wp-includes/js/dist/block-library.js:58780
 msgid "Insert column before"
 msgstr "Sisipkan kolom sebelum"
 
 #: wp-includes/class-wp-editor.php:1327
-#: wp-includes/js/dist/block-library.js:58771
+#: wp-includes/js/dist/block-library.js:58775
 msgid "Delete row"
 msgstr "Hapus baris"
 
 #: wp-includes/class-wp-editor.php:1322
-#: wp-includes/js/dist/block-library.js:58766
+#: wp-includes/js/dist/block-library.js:58770
 msgid "Insert row after"
 msgstr "Sisipkan baris setelah"
 
 #: wp-includes/class-wp-editor.php:1321
-#: wp-includes/js/dist/block-library.js:58761
+#: wp-includes/js/dist/block-library.js:58765
 msgid "Insert row before"
 msgstr "Sisipkan baris sebelum"
 
@@ -19557,7 +19587,7 @@ msgstr "%s adalah opsi WP yang terlindungi dan tidak bisa dimodifikasi"
 
 #. translators: Used between list items, there is a space after the comma.
 #: wp-includes/class-wp-locale.php:241 wp-includes/l10n.php:1971
-#: wp-includes/js/dist/block-editor.js:71290
+#: wp-includes/js/dist/block-editor.js:71440
 msgid ", "
 msgstr ", "
 
@@ -19647,7 +19677,7 @@ msgstr "Berikan umpan ini sebuah judul (opsional):"
 msgid "Enter the RSS feed URL here:"
 msgstr "Masukkan URL umpan RSS tersebut di sini:"
 
-#: wp-includes/widgets.php:1635 wp-includes/js/dist/editor.js:11296
+#: wp-includes/widgets.php:1635 wp-includes/js/dist/editor.js:11324
 msgid "Untitled"
 msgstr "Tanpa judul"
 
@@ -19681,23 +19711,23 @@ msgid "Automatically add paragraphs"
 msgstr "Secara otomatis menambahkan paragraf"
 
 #: wp-includes/widgets/class-wp-widget-text.php:43
-#: wp-includes/js/dist/block-editor.js:23867
-#: wp-includes/js/dist/block-editor.js:27447
-#: wp-includes/js/dist/block-editor.js:27454
-#: wp-includes/js/dist/block-editor.js:27548
+#: wp-includes/js/dist/block-editor.js:23871
+#: wp-includes/js/dist/block-editor.js:27452
+#: wp-includes/js/dist/block-editor.js:27459
+#: wp-includes/js/dist/block-editor.js:27553
 #: wp-includes/js/dist/block-library.js:35743
 #: wp-includes/js/dist/block-library.js:37219
 #: wp-includes/js/dist/block-library.js:38337
-#: wp-includes/js/dist/block-library.js:55989
-#: wp-includes/js/dist/blocks.js:8065 wp-includes/js/dist/edit-site.js:12749
-#: wp-includes/js/dist/edit-site.js:19688
+#: wp-includes/js/dist/block-library.js:55993
+#: wp-includes/js/dist/blocks.js:8089 wp-includes/js/dist/edit-site.js:12749
+#: wp-includes/js/dist/edit-site.js:19691
 #: wp-includes/js/dist/format-library.js:1342
 msgid "Text"
 msgstr "Teks"
 
 #: wp-includes/widgets/class-wp-widget-calendar.php:38
 #: wp-includes/js/dist/block-library.js:6005
-#: wp-includes/js/dist/components.js:54242
+#: wp-includes/js/dist/components.js:54271
 msgid "Calendar"
 msgstr "Kalender"
 
@@ -19926,12 +19956,12 @@ msgstr "Komentar untuk %s"
 
 #: wp-includes/class-wp-customize-nav-menus.php:336
 #: wp-includes/script-loader.php:1248
-#: wp-includes/js/dist/block-directory.js:1803
-#: wp-includes/js/dist/block-editor.js:46061
+#: wp-includes/js/dist/block-directory.js:1826
+#: wp-includes/js/dist/block-editor.js:46182
 #: wp-includes/js/dist/block-library.js:10943
-#: wp-includes/js/dist/block-library.js:44321
-#: wp-includes/js/dist/block-library.js:61138
-#: wp-includes/js/dist/commands.js:3776 wp-includes/js/dist/components.js:60180
+#: wp-includes/js/dist/block-library.js:44322
+#: wp-includes/js/dist/block-library.js:61165
+#: wp-includes/js/dist/commands.js:3799 wp-includes/js/dist/components.js:60211
 #: wp-admin/includes/nav-menu.php:720 wp-admin/includes/nav-menu.php:1096
 #: wp-admin/js/nav-menu.js:1704 wp-admin/js/tags-suggest.js:141
 msgid "No results found."
@@ -19952,8 +19982,8 @@ msgstr "Maaf, komentar untuk item ini telah ditutup."
 
 #: wp-includes/admin-bar.php:1100
 #: wp-includes/class-wp-customize-widgets.php:419
-#: wp-includes/functions.php:5444 wp-includes/js/dist/blocks.js:8074
-#: wp-includes/js/dist/core-data.js:2886
+#: wp-includes/functions.php:5444 wp-includes/js/dist/blocks.js:8098
+#: wp-includes/js/dist/core-data.js:2910
 #: wp-includes/js/dist/customize-widgets.js:2078
 #: wp-includes/js/dist/edit-widgets.js:4222
 #: wp-includes/js/dist/edit-widgets.js:4226
@@ -20004,35 +20034,35 @@ msgstr "HTML"
 #: wp-includes/customize/class-wp-customize-media-control.php:239
 #: wp-includes/customize/class-wp-customize-media-control.php:250
 #: wp-includes/customize/class-wp-customize-media-control.php:260
-#: wp-includes/js/dist/block-editor.js:27489
-#: wp-includes/js/dist/block-editor.js:28190
-#: wp-includes/js/dist/block-editor.js:28276
-#: wp-includes/js/dist/block-editor.js:30809
-#: wp-includes/js/dist/block-editor.js:34112
-#: wp-includes/js/dist/block-library.js:47873
-#: wp-includes/js/dist/components.js:55272
-#: wp-includes/js/dist/components.js:57069
+#: wp-includes/js/dist/block-editor.js:27494
+#: wp-includes/js/dist/block-editor.js:28195
+#: wp-includes/js/dist/block-editor.js:28281
+#: wp-includes/js/dist/block-editor.js:30814
+#: wp-includes/js/dist/block-editor.js:34117
+#: wp-includes/js/dist/block-library.js:47877
+#: wp-includes/js/dist/components.js:55301
+#: wp-includes/js/dist/components.js:57099
 #: wp-includes/js/dist/edit-site.js:12874
 #: wp-includes/js/dist/edit-site.js:12904
-#: wp-includes/js/dist/edit-site.js:20397
-#: wp-includes/js/dist/edit-site.js:20751
-#: wp-includes/js/dist/edit-site.js:20823
-#: wp-includes/js/dist/edit-site.js:21030
-#: wp-includes/js/dist/edit-site.js:21941 wp-admin/js/color-picker.js:149
+#: wp-includes/js/dist/edit-site.js:20400
+#: wp-includes/js/dist/edit-site.js:20754
+#: wp-includes/js/dist/edit-site.js:20826
+#: wp-includes/js/dist/edit-site.js:21033
+#: wp-includes/js/dist/edit-site.js:21944 wp-admin/js/color-picker.js:149
 msgid "Default"
 msgstr "Standar"
 
 #: wp-includes/class-wp-editor.php:1334 wp-includes/media-template.php:1217
 #: wp-includes/widgets/class-wp-widget-media-image.php:84
-#: wp-includes/js/dist/block-editor.js:31057
-#: wp-includes/js/dist/block-editor.js:31253
-#: wp-includes/js/dist/block-editor.js:31318
-#: wp-includes/js/dist/block-editor.js:65809
-#: wp-includes/js/dist/block-editor.js:73996
-#: wp-includes/js/dist/block-editor.js:74002
-#: wp-includes/js/dist/block-library.js:43112
-#: wp-includes/js/dist/block-library.js:43123
-#: wp-includes/js/dist/block-library.js:56812 wp-admin/options-media.php:70
+#: wp-includes/js/dist/block-editor.js:31062
+#: wp-includes/js/dist/block-editor.js:31258
+#: wp-includes/js/dist/block-editor.js:31323
+#: wp-includes/js/dist/block-editor.js:65954
+#: wp-includes/js/dist/block-editor.js:74146
+#: wp-includes/js/dist/block-editor.js:74152
+#: wp-includes/js/dist/block-library.js:43113
+#: wp-includes/js/dist/block-library.js:43124
+#: wp-includes/js/dist/block-library.js:56816 wp-admin/options-media.php:70
 msgid "Height"
 msgstr "Tinggi"
 
@@ -20066,11 +20096,11 @@ msgstr "Email"
 msgid "Site Title"
 msgstr "Judul Situs"
 
-#: wp-includes/taxonomy.php:196 wp-includes/js/dist/block-editor.js:64153
-#: wp-includes/js/dist/blocks.js:8077 wp-includes/js/dist/edit-site.js:20390
-#: wp-includes/js/dist/edit-site.js:20743
-#: wp-includes/js/dist/edit-site.js:20815
-#: wp-includes/js/dist/edit-site.js:21034
+#: wp-includes/taxonomy.php:196 wp-includes/js/dist/block-editor.js:64275
+#: wp-includes/js/dist/blocks.js:8101 wp-includes/js/dist/edit-site.js:20393
+#: wp-includes/js/dist/edit-site.js:20746
+#: wp-includes/js/dist/edit-site.js:20818
+#: wp-includes/js/dist/edit-site.js:21037
 #: wp-admin/includes/class-wp-ms-themes-list-table.php:332
 #: wp-admin/includes/class-wp-ms-themes-list-table.php:348
 msgid "Theme"
@@ -20086,7 +20116,7 @@ msgstr "Aktifkan"
 msgid "First Post"
 msgstr "Pos Pertama"
 
-#: wp-includes/admin-bar.php:654 wp-includes/js/dist/block-editor.js:69317
+#: wp-includes/admin-bar.php:654 wp-includes/js/dist/block-editor.js:69464
 #: wp-includes/js/dist/block-library.js:1772
 #: wp-includes/js/dist/block-library.js:2108
 #: wp-includes/js/dist/block-library.js:3392
@@ -20114,29 +20144,29 @@ msgstr "Pos Pertama"
 #: wp-includes/js/dist/block-library.js:32029
 #: wp-includes/js/dist/block-library.js:37209
 #: wp-includes/js/dist/block-library.js:38327
-#: wp-includes/js/dist/block-library.js:40820
-#: wp-includes/js/dist/block-library.js:41112
-#: wp-includes/js/dist/block-library.js:42416
-#: wp-includes/js/dist/block-library.js:42827
-#: wp-includes/js/dist/block-library.js:43507
-#: wp-includes/js/dist/block-library.js:45131
-#: wp-includes/js/dist/block-library.js:47858
-#: wp-includes/js/dist/block-library.js:49520
-#: wp-includes/js/dist/block-library.js:49828
-#: wp-includes/js/dist/block-library.js:50198
-#: wp-includes/js/dist/block-library.js:50218
-#: wp-includes/js/dist/block-library.js:51762
-#: wp-includes/js/dist/block-library.js:51993
-#: wp-includes/js/dist/block-library.js:52587
-#: wp-includes/js/dist/block-library.js:53605
-#: wp-includes/js/dist/block-library.js:54465
-#: wp-includes/js/dist/block-library.js:55984
-#: wp-includes/js/dist/block-library.js:56408
-#: wp-includes/js/dist/block-library.js:56803
-#: wp-includes/js/dist/block-library.js:58851
-#: wp-includes/js/dist/block-library.js:59779
-#: wp-includes/js/dist/block-library.js:60064
-#: wp-includes/js/dist/block-library.js:63573
+#: wp-includes/js/dist/block-library.js:40821
+#: wp-includes/js/dist/block-library.js:41113
+#: wp-includes/js/dist/block-library.js:42417
+#: wp-includes/js/dist/block-library.js:42828
+#: wp-includes/js/dist/block-library.js:43508
+#: wp-includes/js/dist/block-library.js:45132
+#: wp-includes/js/dist/block-library.js:47862
+#: wp-includes/js/dist/block-library.js:49524
+#: wp-includes/js/dist/block-library.js:49832
+#: wp-includes/js/dist/block-library.js:50202
+#: wp-includes/js/dist/block-library.js:50222
+#: wp-includes/js/dist/block-library.js:51766
+#: wp-includes/js/dist/block-library.js:51997
+#: wp-includes/js/dist/block-library.js:52591
+#: wp-includes/js/dist/block-library.js:53609
+#: wp-includes/js/dist/block-library.js:54469
+#: wp-includes/js/dist/block-library.js:55988
+#: wp-includes/js/dist/block-library.js:56412
+#: wp-includes/js/dist/block-library.js:56807
+#: wp-includes/js/dist/block-library.js:58855
+#: wp-includes/js/dist/block-library.js:59783
+#: wp-includes/js/dist/block-library.js:60068
+#: wp-includes/js/dist/block-library.js:63601
 #: wp-includes/js/dist/edit-widgets.js:3380 wp-admin/includes/ms.php:1083
 #: wp-admin/menu.php:377 wp-admin/options.php:22 wp-admin/network/menu.php:109
 msgid "Settings"
@@ -20148,7 +20178,7 @@ msgstr "Situs Milik Saya"
 
 #: wp-includes/admin-bar.php:632 wp-includes/admin-bar.php:1085
 #: wp-includes/customize/class-wp-customize-themes-panel.php:81
-#: wp-includes/taxonomy.php:195 wp-includes/js/dist/core-data.js:2957
+#: wp-includes/taxonomy.php:195 wp-includes/js/dist/core-data.js:2981
 #: wp-admin/includes/ms.php:1078 wp-admin/themes.php:127
 #: wp-admin/themes.php:251 wp-admin/update-core.php:642
 #: wp-admin/update-core.php:655 wp-admin/network/menu.php:78
@@ -20212,16 +20242,16 @@ msgstr "<strong>Eror</strong>: Mohon masukkan nama pengguna."
 
 #: wp-includes/class-wp-editor.php:1335 wp-includes/media-template.php:1212
 #: wp-includes/widgets/class-wp-widget-media-image.php:78
-#: wp-includes/js/dist/block-editor.js:31253
-#: wp-includes/js/dist/block-editor.js:31318
-#: wp-includes/js/dist/block-editor.js:65802
-#: wp-includes/js/dist/block-editor.js:73980
-#: wp-includes/js/dist/block-editor.js:73986
+#: wp-includes/js/dist/block-editor.js:31258
+#: wp-includes/js/dist/block-editor.js:31323
+#: wp-includes/js/dist/block-editor.js:65947
+#: wp-includes/js/dist/block-editor.js:74130
+#: wp-includes/js/dist/block-editor.js:74136
 #: wp-includes/js/dist/block-library.js:7417
-#: wp-includes/js/dist/block-library.js:43133
-#: wp-includes/js/dist/block-library.js:43144
-#: wp-includes/js/dist/block-library.js:52593
-#: wp-includes/js/dist/block-library.js:56805
+#: wp-includes/js/dist/block-library.js:43134
+#: wp-includes/js/dist/block-library.js:43145
+#: wp-includes/js/dist/block-library.js:52597
+#: wp-includes/js/dist/block-library.js:56809
 #: wp-includes/js/dist/format-library.js:277 wp-admin/options-media.php:67
 msgid "Width"
 msgstr "Lebar"
@@ -20276,7 +20306,7 @@ msgstr "Hitam"
 #: wp-includes/customize/class-wp-customize-nav-menus-panel.php:90
 #: wp-includes/customize/class-wp-customize-themes-panel.php:90
 #: wp-includes/js/dist/customize-widgets.js:964
-#: wp-includes/js/dist/edit-widgets.js:4144 wp-includes/js/dist/editor.js:25812
+#: wp-includes/js/dist/edit-widgets.js:4144 wp-includes/js/dist/editor.js:25844
 #: wp-admin/customize.php:245 wp-admin/includes/class-wp-screen.php:979
 msgid "Help"
 msgstr "Bantuan"
@@ -20289,17 +20319,17 @@ msgstr "Bantuan"
 #: wp-includes/widgets/class-wp-widget-recent-posts.php:114
 #: wp-includes/js/dist/block-library.js:28414
 #: wp-includes/js/dist/block-library.js:28446
-#: wp-includes/js/dist/block-library.js:39414
-#: wp-includes/js/dist/block-library.js:39417
+#: wp-includes/js/dist/block-library.js:39415
+#: wp-includes/js/dist/block-library.js:39418
 #: wp-includes/js/dist/core-commands.js:394
 #: wp-includes/js/dist/core-commands.js:490
-#: wp-includes/js/dist/core-data.js:5712 wp-includes/js/dist/core-data.js:5734
-#: wp-includes/js/dist/core-data.js:5756 wp-includes/js/dist/core-data.js:5776
-#: wp-includes/js/dist/edit-site.js:34012
-#: wp-includes/js/dist/edit-site.js:34129
-#: wp-includes/js/dist/edit-site.js:34131
-#: wp-includes/js/dist/edit-site.js:38177 wp-includes/js/dist/editor.js:13634
-#: wp-includes/js/dist/editor.js:19204 wp-admin/includes/ajax-actions.php:2264
+#: wp-includes/js/dist/core-data.js:5739 wp-includes/js/dist/core-data.js:5761
+#: wp-includes/js/dist/core-data.js:5783 wp-includes/js/dist/core-data.js:5803
+#: wp-includes/js/dist/edit-site.js:34015
+#: wp-includes/js/dist/edit-site.js:34132
+#: wp-includes/js/dist/edit-site.js:34134
+#: wp-includes/js/dist/edit-site.js:38204 wp-includes/js/dist/editor.js:13662
+#: wp-includes/js/dist/editor.js:19234 wp-admin/includes/ajax-actions.php:2264
 #: wp-admin/includes/media.php:3348 wp-admin/includes/revision.php:61
 #: wp-admin/includes/revision.php:64 wp-admin/includes/template.php:2098
 #: wp-admin/js/inline-edit-post.js:216
@@ -20318,8 +20348,8 @@ msgstr "Sunting Media"
 msgid "New Page"
 msgstr "Laman Baru"
 
-#: wp-includes/media.php:4928 wp-includes/js/dist/block-editor.js:68654
-#: wp-includes/js/dist/block-library.js:63594
+#: wp-includes/media.php:4928 wp-includes/js/dist/block-editor.js:68801
+#: wp-includes/js/dist/block-library.js:63622
 #: wp-admin/includes/template.php:2063 wp-admin/nav-menus.php:1021
 #: wp-admin/plugin-editor.php:259 wp-admin/theme-editor.php:260
 msgid "Select"
@@ -20330,19 +20360,19 @@ msgstr "Pilih"
 #: wp-includes/class-wp-customize-manager.php:5742
 #: wp-includes/class-wp-editor.php:1189 wp-includes/class-wp-editor.php:1886
 #: wp-includes/script-loader.php:969 wp-includes/script-loader.php:1292
-#: wp-includes/script-loader.php:1971 wp-includes/js/dist/block-editor.js:68768
-#: wp-includes/js/dist/block-editor.js:70589
+#: wp-includes/script-loader.php:1971 wp-includes/js/dist/block-editor.js:68915
+#: wp-includes/js/dist/block-editor.js:70738
 #: wp-includes/js/dist/block-library.js:33726
 #: wp-includes/js/dist/block-library.js:36051
-#: wp-includes/js/dist/block-library.js:63248
-#: wp-includes/js/dist/components.js:47551
-#: wp-includes/js/dist/components.js:61634
-#: wp-includes/js/dist/edit-site.js:22235
-#: wp-includes/js/dist/edit-site.js:22440
-#: wp-includes/js/dist/edit-site.js:40860
-#: wp-includes/js/dist/edit-widgets.js:4535 wp-includes/js/dist/editor.js:7264
-#: wp-includes/js/dist/editor.js:23908 wp-includes/js/dist/editor.js:25454
-#: wp-includes/js/dist/editor.js:26716 wp-includes/js/dist/fields.js:755
+#: wp-includes/js/dist/block-library.js:63276
+#: wp-includes/js/dist/components.js:47787
+#: wp-includes/js/dist/components.js:61665
+#: wp-includes/js/dist/edit-site.js:22238
+#: wp-includes/js/dist/edit-site.js:22443
+#: wp-includes/js/dist/edit-site.js:40888
+#: wp-includes/js/dist/edit-widgets.js:4535 wp-includes/js/dist/editor.js:7290
+#: wp-includes/js/dist/editor.js:23940 wp-includes/js/dist/editor.js:25486
+#: wp-includes/js/dist/editor.js:26748 wp-includes/js/dist/fields.js:755
 #: wp-admin/includes/class-wp-theme-install-list-table.php:399
 #: wp-admin/theme-install.php:468
 msgid "Close"
@@ -20352,8 +20382,8 @@ msgstr "Tutup"
 #: wp-includes/widgets/class-wp-widget-pages.php:31
 #: wp-includes/widgets/class-wp-widget-pages.php:44
 #: wp-includes/js/dist/core-commands.js:601
-#: wp-includes/js/dist/edit-site.js:39063
-#: wp-includes/js/dist/edit-site.js:41205 wp-admin/export.php:250
+#: wp-includes/js/dist/edit-site.js:39091
+#: wp-includes/js/dist/edit-site.js:41233 wp-admin/export.php:250
 msgid "Pages"
 msgstr "Laman"
 
@@ -20366,7 +20396,7 @@ msgstr "Email: %s"
 
 #: wp-includes/widgets/class-wp-widget-links.php:29
 #: wp-includes/js/dist/edit-site.js:12753
-#: wp-includes/js/dist/edit-site.js:19692
+#: wp-includes/js/dist/edit-site.js:19695
 #: wp-admin/includes/class-wp-terms-list-table.php:198
 #: wp-admin/includes/class-wp-terms-list-table.php:223
 #: wp-admin/link-manager.php:50 wp-admin/menu.php:79
@@ -20377,7 +20407,7 @@ msgstr "Tautan"
 msgid "View Page"
 msgstr "Lihat Laman"
 
-#: wp-includes/post.php:3427 wp-includes/js/dist/editor.js:22087
+#: wp-includes/post.php:3427 wp-includes/js/dist/editor.js:22119
 msgid "Images"
 msgstr "Gambar"
 
@@ -20387,7 +20417,7 @@ msgstr "Gambar"
 #. translators: %s: Plugin author.
 #. translators: %s: Theme author.
 #. translators: %s: Theme author link.
-#: wp-includes/js/dist/block-directory.js:2006
+#: wp-includes/js/dist/block-directory.js:2029
 #: wp-admin/includes/class-wp-debug-data.php:750
 #: wp-admin/includes/class-wp-debug-data.php:926
 #: wp-admin/includes/class-wp-debug-data.php:1313
@@ -20403,7 +20433,7 @@ msgstr "Gambar"
 msgid "By %s"
 msgstr "Oleh %s"
 
-#: wp-includes/js/dist/block-library.js:59369
+#: wp-includes/js/dist/block-library.js:59373
 #: wp-admin/includes/class-plugin-installer-skin.php:223
 #: wp-admin/includes/class-theme-installer-skin.php:246
 #: wp-admin/includes/class-wp-debug-data.php:172
@@ -20416,23 +20446,23 @@ msgstr "Versi"
 #: wp-includes/admin-bar.php:1196 wp-includes/admin-bar.php:1198
 #: wp-includes/blocks/search.php:27 wp-includes/blocks/search.php:28
 #: wp-includes/blocks/search.php:52 wp-includes/class-wp-editor.php:1909
-#: wp-includes/media.php:4927 wp-includes/js/dist/block-editor.js:46293
-#: wp-includes/js/dist/block-editor.js:48360
-#: wp-includes/js/dist/block-editor.js:48942
-#: wp-includes/js/dist/block-editor.js:49179
-#: wp-includes/js/dist/block-library.js:48536
-#: wp-includes/js/dist/block-library.js:52537
-#: wp-includes/js/dist/block-library.js:52741
-#: wp-includes/js/dist/block-library.js:52742
-#: wp-includes/js/dist/block-library.js:52863
-#: wp-includes/js/dist/block-library.js:52864
-#: wp-includes/js/dist/block-library.js:61123
-#: wp-includes/js/dist/components.js:59908
-#: wp-includes/js/dist/components.js:59909
+#: wp-includes/media.php:4927 wp-includes/js/dist/block-editor.js:46414
+#: wp-includes/js/dist/block-editor.js:48481
+#: wp-includes/js/dist/block-editor.js:49063
+#: wp-includes/js/dist/block-editor.js:49300
+#: wp-includes/js/dist/block-library.js:48540
+#: wp-includes/js/dist/block-library.js:52541
+#: wp-includes/js/dist/block-library.js:52745
+#: wp-includes/js/dist/block-library.js:52746
+#: wp-includes/js/dist/block-library.js:52867
+#: wp-includes/js/dist/block-library.js:52868
+#: wp-includes/js/dist/block-library.js:61150
+#: wp-includes/js/dist/components.js:59939
+#: wp-includes/js/dist/components.js:59940
 #: wp-includes/js/dist/edit-site.js:12276
-#: wp-includes/js/dist/edit-site.js:15010
-#: wp-includes/js/dist/edit-site.js:30152
-#: wp-includes/js/dist/edit-site.js:32631
+#: wp-includes/js/dist/edit-site.js:15012
+#: wp-includes/js/dist/edit-site.js:30155
+#: wp-includes/js/dist/edit-site.js:32634
 #: wp-admin/includes/class-wp-theme-install-list-table.php:59
 #: wp-admin/includes/nav-menu.php:599 wp-admin/includes/nav-menu.php:684
 #: wp-admin/includes/nav-menu.php:695 wp-admin/includes/nav-menu.php:971
@@ -20460,7 +20490,7 @@ msgstr "Seluruh Kategori"
 #: wp-includes/class-wp-customize-control.php:642
 #: wp-includes/class-wp-customize-nav-menus.php:1241
 #: wp-includes/js/dist/block-library.js:21917
-#: wp-includes/js/dist/editor.js:5844 wp-includes/js/dist/editor.js:25454
+#: wp-includes/js/dist/editor.js:5868 wp-includes/js/dist/editor.js:25486
 #: wp-includes/js/dist/patterns.js:571 wp-admin/includes/meta-boxes.php:599
 #: wp-admin/includes/meta-boxes.php:1212
 msgid "Add"
@@ -20471,7 +20501,7 @@ msgid "Add or remove tags"
 msgstr "Tambahkan atau buang tag"
 
 #: wp-includes/media.php:4930 wp-includes/script-loader.php:1245
-#: wp-login.php:738 wp-includes/js/dist/edit-site.js:14572
+#: wp-login.php:738 wp-includes/js/dist/edit-site.js:14574
 #: wp-includes/js/dist/edit-widgets.js:3736 wp-admin/edit-form-comment.php:245
 #: wp-admin/edit-tag-form.php:301
 #: wp-admin/includes/class-wp-plugins-list-table.php:620
@@ -20487,15 +20517,15 @@ msgstr "Tambahkan atau buang tag"
 msgid "Update"
 msgstr "Perbarui"
 
-#: wp-includes/js/dist/editor.js:16585 wp-admin/includes/meta-boxes.php:189
+#: wp-includes/js/dist/editor.js:16613 wp-admin/includes/meta-boxes.php:189
 #: wp-admin/includes/meta-boxes.php:211 wp-admin/js/post.js:888
 msgid "Public"
 msgstr "Publik"
 
 #: wp-includes/post.php:1300 wp-includes/post.php:1320
-#: wp-includes/js/dist/edit-site.js:33687
-#: wp-includes/js/dist/edit-site.js:33972 wp-includes/js/dist/editor.js:16589
-#: wp-includes/js/dist/editor.js:19714 wp-includes/js/dist/editor.js:19735
+#: wp-includes/js/dist/edit-site.js:33690
+#: wp-includes/js/dist/edit-site.js:33975 wp-includes/js/dist/editor.js:16617
+#: wp-includes/js/dist/editor.js:19744 wp-includes/js/dist/editor.js:19765
 #: wp-admin/includes/class-wp-posts-list-table.php:1789
 #: wp-admin/includes/class-wp-posts-list-table.php:1991
 #: wp-admin/includes/meta-boxes.php:180 wp-admin/includes/meta-boxes.php:220
@@ -20504,8 +20534,8 @@ msgid "Private"
 msgstr "Privat"
 
 #: wp-includes/class-wp-editor.php:1187
-#: wp-includes/js/dist/block-library.js:48100
-#: wp-includes/js/dist/components.js:47683 wp-admin/includes/meta-boxes.php:165
+#: wp-includes/js/dist/block-library.js:48104
+#: wp-includes/js/dist/components.js:47919 wp-admin/includes/meta-boxes.php:165
 #: wp-admin/includes/meta-boxes.php:223 wp-admin/includes/template.php:897
 #: wp-admin/js/post.js:1012
 msgid "OK"
@@ -20515,13 +20545,13 @@ msgstr "Oke"
 msgid "Image URL"
 msgstr "URL Gambar"
 
-#: wp-includes/js/dist/edit-site.js:14970
-#: wp-includes/js/dist/edit-site.js:31023
-#: wp-includes/js/dist/edit-site.js:31757
-#: wp-includes/js/dist/edit-site.js:32126
-#: wp-includes/js/dist/edit-site.js:35640
-#: wp-includes/js/dist/edit-site.js:39239
-#: wp-includes/js/dist/edit-site.js:40636 wp-includes/js/dist/editor.js:27922
+#: wp-includes/js/dist/edit-site.js:14972
+#: wp-includes/js/dist/edit-site.js:31026
+#: wp-includes/js/dist/edit-site.js:31760
+#: wp-includes/js/dist/edit-site.js:32129
+#: wp-includes/js/dist/edit-site.js:35643
+#: wp-includes/js/dist/edit-site.js:39267
+#: wp-includes/js/dist/edit-site.js:40664 wp-includes/js/dist/editor.js:27954
 #: wp-admin/includes/media.php:2592
 #: wp-admin/includes/class-wp-ms-sites-list-table.php:374
 msgid "Actions"
@@ -20529,11 +20559,11 @@ msgstr "Tindakan"
 
 #. translators: Default privacy policy heading.
 #: wp-includes/class-wp-editor.php:1239 wp-includes/media.php:4924
-#: wp-includes/media.php:5611 wp-includes/js/dist/block-editor.js:49052
-#: wp-includes/js/dist/block-editor.js:66334
-#: wp-includes/js/dist/block-library.js:53900
-#: wp-includes/js/dist/blocks.js:8068 wp-includes/js/dist/core-data.js:2850
-#: wp-includes/js/dist/editor.js:29894 wp-admin/export.php:311
+#: wp-includes/media.php:5611 wp-includes/js/dist/block-editor.js:49173
+#: wp-includes/js/dist/block-editor.js:66479
+#: wp-includes/js/dist/block-library.js:53904
+#: wp-includes/js/dist/blocks.js:8092 wp-includes/js/dist/core-data.js:2874
+#: wp-includes/js/dist/editor.js:29926 wp-admin/export.php:311
 #: wp-admin/includes/class-wp-privacy-policy-content.php:510
 #: wp-admin/includes/media.php:2590 wp-admin/menu.php:66 wp-admin/menu.php:382
 msgid "Media"
@@ -20548,7 +20578,7 @@ msgstr "Sunting Gambar"
 #: wp-includes/media-template.php:645 wp-includes/media-template.php:793
 #: wp-includes/media-template.php:1084 wp-includes/media-template.php:1147
 #: wp-includes/widgets/class-wp-widget-media-image.php:91
-#: wp-includes/js/dist/block-editor.js:71119 wp-admin/includes/media.php:1405
+#: wp-includes/js/dist/block-editor.js:71269 wp-admin/includes/media.php:1405
 #: wp-admin/includes/media.php:3259
 msgid "Caption"
 msgstr "Keterangan"
@@ -20561,13 +20591,13 @@ msgstr "Perataan"
 #: wp-includes/media-template.php:905 wp-includes/media-template.php:984
 #: wp-includes/media-template.php:1176
 #: wp-includes/widgets/class-wp-widget-media-image.php:72
-#: wp-includes/js/dist/block-editor.js:24600
-#: wp-includes/js/dist/block-editor.js:29311
-#: wp-includes/js/dist/block-library.js:56383
-#: wp-includes/js/dist/block-library.js:56384
-#: wp-includes/js/dist/components.js:57295
-#: wp-includes/js/dist/components.js:57296
-#: wp-includes/js/dist/edit-site.js:20178 wp-admin/includes/media.php:1254
+#: wp-includes/js/dist/block-editor.js:24604
+#: wp-includes/js/dist/block-editor.js:29316
+#: wp-includes/js/dist/block-library.js:56387
+#: wp-includes/js/dist/block-library.js:56388
+#: wp-includes/js/dist/components.js:57325
+#: wp-includes/js/dist/components.js:57326
+#: wp-includes/js/dist/edit-site.js:20181 wp-admin/includes/media.php:1254
 msgid "Size"
 msgstr "Ukuran"
 
@@ -20583,7 +20613,7 @@ msgstr "Ukuran Penuh"
 #: wp-includes/media-template.php:917 wp-includes/media-template.php:997
 #: wp-includes/media-template.php:1188 wp-includes/media.php:4565
 #: wp-includes/js/dist/block-editor.js:8184
-#: wp-includes/js/dist/components.js:57156
+#: wp-includes/js/dist/components.js:57186
 #: wp-admin/includes/class-custom-background.php:649
 #: wp-admin/includes/media.php:1204
 msgid "Medium"
@@ -20593,7 +20623,7 @@ msgstr "Sedang"
 #: wp-includes/customize/class-wp-customize-background-position-control.php:65
 #: wp-includes/media-template.php:844 wp-includes/media-template.php:1100
 #: wp-includes/media-template.php:1164
-#: wp-includes/js/dist/block-editor.js:18906
+#: wp-includes/js/dist/block-editor.js:18910
 #: wp-includes/js/dist/block-library.js:28189
 #: wp-admin/includes/class-custom-background.php:411
 #: wp-admin/includes/media.php:1163 wp-admin/includes/media.php:2994
@@ -20605,8 +20635,8 @@ msgstr "Kanan"
 #: wp-includes/media-template.php:841 wp-includes/media-template.php:1097
 #: wp-includes/media-template.php:1161
 #: wp-includes/js/dist/block-library.js:28185
-#: wp-includes/js/dist/components.js:14999
-#: wp-includes/js/dist/components.js:15000
+#: wp-includes/js/dist/components.js:15231
+#: wp-includes/js/dist/components.js:15232
 #: wp-admin/includes/class-custom-background.php:407
 #: wp-admin/includes/media.php:1162 wp-admin/includes/media.php:2992
 msgid "Center"
@@ -20616,9 +20646,9 @@ msgstr "Tengah"
 #: wp-includes/customize/class-wp-customize-background-position-control.php:57
 #: wp-includes/media-template.php:838 wp-includes/media-template.php:1094
 #: wp-includes/media-template.php:1158
-#: wp-includes/js/dist/block-editor.js:18905
+#: wp-includes/js/dist/block-editor.js:18909
 #: wp-includes/js/dist/block-library.js:28181
-#: wp-includes/js/dist/components.js:56485
+#: wp-includes/js/dist/components.js:56515
 #: wp-admin/includes/class-custom-background.php:403
 #: wp-admin/includes/media.php:1161 wp-admin/includes/media.php:2990
 msgid "Left"
@@ -20656,21 +20686,21 @@ msgstr "Berkas &#8220;%s&#8221; tidak ditemukan?"
 msgid "Thumbnail"
 msgstr "Gambar Miniatur"
 
-#: wp-includes/js/dist/block-editor.js:71613
-#: wp-includes/js/dist/block-editor.js:71620
+#: wp-includes/js/dist/block-editor.js:71763
+#: wp-includes/js/dist/block-editor.js:71770
 #: wp-admin/includes/image-edit.php:64 wp-admin/includes/image-edit.php:161
 msgid "Scale"
 msgstr "Skala"
 
 #: wp-includes/class-wp-editor.php:1185
 #: wp-includes/js/dist/customize-widgets.js:1046
-#: wp-includes/js/dist/edit-widgets.js:3597 wp-includes/js/dist/editor.js:11030
+#: wp-includes/js/dist/edit-widgets.js:3597 wp-includes/js/dist/editor.js:11058
 #: wp-admin/includes/image-edit.php:99
 msgid "Redo"
 msgstr "Ulangi"
 
 #: wp-includes/general-template.php:531 wp-login.php:1518
-#: wp-includes/js/dist/editor.js:19885
+#: wp-includes/js/dist/editor.js:19915
 #: wp-admin/includes/class-wp-posts-list-table.php:1777
 #: wp-admin/includes/file.php:2541 wp-admin/install.php:137
 #: wp-admin/install.php:438 wp-admin/options-writing.php:176
@@ -20709,7 +20739,7 @@ msgid "Unknown Feed"
 msgstr "Umpan yang Tidak Diketahui"
 
 #. translators: %s: Plugin name.
-#: wp-includes/js/dist/edit-site.js:15121
+#: wp-includes/js/dist/edit-site.js:15123
 #: wp-admin/includes/class-wp-theme-install-list-table.php:497
 #: wp-admin/includes/deprecated.php:1392 wp-admin/includes/theme.php:1089
 #: wp-admin/theme-install.php:447 wp-admin/theme-install.php:499
@@ -20749,43 +20779,43 @@ msgid "Tags"
 msgstr "Tag"
 
 #. translators: accessibility text for the content landmark region.
-#: wp-includes/revision.php:33 wp-includes/js/dist/block-editor.js:69897
-#: wp-includes/js/dist/edit-widgets.js:1465 wp-includes/js/dist/editor.js:9982
-#: wp-includes/js/dist/editor.js:29063 wp-includes/js/dist/editor.js:29118
+#: wp-includes/revision.php:33 wp-includes/js/dist/block-editor.js:70044
+#: wp-includes/js/dist/edit-widgets.js:1465 wp-includes/js/dist/editor.js:10010
+#: wp-includes/js/dist/editor.js:29095 wp-includes/js/dist/editor.js:29150
 #: wp-admin/includes/dashboard.php:598 wp-admin/index.php:104
 msgid "Content"
 msgstr "Konten"
 
 #: wp-includes/class-wp-editor.php:1188 wp-includes/class-wp-editor.php:1939
 #: wp-includes/media.php:4929 wp-includes/script-loader.php:1291
-#: wp-includes/js/dist/block-editor.js:23935
-#: wp-includes/js/dist/block-editor.js:48022
-#: wp-includes/js/dist/block-editor.js:56275
-#: wp-includes/js/dist/block-editor.js:56532
-#: wp-includes/js/dist/block-editor.js:65631
-#: wp-includes/js/dist/block-editor.js:66373
-#: wp-includes/js/dist/block-editor.js:66376
-#: wp-includes/js/dist/block-editor.js:71517
+#: wp-includes/js/dist/block-editor.js:23939
+#: wp-includes/js/dist/block-editor.js:48143
+#: wp-includes/js/dist/block-editor.js:56395
+#: wp-includes/js/dist/block-editor.js:56652
+#: wp-includes/js/dist/block-editor.js:65776
+#: wp-includes/js/dist/block-editor.js:66518
+#: wp-includes/js/dist/block-editor.js:66521
+#: wp-includes/js/dist/block-editor.js:71667
 #: wp-includes/js/dist/block-library.js:6677
-#: wp-includes/js/dist/block-library.js:39213
-#: wp-includes/js/dist/block-library.js:60937
-#: wp-includes/js/dist/components.js:47682
-#: wp-includes/js/dist/edit-site.js:14610
-#: wp-includes/js/dist/edit-site.js:19837
-#: wp-includes/js/dist/edit-site.js:19896
-#: wp-includes/js/dist/edit-site.js:20251
-#: wp-includes/js/dist/edit-site.js:21536
-#: wp-includes/js/dist/edit-site.js:31183
-#: wp-includes/js/dist/edit-site.js:33802
-#: wp-includes/js/dist/edit-site.js:37755
-#: wp-includes/js/dist/edit-site.js:39141
-#: wp-includes/js/dist/edit-site.js:40494
-#: wp-includes/js/dist/edit-site.js:40592 wp-includes/js/dist/editor.js:5953
-#: wp-includes/js/dist/editor.js:6186 wp-includes/js/dist/editor.js:6284
-#: wp-includes/js/dist/editor.js:6470 wp-includes/js/dist/editor.js:7506
-#: wp-includes/js/dist/editor.js:7826 wp-includes/js/dist/editor.js:11602
-#: wp-includes/js/dist/editor.js:12621 wp-includes/js/dist/editor.js:19365
-#: wp-includes/js/dist/editor.js:24207 wp-includes/js/dist/fields.js:979
+#: wp-includes/js/dist/block-library.js:39214
+#: wp-includes/js/dist/block-library.js:60964
+#: wp-includes/js/dist/components.js:47918
+#: wp-includes/js/dist/edit-site.js:14612
+#: wp-includes/js/dist/edit-site.js:19840
+#: wp-includes/js/dist/edit-site.js:19899
+#: wp-includes/js/dist/edit-site.js:20254
+#: wp-includes/js/dist/edit-site.js:21539
+#: wp-includes/js/dist/edit-site.js:31186
+#: wp-includes/js/dist/edit-site.js:33805
+#: wp-includes/js/dist/edit-site.js:37782
+#: wp-includes/js/dist/edit-site.js:39169
+#: wp-includes/js/dist/edit-site.js:40522
+#: wp-includes/js/dist/edit-site.js:40620 wp-includes/js/dist/editor.js:5977
+#: wp-includes/js/dist/editor.js:6210 wp-includes/js/dist/editor.js:6309
+#: wp-includes/js/dist/editor.js:6495 wp-includes/js/dist/editor.js:7532
+#: wp-includes/js/dist/editor.js:7853 wp-includes/js/dist/editor.js:11630
+#: wp-includes/js/dist/editor.js:12649 wp-includes/js/dist/editor.js:19395
+#: wp-includes/js/dist/editor.js:24239 wp-includes/js/dist/fields.js:979
 #: wp-includes/js/dist/fields.js:1132 wp-includes/js/dist/patterns.js:654
 #: wp-includes/js/dist/patterns.js:843 wp-includes/js/dist/patterns.js:1257
 #: wp-includes/js/dist/patterns.js:1339 wp-includes/js/dist/patterns.js:1381
@@ -20807,8 +20837,8 @@ msgid "Cancel"
 msgstr "Batal"
 
 #: wp-includes/admin-bar.php:447 wp-includes/admin-bar.php:643
-#: wp-includes/js/dist/block-editor.js:50770
-#: wp-includes/js/dist/core-data.js:2967 wp-includes/js/dist/editor.js:25796
+#: wp-includes/js/dist/block-editor.js:50887
+#: wp-includes/js/dist/core-data.js:2991 wp-includes/js/dist/editor.js:25828
 #: wp-admin/plugins.php:634 wp-admin/update-core.php:469
 #: wp-admin/update-core.php:488 wp-admin/network/menu.php:103
 #: wp-admin/network/settings.php:507
@@ -20823,10 +20853,10 @@ msgstr "Komentar Terbaru"
 
 #: wp-includes/class-wp-customize-manager.php:4337
 #: wp-includes/class-wp-editor.php:1255
-#: wp-includes/js/dist/block-editor.js:54185
+#: wp-includes/js/dist/block-editor.js:54302
 #: wp-includes/js/dist/block-library.js:24521
-#: wp-includes/js/dist/edit-site.js:35942
-#: wp-includes/js/dist/edit-site.js:38160 wp-admin/customize.php:211
+#: wp-includes/js/dist/edit-site.js:35945
+#: wp-includes/js/dist/edit-site.js:38187 wp-admin/customize.php:211
 #: wp-admin/includes/class-custom-background.php:282
 #: wp-admin/includes/class-custom-image-header.php:553
 #: wp-admin/includes/class-wp-posts-list-table.php:1547
@@ -20844,8 +20874,8 @@ msgstr "Pratinjau"
 msgid "RSS"
 msgstr "RSS"
 
-#: wp-includes/js/dist/block-editor.js:23892
-#: wp-includes/js/dist/block-editor.js:68778
+#: wp-includes/js/dist/block-editor.js:23896
+#: wp-includes/js/dist/block-editor.js:68925
 #: wp-includes/js/dist/block-library.js:19766
 #: wp-admin/includes/dashboard.php:1398 wp-admin/setup-config.php:272
 msgid "Submit"
@@ -20859,8 +20889,8 @@ msgstr "Anonim"
 
 #: wp-includes/customize/class-wp-customize-nav-menu-control.php:57
 #: wp-includes/customize/class-wp-widget-area-customize-control.php:61
-#: wp-includes/js/dist/block-editor.js:50583
-#: wp-includes/js/dist/components.js:46314 wp-admin/includes/widgets.php:299
+#: wp-includes/js/dist/block-editor.js:50700
+#: wp-includes/js/dist/components.js:46548 wp-admin/includes/widgets.php:299
 #: wp-admin/js/set-post-thumbnail.js:21
 msgid "Done"
 msgstr "Selesai"
@@ -20886,13 +20916,13 @@ msgstr "Tampilkan Pos"
 msgid "Edit Tag"
 msgstr "Sunting Tag"
 
-#: wp-includes/script-loader.php:1087 wp-includes/js/dist/block-editor.js:28780
-#: wp-includes/js/dist/block-editor.js:28876
-#: wp-includes/js/dist/block-editor.js:30797
+#: wp-includes/script-loader.php:1087 wp-includes/js/dist/block-editor.js:28785
+#: wp-includes/js/dist/block-editor.js:28881
+#: wp-includes/js/dist/block-editor.js:30802
 #: wp-includes/js/dist/block-library.js:21499
 #: wp-includes/js/dist/block-library.js:28177
-#: wp-includes/js/dist/editor.js:12382 wp-admin/edit-tag-form.php:189
-#: wp-admin/edit-tags.php:481 wp-admin/includes/class-wp-debug-data.php:1063
+#: wp-includes/js/dist/editor.js:12410 wp-admin/edit-tag-form.php:189
+#: wp-admin/edit-tags.php:484 wp-admin/includes/class-wp-debug-data.php:1063
 #: wp-admin/includes/media.php:1160 wp-admin/includes/media.php:1288
 #: wp-admin/includes/media.php:2988 wp-admin/includes/media.php:3004
 msgid "None"
@@ -20903,9 +20933,9 @@ msgstr "Tak ada"
 #: wp-includes/media-template.php:545 wp-includes/media-template.php:797
 #: wp-includes/js/dist/block-library.js:37242
 #: wp-includes/js/dist/block-library.js:38358
-#: wp-includes/js/dist/edit-site.js:38191 wp-includes/js/dist/editor.js:14935
-#: wp-includes/js/dist/editor.js:14996 wp-admin/edit-link-form.php:139
-#: wp-admin/edit-tag-form.php:206 wp-admin/edit-tags.php:519
+#: wp-includes/js/dist/edit-site.js:38218 wp-includes/js/dist/editor.js:14963
+#: wp-includes/js/dist/editor.js:15024 wp-admin/edit-link-form.php:139
+#: wp-admin/edit-tag-form.php:206 wp-admin/edit-tags.php:522
 #: wp-admin/includes/class-walker-nav-menu-edit.php:237
 #: wp-admin/includes/class-wp-plugins-list-table.php:474
 #: wp-admin/includes/class-wp-terms-list-table.php:193
@@ -20917,18 +20947,18 @@ msgid "Description"
 msgstr "Deskripsi"
 
 #: wp-includes/comment-template.php:2537
-#: wp-includes/js/dist/block-editor.js:56521
+#: wp-includes/js/dist/block-editor.js:56641
 #: wp-includes/js/dist/block-library.js:18752
 #: wp-includes/js/dist/block-library.js:18917
 #: wp-includes/js/dist/block-library.js:19418
-#: wp-includes/js/dist/block-library.js:60922
-#: wp-includes/js/dist/edit-post.js:1749 wp-includes/js/dist/edit-site.js:19888
-#: wp-includes/js/dist/edit-site.js:21521
-#: wp-includes/js/dist/edit-site.js:37740
-#: wp-includes/js/dist/edit-site.js:39134
-#: wp-includes/js/dist/edit-site.js:40481
-#: wp-includes/js/dist/edit-site.js:40579 wp-includes/js/dist/editor.js:5901
-#: wp-includes/js/dist/editor.js:6458 wp-includes/js/dist/editor.js:12609
+#: wp-includes/js/dist/block-library.js:60949
+#: wp-includes/js/dist/edit-post.js:1749 wp-includes/js/dist/edit-site.js:19891
+#: wp-includes/js/dist/edit-site.js:21524
+#: wp-includes/js/dist/edit-site.js:37767
+#: wp-includes/js/dist/edit-site.js:39162
+#: wp-includes/js/dist/edit-site.js:40509
+#: wp-includes/js/dist/edit-site.js:40607 wp-includes/js/dist/editor.js:5925
+#: wp-includes/js/dist/editor.js:6483 wp-includes/js/dist/editor.js:12637
 #: wp-includes/js/dist/patterns.js:626 wp-includes/js/dist/patterns.js:833
 #: wp-includes/js/dist/patterns.js:1241 wp-includes/js/dist/patterns.js:1329
 #: wp-includes/js/dist/reusable-blocks.js:375 wp-admin/edit-form-comment.php:59
@@ -20943,8 +20973,8 @@ msgid "Name"
 msgstr "Nama"
 
 #: wp-includes/class-wp-editor.php:1225
-#: wp-includes/js/dist/block-editor.js:69357
-#: wp-includes/js/dist/edit-post.js:2281 wp-includes/js/dist/edit-site.js:12659
+#: wp-includes/js/dist/block-editor.js:69504
+#: wp-includes/js/dist/edit-post.js:2248 wp-includes/js/dist/edit-site.js:12659
 #: wp-admin/edit-link-form.php:34
 msgid "Advanced"
 msgstr "Tingkat Lanjut"
@@ -20959,7 +20989,7 @@ msgstr "Target"
 #: wp-includes/theme-compat/sidebar.php:131
 #: wp-includes/widgets/class-wp-widget-categories.php:31
 #: wp-includes/widgets/class-wp-widget-categories.php:48
-#: wp-includes/js/dist/components.js:62503 wp-includes/js/dist/patterns.js:429
+#: wp-includes/js/dist/components.js:62534 wp-includes/js/dist/patterns.js:429
 #: wp-admin/edit-link-form.php:31
 #: wp-admin/includes/class-wp-links-list-table.php:137
 #: wp-admin/includes/upgrade.php:420
@@ -20968,16 +20998,16 @@ msgstr "Kategori"
 
 #. translators: button label text should, if possible, be under 16 characters.
 #: wp-includes/class-wp-editor.php:1257
-#: wp-includes/js/dist/block-editor.js:23942
-#: wp-includes/js/dist/block-editor.js:56538
+#: wp-includes/js/dist/block-editor.js:23946
+#: wp-includes/js/dist/block-editor.js:56658
 #: wp-includes/js/dist/block-library.js:6689
-#: wp-includes/js/dist/block-library.js:41471
-#: wp-includes/js/dist/edit-site.js:8899 wp-includes/js/dist/edit-site.js:19901
-#: wp-includes/js/dist/edit-site.js:21543
-#: wp-includes/js/dist/edit-site.js:39160
-#: wp-includes/js/dist/edit-site.js:40598 wp-includes/js/dist/editor.js:6475
-#: wp-includes/js/dist/editor.js:7513 wp-includes/js/dist/editor.js:11546
-#: wp-includes/js/dist/editor.js:16345 wp-includes/js/dist/editor.js:20030
+#: wp-includes/js/dist/block-library.js:41472
+#: wp-includes/js/dist/edit-site.js:8899 wp-includes/js/dist/edit-site.js:19904
+#: wp-includes/js/dist/edit-site.js:21546
+#: wp-includes/js/dist/edit-site.js:39188
+#: wp-includes/js/dist/edit-site.js:40626 wp-includes/js/dist/editor.js:6500
+#: wp-includes/js/dist/editor.js:7539 wp-includes/js/dist/editor.js:11574
+#: wp-includes/js/dist/editor.js:16373 wp-includes/js/dist/editor.js:20060
 #: wp-includes/js/dist/fields.js:986 wp-includes/js/dist/patterns.js:848
 #: wp-includes/js/dist/patterns.js:1264 wp-includes/js/dist/widgets.js:329
 #: wp-admin/edit-form-comment.php:105 wp-admin/edit-link-form.php:30
@@ -21000,22 +21030,22 @@ msgstr "Perbarui Kategori"
 msgid "Edit Link Category"
 msgstr "Sunting Tautan Kategori"
 
-#: wp-includes/js/dist/block-editor.js:57028
-#: wp-includes/js/dist/block-editor.js:59094
-#: wp-includes/js/dist/block-editor.js:71522
+#: wp-includes/js/dist/block-editor.js:57148
+#: wp-includes/js/dist/block-editor.js:59214
+#: wp-includes/js/dist/block-editor.js:71672
 #: wp-includes/js/dist/block-library.js:34019
-#: wp-includes/js/dist/edit-site.js:14565
-#: wp-includes/js/dist/edit-site.js:14611
-#: wp-includes/js/dist/edit-site.js:19838
-#: wp-includes/js/dist/edit-site.js:20162
-#: wp-includes/js/dist/edit-site.js:21383
-#: wp-includes/js/dist/edit-site.js:21503
-#: wp-includes/js/dist/edit-site.js:35561
-#: wp-includes/js/dist/edit-site.js:35566
-#: wp-includes/js/dist/edit-site.js:39188
-#: wp-includes/js/dist/edit-site.js:39276
-#: wp-includes/js/dist/edit-site.js:40671 wp-includes/js/dist/editor.js:7789
-#: wp-includes/js/dist/editor.js:7842 wp-admin/edit-tag-form.php:305
+#: wp-includes/js/dist/edit-site.js:14567
+#: wp-includes/js/dist/edit-site.js:14613
+#: wp-includes/js/dist/edit-site.js:19841
+#: wp-includes/js/dist/edit-site.js:20165
+#: wp-includes/js/dist/edit-site.js:21386
+#: wp-includes/js/dist/edit-site.js:21506
+#: wp-includes/js/dist/edit-site.js:35564
+#: wp-includes/js/dist/edit-site.js:35569
+#: wp-includes/js/dist/edit-site.js:39216
+#: wp-includes/js/dist/edit-site.js:39304
+#: wp-includes/js/dist/edit-site.js:40699 wp-includes/js/dist/editor.js:7816
+#: wp-includes/js/dist/editor.js:7869 wp-admin/edit-tag-form.php:305
 #: wp-admin/includes/class-wp-links-list-table.php:90
 #: wp-admin/includes/class-wp-links-list-table.php:357
 #: wp-admin/includes/class-wp-plugins-list-table.php:624
@@ -21049,31 +21079,31 @@ msgstr "Cari Kategori"
 msgid "Link Categories"
 msgstr "Kategori Tautan"
 
-#: wp-includes/post.php:111 wp-includes/js/dist/edit-site.js:22737
-#: wp-includes/js/dist/edit-site.js:23873
-#: wp-includes/js/dist/edit-site.js:38813 wp-includes/js/dist/editor.js:15722
+#: wp-includes/post.php:111 wp-includes/js/dist/edit-site.js:22740
+#: wp-includes/js/dist/edit-site.js:23876
+#: wp-includes/js/dist/edit-site.js:38841 wp-includes/js/dist/editor.js:15750
 #: wp-admin/includes/meta-boxes.php:1583 wp-admin/revision.php:114
 msgid "Revisions"
 msgstr "Revisi"
 
 #. translators: Hidden accessibility text.
 #: wp-includes/revision.php:34 wp-includes/js/dist/block-library.js:28206
-#: wp-includes/js/dist/editor.js:14935 wp-includes/js/dist/editor.js:14996
-#: wp-includes/js/dist/editor.js:29799 wp-admin/includes/meta-boxes.php:750
+#: wp-includes/js/dist/editor.js:14963 wp-includes/js/dist/editor.js:15024
+#: wp-includes/js/dist/editor.js:29831 wp-admin/includes/meta-boxes.php:750
 #: wp-admin/includes/meta-boxes.php:1642 wp-admin/options-reading.php:193
 msgid "Excerpt"
 msgstr "Kutipan"
 
-#: wp-includes/js/dist/block-editor.js:51214 wp-admin/network/site-info.php:208
+#: wp-includes/js/dist/block-editor.js:51331 wp-admin/network/site-info.php:208
 msgid "Attributes"
 msgstr "Atribut"
 
 #. translators: accessibility text for the publish landmark region.
 #: wp-includes/class-wp-customize-manager.php:4864
-#: wp-includes/script-loader.php:1279 wp-includes/js/dist/block-editor.js:70634
-#: wp-includes/js/dist/edit-widgets.js:1471 wp-includes/js/dist/editor.js:9988
-#: wp-includes/js/dist/editor.js:16342 wp-includes/js/dist/editor.js:16350
-#: wp-includes/js/dist/editor.js:16728 wp-includes/js/dist/editor.js:20155
+#: wp-includes/script-loader.php:1279 wp-includes/js/dist/block-editor.js:70783
+#: wp-includes/js/dist/edit-widgets.js:1471 wp-includes/js/dist/editor.js:10016
+#: wp-includes/js/dist/editor.js:16370 wp-includes/js/dist/editor.js:16378
+#: wp-includes/js/dist/editor.js:16756 wp-includes/js/dist/editor.js:20185
 #: wp-admin/customize.php:197 wp-admin/includes/meta-boxes.php:388
 #: wp-admin/includes/meta-boxes.php:389 wp-admin/includes/meta-boxes.php:1597
 #: wp-admin/js/post.js:780
@@ -21101,14 +21131,14 @@ msgstr "Komentar"
 
 #: wp-includes/class-wp-customize-widgets.php:801
 #: wp-includes/class-wp-editor.php:1396 wp-includes/media.php:4969
-#: wp-includes/js/dist/block-editor.js:56282
-#: wp-includes/js/dist/block-editor.js:65628
-#: wp-includes/js/dist/block-editor.js:65948
-#: wp-includes/js/dist/block-editor.js:66105
-#: wp-includes/js/dist/block-library.js:51961
-#: wp-includes/js/dist/block-library.js:55927
-#: wp-includes/js/dist/edit-site.js:23077
-#: wp-includes/js/dist/edit-site.js:23345
+#: wp-includes/js/dist/block-editor.js:56402
+#: wp-includes/js/dist/block-editor.js:65773
+#: wp-includes/js/dist/block-editor.js:66093
+#: wp-includes/js/dist/block-editor.js:66250
+#: wp-includes/js/dist/block-library.js:51965
+#: wp-includes/js/dist/block-library.js:55931
+#: wp-includes/js/dist/edit-site.js:23080
+#: wp-includes/js/dist/edit-site.js:23348
 #: wp-includes/js/dist/format-library.js:306
 #: wp-includes/js/dist/format-library.js:1944
 #: wp-admin/includes/class-wp-list-table.php:628
@@ -21118,10 +21148,10 @@ msgstr "Terapkan"
 
 #: wp-includes/class-wp-editor.php:1184
 #: wp-includes/js/dist/customize-widgets.js:1038
-#: wp-includes/js/dist/edit-post.js:2589 wp-includes/js/dist/edit-site.js:6561
-#: wp-includes/js/dist/edit-widgets.js:3562 wp-includes/js/dist/editor.js:4988
-#: wp-includes/js/dist/editor.js:8156 wp-includes/js/dist/editor.js:11081
-#: wp-includes/js/dist/editor.js:23249 wp-includes/js/dist/editor.js:23287
+#: wp-includes/js/dist/edit-post.js:2556 wp-includes/js/dist/edit-site.js:6561
+#: wp-includes/js/dist/edit-widgets.js:3562 wp-includes/js/dist/editor.js:4989
+#: wp-includes/js/dist/editor.js:8184 wp-includes/js/dist/editor.js:11109
+#: wp-includes/js/dist/editor.js:23281 wp-includes/js/dist/editor.js:23319
 #: wp-admin/edit-comments.php:349 wp-admin/edit-comments.php:371
 #: wp-admin/edit.php:454 wp-admin/includes/image-edit.php:98
 #: wp-admin/includes/media.php:1747 wp-admin/includes/template.php:563
@@ -21150,7 +21180,7 @@ msgstr "Hasil Pencarian untuk &#8220;%s&#8221;"
 msgid "%s ago"
 msgstr "%s lalu"
 
-#: wp-includes/js/dist/editor.js:26145
+#: wp-includes/js/dist/editor.js:26177
 #: wp-admin/includes/class-wp-media-list-table.php:819
 #: wp-admin/includes/class-wp-posts-list-table.php:1556
 #: wp-admin/includes/class-wp-terms-list-table.php:531
@@ -21160,7 +21190,7 @@ msgstr "%s lalu"
 msgid "View"
 msgstr "Lihat"
 
-#: wp-includes/js/dist/editor.js:6498
+#: wp-includes/js/dist/editor.js:6524
 #: wp-admin/includes/class-wp-comments-list-table.php:375
 #: wp-admin/includes/class-wp-comments-list-table.php:797
 #: wp-admin/includes/class-wp-media-list-table.php:184
@@ -21175,21 +21205,21 @@ msgstr "Kembalikan"
 #: wp-includes/class-walker-comment.php:260
 #: wp-includes/class-walker-comment.php:459
 #: wp-includes/class-wp-editor.php:1394
-#: wp-includes/js/dist/block-editor.js:65906
-#: wp-includes/js/dist/block-editor.js:68649
+#: wp-includes/js/dist/block-editor.js:66051
+#: wp-includes/js/dist/block-editor.js:68796
 #: wp-includes/js/dist/block-library.js:6649
 #: wp-includes/js/dist/block-library.js:9014
 #: wp-includes/js/dist/block-library.js:10258
-#: wp-includes/js/dist/block-library.js:39220
-#: wp-includes/js/dist/block-library.js:39503
-#: wp-includes/js/dist/block-library.js:39510
-#: wp-includes/js/dist/block-library.js:39512
-#: wp-includes/js/dist/block-library.js:61801
-#: wp-includes/js/dist/block-library.js:63143
-#: wp-includes/js/dist/edit-post.js:3233 wp-includes/js/dist/edit-site.js:24051
-#: wp-includes/js/dist/edit-site.js:24340
-#: wp-includes/js/dist/edit-site.js:33861
-#: wp-includes/js/dist/edit-site.js:39261 wp-admin/comment.php:251
+#: wp-includes/js/dist/block-library.js:39221
+#: wp-includes/js/dist/block-library.js:39504
+#: wp-includes/js/dist/block-library.js:39511
+#: wp-includes/js/dist/block-library.js:39513
+#: wp-includes/js/dist/block-library.js:61829
+#: wp-includes/js/dist/block-library.js:63171
+#: wp-includes/js/dist/edit-post.js:3240 wp-includes/js/dist/edit-site.js:24054
+#: wp-includes/js/dist/edit-site.js:24343
+#: wp-includes/js/dist/edit-site.js:33864
+#: wp-includes/js/dist/edit-site.js:39289 wp-admin/comment.php:251
 #: wp-admin/edit-form-comment.php:159
 #: wp-admin/includes/class-walker-nav-menu-edit.php:187
 #: wp-admin/includes/class-wp-comments-list-table.php:824
@@ -21240,8 +21270,8 @@ msgstr "Komentar"
 #: wp-includes/sitemaps/class-wp-sitemaps-stylesheet.php:62
 #: wp-includes/sitemaps/class-wp-sitemaps-stylesheet.php:176
 #: wp-includes/widgets/class-wp-widget-media-image.php:113
-#: wp-includes/js/dist/block-editor.js:22231
-#: wp-includes/js/dist/block-editor.js:66095
+#: wp-includes/js/dist/block-editor.js:22235
+#: wp-includes/js/dist/block-editor.js:66240
 #: wp-includes/js/dist/block-library.js:17967 wp-admin/comment.php:196
 #: wp-admin/edit-form-comment.php:69
 #: wp-admin/includes/class-walker-nav-menu-edit.php:198
@@ -21255,15 +21285,15 @@ msgstr "URL"
 
 #. translators: Hidden accessibility text.
 #: wp-includes/class-wp-editor.php:1219 wp-includes/theme-compat/sidebar.php:29
-#: wp-includes/js/dist/block-library.js:40827
-#: wp-includes/js/dist/block-library.js:40835
-#: wp-includes/js/dist/components.js:62518
-#: wp-includes/js/dist/edit-site.js:34154
-#: wp-includes/js/dist/edit-site.js:36064
-#: wp-includes/js/dist/edit-site.js:36890
-#: wp-includes/js/dist/edit-site.js:38237 wp-includes/js/dist/editor.js:14236
-#: wp-includes/js/dist/editor.js:14278 wp-includes/js/dist/editor.js:14427
-#: wp-includes/js/dist/editor.js:14445 wp-admin/comment.php:185
+#: wp-includes/js/dist/block-library.js:40828
+#: wp-includes/js/dist/block-library.js:40836
+#: wp-includes/js/dist/components.js:62549
+#: wp-includes/js/dist/edit-site.js:34157
+#: wp-includes/js/dist/edit-site.js:36067
+#: wp-includes/js/dist/edit-site.js:36894
+#: wp-includes/js/dist/edit-site.js:38264 wp-includes/js/dist/editor.js:14264
+#: wp-includes/js/dist/editor.js:14306 wp-includes/js/dist/editor.js:14455
+#: wp-includes/js/dist/editor.js:14473 wp-admin/comment.php:185
 #: wp-admin/edit-form-comment.php:48
 #: wp-admin/includes/class-plugin-installer-skin.php:224
 #: wp-admin/includes/class-theme-installer-skin.php:247
@@ -21310,8 +21340,8 @@ msgstr "Y/m/d"
 
 #: wp-includes/post.php:1298 wp-includes/post.php:1319
 #: wp-includes/js/dist/block-library.js:37466
-#: wp-includes/js/dist/edit-site.js:33957 wp-includes/js/dist/editor.js:19702
-#: wp-includes/js/dist/editor.js:19706 wp-includes/js/dist/editor.js:19727
+#: wp-includes/js/dist/edit-site.js:33960 wp-includes/js/dist/editor.js:19732
+#: wp-includes/js/dist/editor.js:19736 wp-includes/js/dist/editor.js:19757
 #: wp-admin/includes/ajax-actions.php:2279
 #: wp-admin/includes/class-wp-posts-list-table.php:1996
 #: wp-admin/includes/meta-boxes.php:122 wp-admin/includes/meta-boxes.php:160
@@ -21319,7 +21349,7 @@ msgstr "Y/m/d"
 msgid "Draft"
 msgstr "Draf"
 
-#: wp-includes/post.php:1299 wp-includes/js/dist/edit-site.js:33967
+#: wp-includes/post.php:1299 wp-includes/js/dist/edit-site.js:33970
 #: wp-admin/includes/ajax-actions.php:2276
 #: wp-admin/includes/class-wp-posts-list-table.php:1995
 #: wp-admin/includes/meta-boxes.php:118 wp-admin/includes/meta-boxes.php:158
@@ -21327,9 +21357,9 @@ msgid "Pending Review"
 msgstr "Menunggu Peninjauan"
 
 #: wp-includes/post.php:1301 wp-includes/post.php:1321
-#: wp-includes/script-loader.php:1280 wp-includes/js/dist/edit-site.js:33647
-#: wp-includes/js/dist/edit-site.js:33977 wp-includes/js/dist/editor.js:19722
-#: wp-includes/js/dist/editor.js:19743 wp-admin/includes/ajax-actions.php:2270
+#: wp-includes/script-loader.php:1280 wp-includes/js/dist/edit-site.js:33650
+#: wp-includes/js/dist/edit-site.js:33980 wp-includes/js/dist/editor.js:19752
+#: wp-includes/js/dist/editor.js:19773 wp-admin/includes/ajax-actions.php:2270
 #: wp-admin/includes/class-wp-posts-list-table.php:1214
 #: wp-admin/includes/class-wp-posts-list-table.php:1988
 #: wp-admin/includes/meta-boxes.php:112 wp-admin/includes/meta-boxes.php:152
@@ -21340,12 +21370,12 @@ msgstr "Telah Terbit"
 #: wp-includes/class-wp-editor.php:1215 wp-includes/media-template.php:523
 #: wp-includes/media-template.php:775 wp-includes/option.php:2696
 #: wp-includes/revision.php:32 wp-includes/js/dist/block-library.js:26407
-#: wp-includes/js/dist/block-library.js:45066
-#: wp-includes/js/dist/block-library.js:61415
-#: wp-includes/js/dist/edit-site.js:33791
-#: wp-includes/js/dist/edit-site.js:34112
-#: wp-includes/js/dist/edit-site.js:35991 wp-includes/js/dist/editor.js:10775
-#: wp-includes/js/dist/fields.js:130 wp-includes/js/dist/widgets.js:1406
+#: wp-includes/js/dist/block-library.js:45067
+#: wp-includes/js/dist/block-library.js:61443
+#: wp-includes/js/dist/edit-site.js:33794
+#: wp-includes/js/dist/edit-site.js:34115
+#: wp-includes/js/dist/edit-site.js:35994 wp-includes/js/dist/editor.js:10803
+#: wp-includes/js/dist/fields.js:130 wp-includes/js/dist/widgets.js:1407
 #: wp-admin/includes/ajax-actions.php:2261
 #: wp-admin/includes/class-wp-posts-list-table.php:774
 #: wp-admin/includes/class-wp-posts-list-table.php:781
