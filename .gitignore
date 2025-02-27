@@ -21,6 +21,14 @@ composer.lock
 /readme.html
 /wp-*.php
 /xmlrpc.php
+/wp-content/wflogs/
+/wp-content/plugins/
+/wp-content/themes/
+!/wp-content/themes/colornews/ 
+
+# Ignore WordPress upgrade folders
+wp-content/upgrade/
+wp-content/upgrade-temp-backup/
 
 # Configuration
 wp-config.php
@@ -31,8 +39,11 @@ wp-config.php
 # Example plugin
 /wp-content/plugins/hello.php
 
-# Uploads
+# Uploads and backups
 /wp-content/uploads/
+*.sql
+/wp-content/cache/
+wp-content/backup-*/
 
 # Log files
 *.log

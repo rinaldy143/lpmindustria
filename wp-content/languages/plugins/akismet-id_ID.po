@@ -283,11 +283,6 @@ msgstr "Pemberitahuan privasi akismet"
 msgid "Privacy"
 msgstr "Privasi"
 
-#. translators: %s: Akismet privacy URL
-#: class.akismet.php:1915
-msgid "This site uses Akismet to reduce spam. <a href=\"%s\" target=\"_blank\" rel=\"nofollow noopener\">Learn how your comment data is processed</a>."
-msgstr "Situs ini menggunakan Akismet untuk mengurangi spam. <a href=\"%s\" target=\"_blank\" rel=\"nofollow noopener\">Pelajari bagaimana data komentar Anda diproses</a>."
-
 #: class.akismet-admin.php:106
 msgid "We collect information about visitors who comment on Sites that use our Akismet Anti-spam service. The information we collect depends on how the User sets up Akismet for the Site, but typically includes the commenter's IP address, user agent, referrer, and Site URL (along with other information directly provided by the commenter such as their name, username, email address, and the comment itself)."
 msgstr "Kami mengumpulkan informasi tentang pengunjung yang mengomentari Situs yang menggunakan layanan antispam Akismet kami. Informasi yang kami kumpulkan tergantung pada bagaimana Pengguna mengatur Akismet untuk Situs, tetapi biasanya termasuk alamat IP komentator, agen pengguna, perujuk, dan URL Situs (bersama dengan informasi lain yang secara langsung disediakan oleh komentator seperti nama, nama pengguna, alamat surel, dan komentar itu sendiri)."
@@ -740,13 +735,13 @@ msgid "Past six months"
 msgstr "Enam bulan terakhir"
 
 #. translators: 1: WordPress documentation URL, 2: Akismet download URL.
-#: class.akismet.php:1737
+#: class.akismet.php:1741
 msgid "Please <a href=\"%1$s\">upgrade WordPress</a> to a current version, or <a href=\"%2$s\">downgrade to version 2.4 of the Akismet plugin</a>."
 msgstr "Harap <a href=\"%1$s\">tingkatkan WordPress</a> ke versi saat ini, atau <a href=\"%2$s\">turunkan plugin Akismet ke versi 2.4</a>."
 
 #. translators: 1: Current Akismet version number, 2: Minimum WordPress version
 #. number required.
-#: class.akismet.php:1735
+#: class.akismet.php:1739
 msgid "Akismet %1$s requires WordPress %2$s or higher."
 msgstr "Akismet %1$s membutuhkan WordPress %2$s atau yang lebih tinggi."
 
@@ -796,25 +791,25 @@ msgstr "Akismet mendapati komentar ini sebagai spam."
 
 #. translators: The placeholder is the number of pieces of spam blocked by
 #. Akismet.
-#: class.akismet-widget.php:112
+#: class.akismet-widget.php:137
 msgid "<strong class=\"count\">%1$s spam</strong> blocked by <strong>Akismet</strong>"
 msgid_plural "<strong class=\"count\">%1$s spam</strong> blocked by <strong>Akismet</strong>"
 msgstr[0] "<strong class=\"count\">%1$s spam</strong> diblokir oleh <strong>Akismet</strong>"
 msgstr[1] "<strong class=\"count\">%1$s spam</strong> diblokir oleh <strong>Akismet</strong>"
 
-#: class.akismet-widget.php:77
+#: class.akismet-widget.php:101
 msgid "Title:"
 msgstr "Judul:"
 
-#: class.akismet-widget.php:72 class.akismet-widget.php:94
+#: class.akismet-widget.php:96 class.akismet-widget.php:118
 msgid "Spam Blocked"
 msgstr "Spam Diblokir"
 
-#: class.akismet-widget.php:17
+#: class.akismet-widget.php:19
 msgid "Display the number of spam comments Akismet has caught"
 msgstr "Tampilkan jumlah komentar spam yang ditangkap Akismet"
 
-#: class.akismet-widget.php:16
+#: class.akismet-widget.php:18
 msgid "Akismet Widget"
 msgstr "Widget Akismet"
 
