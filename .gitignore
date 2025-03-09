@@ -15,7 +15,7 @@ composer.lock
 /wp-content/themes/index.php
 .env
 /wp-content/debug.log
-/wp-includes/
+# /wp-includes/
 /index.php
 /license.txt
 /readme.html
