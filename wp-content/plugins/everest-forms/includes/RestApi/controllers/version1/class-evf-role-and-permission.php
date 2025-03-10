@@ -31,7 +31,7 @@ class EVF_Roles_And_Permission {
 	 * Register routes.
 	 *
 	 * @since 3.0.8
-	 *s
+	 *
 	 * @return void
 	 */
 	public function register_routes() {
