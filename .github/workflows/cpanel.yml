@@ -1,4 +1,4 @@
-name: Deploy to CPanel via SSH
+name: Deploy to CPanel via SFTP
 
 on:
   push:
@@ -14,36 +14,24 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v4
 
-    - name: Install rsync
-      run: sudo apt-get update && sudo apt-get install -y rsync
-      
-    - name: Setup SSH Connection
-      run: |
-        mkdir -p ~/.ssh
-        printf "%s\n" "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
-        eval $(ssh-agent -s)
-        ssh-add ~/.ssh/id_rsa
+    - name: Install lftp
+      run: sudo apt-get update && sudo apt-get install -y lftp
 
-    - name: Setup SSH Known Hosts
+    - name: Deploy via SFTP
       run: |
-        ssh-keyscan -p ${{ secrets.CPANEL_PORT }} ${{ secrets.CPANEL_HOST }} | tee -a ~/.ssh/known_hosts
-
-    - name: Test SSH Connection
-      run: |
-        ssh -vvv -o StrictHostKeyChecking=no -p ${{ secrets.CPANEL_PORT }} ${{ secrets.CPANEL_USER }}@${{ secrets.CPANEL_HOST }} "echo 'SSH connection successful'"
-
-    - name: Deploy ke CPanel (Rsync)
-      run: |
-        rsync -avz --delete \
-          --exclude ".git/" \
-          --exclude ".github/" \
-          --exclude "wp-content/uploads/" \
-          --exclude "node_modules/" \
-          --exclude "vendor/" \
-          --exclude ".env" \
-          -e "ssh -o StrictHostKeyChecking=no -p ${{ secrets.CPANEL_PORT }}" \
-          ./ ${{ secrets.CPANEL_USER }}@${{ secrets.CPANEL_HOST }}:/home/${{ secrets.CPANEL_USER }}/public_html/lpmindustria/
+        lftp -c "
+        set sftp:auto-confirm yes;
+        open -u ${{ secrets.CPANEL_USER }},${{ secrets.CPANEL_PASSWORD }} sftp://${{ secrets.CPANEL_HOST }};
+        mirror -R --delete --verbose \
+          --exclude .git/ \
+          --exclude .github/ \
+          --exclude wp-content/uploads/ \
+          --exclude node_modules/ \
+          --exclude vendor/ \
+          --exclude .env \
+          ./ /home/${{ secrets.CPANEL_USER }}/public_html/lpmindustria/;
+        bye;
+        "
 
     - name: Jalankan Perintah Setelah Deploy (Opsional)
       run: |
