@@ -14,6 +14,11 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v4
 
+    - name: Debug SSH Connection
+      run: |
+        echo "Testing SSH Connection..."
+        ssh -v -o StrictHostKeyChecking=no -p ${{ secrets.CPANEL_PORT }} ${{ secrets.CPANEL_USER }}@${{ secrets.CPANEL_HOST }} exit
+
     - name: Setup SSH Connection
       run: |
         mkdir -p ~/.ssh
