@@ -17,20 +17,22 @@ jobs:
     - name: Setup SSH Connection
       run: |
         mkdir -p ~/.ssh
-        printf "%s" "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+        printf "%s\n" "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
+        eval $(ssh-agent -s)
+        ssh-add ~/.ssh/id_rsa
 
     - name: Setup SSH Known Hosts
       run: |
         ssh-keyscan -p ${{ secrets.CPANEL_PORT }} ${{ secrets.CPANEL_HOST }} | tee -a ~/.ssh/known_hosts
-        
+
     - name: Test SSH Connection
       run: |
-        ssh -o StrictHostKeyChecking=no -p ${{ secrets.CPANEL_PORT }} ${{ secrets.CPANEL_USER }}@${{ secrets.CPANEL_HOST }} "echo 'SSH connection successful'"
+        ssh -vvv -o StrictHostKeyChecking=no -p ${{ secrets.CPANEL_PORT }} ${{ secrets.CPANEL_USER }}@${{ secrets.CPANEL_HOST }} "echo 'SSH connection successful'"
 
     - name: Deploy ke CPanel (Rsync)
       run: |
-        rsync -avz --delete-excluded \
+        rsync -avz --delete \
           --exclude ".git/" \
           --exclude ".github/" \
           --exclude "wp-content/uploads/" \
