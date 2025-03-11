@@ -23,6 +23,10 @@ jobs:
     - name: Setup SSH Known Hosts
       run: |
         ssh-keyscan -p ${{ secrets.CPANEL_PORT }} ${{ secrets.CPANEL_HOST }} | tee -a ~/.ssh/known_hosts
+        
+    - name: Test SSH Connection
+      run: |
+        ssh -o StrictHostKeyChecking=no -p ${{ secrets.CPANEL_PORT }} ${{ secrets.CPANEL_USER }}@${{ secrets.CPANEL_HOST }} "echo 'SSH connection successful'"
 
     - name: Deploy ke CPanel (Rsync)
       run: |
