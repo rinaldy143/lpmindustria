@@ -1,0 +1,40 @@
+name: Deploy to CPanel via SSH
+
+on:
+  push:
+    branches:
+      - master  # Hanya berjalan jika push ke branch master
+
+jobs:
+  deploy:
+    name: Deploy to CPanel
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Setup SSH Connection
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan -H ${{ secrets.CPANEL_HOST }} >> ~/.ssh/known_hosts
+
+    - name: Deploy ke CPanel (Rsync)
+      run: |
+        rsync -avz --delete-excluded \
+          --exclude ".git/" \
+          --exclude ".github/" \
+          --exclude "wp-content/uploads/" \
+          --exclude "node_modules/" \
+          --exclude "vendor/" \
+          --exclude ".env" \
+          ./ ${{ secrets.CPANEL_USER }}@${{ secrets.CPANEL_HOST }}:/home/${{ secrets.CPANEL_USER }}/public_html/lpmindustria/
+
+    - name: Jalankan Perintah Setelah Deploy (Opsional)
+      run: |
+        ssh ${{ secrets.CPANEL_USER }}@${{ secrets.CPANEL_HOST }} << 'EOF'
+        cd /home/${{ secrets.CPANEL_USER }}/public_html/lpmindustria
+        wp cache flush --allow-root
+        EOF
