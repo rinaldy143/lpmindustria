@@ -20,15 +20,7 @@ jobs:
           username: ${{ secrets.SFTP_USERNAME }}
           password: ${{ secrets.SFTP_PASSWORD }}
           port: 21
-          source: "."
+          source: "./*,!.git,!.github,!wp-content/uploads,!wp-content/cache,!node_modules,!vendor,!.env,!.htaccess"
           target: "/htdocs/lpmindustria"
           strip_components: 1
           rm: true
-          exclude: |
-            .git
-            .github
-            wp-content/uploads
-            node_modules
-            vendor
-            .env
-            .htaccess
