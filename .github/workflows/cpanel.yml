@@ -18,7 +18,7 @@ jobs:
         with:
           host: ${{ secrets.SFTP_HOST }}
           username: ${{ secrets.SFTP_USERNAME }}
-          password: ${{ secrets.SFTP_PASSWORD }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 21
           source: "./*,!.git,!.github,!wp-content/uploads,!wp-content/cache,!node_modules,!vendor,!.env,!.htaccess"
           target: "/htdocs/lpmindustria"
