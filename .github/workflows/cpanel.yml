@@ -1,41 +1,34 @@
-name: Deploy to CPanel via SFTP
+name: Deploy WordPress via SFTP
 
 on:
   push:
     branches:
-      - master  # Hanya berjalan jika push ke branch master
+      - master
 
 jobs:
   deploy:
-    name: Deploy to CPanel
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Install lftp
-      run: sudo apt-get update && sudo apt-get install -y lftp
-
-    - name: Deploy via SFTP
-      run: |
-        lftp -c "
-        set sftp:auto-confirm yes;
-        open -u ${{ secrets.CPANEL_USER }},${{ secrets.CPANEL_PASSWORD }} sftp://${{ secrets.CPANEL_HOST }};
-        mirror -R --delete --verbose --only-newer --parallel=5 \
-          --exclude .git/ \
-          --exclude .github/ \
-          --exclude wp-content/uploads/ \
-          --exclude node_modules/ \
-          --exclude vendor/ \
-          --exclude .env \
-          ./ /home/${{ secrets.CPANEL_USER }}/public_html/lpmindustria/;
-        bye;
-        "
-
-    - name: Jalankan Perintah Setelah Deploy (Opsional)
-      run: |
-        ssh -o StrictHostKeyChecking=no -p ${{ secrets.CPANEL_PORT }} ${{ secrets.CPANEL_USER }}@${{ secrets.CPANEL_HOST }} << 'EOF'
-        cd /home/${{ secrets.CPANEL_USER }}/public_html/lpmindustria
-        wp cache flush --allow-root
-        EOF
+      - name: Deploy to server via SFTP
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.SFTP_HOST }}
+          username: ${{ secrets.SFTP_USERNAME }}
+          password: ${{ secrets.SFTP_PASSWORD }}
+          port: 22
+          source: "."
+          target: "/htdocs/lpmindustria"
+          strip_components: 1
+          rm: true
+          exclude: |
+            .git
+            .github
+            wp-content/uploads
+            node_modules
+            vendor
+            .env
+            .htaccess
