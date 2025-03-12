@@ -19,8 +19,9 @@ jobs:
           server: ${{ secrets.SFTP_HOST }}
           username: ${{ secrets.SFTP_USERNAME }}
           password: ${{ secrets.SFTP_PASSWORD }}
+          protocol: ftps
           local-dir: ./
-          server-dir: "/home/lpmindu1/public_html/lpmindustria"
+          server-dir: "/home/lpmindu1/public_html/lpmindustria/"
           exclude: |
             .git/
             .github/
