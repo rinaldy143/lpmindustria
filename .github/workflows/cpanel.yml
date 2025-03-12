@@ -19,7 +19,7 @@ jobs:
           host: ${{ secrets.SFTP_HOST }}
           username: ${{ secrets.SFTP_USERNAME }}
           password: ${{ secrets.SFTP_PASSWORD }}
-          port: 22
+          port: 21
           source: "."
           target: "/htdocs/lpmindustria"
           strip_components: 1
