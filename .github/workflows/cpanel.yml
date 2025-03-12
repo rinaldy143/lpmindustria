@@ -16,8 +16,8 @@ jobs:
       - name: Deploy to server via SFTP
         uses: appleboy/scp-action@v0.1.4
         with:
-          host: ${{ secrets.SFTP_HOST }}
-          username: ${{ secrets.SFTP_USERNAME }}
+          host: ${{ secrets.CPANEL_HOST }}
+          username: ${{ secrets.CPANEL_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 21
           source: "./*,!.git,!.github,!wp-content/uploads,!wp-content/cache,!node_modules,!vendor,!.env,!.htaccess"
