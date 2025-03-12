@@ -17,21 +17,21 @@ jobs:
     - name: Install lftp
       run: sudo apt-get update && sudo apt-get install -y lftp
 
-  - name: Deploy via SFTP
-    run: |
-      lftp -c "
-      set sftp:auto-confirm yes;
-      open -u ${{ secrets.CPANEL_USER }},${{ secrets.CPANEL_PASSWORD }} sftp://${{ secrets.CPANEL_HOST }};
-      mirror -R --delete --verbose --only-newer --parallel=5 \
-        --exclude .git/ \
-        --exclude .github/ \
-        --exclude wp-content/uploads/ \
-        --exclude node_modules/ \
-        --exclude vendor/ \
-        --exclude .env \
-        ./ /home/${{ secrets.CPANEL_USER }}/public_html/lpmindustria/;
-      bye;
-      "
+    - name: Deploy via SFTP
+      run: |
+        lftp -c "
+        set sftp:auto-confirm yes;
+        open -u ${{ secrets.CPANEL_USER }},${{ secrets.CPANEL_PASSWORD }} sftp://${{ secrets.CPANEL_HOST }};
+        mirror -R --delete --verbose --only-newer --parallel=5 \
+          --exclude .git/ \
+          --exclude .github/ \
+          --exclude wp-content/uploads/ \
+          --exclude node_modules/ \
+          --exclude vendor/ \
+          --exclude .env \
+          ./ /home/${{ secrets.CPANEL_USER }}/public_html/lpmindustria/;
+        bye;
+        "
 
     - name: Jalankan Perintah Setelah Deploy (Opsional)
       run: |
