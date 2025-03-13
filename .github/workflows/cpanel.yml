@@ -1,4 +1,4 @@
-name: Deploy WordPress via FTPS
+name: Deploy WordPress via FTP
 
 on:
   push:
@@ -13,13 +13,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Deploy to server via FTPS
+      - name: Deploy to server via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.1.0
         with:
           server: ${{ secrets.SFTP_HOST }}
           username: ${{ secrets.SFTP_USERNAME }}
           password: ${{ secrets.SFTP_PASSWORD }}
-          protocol: ftps
           local-dir: ./
           server-dir: "/home/lpmindu1/public_html/lpmindustria/"
           exclude: |
