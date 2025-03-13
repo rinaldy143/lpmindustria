@@ -1,4 +1,4 @@
-name: Deploy WordPress via SFTP
+name: Deploy WordPress via FTPS
 
 on:
   push:
@@ -13,8 +13,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Deploy to server via SFTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.1.2
+      - name: Deploy to server via FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.1.0
         with:
           server: ${{ secrets.SFTP_HOST }}
           username: ${{ secrets.SFTP_USERNAME }}
@@ -31,6 +31,6 @@ jobs:
             vendor/
             .env
             .htaccess
-          dangerous-clean-slate: true
+          dangerous-clean-slate: false
           log-level: verbose
           timeout: 300000
