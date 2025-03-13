@@ -23,12 +23,13 @@ jobs:
           local-dir: ./
           server-dir: "/home/lpmindu1/public_html/lpmindustria/"
           exclude: |
-            .git/
-            .github/
-            wp-content/uploads/
-            wp-content/cache/
-            node_modules/
-            vendor/
+            **/.git*     
+            **/.git*/**   
+            **/.github*/**
+            **/wp-content/uploads/**
+            **/wp-content/cache/**
+            **/node_modules/**
+            **/vendor/**
             .env
             .htaccess
           dangerous-clean-slate: false
