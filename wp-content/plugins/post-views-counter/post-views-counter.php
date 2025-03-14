@@ -2,12 +2,12 @@
 /*
 Plugin Name: Post Views Counter
 Description: Post Views Counter allows you to display how many times a post, page or custom post type had been viewed in a simple, fast and reliable way.
-Version: 1.5.1
+Version: 1.5.2
 Author: dFactory
 Author URI: https://dfactory.co/
 Plugin URI: https://postviewscounter.com/
 License: MIT License
-License URI: http://opensource.org/licenses/MIT
+License URI: https://opensource.org/licenses/MIT
 Text Domain: post-views-counter
 Domain Path: /languages
 
@@ -30,7 +30,7 @@ if ( ! class_exists( 'Post_Views_Counter' ) ) {
 	 * Post Views Counter final class.
 	 *
 	 * @class Post_Views_Counter
-	 * @version	1.5.1
+	 * @version	1.5.2
 	 */
 	final class Post_Views_Counter {
 
@@ -100,7 +100,7 @@ if ( ! class_exists( 'Post_Views_Counter' ) ) {
 				'deactivation_delete'	=> false,
 				'license'				=> ''
 			],
-			'version'	=> '1.5.1'
+			'version'	=> '1.5.2'
 		];
 
 		// instances
@@ -882,7 +882,8 @@ if ( ! class_exists( 'Post_Views_Counter' ) ) {
 
 			// add styles
 			wp_add_inline_style( 'pvc-pro-style', '
-			.post-views-counter-settings tr.pvc-pro th:after, .nav-tab-wrapper a.nav-tab.nav-tab-disabled.pvc-pro:after, .post-views-counter-settings tr.pvc-pro-extended label[for="post_views_counter_general_counter_mode_ajax"]:after {
+			.post-views-counter-settings tr.pvc-pro th:after, .nav-tab-wrapper a.nav-tab.nav-tab-disabled.pvc-pro:after, .post-views-counter-settings tr.pvc-pro-extended label[for="post_views_counter_general_counter_mode_ajax"]:after,
+			.post-views-counter-settings tr.pvc-pro-extended label[for="pvc_exclude-ai_bots"]:after {
 				content: \'PRO\';
 				display: inline;
 				background-color: #ffc107;

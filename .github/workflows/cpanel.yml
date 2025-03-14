@@ -1,44 +1,36 @@
-name: Deploy to CPanel via SSH
+name: Deploy WordPress via FTP
 
 on:
   push:
     branches:
-      - master  # Hanya berjalan jika push ke branch master
+      - master
 
 jobs:
   deploy:
-    name: Deploy to CPanel
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v4
-      
-    - name: Setup SSH Connection
-      run: |
-        mkdir -p ~/.ssh
-        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Setup SSH Known Hosts
-      run: |
-        ssh-keyscan -p ${{ secrets.CPANEL_PORT }} ${{ secrets.CPANEL_HOST }} | tee -a ~/.ssh/known_hosts
-
-    - name: Deploy ke CPanel (Rsync)
-      run: |
-        rsync -avz --delete-excluded \
-          --exclude ".git/" \
-          --exclude ".github/" \
-          --exclude "wp-content/uploads/" \
-          --exclude "node_modules/" \
-          --exclude "vendor/" \
-          --exclude ".env" \
-          -e "ssh -o StrictHostKeyChecking=no -p ${{ secrets.CPANEL_PORT }}" \
-          ./ ${{ secrets.CPANEL_USER }}@${{ secrets.CPANEL_HOST }}:/home/${{ secrets.CPANEL_USER }}/public_html/lpmindustria/
-
-    - name: Jalankan Perintah Setelah Deploy (Opsional)
-      run: |
-        ssh -o StrictHostKeyChecking=no -p ${{ secrets.CPANEL_PORT }} ${{ secrets.CPANEL_USER }}@${{ secrets.CPANEL_HOST }} << 'EOF'
-        cd /home/${{ secrets.CPANEL_USER }}/public_html/lpmindustria
-        wp cache flush --allow-root
-        EOF
+      - name: Deploy to server via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.0
+        with:
+          server: ${{ secrets.SFTP_HOST }}
+          username: ${{ secrets.SFTP_USERNAME }}
+          password: ${{ secrets.SFTP_PASSWORD }}
+          local-dir: ./
+          server-dir: "/home/lpmindu1/public_html/lpmindustria/"
+          exclude: |
+            **/.git*     
+            **/.git*/**   
+            **/.github*/**
+            **/wp-content/uploads/**
+            **/wp-content/cache/**
+            **/node_modules/**
+            **/vendor/**
+            .env
+            .htaccess
+          dangerous-clean-slate: false
+          log-level: verbose
+          timeout: 300000
