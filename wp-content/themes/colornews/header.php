@@ -15,7 +15,13 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-	
+	<?php
+		$canonical_url = apply_filters('wpseo_canonical', '');
+		if (!empty($canonical_url)) {
+			echo '<link rel="canonical" href="' . esc_url($canonical_url) . '" />';
+		}
+	?>
+
 	<?php wp_head(); ?>
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/css/based.css">
 </head>
