@@ -327,15 +327,15 @@ function the_breadcrumb() {
 }
 
 
-add_filter('wpseo_canonical', 'yoast_custom_canonical_pagination');
+// add_filter('wpseo_canonical', 'yoast_custom_canonical_pagination');
 
-function yoast_custom_canonical_pagination($canonical) {
-    if (is_paged()) {
-        $page_url = get_pagenum_link(1);
-        return $page_url;
-    }
-    return $canonical;
-}
+// function yoast_custom_canonical_pagination($canonical) {
+//     if (is_paged()) {
+//         $page_url = get_pagenum_link(1);
+//         return $page_url;
+//     }
+//     return $canonical;
+// }
 
 function custom_copy_link_script() {
     // Daftarkan script kosong untuk dijadikan wadah
@@ -556,3 +556,26 @@ function add_copy_source_script() {
 }
 add_action('wp_footer', 'add_copy_source_script');
 
+function custom_dynamic_canonical() {
+    $yoast_canonical = get_post_meta(get_the_ID(), '_yoast_wpseo_canonical', true);
+    if (!empty($yoast_canonical)) {
+        return esc_url($yoast_canonical);
+    }
+
+    if (is_single()) {
+        $post_content = get_the_content();
+        preg_match('/<a\s+href=["\']([^"\']+)["\']/i', $post_content, $matches);
+        if (!empty($matches[1])) {
+            return esc_url($matches[1]);
+        }
+    }
+
+    if (is_paged()) {
+        $page_url = get_pagenum_link(1);
+        return esc_url($page_url);
+    }
+
+    return esc_url(home_url($_SERVER['REQUEST_URI']));
+}
+
+add_filter('wpseo_canonical', 'custom_dynamic_canonical');
